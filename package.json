@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TigranKirakosov/pokedex.git"
+    "url": "git+https://github.com/TigranKirakosov/final-project.git"
   },
   "keywords": [
     "react",
@@ -20,9 +20,9 @@
   "author": "Tigran Kirakosov",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/TigranKirakosov/pokedex/issues"
+    "url": "https://github.com/TigranKirakosov/final-project/issues"
   },
-  "homepage": "https://github.com/TigranKirakosov/pokedex#readme",
+  "homepage": "https://github.com/TigranKirakosov/final-project#readme",
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
