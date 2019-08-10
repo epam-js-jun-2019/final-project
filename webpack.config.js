@@ -11,7 +11,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js)$/,
         exclude: /node_module/,
         use: {
           loader: 'babel-loader'
@@ -40,6 +40,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
+    progress: true,
     port: 3002,
     open: true,
     historyApiFallback: true,

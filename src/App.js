@@ -1,27 +1,17 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import './App.scss';
-
-const HomePage = () => (
-  <div>
-    <h1>Ehh wtf</h1>
-  </div>
-);
-const AnotherPage = () => (
-  <div>
-    <h1>Workss?..</h1>
-  </div>
-);
+import HomePage from './pages/homepage/homepage.component';
+import PokemonPage from './pages/pokemon-page/pokemon-page.component';
+import CptPokemonsPage from './pages/captured-pokemons/captured-pokemons-page.component';
 
 function App() {
   return (
-    <div>
-      <Switch>
-        <Route exact path='/' component={HomePage} />
-        <Route path='/another' component={AnotherPage} />
-      </Switch>
-    </div>
+    <Switch>
+      <Route exact path='/' component={HomePage} />
+      <Route path='/pokemon' component={PokemonPage} />
+      <Route path='/cpt-pokemons' component={CptPokemonsPage} />
+    </Switch>
   );
 }
 
