@@ -1,0 +1,21 @@
+{
+  "name": "pokemons",
+  "version": "1.0.0",
+  "description": "Это последнее задание в курсе. Дедлайн - **04/09**!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nikita Korzhavin",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-router-dom": "^5.0.1"
+  },
+  "devDependencies": {
+    "json-server": "^0.15.0",
+    "webpack": "^4.39.1",
+    "webpack-dev": "^1.1.1"
+  }
+}
