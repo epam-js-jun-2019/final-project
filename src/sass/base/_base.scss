@@ -28,6 +28,12 @@ html {
 body {
   box-sizing: border-box;
   padding: 3rem;
+  font-family: $font-regular;
+  background-image: linear-gradient(
+    to right,
+    $color-body-bg-1,
+    $color-body-bg-2
+  );
 
   @include respond(tab-port) {
     padding: 0;
@@ -35,6 +41,6 @@ body {
 }
 
 ::selection {
-  background-color: $color-primary;
+  background-color: green;
   color: $color-white;
 }

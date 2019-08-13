@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -25,6 +26,20 @@ module.exports = {
           'css-loader',
           'sass-loader'
         ]
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]'
+        }
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]'
+        }
       }
     ]
   },
@@ -35,7 +50,17 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'style.[hash].css',
       path: path.resolve(__dirname, 'dist')
-    })
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: 'src/assets/images',
+        to: `${path.join(__dirname, '/dist')}/assets/images`
+      },
+      {
+        from: 'src/assets/fonts',
+        to: `${path.join(__dirname, '/dist')}/assets/fonts`
+      }
+    ])
   ],
   devServer: {
     contentBase: path.join(__dirname, 'dist'),

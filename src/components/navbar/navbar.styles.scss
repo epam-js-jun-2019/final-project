@@ -1,0 +1,33 @@
+@import '../../sass/utils/variables';
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 7rem;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  background-color: $color-primary-light;
+}
+
+.logo-container {
+  height: 5rem;
+}
+
+.logo {
+  width: auto;
+  height: 100%;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 40rem;
+}
+
+.option {
+  font-size: $font-size-default;
+  color: $color-navbar;
+}

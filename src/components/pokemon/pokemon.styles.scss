@@ -1,0 +1,40 @@
+@import '../../sass/utils/variables';
+
+.Pokemon {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: space-around;
+    width: 25rem;
+    height: 100%;
+    margin: 1rem;
+    padding: 3rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-image: linear-gradient(
+      to right,
+      $color-primary,
+      $color-secondary-light
+    );
+  }
+
+  &__image {
+    width: 15rem;
+    height: 100%;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-evenly;
+    height: 10rem;
+    font-family: inherit;
+    font-size: 1.6rem;
+  }
+}
+
+.focus {
+  color: wheat;
+}

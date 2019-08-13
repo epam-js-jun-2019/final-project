@@ -1,0 +1,25 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './navbar.styles.scss';
+
+const Navbar = () => (
+  <nav className='navbar'>
+    <Link className='logo-container' to='/'>
+      <img
+        className='logo'
+        src='./assets/images/International_Pokémon_logo.svg'
+        alt='Pokemon logo'
+      />
+    </Link>
+    <div className='options'>
+      <Link className='option' to='/cpt-pokemons'>
+        Captured Pokemons
+      </Link>
+      <Link className='option' to='/random-page'>
+        Random Pokemon
+      </Link>
+    </div>
+  </nav>
+);
+
+export default Navbar;

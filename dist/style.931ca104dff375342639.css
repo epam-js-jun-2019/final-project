@@ -1,0 +1,116 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 7rem;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  background-color: #ff9c40; }
+
+.logo-container {
+  height: 5rem; }
+
+.logo {
+  width: auto;
+  height: 100%; }
+
+.options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 40rem; }
+
+.option {
+  font-size: 1.6rem;
+  color: #fff4d4; }
+
+.custom-button {
+  min-width: 165px;
+  width: auto;
+  height: 50px;
+  letter-spacing: 0.5px;
+  line-height: 50px;
+  padding: 0 35px 0 35px;
+  font-size: 15px;
+  background-color: #ff7730;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer; }
+  .custom-button:hover {
+    background-color: #2998ff;
+    color: white;
+    border: 1px solid black; }
+
+
+
+
+
+
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+*/
+@font-face {
+  font-family: 'Blinker-Regular';
+  src: url("/assets/fonts/Blinker-Regular/Blinker-Regular.eot");
+  src: url("/assets/fonts/Blinker-Regular/Blinker-Regular.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/Blinker-Regular/Blinker-Regular.woff") format("woff"), url("/assets/fonts/Blinker-Regular/Blinker-Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Blinker-Bold';
+  src: url("/assets/fonts/Blinker-Bold/Blinker-Bold.eot");
+  src: url("/assets/fonts/Blinker-Bold/Blinker-Bold.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/Blinker-Bold/Blinker-Bold.woff") format("woff"), url("/assets/fonts/Blinker-Bold/Blinker-Bold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Blinker-Light';
+  src: url("/assets/fonts/Blinker-Light/Blinker-Light.eot");
+  src: url("/assets/fonts/Blinker-Light/Blinker-Light.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/Blinker-Light/Blinker-Light.woff") format("woff"), url("/assets/fonts/Blinker-Light/Blinker-Light.ttf") format("truetype"); }
+
+a {
+  text-decoration: none;
+  color: black; }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+  @media only screen and (max-width: 1200px) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 900px) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (min-width: 1800px) {
+    html {
+      font-size: 75%; } }
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+  font-family: "Blinker-Regular", Helvetica, Arial, sans-serif;
+  background-image: linear-gradient(to right, #d4fce1, #fff0c8); }
+  @media only screen and (max-width: 900px) {
+    body {
+      padding: 0; } }
+
+::selection {
+  background-color: green;
+  color: #fff; }
+
