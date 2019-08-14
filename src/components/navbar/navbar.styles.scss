@@ -18,6 +18,7 @@
 .logo {
   width: auto;
   height: 100%;
+  animation: changeScale1 0.75s alternate infinite ease-in-out;
 }
 
 .options {
@@ -30,4 +31,11 @@
 .option {
   font-size: $font-size-default;
   color: $color-navbar;
+  transition: 0.15s all ease-in;
+  border-bottom: 0px solid white;
+  &:hover {
+    color: $color-secondary-light;
+    transform: translateY(2px);
+    border-bottom: 3px solid white;
+  }
 }

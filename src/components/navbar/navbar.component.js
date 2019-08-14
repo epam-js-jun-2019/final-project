@@ -12,7 +12,7 @@ const Navbar = () => (
       />
     </Link>
     <div className='options'>
-      <Link className='option' to='/cpt-pokemons'>
+      <Link className='option' to='/captured-pokemons'>
         Captured Pokemons
       </Link>
       <Link className='option' to='/random-page'>

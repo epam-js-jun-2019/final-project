@@ -1,16 +1,20 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 import '../custom-button/custom-button.styles.scss';
 
 import './pokemon.styles.scss';
 
 const Pokemon = ({ id, name, status, captureDate }) => (
   <div className='Pokemon__container'>
-    <img
-      className='Pokemon__image'
-      src={`./assets/images/pokemons-images/${id}.png`}
-      alt=''
-    />
+    <Link to={`pokemon/${id}`}>
+      <img
+        className='Pokemon__image'
+        src={`./assets/images/pokemons-images/${id}.png`}
+        alt=''
+      />
+    </Link>
     <div className='Pokemon__text'>
       <div className='Pokemon__name'>
         Name:{' '}
@@ -25,7 +29,7 @@ const Pokemon = ({ id, name, status, captureDate }) => (
         Capture Date: <span className='focus'>{captureDate}</span>
       </div>
     </div>
-    <button className='custom-button'>Catch!</button>
+    <button className='custom-button'>Catch</button>
   </div>
 );
 

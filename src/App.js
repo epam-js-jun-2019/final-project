@@ -12,8 +12,8 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path='/' component={HomePage} />
-        <Route path='/pokemon' component={PokemonPage} />
-        <Route path='/cpt-pokemons' component={CptPokemonsPage} />
+        <Route path='/pokemon/:id' component={PokemonPage} />
+        <Route path='/captured-pokemons' component={CptPokemonsPage} />
         <Route path='/random-page' component={RandomPage} />
       </Switch>
     </div>

@@ -5,36 +5,52 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-content: space-around;
     width: 25rem;
     height: 100%;
-    margin: 1rem;
-    padding: 3rem;
-    border: 1px solid black;
+    margin-bottom: 5rem;
+    padding: 2rem;
+    border: 3px solid #153f7c;
     border-radius: 5px;
     background-image: linear-gradient(
-      to right,
-      $color-primary,
-      $color-secondary-light
+      to right bottom,
+      $color-secondary-light,
+      $color-primary
     );
+    transition: 0.5s all cubic-bezier(0.26, 0.29, 0.21, 1.87);
+
+    &:hover {
+      transform: scale(1.1);
+      .Pokemon__image {
+        animation: changeScale 0.9s alternate infinite ease-in-out;
+      }
+      background-image: linear-gradient(
+        to left top,
+        $color-secondary-dark,
+        $color-primary-dark
+      );
+    }
   }
 
   &__image {
-    width: 15rem;
+    width: 18rem;
     height: 100%;
   }
 
   &__text {
     display: flex;
     flex-direction: column;
-    align-items: left;
     justify-content: space-evenly;
     height: 10rem;
+    margin-bottom: 1rem;
+    padding: 0 2rem;
     font-family: inherit;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
+    border: 2px solid #153f7c;
+    border-radius: 5px;
+    background-color: #fff4d4;
   }
 }
 
 .focus {
-  color: wheat;
+  color: chocolate;
 }

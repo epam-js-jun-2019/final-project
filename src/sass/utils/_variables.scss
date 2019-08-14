@@ -26,3 +26,22 @@ $font-regular: 'Blinker-Regular', Helvetica, Arial, sans-serif;
 $font-light: 'Blinker-Light', Helvetica, Arial, sans-serif;
 $font-bold: 'Blinker-Bold', Helvetica, Arial, sans-serif;
 $font-size-default: 1.6rem;
+
+// ANIMATION
+@keyframes changeScale {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes changeScale1 {
+  0% {
+    transform: scale(0.98) rotate(-3deg);
+  }
+  100% {
+    transform: scale(1.02) rotate(3deg);
+  }
+}

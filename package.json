@@ -25,6 +25,7 @@
   "homepage": "https://github.com/TigranKirakosov/final-project#readme",
   "devDependencies": {
     "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@epegzz/sass-vars-loader": "^5.0.0",
