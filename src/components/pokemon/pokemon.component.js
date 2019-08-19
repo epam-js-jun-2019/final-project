@@ -7,6 +7,7 @@ import './pokemon.styles.scss';
 
 const Pokemon = ({ id, name, status, captureDate }) => (
   <div className='Pokemon__container'>
+    <div className='second-bg' />
     <Link to={`pokemon/${id}`}>
       <img
         className='Pokemon__image'

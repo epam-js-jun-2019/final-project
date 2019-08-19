@@ -25,8 +25,12 @@ const PokemonPage = ({ pokemons, location }) => {
           src={`../../assets/images/pokemons-images/${id}.png`}
           alt='pokemon'
         />
-        <span>{status}</span>
-        <span>{captureDate}</span>
+        <span>
+          Status: <span className='focus'>{status}</span>
+        </span>
+        <span>
+          Capture Date: <span className='focus'>{captureDate}</span>
+        </span>
         <CustomButton className='button'>Catch</CustomButton>
       </div>
     </div>

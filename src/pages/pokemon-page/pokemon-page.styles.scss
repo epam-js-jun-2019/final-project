@@ -5,10 +5,17 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: 59rem;
+  height: 50rem;
   font-family: inherit;
   font-size: 2rem;
-  color: chocolate;
+
+  .focus {
+    color: chocolate;
+  }
+
+  span {
+    text-align: left;
+  }
 
   .pokemon-image {
     max-width: 35rem;
