@@ -1,8 +1,7 @@
 import React from 'react';
-
 import { Link } from 'react-router-dom';
 
-import '../custom-button/custom-button.styles.scss';
+import CustomButton from '../custom-button/custom-button.component';
 
 import './pokemon.styles.scss';
 
@@ -12,7 +11,7 @@ const Pokemon = ({ id, name, status, captureDate }) => (
       <img
         className='Pokemon__image'
         src={`./assets/images/pokemons-images/${id}.png`}
-        alt=''
+        alt='pokemon'
       />
     </Link>
     <div className='Pokemon__text'>
@@ -29,7 +28,7 @@ const Pokemon = ({ id, name, status, captureDate }) => (
         Capture Date: <span className='focus'>{captureDate}</span>
       </div>
     </div>
-    <button className='custom-button'>Catch</button>
+    <CustomButton>Catch</CustomButton>
   </div>
 );
 

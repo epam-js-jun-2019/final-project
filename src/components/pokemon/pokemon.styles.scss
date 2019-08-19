@@ -6,7 +6,7 @@
     flex-direction: column;
     align-items: center;
     width: 25rem;
-    height: 100%;
+    height: 37rem;
     margin-bottom: 5rem;
     padding: 2rem;
     border: 3px solid #153f7c;
@@ -16,10 +16,16 @@
       $color-secondary-light,
       $color-primary
     );
+    overflow: hidden;
     transition: 0.5s all cubic-bezier(0.26, 0.29, 0.21, 1.87);
+
+    .custom-button {
+      display: none;
+    }
 
     &:hover {
       transform: scale(1.1);
+      z-index: 200;
       .Pokemon__image {
         animation: changeScale 0.9s alternate infinite ease-in-out;
       }
@@ -28,6 +34,9 @@
         $color-secondary-dark,
         $color-primary-dark
       );
+      .custom-button {
+        display: block;
+      }
     }
   }
 
@@ -49,6 +58,10 @@
     border-radius: 5px;
     background-color: #fff4d4;
   }
+}
+
+button {
+  outline: none;
 }
 
 .focus {

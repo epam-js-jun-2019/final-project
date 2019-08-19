@@ -21,6 +21,10 @@ $color-body-bg-2: #fff0c8;
 
 $color-navbar: #fff4d4;
 
+//SHADOW
+$shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.4);
+$shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.08);
+
 // FONT
 $font-regular: 'Blinker-Regular', Helvetica, Arial, sans-serif;
 $font-light: 'Blinker-Light', Helvetica, Arial, sans-serif;
@@ -43,5 +47,14 @@ $font-size-default: 1.6rem;
   }
   100% {
     transform: scale(1.02) rotate(3deg);
+  }
+}
+
+@keyframes changeScale2 {
+  0% {
+    transform: scaleX(0.95);
+  }
+  100% {
+    transform: scaleX(1.05);
   }
 }

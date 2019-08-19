@@ -5,6 +5,7 @@ import HomePage from './pages/homepage/homepage.component';
 import PokemonPage from './pages/pokemon-page/pokemon-page.component';
 import CptPokemonsPage from './pages/captured-pokemons/captured-pokemons-page.component';
 import RandomPage from './pages/random-page/random-page.component';
+import './App.scss';
 
 function App() {
   return (
