@@ -1,0 +1,124 @@
+{
+  "pokemons": [
+    {
+      "name": "bulbasaur",
+      "id": 1,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "ivysaur",
+      "id": 2,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "venusaur",
+      "id": 3,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "charmander",
+      "id": 4,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "charmeleon",
+      "id": 5,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "charizard",
+      "id": 6,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "squirtle",
+      "id": 7,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "wartortle",
+      "id": 8,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "blastoise",
+      "id": 9,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "caterpie",
+      "id": 10,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "metapod",
+      "id": 11,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "butterfree",
+      "id": 12,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "weedle",
+      "id": 13,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "kakuna",
+      "id": 14,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "beedrill",
+      "id": 15,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "pidgey",
+      "id": 16,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "pidgeotto",
+      "id": 17,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "pidgeot",
+      "id": 18,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "rattata",
+      "id": 19,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "raticate",
+      "id": 20,
+      "status": "free",
+      "captureDate": "none"
+    }
+  ]
+}

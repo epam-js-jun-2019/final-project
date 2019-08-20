@@ -1,5 +1,6 @@
 const PokemonsActionTypes = {
-  SET_POKEMON_STATUS: 'SET_POKEMON_STATUS'
+  CATCH_POKEMON: 'CATCH_POKEMON',
+  SET_POKEMON_FREE: 'SET_POKEMON_FREE'
 };
 
 export default PokemonsActionTypes;

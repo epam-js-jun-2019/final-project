@@ -1,6 +1,11 @@
 import PokemonsActionTypes from './pokemons.types';
 
-export const setPokemonStatus = pokemon => ({
-  type: PokemonsActionTypes.SET_POKEMON_STATUS,
-  payload: pokemon
+export const catchPokemon = id => ({
+  type: PokemonsActionTypes.CATCH_POKEMON,
+  payload: id
+});
+
+export const setPokemonFree = id => ({
+  type: PokemonsActionTypes.SET_POKEMON_FREE,
+  payload: id
 });

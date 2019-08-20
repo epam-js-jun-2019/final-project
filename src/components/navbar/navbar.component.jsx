@@ -12,6 +12,9 @@ const Navbar = () => (
       />
     </Link>
     <div className='options'>
+      <Link className='option' to='/'>
+        Wild Pokemons
+      </Link>
       <Link className='option' to='/captured-pokemons'>
         Captured Pokemons
       </Link>

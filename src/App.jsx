@@ -1,10 +1,10 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Navbar from 'Components/navbar/navbar.component.jsx';
-import HomePage from 'Pages/homepage/homepage.component.jsx';
-import PokemonPage from 'Pages/pokemon-page/pokemon-page.component.jsx';
-import CptPokemonsPage from 'Pages/captured-pokemons/captured-pokemons-page.component.jsx';
-import RandomPage from 'Pages/random-page/random-page.component.jsx';
+import Navbar from 'Components/navbar/navbar.component';
+import HomePage from 'Pages/homepage/homepage.component';
+import PokemonPage from 'Pages/pokemon-page/pokemon-page.component';
+import CptPokemonsPage from 'Pages/captured-pokemons/captured-pokemons-page.component';
+import RandomPage from 'Pages/random-page/random-page.component';
 import './App.scss';
 
 function App() {

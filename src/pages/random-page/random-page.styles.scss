@@ -1,0 +1,39 @@
+@import '../../sass/utils/variables';
+
+.pokemon-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50rem;
+  font-family: inherit;
+  font-size: 2rem;
+
+  .focus {
+    color: chocolate;
+  }
+
+  span {
+    text-align: left;
+  }
+
+  .pokemon-image {
+    max-width: 35rem;
+    height: auto;
+    transition: 0.6s all ease-in;
+    animation: changeScale 2s alternate infinite ease-in-out;
+  }
+
+  h1 {
+    color: #072b4d;
+  }
+}
+
+.bg-image {
+  position: fixed;
+  top: -5rem;
+  width: 90rem;
+  height: auto;
+  opacity: 0.075;
+  z-index: -1;
+}

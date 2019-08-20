@@ -1,0 +1,11 @@
+.search-box__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pokemons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 1rem 0;
+}

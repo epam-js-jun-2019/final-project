@@ -1,11 +1,34 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import './Random-page.styles.scss';
 
-const RandomPage = () => (
+const RandomPage = ({ pokemon: { id, name, status, captureDate } }) => (
   <div>
-    <h1>Random Pokemon Page</h1>
+    <img
+      className='bg-image'
+      src={`../../assets/images/pokemons-images/${id}.png`}
+      alt='pokemon'
+    />
+    <div className='pokemon-info'>
+      <h1>{name.split('')[0].toUpperCase() + name.slice(1)}</h1>
+      <img
+        className='pokemon-image'
+        src={`../../assets/images/pokemons-images/${id}.png`}
+        alt='pokemon'
+      />
+      <span>
+        Status: <span className='focus'>{status}</span>
+      </span>
+      <span>
+        Capture Date: <span className='focus'>{captureDate}</span>
+      </span>
+    </div>
   </div>
 );
 
-export default RandomPage;
+const mapStateToProps = ({ pokemons: { pokemons } }) => ({
+  pokemon: pokemons[Math.floor(Math.random() * Math.floor(pokemons['length']))]
+});
+
+export default connect(mapStateToProps)(RandomPage);
