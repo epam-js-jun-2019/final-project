@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import CustomButton from '../../components/custom-button/custom-button.component';
+import getPokemonData from 'FetchAPI/fetch.methods';
+
+import CustomButton from 'Components/custom-button/custom-button.component.jsx';
 
 import './pokemon-page.styles.scss';
 

@@ -12,14 +12,20 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js)$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_module/,
+        resolve: {
+          extensions: ['.jsx', '.js']
+        },
         use: {
           loader: 'babel-loader'
         }
       },
       {
         test: /\.s?css/,
+        resolve: {
+          extensions: ['.css', '.scss', '.sass']
+        },
         use: [
           'style-loader',
           MiniCssExtractPlugin.loader,
@@ -42,6 +48,16 @@ module.exports = {
         }
       }
     ]
+  },
+  resolve: {
+    alias: {
+      Assets: path.resolve(__dirname, './src/assets/'),
+      Components: path.resolve(__dirname, './src/components/'),
+      FetchAPI: path.resolve(__dirname, './src/fetchapi/'),
+      Pages: path.resolve(__dirname, './src/pages/'),
+      Redux: path.resolve(__dirname, './src/redux/'),
+      Sass: path.resolve(__dirname, './src/sass/')
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({

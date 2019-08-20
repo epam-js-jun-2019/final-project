@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import CustomButton from '../custom-button/custom-button.component';
+import CustomButton from 'Components/custom-button/custom-button.component.jsx';
 
 import './pokemon.styles.scss';
 

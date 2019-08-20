@@ -2,8 +2,8 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 
-import Pokemon from '../../components/pokemon/pokemon.component';
-import SearchBox from '../../components/search-box/search-box.component';
+import Pokemon from 'Components/pokemon/pokemon.component.jsx';
+import SearchBox from 'Components/search-box/search-box.component.jsx';
 
 import './homepage.styles.scss';
 
@@ -19,6 +19,7 @@ class HomePage extends React.Component {
 
   render() {
     const { collection } = this.props;
+    console.log(this.props);
     const { searchField } = this.state;
     const filteredPokemons = collection.filter(pokemon =>
       pokemon.name.toLowerCase().includes(searchField.toLowerCase())

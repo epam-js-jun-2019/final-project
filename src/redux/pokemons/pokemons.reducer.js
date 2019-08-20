@@ -1,6 +1,6 @@
 import PokemonsActionTypes from './pokemons.types';
 
-import * as data from '../temp-data/db-reserved.json';
+import * as data from '../../../db.json';
 
 const INITIAL_STATE = {
   pokemons: data.pokemons
