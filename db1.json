@@ -1,32 +1,32 @@
 {
-  "pokemons": [
+  "freePokemons": [
     {
-      "name": "bulbasaur",
       "id": 1,
+      "name": "bulbasaur",
       "status": "free",
       "captureDate": "none"
     },
     {
-      "name": "ivysaur",
       "id": 2,
+      "name": "ivysaur",
       "status": "free",
       "captureDate": "none"
     },
     {
-      "name": "venusaur",
       "id": 3,
+      "name": "venusaur",
       "status": "free",
       "captureDate": "none"
     },
     {
-      "name": "charmander",
       "id": 4,
+      "name": "charmander",
       "status": "free",
       "captureDate": "none"
     },
     {
-      "name": "charmeleon",
       "id": 5,
+      "name": "charmeleon",
       "status": "free",
       "captureDate": "none"
     },
@@ -43,68 +43,68 @@
       "captureDate": "none"
     },
     {
-      "name": "wartortle",
       "id": 8,
+      "name": "wartortle",
       "status": "free",
       "captureDate": "none"
     },
     {
-      "name": "blastoise",
       "id": 9,
+      "name": "blastoise",
       "status": "free",
       "captureDate": "none"
     },
     {
-      "name": "caterpie",
       "id": 10,
+      "name": "caterpie",
       "status": "free",
       "captureDate": "none"
     },
     {
-      "name": "metapod",
       "id": 11,
+      "name": "metapod",
       "status": "free",
       "captureDate": "none"
     },
     {
-      "name": "butterfree",
       "id": 12,
+      "name": "butterfree",
       "status": "free",
       "captureDate": "none"
     },
     {
-      "name": "weedle",
       "id": 13,
+      "name": "weedle",
       "status": "free",
       "captureDate": "none"
     },
     {
-      "name": "kakuna",
       "id": 14,
+      "name": "kakuna",
       "status": "free",
       "captureDate": "none"
     },
     {
-      "name": "beedrill",
       "id": 15,
+      "name": "beedrill",
       "status": "free",
       "captureDate": "none"
     },
     {
-      "name": "pidgey",
       "id": 16,
+      "name": "pidgey",
       "status": "free",
       "captureDate": "none"
     },
     {
-      "name": "pidgeotto",
       "id": 17,
+      "name": "pidgeotto",
       "status": "free",
       "captureDate": "none"
     },
     {
-      "name": "pidgeot",
       "id": 18,
+      "name": "pidgeot",
       "status": "free",
       "captureDate": "none"
     },
@@ -120,5 +120,6 @@
       "status": "free",
       "captureDate": "none"
     }
-  ]
+  ],
+  "capturedPokemons": []
 }

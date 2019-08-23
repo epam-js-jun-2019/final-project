@@ -46,10 +46,8 @@ class HomePage extends React.Component {
   }
 }
 
-const mapStateToProps = ({ pokemons: { pokemons } }) => ({
-  collection: pokemons
-    ? pokemons.filter(pokemon => pokemon.status === 'free' && pokemon.id <= 20)
-    : null
+const mapStateToProps = ({ pokemons: { freePokemons } }) => ({
+  collection: freePokemons ? freePokemons : null
 });
 
 export default connect(mapStateToProps)(HomePage);

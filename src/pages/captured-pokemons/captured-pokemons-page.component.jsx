@@ -46,10 +46,8 @@ class CapturedPokemonsPage extends React.Component {
   }
 }
 
-const mapStateToProps = ({ pokemons: { pokemons } }) => ({
-  collection: pokemons
-    ? pokemons.filter(pokemon => pokemon.status !== 'free')
-    : null
+const mapStateToProps = ({ pokemons: { capturedPokemons } }) => ({
+  collection: capturedPokemons ? capturedPokemons : null
 });
 
 export default connect(mapStateToProps)(CapturedPokemonsPage);

@@ -48,10 +48,20 @@ class Pokemon extends React.Component {
           ) : null}
         </div>
         {status === 'free' ? (
-          <CustomButton onClick={() => catchPokemon(id)}>Catch</CustomButton>
+          <CustomButton
+            onClick={() => {
+              catchPokemon({ id, name, status, captureDate });
+            }}
+          >
+            Catch
+          </CustomButton>
         ) : null}
         {status === 'captured' ? (
-          <CustomButton onClick={() => setPokemonFree(id)}>
+          <CustomButton
+            onClick={() => {
+              setPokemonFree({ id, name, status, captureDate });
+            }}
+          >
             Set Free
           </CustomButton>
         ) : null}
@@ -61,8 +71,8 @@ class Pokemon extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  catchPokemon: id => dispatch(catchPokemon(id)),
-  setPokemonFree: id => dispatch(setPokemonFree(id))
+  catchPokemon: pokemon => dispatch(catchPokemon(pokemon)),
+  setPokemonFree: pokemon => dispatch(setPokemonFree(pokemon))
 });
 
 export default connect(

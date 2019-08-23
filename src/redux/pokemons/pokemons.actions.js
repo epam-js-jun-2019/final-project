@@ -9,12 +9,12 @@ export const getPokemons = payload => ({
   payload
 });
 
-export const catchPokemon = id => ({
+export const catchPokemon = pokemon => ({
   type: PokemonsActionTypes.CATCH_POKEMON,
-  payload: id
+  payload: pokemon
 });
 
-export const setPokemonFree = id => ({
+export const setPokemonFree = pokemon => ({
   type: PokemonsActionTypes.SET_POKEMON_FREE,
-  payload: id
+  payload: pokemon
 });
