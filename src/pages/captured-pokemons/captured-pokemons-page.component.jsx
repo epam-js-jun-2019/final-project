@@ -20,9 +20,12 @@ class CapturedPokemonsPage extends React.Component {
   render() {
     const { collection } = this.props;
     const { searchField } = this.state;
-    const filteredPokemons = collection.filter(pokemon =>
-      pokemon.name.toLowerCase().includes(searchField.toLowerCase())
-    );
+    let filteredPokemons;
+    if (collection) {
+      filteredPokemons = collection.filter(pokemon =>
+        pokemon.name.toLowerCase().includes(searchField.toLowerCase())
+      );
+    }
     return (
       <div className='homepage'>
         <div className='search-box__container'>
@@ -32,9 +35,11 @@ class CapturedPokemonsPage extends React.Component {
           />
         </div>
         <div className='pokemons'>
-          {filteredPokemons.map(({ id, ...collectionProps }) => (
-            <Pokemon key={id} id={id} {...collectionProps} />
-          ))}
+          {collection
+            ? filteredPokemons.map(({ id, ...collectionProps }) => (
+                <Pokemon key={id} id={id} {...collectionProps} />
+              ))
+            : null}
         </div>
       </div>
     );
@@ -42,7 +47,9 @@ class CapturedPokemonsPage extends React.Component {
 }
 
 const mapStateToProps = ({ pokemons: { pokemons } }) => ({
-  collection: pokemons.filter(pokemon => pokemon.status !== 'free')
+  collection: pokemons
+    ? pokemons.filter(pokemon => pokemon.status !== 'free')
+    : null
 });
 
 export default connect(mapStateToProps)(CapturedPokemonsPage);

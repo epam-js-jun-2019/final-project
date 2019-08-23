@@ -5,7 +5,7 @@ import * as data from '../../../db1.json';
 const collection = data.pokemons;
 
 const INITIAL_STATE = {
-  pokemons: collection
+  pokemons: null
 };
 
 const catchPokemonFunc = (state, payload) =>
@@ -29,6 +29,15 @@ const setPokemonFreeFunc = (state, payload) =>
 
 const pokemonsReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case PokemonsActionTypes.GET_POKEMON_DATA:
+      return {
+        ...state,
+        pokemons: action.payload
+      };
+    case PokemonsActionTypes.GET_POKEMON_DATA_ASYNC:
+      return {
+        ...state
+      };
     case PokemonsActionTypes.CATCH_POKEMON:
       catchPokemonFunc(state, action.payload);
       return {

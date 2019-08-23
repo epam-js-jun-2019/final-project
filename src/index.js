@@ -1,3 +1,4 @@
+import regeneratorRuntime from 'regenerator-runtime'; // To handle generators & async/await
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';

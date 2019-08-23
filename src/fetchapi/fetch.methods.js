@@ -1,7 +1,4 @@
-const getPokemonData = (id = '') => {
-  fetch(`http://localhost:8000/pokemons/${id}`)
-    .then(res => res.json())
-    .then(data => data);
-};
+import SmallHTTP from './http.lib';
 
-export default getPokemonData;
+export const getPokemonData = (id = '') =>
+  SmallHTTP.prototype.get(`http://localhost:3000/pokemons/${id}`);

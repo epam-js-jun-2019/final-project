@@ -41,9 +41,11 @@ class Pokemon extends React.Component {
           <div className='Pokemon__status'>
             Status: <span className='focus'>{status}</span>
           </div>
-          <div className='Pokemon__captureDate'>
-            Capture Date: <span className='focus'>{captureDate}</span>
-          </div>
+          {status !== 'free' ? (
+            <div className='Pokemon__captureDate'>
+              Capture Date: <span className='focus'>{captureDate}</span>
+            </div>
+          ) : null}
         </div>
         {status === 'free' ? (
           <CustomButton onClick={() => catchPokemon(id)}>Catch</CustomButton>
