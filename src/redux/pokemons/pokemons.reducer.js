@@ -1,8 +1,4 @@
 import PokemonsActionTypes from './pokemons.types';
-import {
-  catchPokemonFunc,
-  setPokemonFreeFunc
-} from '../../fetchapi/fetch.methods';
 
 const INITIAL_STATE = {
   freePokemons: null,
@@ -22,21 +18,16 @@ const pokemonsReducer = (state = INITIAL_STATE, action) => {
         ...state
       };
     case PokemonsActionTypes.CATCH_POKEMON:
-      catchPokemonFunc({
-        ...action.payload,
-        status: 'captured',
-        captureDate: new Date()
-          .toDateString()
-          .split(' ')
-          .slice(1, 4)
-          .join(' ')
-      });
       return {
         ...state,
         freePokemons: state.freePokemons.filter(
           pokemon => pokemon.id !== action.payload.id
         ),
         capturedPokemons: [
+          ...state.capturedPokemons.slice(
+            0,
+            action.payload.id === 0 ? null : action.payload.id - 1
+          ),
           {
             ...action.payload,
             status: 'captured',
@@ -46,27 +37,26 @@ const pokemonsReducer = (state = INITIAL_STATE, action) => {
               .slice(1, 4)
               .join(' ')
           },
-          ...state.capturedPokemons
+          ...state.capturedPokemons.slice(action.payload.id - 1)
         ]
       };
     case PokemonsActionTypes.SET_POKEMON_FREE:
-      setPokemonFreeFunc({
-        ...action.payload,
-        status: 'free',
-        captureDate: 'none'
-      });
       return {
         ...state,
         capturedPokemons: state.capturedPokemons.filter(
           pokemon => pokemon.id !== action.payload.id
         ),
         freePokemons: [
+          ...state.freePokemons.slice(
+            0,
+            action.payload.id === 0 ? null : action.payload.id - 1
+          ),
           {
             ...action.payload,
             status: 'free',
             captureDate: 'none'
           },
-          ...state.freePokemons
+          ...state.freePokemons.slice(action.payload.id - 1)
         ]
       };
     default:

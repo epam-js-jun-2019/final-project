@@ -1,18 +1,18 @@
-import SmallHTTP from './http.lib';
+import SmallHTTP from 'FetchAPI/http.lib';
 
-export const getPokemonData = () =>
-  SmallHTTP.prototype.get(`http://localhost:3012/db/`);
+export const APIgetPokemonData = () =>
+  SmallHTTP.prototype.get(`http://localhost:3000/db/`);
 
-export const catchPokemonFunc = pokemon => {
-  SmallHTTP.prototype.post(`http://localhost:3012/capturedPokemons/`, pokemon);
+export const APIcatchPokemon = pokemon => {
+  SmallHTTP.prototype.post(`http://localhost:3000/capturedPokemons/`, pokemon);
   SmallHTTP.prototype.delete(
-    `http://localhost:3012/freePokemons/${pokemon.id}`
+    `http://localhost:3000/freePokemons/${pokemon.id}`
   );
 };
 
-export const setPokemonFreeFunc = pokemon => {
-  SmallHTTP.prototype.post(`http://localhost:3012/freePokemons/`, pokemon);
+export const APIsetPokemonFree = pokemon => {
+  SmallHTTP.prototype.post(`http://localhost:3000/freePokemons/`, pokemon);
   SmallHTTP.prototype.delete(
-    `http://localhost:3012/capturedPokemons/${pokemon.id}`
+    `http://localhost:3000/capturedPokemons/${pokemon.id}`
   );
 };

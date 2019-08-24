@@ -1,16 +1,9 @@
 import { put, takeEvery, all } from 'redux-saga/effects';
-import { getPokemonData } from '../fetchapi/fetch.methods';
-import PokemonsActionTypes from './pokemons/pokemons.types';
-
-const delay = ms => new Promise(res => setTimeout(res, ms));
-
-function* helloSaga() {
-  yield delay(2200);
-  console.log('Hello Sagas!');
-}
+import { APIgetPokemonData } from 'FetchAPI/fetch.methods';
+import PokemonsActionTypes from 'Redux/pokemons/pokemons.types';
 
 function* getPokemonDataAsync() {
-  const payload = yield getPokemonData();
+  const payload = yield APIgetPokemonData();
   yield put({ type: PokemonsActionTypes.GET_POKEMON_DATA, payload });
   console.log(payload);
 }
@@ -23,5 +16,5 @@ function* watchGetPokemonDataAsync() {
 }
 
 export default function* rootSaga() {
-  yield all([helloSaga(), watchGetPokemonDataAsync()]);
+  yield all([watchGetPokemonDataAsync()]);
 }

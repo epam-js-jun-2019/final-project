@@ -1,74 +1,8 @@
 {
   "freePokemons": [
     {
-      "id": 1,
-      "name": "bulbasaur",
-      "status": "free",
-      "captureDate": "none"
-    },
-    {
-      "id": 2,
-      "name": "ivysaur",
-      "status": "free",
-      "captureDate": "none"
-    },
-    {
-      "id": 3,
-      "name": "venusaur",
-      "status": "free",
-      "captureDate": "none"
-    },
-    {
-      "id": 4,
-      "name": "charmander",
-      "status": "free",
-      "captureDate": "none"
-    },
-    {
-      "id": 5,
-      "name": "charmeleon",
-      "status": "free",
-      "captureDate": "none"
-    },
-    {
-      "name": "charizard",
-      "id": 6,
-      "status": "free",
-      "captureDate": "none"
-    },
-    {
-      "name": "squirtle",
-      "id": 7,
-      "status": "free",
-      "captureDate": "none"
-    },
-    {
-      "id": 8,
-      "name": "wartortle",
-      "status": "free",
-      "captureDate": "none"
-    },
-    {
-      "id": 9,
-      "name": "blastoise",
-      "status": "free",
-      "captureDate": "none"
-    },
-    {
-      "id": 10,
-      "name": "caterpie",
-      "status": "free",
-      "captureDate": "none"
-    },
-    {
       "id": 11,
       "name": "metapod",
-      "status": "free",
-      "captureDate": "none"
-    },
-    {
-      "id": 12,
-      "name": "butterfree",
       "status": "free",
       "captureDate": "none"
     },
@@ -119,7 +53,74 @@
       "id": 20,
       "status": "free",
       "captureDate": "none"
+    },
+    {
+      "id": 12,
+      "name": "butterfree",
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "id": 10,
+      "name": "caterpie",
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "id": 8,
+      "name": "wartortle",
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "id": 9,
+      "name": "blastoise",
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "id": 7,
+      "name": "squirtle",
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "id": 1,
+      "name": "bulbasaur",
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "id": 2,
+      "name": "ivysaur",
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "id": 3,
+      "name": "venusaur",
+      "status": "free",
+      "captureDate": "none"
     }
   ],
-  "capturedPokemons": []
+  "capturedPokemons": [
+    {
+      "id": 4,
+      "name": "charmander",
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
+    },
+    {
+      "id": 5,
+      "name": "charmeleon",
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
+    },
+    {
+      "id": 6,
+      "name": "charizard",
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
+    }
+  ]
 }

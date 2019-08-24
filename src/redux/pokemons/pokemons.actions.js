@@ -1,6 +1,6 @@
 import PokemonsActionTypes from './pokemons.types';
 
-export const onGetPokemons = () => ({
+export const getPokemonsAsync = () => ({
   type: PokemonsActionTypes.GET_POKEMON_DATA_ASYNC
 });
 

@@ -36,9 +36,11 @@ class HomePage extends React.Component {
         </div>
         <div className='pokemons'>
           {collection
-            ? filteredPokemons.map(({ id, ...collectionProps }) => (
-                <Pokemon key={id} id={id} {...collectionProps} />
-              ))
+            ? filteredPokemons
+                .map(({ id, ...collectionProps }) => (
+                  <Pokemon key={id} id={id} {...collectionProps} />
+                ))
+                .sort((a, b) => (a.props.id > b.props.id ? 1 : -1))
             : null}
         </div>
       </div>

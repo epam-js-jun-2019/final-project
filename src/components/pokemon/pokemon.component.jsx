@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-
+import { APIcatchPokemon, APIsetPokemonFree } from 'FetchAPI/fetch.methods';
 import { catchPokemon } from 'Redux/pokemons/pokemons.actions';
 import { setPokemonFree } from 'Redux/pokemons/pokemons.actions';
 
@@ -51,6 +51,16 @@ class Pokemon extends React.Component {
           <CustomButton
             onClick={() => {
               catchPokemon({ id, name, status, captureDate });
+              APIcatchPokemon({
+                id,
+                name,
+                status: 'captured',
+                captureDate: new Date()
+                  .toDateString()
+                  .split(' ')
+                  .slice(1, 4)
+                  .join(' ')
+              });
             }}
           >
             Catch
@@ -60,6 +70,12 @@ class Pokemon extends React.Component {
           <CustomButton
             onClick={() => {
               setPokemonFree({ id, name, status, captureDate });
+              APIsetPokemonFree({
+                id,
+                name,
+                status: 'free',
+                captureDate: 'none'
+              });
             }}
           >
             Set Free

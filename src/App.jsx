@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { onGetPokemons } from './redux/pokemons/pokemons.actions';
+import { getPokemonsAsync } from 'Redux/pokemons/pokemons.actions';
 
 import Navbar from 'Components/navbar/navbar.component';
 import HomePage from 'Pages/homepage/homepage.component';
@@ -13,7 +13,7 @@ import './App.scss';
 
 class App extends React.Component {
   componentDidMount() {
-    this.props.onGetPokemons();
+    this.props.getPokemonsAsync();
   }
   render() {
     return (
@@ -31,7 +31,7 @@ class App extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  onGetPokemons: () => dispatch(onGetPokemons())
+  getPokemonsAsync: () => dispatch(getPokemonsAsync())
 });
 
 export default connect(

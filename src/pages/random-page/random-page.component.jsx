@@ -27,8 +27,9 @@ const RandomPage = ({ pokemon: { id, name, status, captureDate } }) => (
   </div>
 );
 
-const mapStateToProps = ({ pokemons: { pokemons } }) => ({
-  pokemon: pokemons[Math.floor(Math.random() * Math.floor(pokemons['length']))]
+const mapStateToProps = ({ pokemons: { freePokemons } }) => ({
+  pokemon:
+    freePokemons[Math.floor(Math.random() * Math.floor(freePokemons['length']))]
 });
 
 export default connect(mapStateToProps)(RandomPage);

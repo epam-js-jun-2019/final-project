@@ -13,6 +13,7 @@ class SmallHTTP {
       fetch(url, {
         method: 'POST',
         headers: {
+          'Access-Control-Allow-Origin': '*',
           'Content-type': 'application/json'
         },
         body: JSON.stringify(data)
@@ -28,6 +29,7 @@ class SmallHTTP {
       fetch(url, {
         method: 'PUT',
         headers: {
+          'Access-Control-Allow-Origin': '*',
           'Content-type': 'application/json'
         },
         body: JSON.stringify(data)
@@ -43,6 +45,7 @@ class SmallHTTP {
       fetch(url, {
         method: 'DELETE',
         headers: {
+          'Access-Control-Allow-Origin': '*',
           'Content-type': 'application/json'
         }
       })

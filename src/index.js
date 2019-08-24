@@ -8,6 +8,7 @@ import App from './App';
 import 'Sass/main.scss';
 
 import store from 'Redux/store';
+import { EventEmitter } from 'events';
 
 ReactDOM.render(
   <Provider store={store}>
