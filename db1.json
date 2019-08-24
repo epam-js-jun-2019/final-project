@@ -107,20 +107,19 @@
       "name": "venusaur",
       "status": "free",
       "captureDate": "none"
-    }
-  ],
-  "capturedPokemons": [
+    },
     {
       "id": 1,
       "name": "bulbasaur",
-      "status": "captured",
-      "captureDate": "Aug 24 2019"
+      "status": "free",
+      "captureDate": "none"
     },
     {
       "id": 6,
       "name": "charizard",
-      "status": "captured",
-      "captureDate": "Aug 24 2019"
+      "status": "free",
+      "captureDate": "none"
     }
-  ]
+  ],
+  "capturedPokemons": []
 }

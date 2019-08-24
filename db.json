@@ -1,26 +1,8 @@
 {
-  "pokemons": [
+  "freePokemons": [
     {
       "name": "bulbasaur",
       "id": 1,
-      "status": "free",
-      "captureDate": "none"
-    },
-    {
-      "name": "ivysaur",
-      "id": 2,
-      "status": "free",
-      "captureDate": "none"
-    },
-    {
-      "name": "venusaur",
-      "id": 3,
-      "status": "free",
-      "captureDate": "none"
-    },
-    {
-      "name": "charmander",
-      "id": 4,
       "status": "free",
       "captureDate": "none"
     },
@@ -51,12 +33,6 @@
     {
       "name": "blastoise",
       "id": 9,
-      "status": "free",
-      "captureDate": "none"
-    },
-    {
-      "name": "caterpie",
-      "id": 10,
       "status": "free",
       "captureDate": "none"
     },
@@ -1869,12 +1845,6 @@
     {
       "name": "minun",
       "id": 312,
-      "status": "free",
-      "captureDate": "none"
-    },
-    {
-      "name": "volbeat",
-      "id": 313,
       "status": "free",
       "captureDate": "none"
     },
@@ -4249,76 +4219,114 @@
       "captureDate": "none"
     },
     {
-      "name": "trevenant",
-      "id": 709,
+      "id": 313,
+      "name": "volbeat",
       "status": "free",
       "captureDate": "none"
+    }
+  ],
+  "capturedPokemons": [
+    {
+      "id": 3,
+      "name": "venusaur",
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
+    },
+    {
+      "id": 2,
+      "name": "ivysaur",
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
+    },
+    {
+      "id": 4,
+      "name": "charmander",
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
+    },
+    {
+      "id": 5,
+      "name": "charmeleon",
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
+    },
+    {
+      "id": 10,
+      "name": "caterpie",
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
+    },
+    {
+      "name": "trevenant",
+      "id": 709,
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
     },
     {
       "name": "pumpkaboo-average",
       "id": 710,
-      "status": "free",
-      "captureDate": "none"
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
     },
     {
       "name": "gourgeist-average",
       "id": 711,
-      "status": "free",
-      "captureDate": "none"
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
     },
     {
       "name": "bergmite",
       "id": 712,
-      "status": "free",
-      "captureDate": "none"
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
     },
     {
       "name": "avalugg",
       "id": 713,
-      "status": "free",
-      "captureDate": "none"
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
     },
     {
       "name": "noibat",
       "id": 714,
-      "status": "free",
-      "captureDate": "none"
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
     },
     {
       "name": "noivern",
       "id": 715,
-      "status": "free",
-      "captureDate": "none"
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
     },
     {
       "name": "xerneas",
       "id": 716,
-      "status": "free",
-      "captureDate": "none"
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
     },
     {
       "name": "yveltal",
       "id": 717,
-      "status": "free",
-      "captureDate": "none"
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
     },
     {
       "name": "zygarde",
       "id": 718,
-      "status": "free",
-      "captureDate": "none"
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
     },
     {
       "name": "diancie",
       "id": 719,
-      "status": "free",
-      "captureDate": "none"
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
     },
     {
       "name": "hoopa",
       "id": 720,
-      "status": "free",
-      "captureDate": "none"
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
     }
   ]
 }

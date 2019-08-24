@@ -2,7 +2,8 @@ import PokemonsActionTypes from './pokemons.types';
 
 const INITIAL_STATE = {
   freePokemons: null,
-  capturedPokemons: null
+  capturedPokemons: null,
+  loading: false
 };
 
 const pokemonsReducer = (state = INITIAL_STATE, action) => {
@@ -10,12 +11,14 @@ const pokemonsReducer = (state = INITIAL_STATE, action) => {
     case PokemonsActionTypes.GET_POKEMON_DATA:
       return {
         ...state,
+        loading: false,
         freePokemons: action.payload.freePokemons,
         capturedPokemons: action.payload.capturedPokemons
       };
     case PokemonsActionTypes.GET_POKEMON_DATA_ASYNC:
       return {
-        ...state
+        ...state,
+        loading: true
       };
     case PokemonsActionTypes.CATCH_POKEMON:
       return {
