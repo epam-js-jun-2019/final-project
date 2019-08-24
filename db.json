@@ -1,12 +1,6 @@
 {
   "freePokemons": [
     {
-      "name": "bulbasaur",
-      "id": 1,
-      "status": "free",
-      "captureDate": "none"
-    },
-    {
       "name": "charmeleon",
       "id": 5,
       "status": "free",
@@ -2785,12 +2779,6 @@
       "captureDate": "none"
     },
     {
-      "name": "leafeon",
-      "id": 470,
-      "status": "free",
-      "captureDate": "none"
-    },
-    {
       "name": "glaceon",
       "id": 471,
       "status": "free",
@@ -4223,6 +4211,12 @@
       "name": "volbeat",
       "status": "free",
       "captureDate": "none"
+    },
+    {
+      "id": 470,
+      "name": "leafeon",
+      "status": "free",
+      "captureDate": "none"
     }
   ],
   "capturedPokemons": [
@@ -4325,6 +4319,12 @@
     {
       "name": "hoopa",
       "id": 720,
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
+    },
+    {
+      "id": 1,
+      "name": "bulbasaur",
       "status": "captured",
       "captureDate": "Aug 24 2019"
     }

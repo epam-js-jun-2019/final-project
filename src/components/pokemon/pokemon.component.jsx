@@ -20,10 +20,12 @@ class Pokemon extends React.Component {
       setPokemonFree
     } = this.props;
     return (
-      <div
-        className={`${status !== 'free' ? 'captured' : ''} Pokemon__container`}
-      >
-        <div className={`${status !== 'free' ? 'captured2' : ''} second-bg`} />
+      <div className={`${status !== 'free' ? 'Pokemon_captured' : ''} Pokemon`}>
+        <div
+          className={`${
+            status !== 'free' ? 'Pokemon_captured-alt' : ''
+          } hidden-backgroud`}
+        />
         <Link to={`pokemon/${id}`}>
           <img
             className='Pokemon__image'
@@ -34,16 +36,17 @@ class Pokemon extends React.Component {
         <div className='Pokemon__text'>
           <div className='Pokemon__name'>
             Name:{' '}
-            <span className='focus'>
+            <span className='Pokemon__text_focus'>
               {name.split('')[0].toUpperCase() + name.slice(1)}
             </span>
           </div>
           <div className='Pokemon__status'>
-            Status: <span className='focus'>{status}</span>
+            Status: <span className='Pokemon__text_focus'>{status}</span>
           </div>
           {status !== 'free' ? (
             <div className='Pokemon__captureDate'>
-              Capture Date: <span className='focus'>{captureDate}</span>
+              Capture Date:{' '}
+              <span className='Pokemon__text_focus'>{captureDate}</span>
             </div>
           ) : null}
         </div>

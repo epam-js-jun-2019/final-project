@@ -1,3 +1,5 @@
+@import '../../sass/utils/mixins';
+
 .search {
   -webkit-appearance: none;
   border: 1px solid transparent;
@@ -13,4 +15,11 @@
   &:focus {
     border: 1px solid #153f7c;
   }
+}
+
+input::placeholder {
+  @include respond(tab-port) {
+    font-size: 1.5rem;
+  }
+  text-align: center;
 }

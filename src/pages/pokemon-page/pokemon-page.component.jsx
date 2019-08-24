@@ -14,30 +14,27 @@ class PokemonPage extends React.Component {
     return (
       <div style={{ position: 'relative' }}>
         <div
+          className='background-image'
           style={{
-            position: 'absolute',
-            width: '100%',
-            height: '100%',
-            backgroundImage: `url(../../assets/images/pokemons-images/${id}.png)`,
-            backgroundSize: '80%',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: '20% 75%',
-            opacity: '0.075'
+            backgroundImage: `url(../../assets/images/pokemons-images/${id}.png)`
           }}
         />
         <div className='pokemon-info'>
-          <h1>{name.split('')[0].toUpperCase() + name.slice(1)}</h1>
+          <h1 className='pokemon-title'>
+            {name.split('')[0].toUpperCase() + name.slice(1)}
+          </h1>
           <img
             className='pokemon-image'
             src={`../../assets/images/pokemons-images/${id}.png`}
             alt='pokemon'
           />
           <span>
-            Status: <span className='focus'>{status}</span>
+            Status: <span className='pokemon-info_focus'>{status}</span>
           </span>
           {captureDate !== 'none' ? (
             <span>
-              Capture Date: <span className='focus'>{captureDate}</span>
+              Capture Date:{' '}
+              <span className='pokemon-info_focus'>{captureDate}</span>
             </span>
           ) : null}
         </div>

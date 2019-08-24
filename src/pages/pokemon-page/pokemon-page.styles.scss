@@ -9,22 +9,32 @@
   font-family: inherit;
   font-size: 2rem;
 
-  .focus {
+  &_focus {
     color: chocolate;
   }
 
   span {
     text-align: left;
   }
+}
 
-  .pokemon-image {
-    max-width: 35rem;
-    height: auto;
-    transition: 0.6s all ease-in;
-    animation: changeScale 2s alternate infinite ease-in-out;
-  }
+.pokemon-title {
+  color: #072b4d;
+}
 
-  h1 {
-    color: #072b4d;
-  }
+.pokemon-image {
+  max-width: 35rem;
+  height: auto;
+  transition: 0.6s all ease-in;
+  animation: changeScale 2s alternate infinite ease-in-out;
+}
+
+.background-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: 20% 75%;
+  opacity: 0.075;
 }

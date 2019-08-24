@@ -13,6 +13,9 @@ $breakpoint arguement choices:
 - big-desktop
 
 1em = 16px
+
+# Directory info for components
+@import '../../sass/utils/mixins';
 */
 @mixin respond($breakpoint) {
   @if $breakpoint == phone {
@@ -34,5 +37,11 @@ $breakpoint arguement choices:
     @media only screen and (min-width: 1800px) {
       @content;
     }
+  }
+}
+
+@mixin preciseRespond($breakpoint) {
+  @media only screen and (max-width: $breakpoint) {
+    @content;
   }
 }

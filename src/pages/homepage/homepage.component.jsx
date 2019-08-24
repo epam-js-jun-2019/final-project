@@ -13,6 +13,11 @@ class HomePage extends React.Component {
     super(props);
     this.state = {
       searchField: '',
+      paginationWindow: false,
+      togglePaginationWindow: () =>
+        this.setState(state => {
+          return { ...state, paginationWindow: !this.state.paginationWindow };
+        }),
       currentPage: 1,
       pokemonsPerPage: 12,
       paginate: pageNumber =>
@@ -26,7 +31,14 @@ class HomePage extends React.Component {
 
   render() {
     const { collection, loading } = this.props;
-    const { searchField, pokemonsPerPage, currentPage, paginate } = this.state;
+    const {
+      searchField,
+      pokemonsPerPage,
+      currentPage,
+      paginate,
+      paginationWindow,
+      togglePaginationWindow
+    } = this.state;
     const indexOfLastPokemon = currentPage * pokemonsPerPage;
     const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
     let currentPokemons;
@@ -52,7 +64,15 @@ class HomePage extends React.Component {
           />
         </div>
         <div className='pagination__container'>
-          {collection ? (
+          <a
+            className='pagination__toggler'
+            onClick={() => {
+              togglePaginationWindow();
+            }}
+          >
+            More pages
+          </a>
+          {collection && paginationWindow ? (
             <Pagination
               pokemonsPerPage={pokemonsPerPage}
               currentPage={currentPage}

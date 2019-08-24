@@ -1,4 +1,5 @@
 @import '../../sass/utils/variables';
+@import '../../sass/utils/mixins';
 
 .navbar {
   display: flex;
@@ -14,6 +15,9 @@
 
 .logo-container {
   height: 5rem;
+  @include preciseRespond(490px) {
+    transform: scale(0.7);
+  }
 }
 
 .logo {
@@ -35,6 +39,19 @@
   color: $color-navbar;
   transition: 0.15s all ease-in;
   border-bottom: 0px solid white;
+
+  @include preciseRespond(490px) {
+    width: 50rem;
+    font-size: 1.4rem;
+    margin-top: 5px;
+  }
+
+  @include preciseRespond(470px) {
+    width: 6rem;
+    font-size: 1.2rem;
+    margin-top: 5px;
+  }
+
   &:hover {
     color: $color-secondary-light;
     transform: translateY(2px);
