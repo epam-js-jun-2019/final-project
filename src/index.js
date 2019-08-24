@@ -1,3 +1,4 @@
+import 'react-app-polyfill/ie11';
 import regeneratorRuntime from 'regenerator-runtime'; // To handle generators & async/await
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -8,7 +9,6 @@ import App from './App';
 import 'Sass/main.scss';
 
 import store from 'Redux/store';
-import { EventEmitter } from 'events';
 
 ReactDOM.render(
   <Provider store={store}>

@@ -5,18 +5,25 @@ import './pokemon-page.styles.scss';
 
 class PokemonPage extends React.Component {
   render() {
-    const { collection, location } = this.props;
+    const { freePokemons, capturedPokemons, location } = this.props;
     const pokemonID = +location.pathname.split('/pokemon/')[1];
-    const currentPokemon = collection.filter(
-      pokemon => pokemon.id === pokemonID
-    )[0];
+    let currentPokemon =
+      freePokemons.filter(pokemon => pokemon.id === pokemonID)[0] ||
+      capturedPokemons.filter(pokemon => pokemon.id === pokemonID)[0];
     const { id, name, status, captureDate } = currentPokemon;
     return (
-      <div>
-        <img
-          className='bg-image'
-          src={`../../assets/images/pokemons-images/${id}.png`}
-          alt='pokemon'
+      <div style={{ position: 'relative' }}>
+        <div
+          style={{
+            position: 'absolute',
+            width: '100%',
+            height: '100%',
+            backgroundImage: `url(../../assets/images/pokemons-images/${id}.png)`,
+            backgroundSize: '80%',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: '20% 75%',
+            opacity: '0.075'
+          }}
         />
         <div className='pokemon-info'>
           <h1>{name.split('')[0].toUpperCase() + name.slice(1)}</h1>
@@ -37,8 +44,9 @@ class PokemonPage extends React.Component {
   }
 }
 
-const mapStateToProps = ({ pokemons: { pokemons } }) => ({
-  collection: pokemons
+const mapStateToProps = ({ pokemons: { freePokemons, capturedPokemons } }) => ({
+  freePokemons: freePokemons ? freePokemons : null,
+  capturedPokemons: capturedPokemons ? capturedPokemons : null
 });
 
 export default connect(mapStateToProps)(PokemonPage);

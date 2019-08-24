@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: ['@babel/polyfill', './src/index.js'],
   output: {
     path: path.join(__dirname, '/dist'),
     filename: 'bundle.[hash].js'
@@ -30,11 +30,12 @@ module.exports = {
           'style-loader',
           MiniCssExtractPlugin.loader,
           'css-loader',
-          'sass-loader'
+          'sass-loader',
+          'postcss-loader'
         ]
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/i,
+        test: /\.(png|jpe?g|gif|svg|ico)$/i,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]'
@@ -62,7 +63,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html'
+      template: './public/index.html',
+      favicon: './src/assets/images/favicon.svg'
     }),
     new MiniCssExtractPlugin({
       filename: 'style.[hash].css',

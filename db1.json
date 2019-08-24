@@ -43,14 +43,14 @@
       "captureDate": "none"
     },
     {
-      "name": "rattata",
       "id": 19,
+      "name": "rattata",
       "status": "free",
       "captureDate": "none"
     },
     {
-      "name": "raticate",
       "id": 20,
+      "name": "raticate",
       "status": "free",
       "captureDate": "none"
     },
@@ -85,14 +85,20 @@
       "captureDate": "none"
     },
     {
-      "id": 1,
-      "name": "bulbasaur",
+      "id": 5,
+      "name": "charmeleon",
       "status": "free",
       "captureDate": "none"
     },
     {
       "id": 2,
       "name": "ivysaur",
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "id": 4,
+      "name": "charmander",
       "status": "free",
       "captureDate": "none"
     },
@@ -105,14 +111,8 @@
   ],
   "capturedPokemons": [
     {
-      "id": 4,
-      "name": "charmander",
-      "status": "captured",
-      "captureDate": "Aug 24 2019"
-    },
-    {
-      "id": 5,
-      "name": "charmeleon",
+      "id": 1,
+      "name": "bulbasaur",
       "status": "captured",
       "captureDate": "Aug 24 2019"
     },
