@@ -2,7 +2,12 @@ import React from 'react';
 
 import './pagination.styles.scss';
 
-const Pagination = ({ pokemonsPerPage, totalPokemons, paginate }) => {
+const Pagination = ({
+  pokemonsPerPage,
+  currentPage,
+  totalPokemons,
+  paginate
+}) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalPokemons / pokemonsPerPage); i++) {
@@ -14,7 +19,11 @@ const Pagination = ({ pokemonsPerPage, totalPokemons, paginate }) => {
       {pageNumbers.map(number => (
         <div key={number}>
           <a
-            className='pagination__page-pointer'
+            className={`${
+              number === currentPage
+                ? 'pagination__page-pointer pagination__page-pointer_active'
+                : 'pagination__page-pointer'
+            }`}
             onClick={() => paginate(number)}
           >
             {number}

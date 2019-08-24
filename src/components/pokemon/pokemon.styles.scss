@@ -52,17 +52,16 @@
 
   &__image {
     width: 18rem;
-    height: 100%;
+    height: auto;
     z-index: 1;
   }
 
   &__text {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     height: 10rem;
     margin-bottom: 1rem;
-    padding: 0 2rem;
+    padding: 0.5rem 2rem;
     font-family: inherit;
     font-size: 1.2rem;
     border: 2px solid #153f7c;
@@ -70,11 +69,17 @@
     background-color: #fff4d4;
     z-index: 1;
   }
+  &__name,
+  &__status,
+  &__captureDate {
+    margin-top: 1rem;
+  }
 }
 
 .second-bg {
   position: absolute;
   top: -0.5rem;
+  left: 0rem;
   width: 25rem;
   height: 37rem;
   content: '';

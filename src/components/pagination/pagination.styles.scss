@@ -19,6 +19,12 @@
     transition: 0.27s all ease;
     cursor: pointer;
 
+    &_active {
+      transform: scale(1.2);
+      background-color: $color-secondary-dark;
+      border: 1px solid white;
+    }
+
     &:hover {
       transform: scale(1.4);
       background-color: $color-secondary-light;

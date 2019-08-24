@@ -35,9 +35,11 @@ class PokemonPage extends React.Component {
           <span>
             Status: <span className='focus'>{status}</span>
           </span>
-          <span>
-            Capture Date: <span className='focus'>{captureDate}</span>
-          </span>
+          {captureDate !== 'none' ? (
+            <span>
+              Capture Date: <span className='focus'>{captureDate}</span>
+            </span>
+          ) : null}
         </div>
       </div>
     );

@@ -14,7 +14,7 @@ class CapturedPokemonsPage extends React.Component {
     this.state = {
       searchField: '',
       currentPage: 1,
-      pokemonsPerPage: 8,
+      pokemonsPerPage: 12,
       paginate: pageNumber =>
         this.setState(state => {
           return { ...state, currentPage: pageNumber };
@@ -55,6 +55,7 @@ class CapturedPokemonsPage extends React.Component {
           {collection ? (
             <Pagination
               pokemonsPerPage={pokemonsPerPage}
+              currentPage={currentPage}
               totalPokemons={collection.length}
               paginate={paginate}
             />
