@@ -21,16 +21,24 @@ const RandomPage = ({ pokemon: { id, name, status, captureDate } }) => (
       <span>
         Status: <span className='focus'>{status}</span>
       </span>
-      <span>
-        Capture Date: <span className='focus'>{captureDate}</span>
-      </span>
+      {captureDate !== 'none' ? (
+        <span>
+          Capture Date: <span className='focus'>{captureDate}</span>
+        </span>
+      ) : null}
     </div>
   </div>
 );
 
-const mapStateToProps = ({ pokemons: { freePokemons } }) => ({
+const mapStateToProps = ({ pokemons: { freePokemons, capturedPokemons } }) => ({
   pokemon:
-    freePokemons[Math.floor(Math.random() * Math.floor(freePokemons['length']))]
+    (Math.random().toFixed(2) * 100) % 2 === 0
+      ? freePokemons[
+          Math.floor(Math.random() * Math.floor(freePokemons['length']))
+        ]
+      : capturedPokemons[
+          Math.floor(Math.random() * Math.floor(capturedPokemons['length']))
+        ]
 });
 
 export default connect(mapStateToProps)(RandomPage);

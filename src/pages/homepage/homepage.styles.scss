@@ -1,71 +1,59 @@
 @import '../../sass/utils/variables';
 @import '../../sass/utils/mixins';
 
-.search-box__container {
+.homepage {
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  flex-direction: column;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 5rem;
+  font-size: 2rem;
+  color: #000a38;
 
-.pagination {
-  &__container {
-    position: relative;
+  @include preciseRespond(700px) {
+    font-size: 1rem;
+  }
+  @include preciseRespond(400px) {
+    font-size: 10px;
+  }
+  @include preciseRespond(350px) {
+    font-size: 8px;
   }
 
-  &__toggler {
-    position: absolute;
-    top: -6rem;
-    left: 2rem;
+  ul {
+    padding-left: 2rem;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  &__info {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 10rem;
-    height: 4rem;
-    margin: 0.45rem;
-    padding: 5px;
-    font-size: 1.5rem;
-    background-color: $color-primary-light;
-    color: white;
-    border: 1px solid $color-tertiary;
-    border-radius: 0.5rem;
-    transition: 0.27s all ease;
-    cursor: pointer;
+    flex-direction: column;
+    padding: 0 15rem;
 
-    @include preciseRespond(430px) {
-      font-size: 8px;
-      width: 8rem;
-      height: 3rem;
-      left: 5px;
+    @include preciseRespond(700px) {
+      padding: 0 10rem;
     }
 
-    &:hover {
-      transform: scale(1.1);
-      background-color: $color-secondary-light;
-      border: 1px solid white;
-      color: black;
-      box-shadow: $shadow-light;
-    }
-    &:active {
-      transform: scale(1.05) translateY(3px);
-      box-shadow: $shadow-dark;
+    @include preciseRespond(400px) {
+      padding: 0 8rem;
     }
   }
 }
 
-.pokemons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 1rem 0;
-
-  @include preciseRespond(900px) {
-    padding: 1rem 2rem;
+.homepage__info {
+  :not(:first-child) {
+    margin-top: 4px;
   }
+}
 
-  @include preciseRespond(470px) {
-    flex-wrap: none;
-    justify-content: none;
-    flex-direction: column;
-    align-items: center;
+.animated {
+  transition: all 0.75s cubic-bezier(0.23, 1.74, 0.73, 1.43);
+  &:hover,
+  &:active {
+    transform: translateX(1rem);
   }
 }

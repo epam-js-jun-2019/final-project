@@ -1,103 +1,46 @@
 import React from 'react';
 
-import { connect } from 'react-redux';
-
-import Pokemon from 'Components/pokemon/pokemon.component';
-import SearchBox from 'Components/search-box/search-box.component';
-import Pagination from 'Components/pagination/pagination.component';
-
 import './homepage.styles.scss';
+import packagesJSON from '../../../package.json';
 
-class HomePage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchField: '',
-      paginationWindow: false,
-      togglePaginationWindow: () =>
-        this.setState(state => {
-          return { ...state, paginationWindow: !this.state.paginationWindow };
-        }),
-      currentPage: 1,
-      pokemonsPerPage: 12,
-      paginate: pageNumber =>
-        this.setState(state => {
-          return { ...state, currentPage: pageNumber };
-        })
-    };
+const HomePage = () => {
+  let dependencies = [];
+  for (let [key, value] of Object.entries(packagesJSON.dependencies)) {
+    dependencies = [...dependencies, { [key]: value }];
   }
-
-  handleChange = e => this.setState({ searchField: e.target.value });
-
-  render() {
-    const { collection, loading } = this.props;
-    const {
-      searchField,
-      pokemonsPerPage,
-      currentPage,
-      paginate,
-      paginationWindow,
-      togglePaginationWindow
-    } = this.state;
-    const indexOfLastPokemon = currentPage * pokemonsPerPage;
-    const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
-    let currentPokemons;
-    let filteredPokemons;
-    if (collection) {
-      currentPokemons = collection.slice(
-        indexOfFirstPokemon,
-        indexOfLastPokemon
-      );
-      filteredPokemons = currentPokemons.filter(pokemon =>
-        pokemon.name.toLowerCase().includes(searchField.toLowerCase())
-      );
-    }
-
-    return loading ? (
-      <h1 style={{ color: 'white', marginLeft: '45%' }}>Loading...</h1>
-    ) : (
-      <div className='homepage'>
-        <div className='search-box__container'>
-          <SearchBox
-            placeholder='search pokemons'
-            handleChange={this.handleChange}
-          />
-        </div>
-        <div className='pagination__container'>
-          <a
-            className='pagination__toggler'
-            onClick={() => {
-              togglePaginationWindow();
-            }}
-          >
-            More pages
-          </a>
-          {collection && paginationWindow ? (
-            <Pagination
-              pokemonsPerPage={pokemonsPerPage}
-              currentPage={currentPage}
-              totalPokemons={collection.length}
-              paginate={paginate}
-            />
-          ) : null}
-        </div>
-        <div className='pokemons'>
-          {collection
-            ? filteredPokemons
-                .map(({ id, ...collectionProps }) => (
-                  <Pokemon key={id} id={id} {...collectionProps} />
-                ))
-                .sort((a, b) => (a.props.id > b.props.id ? 1 : -1))
-            : null}
-        </div>
-      </div>
-    );
+  let devDependencies = [];
+  for (let [key, value] of Object.entries(packagesJSON.devDependencies)) {
+    devDependencies = [...devDependencies, { [key]: value }];
   }
-}
+  return (
+    <div className='homepage'>
+      <h1 className='homepage__title'>Welcome to Pokedex!</h1>
+      <section className='homepage__info'>
+        <p>
+          This App is the final task of EPAM's JavaScript Development summer
+          course. It's built up of the following npm packages:
+        </p>
+        <h3>Dependencies:</h3>
+        <ul>
+          {dependencies.map((pckg, idx) => (
+            <li className='animated' key={idx + 1}>
+              <strong>{Object.entries(pckg)[0][0]}</strong>:{' '}
+              <i>{Object.entries(pckg)[0][1]}</i>
+            </li>
+          ))}
+        </ul>
+        <h3>Development dependencies:</h3>
+        <ul>
+          {devDependencies.map((pckg, idx) => (
+            <li className='animated' key={idx + 1}>
+              <strong style={{}}>{Object.entries(pckg)[0][0]}</strong>:{' '}
+              <i>{Object.entries(pckg)[0][1]}</i>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </div>
+  );
+};
 
-const mapStateToProps = ({ pokemons: { freePokemons, loading } }) => ({
-  collection: freePokemons ? freePokemons : null,
-  loading
-});
-
-export default connect(mapStateToProps)(HomePage);
+export default HomePage;

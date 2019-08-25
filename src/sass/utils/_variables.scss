@@ -60,3 +60,15 @@ $font-size-default: 1.6rem;
     transform: scaleX(1.05);
   }
 }
+
+@keyframes changeScale3 {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(5px);
+  }
+}

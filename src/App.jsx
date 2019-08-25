@@ -7,7 +7,8 @@ import { getPokemonsAsync } from 'Redux/pokemons/pokemons.actions';
 import Navbar from 'Components/navbar/navbar.component';
 import HomePage from 'Pages/homepage/homepage.component';
 import PokemonPage from 'Pages/pokemon-page/pokemon-page.component';
-import CptPokemonsPage from 'Pages/captured-pokemons/captured-pokemons-page.component';
+import FreePokemonsPage from 'Pages/free-pokemons/free-pokemons-page.component';
+import CapturedPokemonsPage from 'Pages/captured-pokemons/captured-pokemons-page.component';
 import RandomPage from 'Pages/random-page/random-page.component';
 import './App.scss';
 
@@ -22,7 +23,8 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route path='/pokemon/:id' component={PokemonPage} />
-          <Route path='/captured-pokemons' component={CptPokemonsPage} />
+          <Route path='/free-pokemons' component={FreePokemonsPage} />
+          <Route path='/captured-pokemons' component={CapturedPokemonsPage} />
           <Route path='/random-page' component={RandomPage} />
         </Switch>
       </div>
