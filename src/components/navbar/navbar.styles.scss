@@ -11,12 +11,18 @@
   border-radius: 1rem;
   border: 3px solid $color-primary;
   background-color: $color-primary-light;
+  @include preciseRespond(490px) {
+    padding: 1rem 1rem 1rem 0rem;
+  }
 }
 
 .logo-container {
   height: 5rem;
   @include preciseRespond(490px) {
     transform: scale(0.7);
+  }
+  @include preciseRespond(370px) {
+    transform: scale(0.5) translateX(-1.5rem);
   }
 }
 
@@ -41,14 +47,17 @@
   border-bottom: 0px solid white;
 
   @include preciseRespond(490px) {
-    width: 50rem;
     font-size: 1.4rem;
     margin-top: 5px;
   }
 
   @include preciseRespond(470px) {
-    width: 6rem;
     font-size: 1.2rem;
+    margin-top: 5px;
+  }
+
+  @include preciseRespond(370px) {
+    font-size: 1rem;
     margin-top: 5px;
   }
 

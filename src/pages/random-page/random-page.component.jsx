@@ -4,11 +4,12 @@ import { connect } from 'react-redux';
 import './Random-page.styles.scss';
 
 const RandomPage = ({ pokemon: { id, name, status, captureDate } }) => (
-  <div>
-    <img
-      className='bg-image'
-      src={`../../assets/images/pokemons-images/${id}.png`}
-      alt='pokemon'
+  <div style={{ position: 'relative' }}>
+    <div
+      className='background-image'
+      style={{
+        backgroundImage: `url(../../assets/images/pokemons-images/${id}.png)`
+      }}
     />
     <div className='pokemon-info'>
       <h1>{name.split('')[0].toUpperCase() + name.slice(1)}</h1>

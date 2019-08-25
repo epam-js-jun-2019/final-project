@@ -58,6 +58,10 @@
   justify-content: space-between;
   padding: 1rem 0;
 
+  @include preciseRespond(900px) {
+    padding: 1rem 2rem;
+  }
+
   @include preciseRespond(470px) {
     flex-wrap: none;
     justify-content: none;

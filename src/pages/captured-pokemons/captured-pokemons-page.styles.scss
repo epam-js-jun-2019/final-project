@@ -56,4 +56,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 1rem 0;
+  @include preciseRespond(900px) {
+    padding: 1rem 2rem;
+  }
 }
