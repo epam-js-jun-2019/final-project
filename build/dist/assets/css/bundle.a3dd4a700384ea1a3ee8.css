@@ -1,0 +1,1053 @@
+@keyframes changeScale {
+  0% {
+    transform: scale(0.9); }
+  100% {
+    transform: scale(1.1); } }
+
+@keyframes changeScale1 {
+  0% {
+    transform: scale(0.98) rotate(-3deg); }
+  100% {
+    transform: scale(1.02) rotate(3deg); } }
+
+@keyframes changeScale2 {
+  0% {
+    transform: scaleX(0.95); }
+  100% {
+    transform: scaleX(1.05); } }
+
+@keyframes changeScale3 {
+  0% {
+    transform: translateX(0px); }
+  50% {
+    transform: translateX(-5px); }
+  100% {
+    transform: translateX(5px); } }
+
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+
+# Directory info for components
+@import '../../sass/utils/mixins';
+*/
+.navbar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  height: 7rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  border: 3px solid #ffb900;
+  background-color: #ff9c40; }
+  @media only screen and (max-width: 490px) {
+    .navbar {
+      padding: 1rem 1rem 1rem 0rem; } }
+
+.logo-container {
+  height: 5rem; }
+  @media only screen and (max-width: 490px) {
+    .logo-container {
+      -webkit-transform: scale(0.7);
+      transform: scale(0.7); } }
+  @media only screen and (max-width: 370px) {
+    .logo-container {
+      -webkit-transform: scale(0.5) translateX(-1.5rem);
+      transform: scale(0.5) translateX(-1.5rem); } }
+
+.logo {
+  width: auto;
+  height: 100%;
+  -webkit-animation: changeScale1 0.75s alternate infinite ease-in-out;
+  animation: changeScale1 0.75s alternate infinite ease-in-out; }
+
+.options {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 40rem;
+  height: 2.5rem; }
+
+.option {
+  font-size: 1.6rem;
+  color: #fff4d4;
+  -webkit-transition: 0.15s all ease-in;
+  transition: 0.15s all ease-in;
+  border-bottom: 0px solid white; }
+  @media only screen and (max-width: 490px) {
+    .option {
+      font-size: 1.4rem;
+      margin-top: 5px; } }
+  @media only screen and (max-width: 470px) {
+    .option {
+      font-size: 1.2rem; } }
+  @media only screen and (max-width: 370px) {
+    .option {
+      font-size: 1rem; } }
+  @media only screen and (max-width: 325px) {
+    .option {
+      font-size: 0.9rem; } }
+  .option:hover {
+    color: #2998ff;
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);
+    border-bottom: 3px solid white; }
+
+@keyframes changeScale {
+  0% {
+    transform: scale(0.9); }
+  100% {
+    transform: scale(1.1); } }
+
+@keyframes changeScale1 {
+  0% {
+    transform: scale(0.98) rotate(-3deg); }
+  100% {
+    transform: scale(1.02) rotate(3deg); } }
+
+@keyframes changeScale2 {
+  0% {
+    transform: scaleX(0.95); }
+  100% {
+    transform: scaleX(1.05); } }
+
+@keyframes changeScale3 {
+  0% {
+    transform: translateX(0px); }
+  50% {
+    transform: translateX(-5px); }
+  100% {
+    transform: translateX(5px); } }
+
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+
+# Directory info for components
+@import '../../sass/utils/mixins';
+*/
+.homepage {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 5rem;
+  font-size: 2rem;
+  color: #000a38; }
+  @media only screen and (max-width: 700px) {
+    .homepage {
+      font-size: 1rem; } }
+  @media only screen and (max-width: 400px) {
+    .homepage {
+      font-size: 10px; } }
+  @media only screen and (max-width: 350px) {
+    .homepage {
+      font-size: 8px; } }
+  .homepage ul {
+    padding-left: 2rem; }
+  .homepage__title {
+    margin-bottom: 1rem;
+    text-align: center; }
+  .homepage__info {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 0 15rem; }
+    @media only screen and (max-width: 700px) {
+      .homepage__info {
+        padding: 0 10rem; } }
+    @media only screen and (max-width: 400px) {
+      .homepage__info {
+        padding: 0 8rem; } }
+
+.homepage__info :not(:first-child) {
+  margin-top: 4px; }
+
+.animated {
+  -webkit-transition: all 0.75s cubic-bezier(0.23, 1.74, 0.73, 1.43);
+  transition: all 0.75s cubic-bezier(0.23, 1.74, 0.73, 1.43); }
+  .animated:hover, .animated:active {
+    -webkit-transform: translateX(1rem);
+    transform: translateX(1rem); }
+
+@keyframes changeScale {
+  0% {
+    transform: scale(0.9); }
+  100% {
+    transform: scale(1.1); } }
+
+@keyframes changeScale1 {
+  0% {
+    transform: scale(0.98) rotate(-3deg); }
+  100% {
+    transform: scale(1.02) rotate(3deg); } }
+
+@keyframes changeScale2 {
+  0% {
+    transform: scaleX(0.95); }
+  100% {
+    transform: scaleX(1.05); } }
+
+@keyframes changeScale3 {
+  0% {
+    transform: translateX(0px); }
+  50% {
+    transform: translateX(-5px); }
+  100% {
+    transform: translateX(5px); } }
+
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+
+# Directory info for components
+@import '../../sass/utils/mixins';
+*/
+.pokemon-info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 50rem;
+  font-family: inherit;
+  font-size: 2rem; }
+  .pokemon-info_focus {
+    color: chocolate; }
+  .pokemon-info span {
+    text-align: left; }
+
+.pokemon-title {
+  color: #072b4d; }
+
+.pokemon-image {
+  width: 35rem;
+  height: auto;
+  -webkit-transition: 0.6s all ease-in;
+  transition: 0.6s all ease-in;
+  -webkit-animation: changeScale 2s alternate infinite ease-in-out;
+  animation: changeScale 2s alternate infinite ease-in-out; }
+  @media only screen and (max-width: 450px) {
+    .pokemon-image {
+      width: 20rem; } }
+
+.background-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: 20% 75%;
+  opacity: 0.075; }
+
+@keyframes changeScale {
+  0% {
+    transform: scale(0.9); }
+  100% {
+    transform: scale(1.1); } }
+
+@keyframes changeScale1 {
+  0% {
+    transform: scale(0.98) rotate(-3deg); }
+  100% {
+    transform: scale(1.02) rotate(3deg); } }
+
+@keyframes changeScale2 {
+  0% {
+    transform: scaleX(0.95); }
+  100% {
+    transform: scaleX(1.05); } }
+
+@keyframes changeScale3 {
+  0% {
+    transform: translateX(0px); }
+  50% {
+    transform: translateX(-5px); }
+  100% {
+    transform: translateX(5px); } }
+
+.custom-button {
+  min-width: 10rem;
+  width: auto;
+  height: 3.5rem;
+  letter-spacing: 0.5px;
+  line-height: 3rem;
+  padding: 0 1.5rem 0 1.5rem;
+  font-family: inherit;
+  font-size: 1.6rem;
+  background-color: #ff7730;
+  color: white;
+  text-transform: uppercase;
+  border: 1px solid white;
+  border-radius: 5px;
+  outline: none;
+  overflow: hidden;
+  -webkit-transition: 0.2s all ease-in;
+  transition: 0.2s all ease-in;
+  cursor: pointer; }
+  .custom-button:hover {
+    background-color: #2998ff;
+    color: white;
+    border: 1px solid black;
+    -webkit-box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.25); }
+  .custom-button:active {
+    -webkit-transform: translateY(3px);
+    transform: translateY(3px);
+    -webkit-box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.6);
+    box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.6); }
+
+@keyframes changeScale {
+  0% {
+    transform: scale(0.9); }
+  100% {
+    transform: scale(1.1); } }
+
+@keyframes changeScale1 {
+  0% {
+    transform: scale(0.98) rotate(-3deg); }
+  100% {
+    transform: scale(1.02) rotate(3deg); } }
+
+@keyframes changeScale2 {
+  0% {
+    transform: scaleX(0.95); }
+  100% {
+    transform: scaleX(1.05); } }
+
+@keyframes changeScale3 {
+  0% {
+    transform: translateX(0px); }
+  50% {
+    transform: translateX(-5px); }
+  100% {
+    transform: translateX(5px); } }
+
+.Pokemon {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 25rem;
+  height: 37rem;
+  margin-bottom: 5rem;
+  padding: 2rem;
+  border: 3px solid #153f7c;
+  border-radius: 13rem;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#0099ff), to(#ffde25));
+  background-image: linear-gradient(to right bottom, #0099ff, #ffde25);
+  -webkit-box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.25);
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+  z-index: 1;
+  overflow: hidden;
+  -webkit-transition: 0.5s all cubic-bezier(0.26, 0.29, 0.21, 1.87);
+  transition: 0.5s all cubic-bezier(0.26, 0.29, 0.21, 1.87); }
+  .Pokemon .custom-button {
+    -webkit-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+    opacity: 0;
+    z-index: 1; }
+  .Pokemon:hover {
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+    -webkit-box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.6);
+    box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.6);
+    border: 3px solid #27054e;
+    z-index: 200; }
+    .Pokemon:hover .Pokemon__image {
+      -webkit-animation: changeScale 0.9s alternate infinite ease-in-out;
+      animation: changeScale 0.9s alternate infinite ease-in-out; }
+    .Pokemon:hover .Pokemon__text {
+      border: 2px solid #27054e; }
+    .Pokemon:hover .hidden-background {
+      opacity: 1; }
+    .Pokemon:hover .custom-button {
+      opacity: 1; }
+  .Pokemon__image {
+    width: 18rem;
+    height: auto;
+    z-index: 1; }
+  .Pokemon__text {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 10rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 2rem;
+    font-family: inherit;
+    font-size: 1.2rem;
+    border: 2px solid #153f7c;
+    border-radius: 5px;
+    background-color: #fff4d4;
+    z-index: 1; }
+    .Pokemon__text_focus {
+      color: chocolate; }
+  .Pokemon__name, .Pokemon__status, .Pokemon__captureDate {
+    margin-top: 1rem; }
+  .Pokemon_captured {
+    background-image: -webkit-gradient(linear, right bottom, left top, from(#5643fa), to(#ff7730));
+    background-image: linear-gradient(to left top, #5643fa, #ff7730); }
+  .Pokemon_captured-alt {
+    background-image: -webkit-gradient(linear, left top, right bottom, from(#0099ff), to(#ffde25));
+    background-image: linear-gradient(to right bottom, #0099ff, #ffde25); }
+
+.hidden-background {
+  position: absolute;
+  top: -0.5rem;
+  left: 0rem;
+  width: 25rem;
+  height: 37rem;
+  content: '';
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#5643fa), to(#ff7730));
+  background-image: linear-gradient(to left top, #5643fa, #ff7730);
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0;
+  z-index: -1; }
+
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+
+# Directory info for components
+@import '../../sass/utils/mixins';
+*/
+.search {
+  -webkit-appearance: none;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  outline: none;
+  padding: 1rem;
+  width: 16.5rem;
+  line-height: 2rem;
+  margin: 2rem 0;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out; }
+  .search:hover, .search:focus {
+    border: 1px solid #153f7c; }
+
+input::-webkit-input-placeholder {
+  text-align: center; }
+  @media only screen and (max-width: 900px) {
+    input::-webkit-input-placeholder {
+      font-size: 1.5rem; } }
+
+input::-moz-placeholder {
+  text-align: center; }
+  @media only screen and (max-width: 900px) {
+    input::-moz-placeholder {
+      font-size: 1.5rem; } }
+
+input:-ms-input-placeholder {
+  text-align: center; }
+  @media only screen and (max-width: 900px) {
+    input:-ms-input-placeholder {
+      font-size: 1.5rem; } }
+
+input::-ms-input-placeholder {
+  text-align: center; }
+  @media only screen and (max-width: 900px) {
+    input::-ms-input-placeholder {
+      font-size: 1.5rem; } }
+
+input::placeholder {
+  text-align: center; }
+  @media only screen and (max-width: 900px) {
+    input::placeholder {
+      font-size: 1.5rem; } }
+
+@keyframes changeScale {
+  0% {
+    transform: scale(0.9); }
+  100% {
+    transform: scale(1.1); } }
+
+@keyframes changeScale1 {
+  0% {
+    transform: scale(0.98) rotate(-3deg); }
+  100% {
+    transform: scale(1.02) rotate(3deg); } }
+
+@keyframes changeScale2 {
+  0% {
+    transform: scaleX(0.95); }
+  100% {
+    transform: scaleX(1.05); } }
+
+@keyframes changeScale3 {
+  0% {
+    transform: translateX(0px); }
+  50% {
+    transform: translateX(-5px); }
+  100% {
+    transform: translateX(5px); } }
+
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+
+# Directory info for components
+@import '../../sass/utils/mixins';
+*/
+.pagination {
+  position: absolute;
+  top: 3rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.425);
+  border-radius: 5px;
+  z-index: 1000; }
+  .pagination__page-pointer {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    margin: 0.45rem;
+    padding: 5px;
+    font-size: 1.3rem;
+    background-color: #ff9c40;
+    color: white;
+    border: 1px solid #27054e;
+    border-radius: 10rem;
+    -webkit-transition: 0.27s all ease;
+    transition: 0.27s all ease;
+    cursor: pointer; }
+    @media only screen and (max-width: 430px) {
+      .pagination__page-pointer {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.1rem; } }
+    .pagination__page-pointer_active {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
+      background-color: #5643fa;
+      border: 1px solid white; }
+    .pagination__page-pointer:hover {
+      -webkit-transform: scale(1.4);
+      transform: scale(1.4);
+      background-color: #2998ff;
+      border: 1px solid white;
+      color: black;
+      -webkit-box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.25);
+      box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.25); }
+    .pagination__page-pointer:active {
+      -webkit-transform: scale(1.2) translateY(3px);
+      transform: scale(1.2) translateY(3px);
+      -webkit-box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.6);
+      box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.6); }
+
+@keyframes changeScale {
+  0% {
+    transform: scale(0.9); }
+  100% {
+    transform: scale(1.1); } }
+
+@keyframes changeScale1 {
+  0% {
+    transform: scale(0.98) rotate(-3deg); }
+  100% {
+    transform: scale(1.02) rotate(3deg); } }
+
+@keyframes changeScale2 {
+  0% {
+    transform: scaleX(0.95); }
+  100% {
+    transform: scaleX(1.05); } }
+
+@keyframes changeScale3 {
+  0% {
+    transform: translateX(0px); }
+  50% {
+    transform: translateX(-5px); }
+  100% {
+    transform: translateX(5px); } }
+
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+
+# Directory info for components
+@import '../../sass/utils/mixins';
+*/
+.search-box__container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.pagination__container {
+  position: relative; }
+
+.pagination__toggler {
+  position: absolute;
+  top: -6rem;
+  left: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 10rem;
+  height: 4rem;
+  margin: 0.45rem;
+  padding: 5px;
+  font-size: 1.5rem;
+  background-color: #ff9c40;
+  color: white;
+  border: 1px solid #27054e;
+  border-radius: 0.5rem;
+  -webkit-transition: 0.27s all ease;
+  transition: 0.27s all ease;
+  cursor: pointer; }
+  @media only screen and (max-width: 430px) {
+    .pagination__toggler {
+      font-size: 8px;
+      width: 8rem;
+      height: 3rem;
+      left: 5px; } }
+  .pagination__toggler:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    background-color: #2998ff;
+    border: 1px solid white;
+    color: black;
+    -webkit-box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.25); }
+  .pagination__toggler:active {
+    -webkit-transform: scale(1.05) translateY(3px);
+    transform: scale(1.05) translateY(3px);
+    -webkit-box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.6);
+    box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.6); }
+
+.pokemons {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1rem 0; }
+  @media only screen and (max-width: 900px) {
+    .pokemons {
+      padding: 1rem 2rem; } }
+  @media only screen and (max-width: 470px) {
+    .pokemons {
+      -webkit-flex-wrap: none;
+      -ms-flex-wrap: none;
+      flex-wrap: none;
+      -webkit-box-pack: none;
+      -webkit-justify-content: none;
+      -ms-flex-pack: none;
+      justify-content: none;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center; } }
+
+.to-begin-button {
+  position: fixed;
+  bottom: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  border: 3px solid white;
+  border-radius: 100px;
+  font-size: 1rem;
+  color: white;
+  background-color: #5643fa;
+  z-index: 2000;
+  opacity: 0.25;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
+  @media only screen and (max-width: 900px) {
+    .to-begin-button {
+      left: 5px; } }
+  .to-begin-button:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    background-color: #2998ff;
+    color: black;
+    -webkit-box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.25);
+    opacity: 1; }
+  .to-begin-button:active {
+    -webkit-transform: scale(1.05) translateY(3px);
+    transform: scale(1.05) translateY(3px);
+    -webkit-box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.6);
+    box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.6);
+    opacity: 1; }
+
+
+
+@keyframes changeScale {
+  0% {
+    transform: scale(0.9); }
+  100% {
+    transform: scale(1.1); } }
+
+@keyframes changeScale1 {
+  0% {
+    transform: scale(0.98) rotate(-3deg); }
+  100% {
+    transform: scale(1.02) rotate(3deg); } }
+
+@keyframes changeScale2 {
+  0% {
+    transform: scaleX(0.95); }
+  100% {
+    transform: scaleX(1.05); } }
+
+@keyframes changeScale3 {
+  0% {
+    transform: translateX(0px); }
+  50% {
+    transform: translateX(-5px); }
+  100% {
+    transform: translateX(5px); } }
+
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+
+# Directory info for components
+@import '../../sass/utils/mixins';
+*/
+.pokemon-info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 50rem;
+  font-family: inherit;
+  font-size: 2rem; }
+  .pokemon-info .focus {
+    color: chocolate; }
+  .pokemon-info span {
+    text-align: left; }
+  .pokemon-info .pokemon-image {
+    width: 35rem;
+    height: auto;
+    -webkit-transition: 0.6s all ease-in;
+    transition: 0.6s all ease-in;
+    -webkit-animation: changeScale 2s alternate infinite ease-in-out;
+    animation: changeScale 2s alternate infinite ease-in-out; }
+    @media only screen and (max-width: 450px) {
+      .pokemon-info .pokemon-image {
+        width: 20rem; } }
+  .pokemon-info h1 {
+    color: #072b4d; }
+
+.background-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.075; }
+
+a {
+  text-decoration: none;
+  color: black; }
+
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+
+# Directory info for components
+@import '../../sass/utils/mixins';
+*/
+@keyframes changeScale {
+  0% {
+    transform: scale(0.9); }
+  100% {
+    transform: scale(1.1); } }
+
+@keyframes changeScale1 {
+  0% {
+    transform: scale(0.98) rotate(-3deg); }
+  100% {
+    transform: scale(1.02) rotate(3deg); } }
+
+@keyframes changeScale2 {
+  0% {
+    transform: scaleX(0.95); }
+  100% {
+    transform: scaleX(1.05); } }
+
+@keyframes changeScale3 {
+  0% {
+    transform: translateX(0px); }
+  50% {
+    transform: translateX(-5px); }
+  100% {
+    transform: translateX(5px); } }
+
+@font-face {
+  font-family: 'Blinker-Regular';
+  src: url("/assets/fonts/Blinker-Regular/Blinker-Regular.eot");
+  src: url("/assets/fonts/Blinker-Regular/Blinker-Regular.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/Blinker-Regular/Blinker-Regular.woff") format("woff"), url("/assets/fonts/Blinker-Regular/Blinker-Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Blinker-Bold';
+  src: url("/assets/fonts/Blinker-Bold/Blinker-Bold.eot");
+  src: url("/assets/fonts/Blinker-Bold/Blinker-Bold.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/Blinker-Bold/Blinker-Bold.woff") format("woff"), url("/assets/fonts/Blinker-Bold/Blinker-Bold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Blinker-Light';
+  src: url("/assets/fonts/Blinker-Light/Blinker-Light.eot");
+  src: url("/assets/fonts/Blinker-Light/Blinker-Light.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/Blinker-Light/Blinker-Light.woff") format("woff"), url("/assets/fonts/Blinker-Light/Blinker-Light.ttf") format("truetype"); }
+
+a {
+  text-decoration: none;
+  color: black; }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+  @media only screen and (max-width: 1200px) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 900px) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (min-width: 1800px) {
+    html {
+      font-size: 75%; } }
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+  font-family: "Blinker-Regular", Helvetica, Arial, sans-serif;
+  background-image: linear-gradient(to right, #ff9c40, #44c4ff); }
+  @media only screen and (max-width: 900px) {
+    body {
+      padding: 0; } }
+
+::selection {
+  background-color: #ff7730;
+  color: #fff; }
+

@@ -29,7 +29,7 @@ class Pokemon extends React.Component {
         <Link to={`pokemon/${id}`}>
           <img
             className='Pokemon__image'
-            src={`./assets/images/pokemons-images/${id}.png`}
+            src={`./dist/assets/images/pokemons-images/${id}.png`}
             alt='pokemon'
           />
         </Link>

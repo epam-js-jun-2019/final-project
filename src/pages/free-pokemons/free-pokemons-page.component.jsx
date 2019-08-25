@@ -13,7 +13,7 @@ const FreePokemonsPage = ({ collection }) => {
 };
 
 const mapStateToProps = ({ pokemons: { freePokemons } }) => ({
-  collection: freePokemons ? freePokemons : null
+  collection: freePokemons || null
 });
 
 export default connect(mapStateToProps)(FreePokemonsPage);

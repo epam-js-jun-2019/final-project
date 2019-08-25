@@ -5,7 +5,6 @@ import PokemonsActionTypes from 'Redux/pokemons/pokemons.types';
 function* getPokemonDataAsync() {
   const payload = yield APIgetPokemonData();
   yield put({ type: PokemonsActionTypes.GET_POKEMON_DATA, payload });
-  console.log(payload);
 }
 
 function* watchGetPokemonDataAsync() {

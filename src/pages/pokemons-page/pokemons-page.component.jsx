@@ -17,7 +17,7 @@ class PokemonsPage extends React.Component {
           return { ...state, paginationWindow: !this.state.paginationWindow };
         }),
       currentPage: 1,
-      pokemonsPerPage: 12,
+      pokemonsPerPage: 20,
       paginate: pageNumber =>
         this.setState(state => {
           return { ...state, currentPage: pageNumber };

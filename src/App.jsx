@@ -22,7 +22,7 @@ class App extends React.Component {
         <Navbar />
         <Switch>
           <Route exact path='/' component={HomePage} />
-          <Route path='/pokemon/:id' component={PokemonPage} />
+          <Route path='/pokemon/:pokemonID' component={PokemonPage} />
           <Route path='/free-pokemons' component={FreePokemonsPage} />
           <Route path='/captured-pokemons' component={CapturedPokemonsPage} />
           <Route path='/random-page' component={RandomPage} />

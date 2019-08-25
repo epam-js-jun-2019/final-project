@@ -4,8 +4,8 @@
   "description": "EPAM's JavaScript development course final project",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --progress --mode development --open --hot",
-    "build": "rimraf ./dist && webpack --progress --mode production"
+    "dev": "webpack-dev-server --open --hot --progress --config ./build/webpack.dev.config.js",
+    "build": "rimraf ./dist && webpack --progress --config ./build/webpack.build.config.js"
   },
   "repository": {
     "type": "git",
@@ -13,7 +13,11 @@
   },
   "keywords": [
     "react",
+    "redux",
+    "redux-saga",
+    "babel",
     "webpack",
+    "postcss",
     "sass",
     "mocked-api"
   ],
@@ -42,7 +46,8 @@
     "style-loader": "^1.0.0",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.8.0"
+    "webpack-dev-server": "^3.8.0",
+    "webpack-merge": "^4.2.1"
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",

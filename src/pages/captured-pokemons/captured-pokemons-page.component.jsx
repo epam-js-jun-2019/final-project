@@ -13,7 +13,7 @@ const CapturedPokemonsPage = ({ collection }) => {
 };
 
 const mapStateToProps = ({ pokemons: { capturedPokemons } }) => ({
-  collection: capturedPokemons ? capturedPokemons : null
+  collection: capturedPokemons || null
 });
 
 export default connect(mapStateToProps)(CapturedPokemonsPage);

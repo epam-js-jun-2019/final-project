@@ -3,11 +3,22 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
+const PATHS = {
+  src: path.join(__dirname, '../src'),
+  dist: path.join(__dirname, '../dist'),
+  public: path.join(__dirname, '../public'),
+  assets: 'assets/'
+};
+
 module.exports = {
-  entry: ['@babel/polyfill', './src/index.js'],
+  externals: {
+    paths: PATHS
+  },
+  entry: ['@babel/polyfill', `${PATHS.src}/index.js`],
   output: {
-    path: path.join(__dirname, '/dist'),
-    filename: 'bundle.[hash].js'
+    path: PATHS.dist,
+    filename: `${PATHS.assets}js/bundle.[hash].js`,
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -30,7 +41,7 @@ module.exports = {
           'style-loader',
           MiniCssExtractPlugin.loader,
           'css-loader',
-          'sass-loader',
+          { loader: 'sass-loader', options: { sourceMap: true } },
           'postcss-loader'
         ]
       },
@@ -53,41 +64,36 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
-      Assets: path.resolve(__dirname, './src/assets/'),
-      Components: path.resolve(__dirname, './src/components/'),
-      FetchAPI: path.resolve(__dirname, './src/fetchapi/'),
-      Pages: path.resolve(__dirname, './src/pages/'),
-      Redux: path.resolve(__dirname, './src/redux/'),
-      Sass: path.resolve(__dirname, './src/sass/')
+      Assets: path.resolve(__dirname, '../src/assets/'),
+      Components: path.resolve(__dirname, '../src/components/'),
+      FetchAPI: path.resolve(__dirname, '../src/fetchapi/'),
+      Pages: path.resolve(__dirname, '../src/pages/'),
+      Redux: path.resolve(__dirname, '../src/redux/'),
+      Sass: path.resolve(__dirname, '../src/sass/')
     }
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html',
-      favicon: './src/assets/images/favicon.svg'
+      template: `${PATHS.public}/index.html`,
+      filename: './index.html',
+      favicon: './src/assets/static/favicon.svg'
     }),
     new MiniCssExtractPlugin({
-      filename: 'style.[hash].css',
-      path: path.resolve(__dirname, 'dist')
+      filename: `${PATHS.assets}css/bundle.[hash].css`
     }),
     new CopyWebpackPlugin([
       {
-        from: 'src/assets/images',
-        to: `${path.join(__dirname, '/dist')}/assets/images`
+        from: `${PATHS.src}/assets/images`,
+        to: `${PATHS.assets}images`
       },
       {
-        from: 'src/assets/fonts',
-        to: `${path.join(__dirname, '/dist')}/assets/fonts`
+        from: `${PATHS.src}/assets/fonts`,
+        to: `${PATHS.assets}/fonts`
+      },
+      {
+        from: `${PATHS.src}/assets/static`,
+        to: ''
       }
     ])
-  ],
-  devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    compress: true,
-    progress: true,
-    port: 3002,
-    open: true,
-    historyApiFallback: true,
-    stats: 'minimal'
-  }
+  ]
 };

@@ -8,14 +8,14 @@ const RandomPage = ({ pokemon: { id, name, status, captureDate } }) => (
     <div
       className='background-image'
       style={{
-        backgroundImage: `url(../../assets/images/pokemons-images/${id}.png)`
+        backgroundImage: `url(../../dist/assets/images/pokemons-images/${id}.png)`
       }}
     />
     <div className='pokemon-info'>
       <h1>{name.split('')[0].toUpperCase() + name.slice(1)}</h1>
       <img
         className='pokemon-image'
-        src={`../../assets/images/pokemons-images/${id}.png`}
+        src={`../../dist/assets/images/pokemons-images/${id}.png`}
         alt='pokemon'
       />
       <span>
@@ -32,7 +32,7 @@ const RandomPage = ({ pokemon: { id, name, status, captureDate } }) => (
 
 const mapStateToProps = ({ pokemons: { freePokemons, capturedPokemons } }) => ({
   pokemon:
-    (Math.random().toFixed(2) * 100) % 2 === 0
+    (Math.random().toFixed(2) * 100) % 3.5 !== 0
       ? freePokemons[
           Math.floor(Math.random() * Math.floor(freePokemons['length']))
         ]
