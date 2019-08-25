@@ -29,6 +29,9 @@ class PokemonPage extends React.Component {
             alt='pokemon'
           />
           <span>
+            ID: <span className='pokemon-info_focus'>{id}</span>
+          </span>
+          <span>
             Status: <span className='pokemon-info_focus'>{status}</span>
           </span>
           {captureDate !== 'none' ? (

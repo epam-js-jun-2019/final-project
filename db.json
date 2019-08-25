@@ -1,6 +1,12 @@
 {
   "freePokemons": [
     {
+      "name": "charmeleon",
+      "id": 5,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
       "name": "charizard",
       "id": 6,
       "status": "free",
@@ -4211,12 +4217,6 @@
       "name": "leafeon",
       "status": "free",
       "captureDate": "none"
-    },
-    {
-      "id": 1,
-      "name": "bulbasaur",
-      "status": "free",
-      "captureDate": "none"
     }
   ],
   "capturedPokemons": [
@@ -4327,12 +4327,6 @@
       "name": "bulbasaur",
       "status": "captured",
       "captureDate": "Aug 24 2019"
-    },
-    {
-      "id": 6,
-      "name": "charizard",
-      "status": "captured",
-      "captureDate": "Aug 25 2019"
     }
   ]
 }

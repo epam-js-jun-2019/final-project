@@ -71,10 +71,12 @@
       color: chocolate;
     }
   }
+
+  &__id,
   &__name,
   &__status,
   &__captureDate {
-    margin-top: 1rem;
+    margin-top: 5px;
   }
 
   &_captured {

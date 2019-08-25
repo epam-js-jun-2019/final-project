@@ -19,6 +19,9 @@ const RandomPage = ({ pokemon: { id, name, status, captureDate } }) => (
         alt='pokemon'
       />
       <span>
+        ID: <span className='focus'>{id}</span>
+      </span>
+      <span>
         Status: <span className='focus'>{status}</span>
       </span>
       {captureDate !== 'none' ? (

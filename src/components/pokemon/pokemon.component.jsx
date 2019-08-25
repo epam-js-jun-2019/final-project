@@ -34,6 +34,9 @@ class Pokemon extends React.Component {
           />
         </Link>
         <div className='Pokemon__text'>
+          <div className='Pokemon__id'>
+            ID: <span className='Pokemon__text_focus'>{id}</span>
+          </div>
           <div className='Pokemon__name'>
             Name:{' '}
             <span className='Pokemon__text_focus'>
