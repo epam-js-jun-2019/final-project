@@ -27,12 +27,6 @@
     transition: 0.27s all ease;
     cursor: pointer;
 
-    @include preciseRespond(430px) {
-      width: 2rem;
-      height: 2rem;
-      font-size: 1.1rem;
-    }
-
     &_active {
       transform: scale(1.2);
       background-color: $color-secondary-dark;
@@ -50,5 +44,21 @@
       transform: scale(1.2) translateY(3px);
       box-shadow: $shadow-dark;
     }
+  }
+}
+
+@include preciseRespond(490px) {
+  .pagination__page-pointer {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
+  }
+}
+
+@include preciseRespond(420px) {
+  .pagination__page-pointer {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.1rem;
   }
 }

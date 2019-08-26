@@ -12,6 +12,8 @@ import CapturedPokemonsPage from 'Pages/captured-pokemons/captured-pokemons-page
 import RandomPage from 'Pages/random-page/random-page.component';
 import './App.scss';
 
+const NoMatch = () => <div>The page doesn't exist</div>;
+
 class App extends React.Component {
   componentDidMount() {
     this.props.getPokemonsAsync();
@@ -26,6 +28,7 @@ class App extends React.Component {
           <Route path='/free-pokemons' component={FreePokemonsPage} />
           <Route path='/captured-pokemons' component={CapturedPokemonsPage} />
           <Route path='/random-page' component={RandomPage} />
+          <Route component={NoMatch} />
         </Switch>
       </div>
     );

@@ -68,7 +68,7 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: 'style.[hash].css',
-      path: path.resolve(__dirname, 'dist')
+      path: path.resolve(__dirname, '/dist')
     }),
     new CopyWebpackPlugin([
       {
@@ -82,7 +82,7 @@ module.exports = {
     ])
   ],
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: path.join(__dirname, '/dist'),
     compress: true,
     progress: true,
     port: 3002,

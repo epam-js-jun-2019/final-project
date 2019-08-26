@@ -16,7 +16,7 @@ class PokemonPage extends React.Component {
         <div
           className='background-image'
           style={{
-            backgroundImage: `url(../../dist/assets/images/pokemons-images/${id}.png)`
+            backgroundImage: `url(../../assets/images/pokemons-images/${id}.png)`
           }}
         />
         <div className='pokemon-info'>
@@ -25,7 +25,7 @@ class PokemonPage extends React.Component {
           </h1>
           <img
             className='pokemon-image'
-            src={`../../dist/assets/images/pokemons-images/${id}.png`}
+            src={`../../assets/images/pokemons-images/${id}.png`}
             alt='pokemon'
           />
           <span>

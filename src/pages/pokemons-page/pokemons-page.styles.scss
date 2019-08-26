@@ -31,13 +31,6 @@
     transition: 0.27s all ease;
     cursor: pointer;
 
-    @include preciseRespond(430px) {
-      font-size: 8px;
-      width: 8rem;
-      height: 3rem;
-      left: 5px;
-    }
-
     &:hover {
       transform: scale(1.1);
       background-color: $color-secondary-light;
@@ -57,17 +50,6 @@
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 1rem 0;
-
-  @include preciseRespond(900px) {
-    padding: 1rem 2rem;
-  }
-
-  @include preciseRespond(470px) {
-    flex-wrap: none;
-    justify-content: none;
-    flex-direction: column;
-    align-items: center;
-  }
 }
 
 .to-begin-button {
@@ -87,10 +69,6 @@
   opacity: 0.25;
   transition: all 0.2s ease-in-out;
 
-  @include preciseRespond(900px) {
-    left: 5px;
-  }
-
   &:hover {
     transform: scale(1.1);
     background-color: $color-secondary-light;
@@ -102,5 +80,37 @@
     transform: scale(1.05) translateY(3px);
     box-shadow: $shadow-dark;
     opacity: 1;
+  }
+}
+
+@include preciseRespond(900px) {
+  .pokemons {
+    padding: 1rem 2rem;
+  }
+  .to-begin-button {
+    left: 5px;
+  }
+}
+
+@include preciseRespond(470px) {
+  .pokemons {
+    flex-wrap: none;
+    justify-content: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  .pagination__toggler {
+    font-size: 10px;
+    width: 9rem;
+    height: 3rem;
+  }
+}
+
+@include preciseRespond(430px) {
+  .pagination__toggler {
+    font-size: 8px;
+    width: 7rem;
+    height: 2.5rem;
+    left: 5px;
   }
 }

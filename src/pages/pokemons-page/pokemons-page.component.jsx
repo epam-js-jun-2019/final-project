@@ -13,15 +13,10 @@ class PokemonsPage extends React.Component {
       searchField: '',
       paginationWindow: false,
       togglePaginationWindow: () =>
-        this.setState(state => {
-          return { ...state, paginationWindow: !this.state.paginationWindow };
-        }),
+        this.setState({ paginationWindow: !this.state.paginationWindow }),
       currentPage: 1,
       pokemonsPerPage: 20,
-      paginate: pageNumber =>
-        this.setState(state => {
-          return { ...state, currentPage: pageNumber };
-        })
+      paginate: pageNumber => this.setState({ currentPage: pageNumber })
     };
   }
 
@@ -64,9 +59,7 @@ class PokemonsPage extends React.Component {
         <div className='pagination__container'>
           <a
             className='pagination__toggler'
-            onClick={() => {
-              togglePaginationWindow();
-            }}
+            onClick={() => togglePaginationWindow()}
           >
             More pages
           </a>

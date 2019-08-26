@@ -1,4 +1,5 @@
 @import '../../sass/utils/mixins';
+@import '../../sass/utils/mixins';
 
 .search {
   -webkit-appearance: none;
@@ -22,4 +23,20 @@ input::placeholder {
     font-size: 1.5rem;
   }
   text-align: center;
+}
+
+@include preciseRespond(490px) {
+  .search {
+    transform: scale(0.9);
+  }
+}
+@include preciseRespond(470px) {
+  .search {
+    transform: scale(0.8);
+  }
+}
+@include preciseRespond(370px) {
+  .search {
+    transform: scale(0.7);
+  }
 }

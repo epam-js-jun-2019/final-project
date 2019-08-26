@@ -11,19 +11,10 @@
   border-radius: 1rem;
   border: 3px solid $color-primary;
   background-color: $color-primary-light;
-  @include preciseRespond(490px) {
-    padding: 1rem 1rem 1rem 0rem;
-  }
 }
 
 .logo-container {
   height: 5rem;
-  @include preciseRespond(490px) {
-    transform: scale(0.7);
-  }
-  @include preciseRespond(370px) {
-    transform: scale(0.5) translateX(-1.5rem);
-  }
 }
 
 .logo {
@@ -46,26 +37,47 @@
   transition: 0.15s all ease-in;
   border-bottom: 0px solid white;
 
-  @include preciseRespond(490px) {
-    font-size: 1.4rem;
-    margin-top: 5px;
-  }
-
-  @include preciseRespond(470px) {
-    font-size: 1.2rem;
-  }
-
-  @include preciseRespond(370px) {
-    font-size: 1rem;
-  }
-
-  @include preciseRespond(325px) {
-    font-size: 0.9rem;
-  }
-
   &:hover {
     color: $color-secondary-light;
     transform: translateY(2px);
     border-bottom: 3px solid white;
+  }
+}
+
+@include preciseRespond(490px) {
+  .navbar {
+    padding: 1rem 1rem 1rem 0rem;
+    height: 5.5rem;
+  }
+  .logo-container {
+    transform: scale(0.7);
+  }
+  .option {
+    font-size: 1.4rem;
+    margin-top: 5px;
+  }
+}
+@include preciseRespond(470px) {
+  .navbar {
+    height: 4rem;
+  }
+  .option {
+    font-size: 1.2rem;
+  }
+  .logo-container {
+    transform: scale(0.5);
+  }
+}
+@include preciseRespond(370px) {
+  .logo-container {
+    transform: scale(0.5) translateX(-1.5rem);
+  }
+  .option {
+    font-size: 1rem;
+  }
+}
+@include preciseRespond(325px) {
+  .option {
+    font-size: 0.9rem;
   }
 }

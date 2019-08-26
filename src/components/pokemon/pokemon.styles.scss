@@ -1,4 +1,5 @@
 @import '../../sass/utils/variables';
+@import '../../sass/utils/mixins';
 
 .Pokemon {
   position: relative;
@@ -11,11 +12,6 @@
   padding: 2rem;
   border: 3px solid #153f7c;
   border-radius: 13rem;
-  background-image: linear-gradient(
-    to right bottom,
-    #0099ff,
-    rgb(255, 222, 37)
-  );
   box-shadow: $shadow-light;
   transform: scale(1);
   opacity: 1;
@@ -30,7 +26,7 @@
   }
 
   &:hover {
-    transform: scale(1.15);
+    transform: scale(1 + 0.15);
     box-shadow: $shadow-dark;
     border: 3px solid $color-tertiary;
     z-index: 200;
@@ -41,6 +37,9 @@
       border: 2px solid $color-tertiary;
     }
     .hidden-background {
+      opacity: 1;
+    }
+    .hidden-background_alt {
       opacity: 1;
     }
     .custom-button {
@@ -111,4 +110,58 @@
   transition: opacity 0.2s ease-in-out;
   opacity: 0;
   z-index: -1;
+
+  &_alt {
+    position: absolute;
+    top: -0.5rem;
+    left: 0rem;
+    width: 25rem;
+    height: 37rem;
+    content: '';
+    background-image: linear-gradient(
+      to right bottom,
+      #0099ff,
+      rgb(255, 222, 37)
+    );
+    transition: opacity 0.2s ease-in-out;
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+@include preciseRespond(490px) {
+  .Pokemon {
+    transform: scale(1 - 0.2);
+    &:hover {
+      transform: scale(1 - 0.2 + 0.15);
+    }
+  }
+  .hidden-background,
+  .hidden-background_alt {
+    transform: scale(1);
+  }
+}
+@include preciseRespond(470px) {
+  .Pokemon {
+    transform: scale(1 - 0.3);
+    &:hover {
+      transform: scale(1 - 0.3 + 0.15);
+    }
+  }
+  .hidden-background,
+  .hidden-background_alt {
+    transform: scale(1);
+  }
+}
+@include preciseRespond(370px) {
+  .Pokemon {
+    transform: scale(1 - 0.4);
+    &:hover {
+      transform: scale(1 - 0.4 + 0.15);
+    }
+  }
+  .hidden-background,
+  .hidden-background_alt {
+    transform: scale(1);
+  }
 }

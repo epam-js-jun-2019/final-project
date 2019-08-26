@@ -20,16 +20,20 @@ class Pokemon extends React.Component {
       setPokemonFree
     } = this.props;
     return (
-      <div className={`${status !== 'free' ? 'Pokemon_captured' : ''} Pokemon`}>
+      <div
+        className={`${
+          status !== 'free' ? 'Pokemon_captured' : 'Pokemon_captured-alt'
+        } Pokemon`}
+      >
         <div
           className={`${
-            status !== 'free' ? 'Pokemon_captured-alt' : ''
-          } hidden-backgroud`}
+            status !== 'free' ? 'hidden-background_alt' : 'hidden-background'
+          }`}
         />
         <Link to={`pokemon/${id}`}>
           <img
             className='Pokemon__image'
-            src={`./dist/assets/images/pokemons-images/${id}.png`}
+            src={`/assets/images/pokemons-images/${id}.png`}
             alt='pokemon'
           />
         </Link>

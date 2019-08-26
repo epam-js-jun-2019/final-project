@@ -8,14 +8,14 @@ const RandomPage = ({ pokemon: { id, name, status, captureDate } }) => (
     <div
       className='background-image'
       style={{
-        backgroundImage: `url(../../dist/assets/images/pokemons-images/${id}.png)`
+        backgroundImage: `url(../../assets/images/pokemons-images/${id}.png)`
       }}
     />
     <div className='pokemon-info'>
       <h1>{name.split('')[0].toUpperCase() + name.slice(1)}</h1>
       <img
         className='pokemon-image'
-        src={`../../dist/assets/images/pokemons-images/${id}.png`}
+        src={`../../assets/images/pokemons-images/${id}.png`}
         alt='pokemon'
       />
       <span>

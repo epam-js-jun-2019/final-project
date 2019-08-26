@@ -1,15 +1,15 @@
 import React from 'react';
 
 import './homepage.styles.scss';
-import packagesJSON from '../../../package.json';
+import packageJSON from '../../../package.json';
 
 const HomePage = () => {
   let dependencies = [];
-  for (let [key, value] of Object.entries(packagesJSON.dependencies)) {
+  for (let [key, value] of Object.entries(packageJSON.dependencies)) {
     dependencies = [...dependencies, { [key]: value }];
   }
   let devDependencies = [];
-  for (let [key, value] of Object.entries(packagesJSON.devDependencies)) {
+  for (let [key, value] of Object.entries(packageJSON.devDependencies)) {
     devDependencies = [...devDependencies, { [key]: value }];
   }
   return (
