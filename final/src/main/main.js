@@ -10,6 +10,7 @@ const Main = () => {
   const loading = useSelector(state => state.loading);
   const count = useSelector(state => state.catched.length);
   const page = useSelector(state => state.page++);
+  
   async function fetchData() {
     dispatch(loadPokemons());
     const url = `http://localhost:3000/pokemons?_limit=20&_page=${page}`;
@@ -51,7 +52,10 @@ const Main = () => {
         <br />
         <Layout data={data} />
 
-        <button className="button is-large is-fullwidth is-outlined is-info" onClick={() => fetchData()}>
+        <button
+          className="button is-large is-fullwidth is-outlined is-info"
+          onClick={() => fetchData()}
+        >
           Load more
         </button>
       </div>
