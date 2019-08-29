@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { Switch, Route } from "react-router-dom";
-import Catched from '../Cached'
+import Catched from '../Catched'
 import Header from "../header";
 import Main from "../main";
 const App = () => {

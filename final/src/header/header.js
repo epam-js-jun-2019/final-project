@@ -1,6 +1,5 @@
 import React from "react";
 import {Link} from 'react-router-dom'
-
 const Header = () => {
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
@@ -8,7 +7,6 @@ const Header = () => {
         <Link className="navbar-item" to="/">Home</Link>
 
         <Link className="navbar-item" to="/catched">Catched</Link>
-
       </div>
     </nav>
   );
