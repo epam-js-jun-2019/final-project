@@ -23,17 +23,16 @@ const reducer = (state = initialState, action) => {
       };
     case POKEMON_CATCH:
       const { payload } = action;
-      const {data} = state;
-      let idx = 0
-      while (data[idx].id !== payload){
-          idx++
+      const { data } = state;
+      let idx = 0;
+      while (data[idx].id !== payload) {
+        idx++;
       }
 
-      const element = data[idx]
-      element.disable = true
+      const element = data[idx];
+      element.catched = true;
+      element.catchTime = new Date()
 
-      console.log(element)
-      console.log(state)
       if (state.catched.indexOf(payload) === -1) {
         return {
           ...state,

@@ -15,9 +15,9 @@ const Catched = () => {
   const result = [];
   catched.forEach(catchedEl => {
     const pokemon = data.filter(dataEl => dataEl.id === catchedEl);
-    const { id, name, image, disable } = pokemon[0];
+    const { id, name, image, catched } = pokemon[0];
     result.push(
-      <Pokemon id={id} name={name} src={image} key={id} disable={disable} />
+      <Pokemon id={id} name={name} src={image} key={id} catched={catched} />
     );
   });
   return (
