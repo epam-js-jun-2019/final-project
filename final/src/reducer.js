@@ -1,29 +1,49 @@
-import {LOADING_START,LOADING_SUCCESS,POKEMON_CATCH} from './consts'
+import { LOADING_START, LOADING_SUCCESS, POKEMON_CATCH } from "./consts";
 
 const initialState = {
-    page : 1,
-    data : [],
-    loading: false,
-    error : false,
-    catched : [],
-  };
+  page: 1,
+  data: [],
+  loading: false,
+  error: false,
+  catched: []
+};
 
 const reducer = (state = initialState, action) => {
-    switch (action.type) {
-      case LOADING_START :
+  switch (action.type) {
+    case LOADING_START:
+      return {
+        ...state,
+        loading: true
+      };
+    case LOADING_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        data: [...state.data, ...action.payload]
+      };
+    case POKEMON_CATCH:
+      const { payload } = action;
+      const {data} = state;
+      let idx = 0
+      while (data[idx].id !== payload){
+          idx++
+      }
+
+      const element = data[idx]
+      element.disable = true
+
+      console.log(element)
+      console.log(state)
+      if (state.catched.indexOf(payload) === -1) {
         return {
-          ...state, loading : true
-        } 
-      case LOADING_SUCCESS:
-          return{
-            ...state, loading : false, data : [...state.data,...action.payload]
-          }
-      case POKEMON_CATCH:
-          return{
-              ...state, catched : [...state.catched,action.payload]
-          }
-      default:
+          ...state,
+          catched: [...state.catched, action.payload]
+        };
+      } else {
         return state;
-    }
+      }
+    default:
+      return state;
   }
-export default reducer  
+};
+export default reducer;

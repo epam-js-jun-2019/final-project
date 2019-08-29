@@ -18,7 +18,7 @@ const Main = () => {
       </div>
     );
 
-  data = data.map(el => <Pokemon id={el.id} src={el.image} name={el.name} />);
+  data = data.map(el => <Pokemon id={el.id} src={el.image} name={el.name} disable={el.disable || false} />);
   return (
     <div className="columns">
       <div className="column"></div>
