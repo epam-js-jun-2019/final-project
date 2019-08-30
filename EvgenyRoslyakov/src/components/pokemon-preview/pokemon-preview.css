@@ -1,0 +1,14 @@
+img {
+    width: 70px;;
+}
+
+.pokemon-preview {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    padding: 0.5rem 1rem;
+    width: 150px;
+    border: 2px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+}
