@@ -1,9 +1,10 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import FirstPage from '../components/firstpage';
-import CatchedPokemons from '../components/catchedpage';
-import AboutApp from '../components/aboutpage';
-import NoMatch from '../components/nomatch';
+
+import FirstPage from '../components/pages/firstpage';
+import CatchedPokemons from '../components/pages/catchedpage';
+import AboutApp from '../components/pages/aboutpage';
+import NoMatch from '../components/pages/nomatch';
 
 
 class Switchpath extends React.Component {

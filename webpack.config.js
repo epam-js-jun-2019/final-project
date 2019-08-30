@@ -1,5 +1,5 @@
 const path = require('path'); // можно почитать больше в доке https://nodejs.org/api/path.html
-//const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlExtractPlugin = require('html-webpack-plugin');
 // https://webpack.js.org/guides/ - ссылка на гайды
 module.exports = {
@@ -22,9 +22,9 @@ module.exports = {
       {
         test: /\.s?css/,
         use: [
-   //       'style-loader',
-     //     MiniCssExtractPlugin.loader,
-       //   'css-loader',
+          'style-loader',
+          MiniCssExtractPlugin.loader,
+          'css-loader',
          // 'sass-loader',
         ]
       }
@@ -35,11 +35,11 @@ module.exports = {
 	// этот плагин генерирует index.html и добавляет тег скрипт
     new HtmlExtractPlugin({
       template: './src/index.html',
-    })/*,
+    }),
 	// А этот плагин экстрактит стили из бандла
     new MiniCssExtractPlugin({
       filename: 'style.[hash].css',
       path: path.resolve(__dirname, 'dist'),
-    }),*/
+    }),
   ],
 }
