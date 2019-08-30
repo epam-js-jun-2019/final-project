@@ -4,6 +4,7 @@ import Catched from '../Catched'
 import Header from "../header";
 import Main from "../main";
 import Profile from '../profile'
+
 const App = () => {
   return (
     <Fragment>

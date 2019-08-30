@@ -1,20 +1,6 @@
 import React from "react";
-import { useSelector } from "react-redux";
-const Profile = ({ match }) => {
-  const { id } = match.params;
-  const pokemonData = useSelector(state => {
-    const el = state.data.filter(el => el.id === +id);
-    return el;
-  });
-  if (!pokemonData[0]) {
-    return <div className="has-text-centered">Loading...</div>;
-  }
-  const { image, name, catchTime, catched } = pokemonData[0];
-  let time;
-  if (catched) {
-    time = `${catchTime.getDate()} ${catchTime.getMonth()} ${catchTime.getFullYear()} ${catchTime.getHours()} : ${catchTime.getMinutes()}`;
-  }
 
+const ProfileView = ({ image, time, name, catched, id }) => {
   return (
     <div>
       <h1 className="has-text-centered is-size-1">
@@ -37,9 +23,15 @@ const Profile = ({ match }) => {
                   {catched ? "Catched" : "Walking around!"}
                 </p>
                 <p className="has-text-left">
+                  <span className="has-text-weight-bold">ID :</span>
+                  {id}
+                </p>
+                <p className="has-text-left">
                   {catched ? (
                     <span>
-                      <span className="has-text-weight-bold">Catch time :   </span>
+                      <span className="has-text-weight-bold">
+                        Catch time :{" "}
+                      </span>
                       {time}
                     </span>
                   ) : null}
@@ -50,9 +42,8 @@ const Profile = ({ match }) => {
         </div>
         <div className="column"></div>
       </div>
-      {id}
     </div>
   );
 };
 
-export default Profile;
+export default ProfileView;

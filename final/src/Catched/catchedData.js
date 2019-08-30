@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import Pokemon from "../pokemon";
-import Layout from "../layout";
+import CatchedView from "./catchedView";
 
 const Catched = () => {
   const catched = useSelector(state => state.catched);
@@ -16,22 +16,9 @@ const Catched = () => {
   catched.forEach(catchedEl => {
     const pokemon = data.filter(dataEl => dataEl.id === catchedEl);
     const { id, name, image, catched } = pokemon[0];
-    result.push(
-      <Pokemon id={id} name={name} src={image} key={id} catched={catched} />
-    );
+    result.push(<Pokemon key={id} src={image} {...{ id, name, catched }} />);
   });
-  return (
-    <div className="columns">
-      <div className="column"></div>
-      <div className="column is-two-thirds">
-        <h1 className="has-text-centered is-size-3">
-          Look at your's awesome pokemons!
-        </h1>
-        <Layout data={result} />
-      </div>
-      <div className="column"></div>
-    </div>
-  );
+  return <CatchedView data={result} />;
 };
 
 export default Catched;

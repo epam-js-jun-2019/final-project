@@ -19,6 +19,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
+        page : state.page + 1,
         data: [...state.data, ...action.payload]
       };
     case POKEMON_CATCH:

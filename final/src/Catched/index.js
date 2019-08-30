@@ -1,3 +1,3 @@
-import Catched from './catched'
+import Catched from './catchedData'
 
 export default Catched
