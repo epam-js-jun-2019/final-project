@@ -9,7 +9,10 @@ module.exports = {
         filename: 'bundle.js'
     },
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx'],
+        alias:{
+            pokemons: path.resolve(__dirname,'/pokemons')
+        },
     },
     module: {
         rules:[
@@ -30,6 +33,9 @@ module.exports = {
         ]
             }
         ]
+    },
+    devServer :{
+        historyApiFallback: true
     },
     plugins : [
         new HtmlWebpackPlugin({

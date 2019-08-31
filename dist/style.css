@@ -1,0 +1,40 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30vw;
+  margin: 20px 0; }
+  .card__image {
+    width: 90%; }
+
+.app__container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start; }
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e6e6e6;
+  padding: 0 10px; }
+
+.app {
+  display: grid;
+  grid-template-rows: 60px 1fr; }
+
+body {
+  font-family: 'Amatic SC', cursive;
+  background-color: #ededed;
+  margin: 0; }
+
+h1 {
+  font-size: 60px; }
+
+span {
+  font-size: 40px; }
+

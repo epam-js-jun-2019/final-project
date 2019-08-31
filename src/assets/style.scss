@@ -1,3 +1,29 @@
-h1 {
-    color: rosybrown;
+body{
+    font-family: 'Amatic SC', cursive;
+    background-color: #ededed;
+    margin: 0;
 }
+
+h1{
+    font-size: 60px;
+}
+
+span{
+    font-size: 40px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+@media screen and (orientation: portrait){
+    h1{
+        font-size: 40px;
+    }
+
+    span{
+        font-size: 30px;
+    }
+}
+
