@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AppHeader from '../app-header/app-header';
 import PokemonPreview from '../pokemon-preview/pokemon-preview';
+import AsyncProvider from '../../services/async-module';
 import './app.css';
 
 class App extends Component {
@@ -12,24 +13,18 @@ class App extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:8087/pokemons?_limit=30')
-            .then(response => {
-                if(!response.ok) {
-                    throw new Error(`Couldn't fetch, status ${response.status}`)
-                }
-                return response.json()
-            })
-            .then(data => this.setState({ data: data }))
-            .catch(error => console.log(error))
+        AsyncProvider.getLimitedData(30)
+                        .then(data => this.setState({ data: data }))
+                        .catch(error => console.log(error))
     }
 
     render() {
+        console.log(AsyncProvider);
         const liItems = this.state.data.map(item => {
-            let imgPath = `/pokemons/${item.id}.png`;
             return (
                 <li key={item.id}>
                     <PokemonPreview pokemon={item}
-                                    imgPath={imgPath} />
+                                    imgPath={`/pokemons/${item.id}.png`} />
                 </li>
             )
         });

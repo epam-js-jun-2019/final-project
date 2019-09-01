@@ -6,7 +6,8 @@ img {
     display: flex;
     justify-content: space-around;
     align-items: baseline;
-    padding: 0.5rem 1rem;
+    padding: .5rem 1rem;
+    margin-bottom: .5rem;
     width: 150px;
     border: 2px solid black;
     border-radius: 4px;
