@@ -1,0 +1,49 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+.app {
+  max-width: 1300px;
+  margin: 50px auto;
+}
+.list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.card {
+  height: 250px;
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  transition: box-shadow .3s ease-in-out;
+  margin-bottom: 50px;
+  text-align: center;
+}
+.card:hover {
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, .15);
+}
+.card-img {
+  display: flex;
+  justify-content: center;
+}
+.card img {
+  height: 150px;
+}
+ul {
+  text-align: center;
+}
+li {
+  display: inline;
+  
+  margin-right: 50px;
+}
+.links {
+  text-decoration: none;
+  color:gray;
+  font-size: 26px;
+}
+.links:hover {
+  color:Turquoise;
+}
+ 
