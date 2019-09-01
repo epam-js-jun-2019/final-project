@@ -53,7 +53,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
-      Assets: path.resolve(__dirname, './src/assets/'),
+      Assets: path.resolve(__dirname, './assets/'),
       Components: path.resolve(__dirname, './src/components/'),
       FetchAPI: path.resolve(__dirname, './src/fetchapi/'),
       Pages: path.resolve(__dirname, './src/pages/'),
@@ -64,7 +64,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      favicon: './src/assets/static/favicon.svg'
+      favicon: './assets/static/favicon.svg'
     }),
     new MiniCssExtractPlugin({
       filename: 'style.[hash].css',
@@ -72,11 +72,11 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       {
-        from: 'src/assets/images',
+        from: 'assets/images',
         to: `${path.join(__dirname, '/dist')}/assets/images`
       },
       {
-        from: 'src/assets/fonts',
+        from: 'assets/fonts',
         to: `${path.join(__dirname, '/dist')}/assets/fonts`
       }
     ])
@@ -88,6 +88,7 @@ module.exports = {
     port: 3002,
     open: true,
     historyApiFallback: true,
-    stats: 'minimal'
+    stats: 'minimal',
+    writeToDisk: true
   }
 };

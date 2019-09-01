@@ -7,7 +7,7 @@ const Navbar = () => (
     <Link className='logo-container' to='/'>
       <img
         className='logo'
-        src='./assets/images/Pokedex_logo.png'
+        src='../../assets/images/Pokedex_logo.png'
         alt='Pokemon logo'
       />
     </Link>
