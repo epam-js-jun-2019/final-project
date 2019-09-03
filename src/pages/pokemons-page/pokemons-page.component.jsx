@@ -20,7 +20,7 @@ class PokemonsPage extends React.Component {
     };
   }
 
-  handleChange = e => this.setState({ searchField: e.target.value });
+  handleSearch = e => this.setState({ searchField: e.target.value });
 
   render() {
     const { collection, loading } = this.props;
@@ -53,7 +53,7 @@ class PokemonsPage extends React.Component {
         <div className='search-box__container'>
           <SearchBox
             placeholder='search pokemons'
-            handleChange={this.handleChange}
+            handleChange={this.handleSearch}
           />
         </div>
         <div className='pagination__container'>

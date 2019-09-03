@@ -88,7 +88,6 @@ module.exports = {
     port: 3002,
     open: true,
     historyApiFallback: true,
-    stats: 'minimal',
-    writeToDisk: true
+    stats: 'minimal'
   }
 };
