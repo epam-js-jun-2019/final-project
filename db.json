@@ -1,18 +1,6 @@
 {
   "freePokemons": [
     {
-      "name": "charmeleon",
-      "id": 5,
-      "status": "free",
-      "captureDate": "none"
-    },
-    {
-      "name": "charizard",
-      "id": 6,
-      "status": "free",
-      "captureDate": "none"
-    },
-    {
       "name": "squirtle",
       "id": 7,
       "status": "free",
@@ -4327,6 +4315,12 @@
       "name": "bulbasaur",
       "status": "captured",
       "captureDate": "Aug 24 2019"
+    },
+    {
+      "id": 6,
+      "name": "charizard",
+      "status": "captured",
+      "captureDate": "Sep 03 2019"
     }
   ]
 }

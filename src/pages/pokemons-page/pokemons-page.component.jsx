@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Pokemon from 'Components/pokemon/pokemon.component';
+import Pokemon from '../../HOCs/pokemon.hoc';
 import SearchBox from 'Components/search-box/search-box.component';
 import Pagination from 'Components/pagination/pagination.component';
 
@@ -12,38 +12,46 @@ class PokemonsPage extends React.Component {
     this.state = {
       searchField: '',
       paginationWindow: false,
-      togglePaginationWindow: () =>
-        this.setState({ paginationWindow: !this.state.paginationWindow }),
       currentPage: 1,
-      pokemonsPerPage: 20,
-      paginate: pageNumber => this.setState({ currentPage: pageNumber })
+      pokemonsPerPage: 20
     };
   }
 
+  togglePaginationWindow = () =>
+    this.setState({ paginationWindow: !this.state.paginationWindow });
+
+  paginate = pageNumber => this.setState({ currentPage: pageNumber });
+
   handleSearch = e => this.setState({ searchField: e.target.value });
+
+  filterPokemons = pokemons =>
+    pokemons.filter(pokemon =>
+      pokemon.name.toLowerCase().includes(this.state.searchField.toLowerCase())
+    );
+
+  renderPokemons = pokemons =>
+    pokemons
+      .map(({ id, ...collectionProps }) => (
+        <Pokemon key={id} id={id} {...collectionProps} />
+      ))
+      .sort((a, b) => (a.props.id > b.props.id ? 1 : -1));
 
   render() {
     const { collection, loading } = this.props;
-    const {
-      searchField,
-      pokemonsPerPage,
-      currentPage,
-      paginate,
-      paginationWindow,
-      togglePaginationWindow
-    } = this.state;
+    const { pokemonsPerPage, currentPage, paginationWindow } = this.state;
+
     const indexOfLastPokemon = currentPage * pokemonsPerPage;
     const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
+
     let currentPokemons;
     let filteredPokemons;
+
     if (collection) {
       currentPokemons = collection.slice(
         indexOfFirstPokemon,
         indexOfLastPokemon
       );
-      filteredPokemons = currentPokemons.filter(pokemon =>
-        pokemon.name.toLowerCase().includes(searchField.toLowerCase())
-      );
+      filteredPokemons = this.filterPokemons(currentPokemons);
     }
 
     return loading ? (
@@ -59,7 +67,7 @@ class PokemonsPage extends React.Component {
         <div className='pagination__container'>
           <a
             className='pagination__toggler'
-            onClick={() => togglePaginationWindow()}
+            onClick={() => this.togglePaginationWindow()}
           >
             More pages
           </a>
@@ -68,18 +76,12 @@ class PokemonsPage extends React.Component {
               pokemonsPerPage={pokemonsPerPage}
               currentPage={currentPage}
               totalPokemons={collection.length}
-              paginate={paginate}
+              paginate={this.paginate}
             />
           ) : null}
         </div>
         <div className='pokemons'>
-          {collection
-            ? filteredPokemons
-                .map(({ id, ...collectionProps }) => (
-                  <Pokemon key={id} id={id} {...collectionProps} />
-                ))
-                .sort((a, b) => (a.props.id > b.props.id ? 1 : -1))
-            : null}
+          {collection ? this.renderPokemons(filteredPokemons) : null}
         </div>
         <a className='to-begin-button' href='#homepage'>
           To Top

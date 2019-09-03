@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import './Random-page.styles.scss';
 
@@ -33,15 +32,4 @@ const RandomPage = ({ pokemon: { id, name, status, captureDate } }) => (
   </div>
 );
 
-const mapStateToProps = ({ pokemons: { freePokemons, capturedPokemons } }) => ({
-  pokemon:
-    (Math.random().toFixed(2) * 100) % 3.5 !== 0
-      ? freePokemons[
-          Math.floor(Math.random() * Math.floor(freePokemons['length']))
-        ]
-      : capturedPokemons[
-          Math.floor(Math.random() * Math.floor(capturedPokemons['length']))
-        ]
-});
-
-export default connect(mapStateToProps)(RandomPage);
+export default RandomPage;

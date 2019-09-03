@@ -1,15 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
-
 import './pokemon-page.styles.scss';
 
 class PokemonPage extends React.Component {
   render() {
-    const { freePokemons, capturedPokemons, match } = this.props;
-    const pokemonID = +match.params.pokemonID;
-    let currentPokemon =
-      freePokemons.filter(pokemon => pokemon.id === pokemonID)[0] ||
-      capturedPokemons.filter(pokemon => pokemon.id === pokemonID)[0];
+    const { currentPokemon } = this.props;
     const { id, name, status, captureDate } = currentPokemon;
     return (
       <div style={{ position: 'relative' }}>
@@ -46,9 +40,4 @@ class PokemonPage extends React.Component {
   }
 }
 
-const mapStateToProps = ({ pokemons: { freePokemons, capturedPokemons } }) => ({
-  freePokemons: freePokemons || null,
-  capturedPokemons: capturedPokemons || null
-});
-
-export default connect(mapStateToProps)(PokemonPage);
+export default PokemonPage;

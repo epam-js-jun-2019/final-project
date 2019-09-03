@@ -1,9 +1,10 @@
 import { put, takeEvery, all } from 'redux-saga/effects';
-import { APIgetPokemonData } from 'FetchAPI/fetch.methods';
+import apiRequests from 'FetchAPI/http.lib';
+import restApiLinks from 'FetchAPI/restful-api.links';
 import PokemonsActionTypes from 'Redux/pokemons/pokemons.types';
 
 function* getPokemonDataAsync() {
-  const payload = yield APIgetPokemonData();
+  const payload = yield apiRequests.get(restApiLinks.DB);
   yield put({ type: PokemonsActionTypes.GET_POKEMON_DATA, payload });
 }
 

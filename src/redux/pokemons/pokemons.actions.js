@@ -18,3 +18,8 @@ export const setPokemonFree = pokemon => ({
   type: PokemonsActionTypes.SET_POKEMON_FREE,
   payload: pokemon
 });
+
+export const setCurrentPokemon = pokemon => ({
+  type: PokemonsActionTypes.SET_CURRENT_POKEMON,
+  payload: pokemon
+});

@@ -3,6 +3,7 @@ import PokemonsActionTypes from './pokemons.types';
 const INITIAL_STATE = {
   freePokemons: null,
   capturedPokemons: null,
+  currentPokemon: null,
   loading: false
 };
 
@@ -26,22 +27,7 @@ const pokemonsReducer = (state = INITIAL_STATE, action) => {
         freePokemons: state.freePokemons.filter(
           pokemon => pokemon.id !== action.payload.id
         ),
-        capturedPokemons: [
-          ...state.capturedPokemons.slice(
-            0,
-            action.payload.id === 0 ? null : action.payload.id - 1
-          ),
-          {
-            ...action.payload,
-            status: 'captured',
-            captureDate: new Date()
-              .toDateString()
-              .split(' ')
-              .slice(1, 4)
-              .join(' ')
-          },
-          ...state.capturedPokemons.slice(action.payload.id - 1)
-        ]
+        capturedPokemons: [...state.capturedPokemons, action.payload]
       };
     case PokemonsActionTypes.SET_POKEMON_FREE:
       return {
@@ -49,18 +35,12 @@ const pokemonsReducer = (state = INITIAL_STATE, action) => {
         capturedPokemons: state.capturedPokemons.filter(
           pokemon => pokemon.id !== action.payload.id
         ),
-        freePokemons: [
-          ...state.freePokemons.slice(
-            0,
-            action.payload.id === 0 ? null : action.payload.id - 1
-          ),
-          {
-            ...action.payload,
-            status: 'free',
-            captureDate: 'none'
-          },
-          ...state.freePokemons.slice(action.payload.id - 1)
-        ]
+        freePokemons: [...state.freePokemons, action.payload]
+      };
+    case PokemonsActionTypes.SET_CURRENT_POKEMON:
+      return {
+        ...state,
+        currentPokemon: action.payload
       };
     default:
       return state;
