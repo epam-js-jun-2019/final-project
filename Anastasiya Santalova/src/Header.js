@@ -7,7 +7,7 @@ class Header extends React.Component {
     return (
       <header className="header col-12 row align-items-center border-bottom border-danger">
         <span className="logo-image col-1">
-          <Link to="/"><img src="/myIco.png" className="logo" alt="logo"/></Link>
+          <Link to="/"><img src="https://raw.githubusercontent.com/epam-js-jun-2019/final-project/master/pokemons/25.png" className="logo" alt="logo"/></Link>
         </span>
         <span className="col-11 col-md-7">
           <h1 className="text-warning">PokeDex</h1>

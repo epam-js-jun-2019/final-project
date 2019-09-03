@@ -3796,5 +3796,37 @@
       "name": "magearna-original",
       "id": 10147
     }
+  ],
+  "caught": [
+    {
+      "name": "bulbasaur",
+      "id": 1,
+      "pokemonId": 1
+    },
+    {
+      "name": "metapod",
+      "id": 11,
+      "pokemonId": 11
+    },
+    {
+      "name": "spearow",
+      "id": 21,
+      "pokemonId": 21
+    },
+    {
+      "name": "fearow",
+      "id": 22,
+      "pokemonId": 22
+    },
+    {
+      "name": "butterfree",
+      "id": 12,
+      "pokemonId": 12
+    },
+    {
+      "name": "pidgey",
+      "id": 16,
+      "pokemonId": 16
+    }
   ]
 }

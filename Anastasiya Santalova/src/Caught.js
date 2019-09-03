@@ -34,7 +34,7 @@ class Caught extends React.Component {
     if (this.state.caught.length === 0) {
       return (
         <div className="no-pokemons">
-          <img className="no-pokemons_img" src="/pokemons/no-pokemons.png" alt="no pokemons"></img>
+          <img className="no-pokemons_img" src="https://raw.githubusercontent.com/epam-js-jun-2019/final-project/master/pokemons/220.png" alt="no pokemons"></img>
           <p>Вы ещё не поймали ни одного покемона...<br/><br/></p>
           <p>Пожалуйста, вернитесь на <Link to='/' className="text-danger">главную</Link> страницу и поймайте парочку для меня ;)</p>
         </div>
