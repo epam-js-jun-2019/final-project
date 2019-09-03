@@ -1,22 +1,24 @@
 import React from 'react';
 import './App.css';
 import data from './db.json';
+import Button from './Button';
 
 function Pokemon(props) {
   return (
-    <div className="card">
+    <div className="card" key={props.pokemon.id}>
       <div className="card-img">
         <img 
         src = {process.env.PUBLIC_URL +'/pokemons/' + props.pokemon.id + '.png'}
         alt = {props.pokemon.name}/>
       </div>
       <h3>{props.pokemon.name}</h3>
-      <input type="button" value="CATCH"></input>
+      <Button index = {props.pokemon.id} />
     </div>
   )
 }
 
 class List extends React.Component {
+
   renderPokemons() {
     return data.pokemons.map(pokemon => {
       return (
