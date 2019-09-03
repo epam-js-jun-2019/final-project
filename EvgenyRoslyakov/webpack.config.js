@@ -40,6 +40,7 @@ module.exports = {
                         loader: 'url-loader',
                         options: {
                             limit: false,
+                            fallback: 'file-loader'
                         },
                     },
                 ],

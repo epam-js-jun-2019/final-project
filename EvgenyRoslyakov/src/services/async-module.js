@@ -2,6 +2,7 @@ function AsyncProvider() {
     const apiUrl = 'http://localhost:8087/';
 
     const getData = async function(query) {
+        console.log('async getData()');
         const resp = await fetch(`${apiUrl}${query}`);
         if(!resp.ok) {
             throw new Error(`Couldn't fetch; status ${resp.status}`)
@@ -17,8 +18,8 @@ function AsyncProvider() {
         return getData(`pokemons/${id}`);
     };
 
-    const getLimitedData = function(limit) {
-        return getData(`pokemons?_limit=${limit}`);
+    const getLimitedData = function(page, limit) {
+        return getData(`pokemons?_page=${page}&_limit=${limit}`);
     };
 
     return {

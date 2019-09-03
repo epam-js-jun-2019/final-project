@@ -1,0 +1,22 @@
+h2,
+h3 {
+    margin: .5rem 0;
+}
+
+.pokemon-card {
+    width: 200px;
+    padding: 1rem;
+    margin: 0 auto;
+    margin-bottom: .5rem;
+    border: 2px solid #FFCC00;
+    border-radius: 10px;
+}
+
+.pokemon-name {
+    color:#21386E;
+}
+
+.pokemon-pic {
+    width: 100%;
+}
+

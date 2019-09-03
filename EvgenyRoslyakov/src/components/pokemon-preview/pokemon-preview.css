@@ -1,15 +1,22 @@
-img {
+.img-miniature {
     width: 70px;;
+}
+
+.leftside {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .pokemon-preview {
     display: flex;
     justify-content: space-around;
-    align-items: baseline;
+    align-items: center;
     padding: .5rem 1rem;
     margin-bottom: .5rem;
     width: 150px;
-    border: 2px solid black;
+    border: 2px solid #21386E;
     border-radius: 4px;
     cursor: pointer;
 }

@@ -1,13 +1,8 @@
+body {
+    font-family: 'Rajdhani', sans-serif;
+}
+
 .main-container {
     width: 600px;
     margin: 0 auto;
-}
-
-.pokemons-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 0;
-    margin: 0;
-    list-style: none;
 }
