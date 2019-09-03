@@ -1,16 +1,24 @@
 {
   "caughtPokemons": [
     {
-      "name": "bulbasaur",
-      "id": 1
+      "name": "jigglypuff",
+      "id": 39
     },
     {
-      "name": "pikachu",
-      "id": 25
+      "name": "wigglytuff",
+      "id": 40
     },
     {
-      "name": "butterfree",
-      "id": 12
+      "name": "clefairy",
+      "id": 35
+    },
+    {
+      "name": "clefable",
+      "id": 36
+    },
+    {
+      "name": "persian",
+      "id": 53
     }
   ]
 }

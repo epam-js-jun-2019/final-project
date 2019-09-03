@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import data from './db.json';
 import Button from './Button';
+import AddInfo from './AddInfo';
 
 function Pokemon(props) {
   return (
@@ -13,6 +14,7 @@ function Pokemon(props) {
       </div>
       <h3>{props.pokemon.name}</h3>
       <Button index = {props.pokemon.id} />
+      <AddInfo />
     </div>
   )
 }
