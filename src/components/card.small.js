@@ -1,65 +1,64 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Card } from 'antd';
+import { Card, Button } from 'antd';
 
 class SmallCard extends React.Component {
 
-  constructor(props) {
-    super(props);
-    
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  componentDidMount () {
-    if (this.props.pokemon.id !== undefined) {
-    fetch(`http://localhost:3000/pokemons/${this.props.pokemon.id}`)
-      .then(response => response.json())
-      .then(data => this.setState({ pokemon: data }))
-      
-      
-    }
-  }
-
-  handleClick() {
-    this.setState({
-      active: !this.state.active
-    });
-
-    const { pokemon } = this.props;
-    const url = 'http://localhost:3000/caught';
-    const data = {name: pokemon.name,
-                  id: pokemon.id,
-                  pokemonId: pokemon.id,};
-
-    fetch(url, {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers:{
-        'Content-Type': 'application/json'
-      }
-    }).then(res => res.json())
-      .catch(error => console.error('Ошибка:', error));
-  }
-
-  render () {
-    let pokemonStatus = true;
-    
-    if (this.state) {
-      pokemonStatus = this.state.active;
+    constructor(props) {
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
+        this.setState({ active: false });
     }
 
-    const { pokemon } = this.props;
+    componentWillMount () {
+        const { pokemon } = this.props;
+        
+        if (pokemon.catched === 1) {
+            this.setState({ active: false });
+          } else {
+            this.setState({ active: true });
+          }
+    }
+     
+    handleClick() {
+        this.setState(state => ({
+            active: !state.active
+          }));      
+        const url = `http://localhost:3000/pokemons/${this.props.pokemon.id}`;
+        const data = {
+            name: this.props.pokemon.name,
+            catched: 1,
+            date: new Date().toJSON().slice(0,10).replace(/-/g,'/')
+        }
+        fetch(url, {
+            method: 'PUT',
+            body: JSON.stringify(data),
+            headers:{'Content-Type': 'application/json'}
+            })
+        .then(res => res.json())
+        .catch(error => console.error('Error:', error));
+    }
+
+    render () {
+        let pokemonStatus = false;
+        if (this.state) {
+            pokemonStatus = this.state.active;
+        }
+        const { pokemon } = this.props;
     
-    return (
-      
-        <Card title={`${pokemon.name}`} extra={<a href="#">More</a>} style={{ width: 300, margin: 10 }}>
-         <img src={`/pokemons/${pokemon.id}.png`} width='80%' />
-        </Card>
+        return (
+            <>
+            <Card title={`${pokemon.name}`}  style={{ width: '100%', textTransform: 'capitalize' }}>
+            <Link to={`/p/${pokemon.id}`}><img src={`../pokemons/${pokemon.id}.png`} width='100%'  /></Link>
+                <Button type="primary" block={true} onClick={this.handleClick} disabled={pokemonStatus ? false : true}>
+                    {pokemonStatus ? 'Catch!' : 'Catched!'}
+                </Button>
+            
 
-
-      
-    );
-  }
+            </Card>
+            </>
+        );
+    }
 }
 
 export default SmallCard;
