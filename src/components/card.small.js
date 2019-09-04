@@ -7,7 +7,10 @@ class SmallCard extends React.Component {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
-        this.setState({ active: false });
+        // this.setState({ active: false });
+        this.state = {
+            active: false
+        };
     }
 
     componentWillMount () {
@@ -19,7 +22,7 @@ class SmallCard extends React.Component {
             this.setState({ active: true });
           }
     }
-     
+
     handleClick() {
         this.setState(state => ({
             active: !state.active

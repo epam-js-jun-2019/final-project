@@ -7,25 +7,15 @@ class BigCard extends React.Component {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
-        this.setState({ active: false });
         this.state = {
             pokemon: {}
           };
         }
-   
     
     componentDidMount() {
         fetch(`http://localhost:3000/pokemons/${this.props.id}`)
         .then(response => response.json())
         .then(data => this.setState({ pokemon: data }))
-       // if (this.state.pokemon.catched !== undefined) {
-        //    console.log('тру');
-        //    console.log(this.state.pokemon.catched == undefined);
-        //    this.setState({ active: true });
-        //  } else {
-        //    this.setState({ active: false });
-         //   console.log('фалс');
-         // }
     }
 
     handleClick() {
@@ -62,9 +52,9 @@ class BigCard extends React.Component {
                 <h3>Pokemon ID:{pokemon.id}</h3>
                 {pokemon.catched ? (<h3>Catched {pokemon.date}</h3>) : null }
             
-                <img src={`/pokemons/${pokemon.id}.png`} width='100%' onClick={this.showModal} />
+                <img src={`/pokemons/${this.props.id}.png`} width='100%' onClick={this.showModal} />
                 
-                {pokemon.catched ? null : (<Button type="primary" block="true" onClick={this.handleClick} disabled={pokemonStatus ? true : false}>
+                {pokemon.catched ? null : (<Button type="primary" block={true} onClick={this.handleClick} disabled={pokemonStatus ? true : false}>
                     {pokemonStatus ? 'Catched!' : 'Catch'}
                 </Button>) }
             
