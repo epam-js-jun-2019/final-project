@@ -16,7 +16,7 @@ class Caught extends React.Component {
       .then(data => {
         let caughtPokemons = data.map((pokemon, index) => {
           return (
-              <div className="card">
+              <div className="card" key={pokemon.id}>
                 <div className="card-img">
                   <img 
                   src = {process.env.PUBLIC_URL +'/pokemons/' + pokemon.id + '.png'}

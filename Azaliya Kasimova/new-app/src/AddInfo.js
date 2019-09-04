@@ -3,8 +3,14 @@ import './App.css';
 import Modal from './Modal';
 
 class AddInfo extends React.Component {
-  state = { show: false };
-
+  constructor (props) {
+    super(props)
+    this.state = { show: false,
+                   pokemonName: this.props.name,
+                   imageSrc: this.props.source,
+                   pokemonID: this.props.index};
+    }
+  
   showModal = () => {
     this.setState({ show: true });
   };
@@ -16,7 +22,9 @@ class AddInfo extends React.Component {
   render() {
     return (
       <main>
-         <Modal show={this.state.show} handleClose={this.hideModal} />
+         <Modal show={this.state.show} handleClose={this.hideModal} index={this.state.pokemonID}
+                source = {this.state.imageSrc} name = {this.state.pokemonName}
+                />
         <p type="button" onClick={this.showModal} className="addInfo">
           more info
         </p>

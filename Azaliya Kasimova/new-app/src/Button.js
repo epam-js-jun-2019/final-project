@@ -1,16 +1,15 @@
 import React from 'react';
 import './App.css';
 import data from './db.json';
-import { get } from 'http';
 
 class Button extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {caughtPokemon:
-      this.makeArray(this.props.index)
-    }
+    this.state = {caughtPokemon: this.makeArray(this.props.index),}
+    
     this.handleClick = this.handleClick.bind(this)
     this.makeArray = this.makeArray.bind(this)
+
   }
 
   makeArray(number) {
@@ -22,7 +21,7 @@ class Button extends React.Component {
     }
     return arr 
   }
-
+  
   handleClick() {
     return fetch('http://localhost:3001/caughtPokemons', {
       method: 'POST', 
@@ -41,7 +40,7 @@ class Button extends React.Component {
 
   render() {
     return (
-      <input type="button" value="CATCH" onClick={this.handleClick}>  
+    <input type="button" value="CATCH" onClick={this.handleClick}>  
       </input>
     )
   }

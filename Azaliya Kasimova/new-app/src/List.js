@@ -12,9 +12,12 @@ function Pokemon(props) {
         src = {process.env.PUBLIC_URL +'/pokemons/' + props.pokemon.id + '.png'}
         alt = {props.pokemon.name}/>
       </div>
-      <h3>{props.pokemon.name}</h3>
+      <div className="text">
+        <h3>{props.pokemon.name}</h3>
+      </div>
       <Button index = {props.pokemon.id} />
-      <AddInfo />
+      <AddInfo name = {props.pokemon.name} index = {props.pokemon.id}
+      source =  {process.env.PUBLIC_URL +'/pokemons/' + props.pokemon.id + '.png'}/>
     </div>
   )
 }
