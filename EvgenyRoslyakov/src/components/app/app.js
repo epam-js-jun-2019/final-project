@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AppHeader from '../app-header/app-header';
-import PaginationBar from '../pagination_bar/pagination-bar';
-import LoadedPokemons from '../loaded-pokemons/loaded-pokemons';
-import PokemonCard from '../pokemon-card/pokemon-card';
+import PageIndex from '../pages/page-index';
+import PageCatched from '../pages/page-catched';
+import PageCard from '../pages/page-card';
 import AsyncProvider from '../../services/async-module';
 import './app.css';
+import ErrorMessage from '../error-message/error-message';
 
 class App extends Component {
     constructor(props) {
@@ -13,10 +14,9 @@ class App extends Component {
         console.log('constructor()');
         this.state = { 
                         viewedData: [],
-                        currentPage: 1,
+                        catchedData: [],
+                        viewedPage: 1,
                         previewsPerPage: 18,
-                        catched: [],
-                        whichCard: {},
                         loading: true,
                         error: false
                     };
@@ -27,10 +27,11 @@ class App extends Component {
         this.onPokemonsLoaded = this.onPokemonsLoaded.bind(this);
         this.onError = this.onError.bind(this);
         this.handleCatchClick = this.handleCatchClick.bind(this);
-        this.handleOpenFullCard = this.handleOpenFullCard.bind(this);
         this.handleToNextClick = this.handleToNextClick.bind(this);
         this.handleToPrevClick = this.handleToPrevClick.bind(this);
         this.toFormatCatchedData = this.toFormatCatchedData.bind(this);
+        this.getMaxPage = this.getMaxPage.bind(this);
+        this.isCatched = this.isCatched.bind(this);
     }
 
     getViewedData(page, previews) {
@@ -40,21 +41,31 @@ class App extends Component {
     }
 
     componentDidMount() {
-        const {currentPage: page, previewsPerPage: previews} = this.state;
+        const {viewedPage: page, previewsPerPage: previews} = this.state;
         console.log('componentDidMount()');
         this.getViewedData(page, previews);
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if(this.state.currentPage !== prevState.currentPage) {
+        if(this.state.viewedPage !== prevState.viewedPage) {
             this.setState({ loading: true });
-            const {currentPage: page, previewsPerPage: previews} = this.state;
+            const {viewedPage: page, previewsPerPage: previews} = this.state;
             this.getViewedData(page, previews);
         }
         console.log('componentDidUpdate()');
     }
 
+    componentDidCatch() {
+        console.log('componentDidCatch()');
+        this.setState({ error: true });
+    }
+
     onPokemonsLoaded(data) {
+        data.forEach(newItem => {
+            if(this.isCatched(newItem.id)) {
+                newItem = {...newItem, catched: true};
+            }
+        });
         this.setState({ 
             viewedData: data,
             error: false,
@@ -76,48 +87,78 @@ class App extends Component {
 
     handleCatchClick(e, pokemon) {
         e.stopPropagation();
+        if(this.isCatched(pokemon.id)) return;
         const newCatched = this.toFormatCatchedData(pokemon);
         this.setState(state => ({
-            catched: [...state.catched, newCatched]
+            catchedData: [...state.catchedData, newCatched]
         }));
     }
 
-    handleOpenFullCard(id) {
-        AsyncProvider.getDataById(id)
-                     .then(data => this.setState({ whichCard: data }));
+    getMaxPage(itemsNumber) {
+        return Math.floor(itemsNumber / this.state.previewsPerPage) + 1;
     }
 
     handleToNextClick() {
-        const maxPage = Math.floor(949 / this.state.previewsPerPage) + 1;
-        const nextPage = (this.state.currentPage > maxPage) ? 1 
-                                                            : this.state.currentPage + 1;
-        this.setState( { currentPage: nextPage }) ;
+        const maxPage = this.getMaxPage();
+        const nextPage = (this.state.viewedPage >= maxPage) ? 1 
+                                                            : this.state.viewedPage + 1;
+        this.setState( { viewedPage: nextPage }) ;
     }
 
     handleToPrevClick() {
-        const maxPage = Math.floor(949 / this.state.previewsPerPage) + 1;
-        const prevPage = (this.state.currentPage <= 1) ? maxPage
-                                                       : this.state.currentPage - 1;
-        this.setState( { currentPage: prevPage }) ;
+        const maxPage = this.getMaxPage();
+        const prevPage = (this.state.viewedPage <= 1) ? maxPage
+                                                      : this.state.viewedPage - 1;
+        this.setState( { viewedPage: prevPage }) ;
+    }
+
+    isCatched(id) {
+        return this.state.catchedData.some(catched => catched.id === id);
     }
 
     render() {
         console.log('render()');
-        console.log('loading:', this.state.loading);
-        console.log(this.state.currentPage);
+        // console.log('loading:', this.state.loading);
+        // console.log(this.state.catchedData);
+        // console.log(this.state.viewedData);
+        if(this.state.error) {
+            return <ErrorMessage />
+        };
         return (
-                <div className="pokedex main-container">
-                    <AppHeader />
-                    {/* <PokemonCard data={this.state.whichCard} /> */}
-                    <LoadedPokemons data={this.state.viewedData}
-                                  isLoading={this.state.loading}
-                                  isError={this.state.error}
-                                  onCatch={this.handleCatchClick}
-                                  onOpen={this.handleOpenFullCard} />
-                    <PaginationBar page={this.state.currentPage}
-                                   toNext={this.handleToNextClick}
-                                   toPrev={this.handleToPrevClick} />
-                </div>
+                <Router>
+                    <div className="pokedex main-container">
+                        <AppHeader toCatched={() => this.setState({viewedPage: 1})} />
+                        <Switch>
+                            <Route exact path="/" 
+                                   render={() => {
+                                            return (
+                                                <PageIndex data={this.state.viewedData}
+                                                            isLoading={this.state.loading}
+                                                            isError={this.state.error} 
+                                                            onCatch={this.handleCatchClick}
+                                                            page={this.state.viewedPage}
+                                                            toNext={this.handleToNextClick}
+                                                            pageInfo={[this.state.viewedPage,
+                                                                        this.getMaxPage(949)]}
+                                                            toPrev={this.handleToPrevClick}/>
+                                            )
+                                    }} />
+                            <Route path="/pokemons/catched" 
+                                   render={() => {
+                                            return (
+                                                <PageCatched data={this.state.catchedData}
+                                                            page={this.state.viewedPage}
+                                                            toNext={this.handleToNextClick}
+                                                            pageInfo={[this.state.viewedPage,
+                                                                        this.getMaxPage(this.state.catchedData.length)]}
+                                                            toPrev={this.handleToPrevClick}/>
+                                            )
+                                        }} />
+                            <Route path="/pokemons/:id" 
+                                   component={PageCard} />
+                        </Switch>
+                    </div>
+                </Router>
         )
     }
 }

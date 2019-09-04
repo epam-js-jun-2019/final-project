@@ -8,10 +8,9 @@ const LoadedPokemons = (props) => {
                          !props.isLoading) ? <ErrorMessage /> : null;
     const spinner = props.isLoading ? <Spinner /> : null;
     const content = !(props.isError ||
-                      props.isLoading) ? <PokemonsList 
-                                            data={props.data}
-                                            onCatch={props.onCatch}
-                                            onOpen={props.onOpen} />
+                      props.isLoading) ? <PokemonsList data={props.data}
+                                                        onCatch={props.onCatch}
+                                                        onPreviewClick={props.onPreviewClick} />
                                        : null;
     return (
         <React.Fragment>

@@ -1,4 +1,10 @@
 .app-pagination {
     display: flex;
     justify-content: center;
+    align-items: baseline;
+}
+
+.page-number {
+    color: #21386E;
+    font-weight: 700;
 }

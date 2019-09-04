@@ -20,3 +20,13 @@
     border-radius: 4px;
     cursor: pointer;
 }
+
+.btn-disabled {
+    display: inline-block;
+    padding: .5rem 1rem;
+    margin: .25rem;
+    vertical-align: middle;
+    color: #90AAB1;
+    border: 2px solid #90AAB1;
+    border-radius: 20px;
+}
