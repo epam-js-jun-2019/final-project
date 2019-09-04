@@ -63,7 +63,7 @@ class Card extends React.Component {
 
           <div className="col-5">
             <Link to={`/pokemons/${pokemon.id}`}>
-              <img src={`https://raw.githubusercontent.com/epam-js-jun-2019/final-project/master/pokemons/${pokemon.id}.png`} className="card-img" alt={`покемон ${pokemon.name}`}  onError={(e)=>{e.target.onerror = null; e.target.src="/pokemons/no-img.png"}}/>
+              <img src={`https://raw.githubusercontent.com/epam-js-jun-2019/final-project/master/pokemons/${pokemon.id}.png`} className="card-img" alt={`покемон ${pokemon.name}`}  onError={(e)=>{e.target.onerror = null; e.target.src="https://raw.githubusercontent.com/epam-js-jun-2019/final-project/master/pokemons/220.png"}}/>
             </Link>
           </div>
 

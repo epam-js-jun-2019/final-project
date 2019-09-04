@@ -50,7 +50,7 @@ class Pokemon extends React.Component {
         <div className="pokemon-card row align-items-center">
 
           <div className="pokemon-card__container_img col-6">
-            <img src={`https://raw.githubusercontent.com/epam-js-jun-2019/final-project/master/pokemons/${pokemon.id}.png`} className="pokemon-card__img" alt={`покемон ${pokemon.name}`} onError={(e)=>{e.target.onerror = null; e.target.src="/pokemons/no-img.png"}}/>
+            <img src={`https://raw.githubusercontent.com/epam-js-jun-2019/final-project/master/pokemons/${pokemon.id}.png`} className="pokemon-card__img" alt={`покемон ${pokemon.name}`} onError={(e)=>{e.target.onerror = null; e.target.src="https://raw.githubusercontent.com/epam-js-jun-2019/final-project/master/pokemons/220.png"}}/>
           </div>
 
           <div className="pokemon-card__container_text col-6">

@@ -3827,6 +3827,21 @@
       "name": "pidgey",
       "id": 16,
       "pokemonId": 16
+    },
+    {
+      "name": "kakuna",
+      "id": 14,
+      "pokemonId": 14
+    },
+    {
+      "name": "raichu",
+      "id": 26,
+      "pokemonId": 26
+    },
+    {
+      "name": "staryu",
+      "id": 120,
+      "pokemonId": 120
     }
   ]
 }
