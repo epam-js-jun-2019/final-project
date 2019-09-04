@@ -7,13 +7,12 @@ class SmallCard extends React.Component {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
-        // this.setState({ active: false });
         this.state = {
             active: false
         };
     }
 
-    componentWillMount () {
+    componentDidMount () {
         const { pokemon } = this.props;
         
         if (pokemon.catched === 1) {

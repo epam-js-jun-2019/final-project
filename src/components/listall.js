@@ -2,7 +2,6 @@ import React from 'react';
 import { Col, Row } from 'antd';
 import SmallCard from './card.small';
 import { Button, List } from 'antd';
-import PokemonModal from './pokemonmodal';
 
 class ListAll extends React.Component {
 
