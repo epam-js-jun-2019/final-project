@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Button } from 'antd';
+import dburl from '../constants/const';
 
 class SmallCard extends React.Component {
 
@@ -26,7 +27,7 @@ class SmallCard extends React.Component {
         this.setState(state => ({
             active: !state.active
           }));      
-        const url = `http://localhost:3000/pokemons/${this.props.pokemon.id}`;
+        const url = `${dburl}/pokemons/${this.props.pokemon.id}`;
         const data = {
             name: this.props.pokemon.name,
             catched: 1,

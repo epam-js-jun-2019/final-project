@@ -10,7 +10,7 @@ const NavBar = () => {
            <div style={{
                 width: '120px',
                 height: '31px',
-                backgroundImage: 'url(src/assets/logo.png)',
+                backgroundImage: 'url(/assets/logo.png)',
                 backgroundSize: 'contain',
                 margin: '16px 24px 16px 0',
                 float: 'left',}}

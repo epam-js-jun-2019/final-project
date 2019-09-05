@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Card, Button } from 'antd';
-
+import dburl from '../constants/const';
 class BigCard extends React.Component {
 
     constructor(props) {
@@ -13,16 +12,16 @@ class BigCard extends React.Component {
         }
     
     componentDidMount() {
-        fetch(`http://localhost:3000/pokemons/${this.props.id}`)
+        fetch(`${dburl}/pokemons/${this.props.id}`)
         .then(response => response.json())
         .then(data => this.setState({ pokemon: data }))
-    }
+    }    
 
     handleClick() {
         this.setState(state => ({
             active: !state.active
           }));      
-        const url = `http://localhost:3000/pokemons/${this.props.id}`;
+        const url = `${dburl}/pokemons/${this.props.id}`;
         const data = {
             name: this.state.pokemon.name,
             catched: 1,
