@@ -5,7 +5,7 @@ class Caught extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      caughtPokemons: [],
+      caughtPokemon: [],
     };
   }
 
@@ -14,7 +14,7 @@ class Caught extends React.Component {
     fetch('http://localhost:3001/caughtPokemons')
       .then(resp => resp.json())
       .then(data => {
-        let caughtPokemons = data.map((pokemon, index) => {
+        let caughtPokemon = data.map((pokemon, index) => {
           return (
               <div className="card" key={pokemon.id}>
                 <div className="card-img">
@@ -26,14 +26,14 @@ class Caught extends React.Component {
                 </div>    
           )
         })
-        this.setState({caughtPokemons: caughtPokemons});
+        this.setState({caughtPokemon: caughtPokemon});
   })
 }  
     render() {
       return (
         <div className = "app">
           <div className = "list">
-          {this.state.caughtPokemons}
+          {this.state.caughtPokemon}
           </div>
         </div>
       );

@@ -1,20 +1,32 @@
 {
   "caughtPokemons": [
     {
+      "name": "butterfree",
+      "id": 12
+    },
+    {
+      "name": "beedrill",
+      "id": 15
+    },
+    {
       "name": "jigglypuff",
       "id": 39
     },
     {
-      "name": "wigglytuff",
-      "id": 40
+      "name": "venusaur",
+      "id": 3
     },
     {
-      "name": "clefairy",
-      "id": 35
+      "name": "oddish",
+      "id": 43
     },
     {
-      "name": "chansey",
-      "id": 113
+      "name": "rattata",
+      "id": 19
+    },
+    {
+      "name": "meowth",
+      "id": 52
     }
   ]
 }
