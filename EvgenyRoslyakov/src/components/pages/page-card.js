@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AsyncProvider from '../../services/async-module';
+import LSWorker from '../../services/localstorage-worker';
 import PokemonCard from '../pokemon-card/pokemon-card';
 
 class PageCard extends Component {
@@ -7,12 +7,19 @@ class PageCard extends Component {
         super(props);
 
         this.state = { pokemon: {} };
+
+        this.handleOpenCard = this.handleOpenCard.bind(this);
     }
 
     componentDidMount() {
-        console.log(this.props.match.params.id);
-        AsyncProvider.getDataById(this.props.match.params.id)
-                .then(data => this.setState({pokemon: data}));
+        const id = this.props.routeProps.match.params.id;
+        const data = this.handleOpenCard(id);
+        this.setState({pokemon: data});
+    }
+
+    handleOpenCard(id) {
+        return LSWorker.readLSData(this.props.page)
+                             .find(item => id == item.id);
     }
 
     render() {
