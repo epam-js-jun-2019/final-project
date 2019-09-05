@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Button } from 'antd';
 import dburl from '../constants/const';
+
 class BigCard extends React.Component {
 
     constructor(props) {
@@ -46,7 +47,6 @@ class BigCard extends React.Component {
         }    
     
         return (
-            <>
             <Card title={`${pokemon.name}`}  style={{ width: '100%', textTransform: 'capitalize' }}>
                 <h3>Pokemon ID:{pokemon.id}</h3>
                 {pokemon.catched ? (<h3>Catched {pokemon.date}</h3>) : null }
@@ -56,10 +56,7 @@ class BigCard extends React.Component {
                 {pokemon.catched ? null : (<Button type="primary" block={true} onClick={this.handleClick} disabled={pokemonStatus ? true : false}>
                     {pokemonStatus ? 'Catched!' : 'Catch'}
                 </Button>) }
-            
-
             </Card>
-            </>
         );
     }
 }

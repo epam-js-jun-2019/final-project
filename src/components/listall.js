@@ -40,26 +40,25 @@ class ListAll extends React.Component {
         return (
             <>
             <List
-    grid={{
-      gutter: 16,
-      xs: 1,
-      sm: 2,
-      md: 3,
-      lg: 4,
-      xl: 5,
-      xxl: 5,
-    }}
-    dataSource={pokemons}
-    renderItem={pokemon => (
-    <List.Item>
-        <SmallCard pokemon = {pokemon} key = {pokemon.id} catched = {pokemon.catched}/>
-    </List.Item> )}  
-    />   
+                grid={{
+                    gutter: 16,
+                    xs: 1,
+                    sm: 2,
+                    md: 3,
+                    lg: 4,
+                    xl: 5,
+                    xxl: 5,
+                }}
+                dataSource={pokemons}
+                renderItem={pokemon => (
+                    <List.Item>
+                        <SmallCard pokemon = {pokemon} key = {pokemon.id} catched = {pokemon.catched}/>
+                    </List.Item> )}  
+            />   
             <Row type="flex" justify="center">
                <Col> <Button type="default" onClick={this.handleClick} disabled={ifDisabled}>Load more</Button></Col>
-
             </Row>
-         </>   
+            </>   
         );
     }
 }

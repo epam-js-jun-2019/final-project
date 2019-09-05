@@ -50,16 +50,12 @@ class SmallCard extends React.Component {
         const { pokemon } = this.props;
     
         return (
-            <>
             <Card title={`${pokemon.name}`}  style={{ width: '100%', textTransform: 'capitalize' }}>
-            <Link to={`/p/${pokemon.id}`}><img src={`../pokemons/${pokemon.id}.png`} width='100%'  /></Link>
+                <Link to={`/p/${pokemon.id}`}><img src={`../pokemons/${pokemon.id}.png`} width='100%'  /></Link>
                 <Button type="primary" block={true} onClick={this.handleClick} disabled={pokemonStatus ? false : true}>
                     {pokemonStatus ? 'Catch!' : 'Catched!'}
                 </Button>
-            
-
             </Card>
-            </>
         );
     }
 }
