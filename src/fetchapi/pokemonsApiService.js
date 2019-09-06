@@ -14,7 +14,6 @@ const pokemonsApiService = {
       } else {
         throw new Error(response);
       }
-      return backRequest;
     } catch (err) {
       throw err;
     }
@@ -33,7 +32,6 @@ const pokemonsApiService = {
       } else {
         throw new Error(response);
       }
-      return backRequest;
     } catch (err) {
       throw err;
     }
