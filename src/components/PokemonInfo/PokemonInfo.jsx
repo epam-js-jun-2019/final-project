@@ -1,19 +1,10 @@
 import React from 'react';
 import moment from 'moment';
-import Loader from '../Loader/Loader';
 
 export default function (props) {
   const {
-    id, name, catched, addDefaultSrc, isLoading, isFailed,
+    id, name, catched, addDefaultSrc,
   } = props;
-
-  if (isLoading) {
-    return <Loader />;
-  }
-
-  if (isFailed) {
-    return <h1>Oops... Something went wrong...</h1>;
-  }
 
   return (
     <>
