@@ -1,17 +1,16 @@
 import React from 'react';
-import './error-message.css';
-// import logo from './error-logo.png';
+// import logo from '../error-logo.png';
 
-const ErrorMessage = () => {
+const EmptyMessage = () => {
     return (
         <div className="error-message">
             <img src='error-logo.png'
                  className="error-logo"
                  alt="error-logo" />
             <h2>Oops!</h2>
-            <h2>Something went wrong!</h2>
+            <h2>You haven't catch anything yet!</h2>
         </div>
     )
 }
 
-export default ErrorMessage;
+export default EmptyMessage;

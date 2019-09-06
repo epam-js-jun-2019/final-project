@@ -12,14 +12,11 @@ const AppHeader = (props) => {
                      onClick={props.toCatched}
                      alt="logo" />
             </Link>
-            <Link to="/pokemons/catched">
+            <Link to="/catched">
                 <button className="btn-link to-catched-poks"
                         onClick={props.toCatched}>
                     catched
                 </button>
-            </Link>
-            <Link to="/pokemons/free">
-                <button className="btn-link to-free-poks">free</button>
             </Link>
         </nav>
     )

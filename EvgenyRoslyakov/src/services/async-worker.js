@@ -10,19 +10,6 @@ function AsyncProvider() {
         return await resp.json();
     };
 
-    const postData = async function(body) {
-        console.log('async postData()');
-        const resp = await fetch(`${apiUrl}catchedPokemons`,{
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8'
-            },
-            body: JSON.stringify(body)
-        });
-        const result = await resp.json();
-        console.log(result);
-    }
-
     const getDataById = function(category, id) {
         return getData(`${category}/${id}`);
     };
@@ -34,8 +21,7 @@ function AsyncProvider() {
     return {
         getData,
         getLimitedData,
-        getDataById,
-        postData
+        getDataById
     };
 };
 

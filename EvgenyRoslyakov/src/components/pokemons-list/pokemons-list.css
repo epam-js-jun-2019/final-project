@@ -1,8 +1,30 @@
 .pokemons-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 0;
     margin: 0;
     list-style: none;
+}
+
+.pokemons-list li {
+    width: 30%;
+}
+
+@media (max-width: 590px) {
+    .pokemons-list li {
+        width: 45%;
+    }
+}
+
+@media (max-width: 400px) {
+    .pokemons-list li {
+        width: 70%;
+    }
+}
+
+@media (max-width: 420px) {
+    .pokemons-list li {
+        width: 90%;
+    }
 }

@@ -8,22 +8,21 @@ class PageCard extends Component {
 
         this.state = { pokemon: {} };
 
+        this.componentDidMount = this.componentDidMount.bind(this);
         this.handleOpenCard = this.handleOpenCard.bind(this);
     }
 
     componentDidMount() {
-        const id = this.props.routeProps.match.params.id;
+        const id = this.props.match.params.id;
         const data = this.handleOpenCard(id);
         this.setState({pokemon: data});
     }
 
     handleOpenCard(id) {
-        return LSWorker.readLSData(this.props.page)
-                             .find(item => id == item.id);
+        return LSWorker.readLSDataById(id)
     }
 
     render() {
-        console.log(this.state.pokemon);
         return (
             <PokemonCard data={this.state.pokemon} />
         )

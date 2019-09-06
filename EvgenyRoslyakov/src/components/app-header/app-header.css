@@ -1,8 +1,10 @@
 .app-header {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
     padding: 0.8rem;
-    margin: .5rem;
+    margin: .5rem auto;
 }
 
 .logo {
@@ -35,4 +37,26 @@
 .btn-link:active {
     color: black;
     box-shadow: 0 2px 4px 0 rgba(33, 56, 110, .5);
+}
+
+@media (max-width: 590px) {
+    .app-header {
+        padding: .5rem;
+    }
+    .page-info,
+    .btn-disabled,
+    .btn-link {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .app-header {
+        padding: .4rem;
+    }
+    .page-info,
+    .btn-disabled,
+    .btn-link {
+        font-size: 1.4rem;
+    }
 }
