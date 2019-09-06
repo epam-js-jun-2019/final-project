@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.css';
-import Status from './Status';
 
-const Modal = ({ handleClose, show, source, name, index}) => {
+const Modal = ({ handleClose, show, source, name, index, status}) => {
   const showHideClassName = show ? "modal display-block" : "modal display-none";
 
   return (
@@ -15,7 +14,7 @@ const Modal = ({ handleClose, show, source, name, index}) => {
             <div className="contentText">
               <p>Name: {name}</p>
               <p>id: {index}</p>
-             <Status index = {index} />
+              <p>Status: {status}</p>
             </div>
           </div>
         <button onClick={handleClose} className="closeButton">close</button>
