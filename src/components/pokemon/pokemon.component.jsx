@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import apiRequests from 'FetchAPI/http.lib';
-import restApiLinks from 'FetchAPI/restful-api.links';
 
 import CustomButton from 'Components/custom-button/custom-button.component';
 
@@ -13,34 +11,16 @@ class Pokemon extends React.Component {
     return newWord;
   };
 
-  catchHandler = async pokemon => {
-    const backRequest = await apiRequests.post(
-      restApiLinks.capturedPokemons,
-      pokemon
-    );
-    const { data, response } = await backRequest;
-    if (response.ok) {
-      await apiRequests.delete(`${restApiLinks.freePokemons}/${pokemon.id}`);
-      this.props.catchPokemon(data);
-    }
-  };
-
-  rescueHandler = async pokemon => {
-    const backRequest = await apiRequests.post(
-      restApiLinks.freePokemons,
-      pokemon
-    );
-    const { data, response } = await backRequest;
-    if (response.ok) {
-      await apiRequests.delete(
-        `${restApiLinks.capturedPokemons}/${pokemon.id}`
-      );
-      this.props.setPokemonFree(data);
-    }
-  };
-
   render() {
-    const { id, name, status, captureDate, setCurrentPokemon } = this.props;
+    const {
+      id,
+      name,
+      status,
+      captureDate,
+      setCurrentPokemon,
+      catchPokemonAsync,
+      setPokemonFreeAsync
+    } = this.props;
 
     const captureDateBlock =
       status !== 'free' ? (
@@ -91,7 +71,7 @@ class Pokemon extends React.Component {
         {status === 'free' ? (
           <CustomButton
             onClick={() =>
-              this.catchHandler({
+              catchPokemonAsync({
                 id,
                 name,
                 status: 'captured',
@@ -109,7 +89,7 @@ class Pokemon extends React.Component {
         {status === 'captured' ? (
           <CustomButton
             onClick={() =>
-              this.rescueHandler({
+              setPokemonFreeAsync({
                 id,
                 name,
                 status: 'free',

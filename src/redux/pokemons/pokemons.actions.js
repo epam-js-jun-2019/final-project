@@ -9,8 +9,18 @@ export const getPokemons = payload => ({
   payload
 });
 
+export const catchPokemonAsync = pokemon => ({
+  type: PokemonsActionTypes.CATCH_POKEMON_ASYNC,
+  payload: pokemon
+});
+
 export const catchPokemon = pokemon => ({
   type: PokemonsActionTypes.CATCH_POKEMON,
+  payload: pokemon
+});
+
+export const setPokemonFreeAsync = pokemon => ({
+  type: PokemonsActionTypes.SET_POKEMON_FREE_ASYNC,
   payload: pokemon
 });
 

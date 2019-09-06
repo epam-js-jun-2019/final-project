@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
 import {
-  catchPokemon,
-  setPokemonFree,
+  catchPokemonAsync,
+  setPokemonFreeAsync,
   setCurrentPokemon
 } from 'Redux/pokemons/pokemons.actions';
 import Pokemon from 'Components/pokemon/pokemon.component';
 
 const mapDispatchToProps = dispatch => ({
-  catchPokemon: pokemon => dispatch(catchPokemon(pokemon)),
-  setPokemonFree: pokemon => dispatch(setPokemonFree(pokemon)),
+  catchPokemonAsync: pokemon => dispatch(catchPokemonAsync(pokemon)),
+  setPokemonFreeAsync: pokemon => dispatch(setPokemonFreeAsync(pokemon)),
   setCurrentPokemon: pokemon => dispatch(setCurrentPokemon(pokemon))
 });
 

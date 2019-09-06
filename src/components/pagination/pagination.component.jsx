@@ -8,11 +8,15 @@ const Pagination = ({
   totalPokemons,
   paginate
 }) => {
-  const pageNumbers = [];
+  const getPageNumbersArray = (total, perPage) => {
+    const pageNumbers = [];
+    for (let i = 1; i <= Math.ceil(total / perPage); i++) {
+      pageNumbers.push(i);
+    }
+    return pageNumbers;
+  };
 
-  for (let i = 1; i <= Math.ceil(totalPokemons / pokemonsPerPage); i++) {
-    pageNumbers.push(i);
-  }
+  const pageNumbers = getPageNumbersArray(totalPokemons, pokemonsPerPage);
 
   return (
     <nav className='pagination'>

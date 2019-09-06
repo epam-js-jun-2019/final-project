@@ -2,6 +2,10 @@ import React from 'react';
 import './pokemon-page.styles.scss';
 
 class PokemonPage extends React.Component {
+  capitalizeWord = word => {
+    const newWord = word.split('')[0].toUpperCase() + word.slice(1);
+    return newWord;
+  };
   render() {
     const { currentPokemon } = this.props;
     const { id, name, status, captureDate } = currentPokemon;
@@ -14,9 +18,7 @@ class PokemonPage extends React.Component {
           }}
         />
         <div className='pokemon-info'>
-          <h1 className='pokemon-title'>
-            {name.split('')[0].toUpperCase() + name.slice(1)}
-          </h1>
+          <h1 className='pokemon-title'>{this.capitalizeWord(name)}</h1>
           <img
             className='pokemon-image'
             src={`../../assets/images/pokemons-images/${id}.png`}

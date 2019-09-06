@@ -21,7 +21,7 @@ const apiRequests = {
     }
   },
   put: async (url, payload) => {
-    let response = fetch(url, {
+    let response = await fetch(url, {
       method: 'PUT',
       headers: {
         'Access-Control-Allow-Origin': '*',
@@ -35,7 +35,7 @@ const apiRequests = {
     }
   },
   delete: async url => {
-    let response = fetch(url, {
+    let response = await fetch(url, {
       method: 'DELETE',
       headers: {
         'Access-Control-Allow-Origin': '*',
