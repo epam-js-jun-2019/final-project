@@ -15,7 +15,7 @@ export function  getPokemonName(id){
         })
         .then(response => response.json())
         .then(data => {
-            this.setState({name:data[0].name});
+            this.setState({name:data[0].name, img:data[0].img});
         })
         .catch(error => {
             console.log('Request failed', error);

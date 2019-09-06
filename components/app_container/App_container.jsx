@@ -5,6 +5,7 @@ import './app_container.scss';
 export function App_container(props) {
     const { pokemons, onScroll } = props;
 
+
     const handleScoll = () =>{
         if(window.innerHeight + document.documentElement.scrollTop != document.documentElement.offsetHeight){
             return;
@@ -20,10 +21,10 @@ export function App_container(props) {
 
         return () => window.removeEventListener('scroll', handleScoll);
     }, [])
-
+    
     return (
         <section className="app__container">
-            {pokemons.map(pokemon => <Pockemon_card key={pokemon.id} id={pokemon.id} name={pokemon.name}/>) }    
+            {pokemons.map(pokemon => <Pockemon_card key={pokemon.id} id={pokemon.id} name={pokemon.name} img={pokemon.img}/>) }    
         </section>
     );
 }

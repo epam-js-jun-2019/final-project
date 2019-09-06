@@ -5,7 +5,8 @@ import { Loading } from '../components/Loading/Loading';
 
 export class PokemonPageContainer extends Component{
     state={
-        name: null
+        name: null,
+        img: null
     }
 
 
@@ -21,11 +22,11 @@ export class PokemonPageContainer extends Component{
 
     render(){
         const id = parseInt(this.props.match.params.id);
-        const {name} = this.state;
+        const {name, img} = this.state;
         return (
             <>
                 {!name &&<Loading />}
-                {name &&<Pokemon_page id={id} name={name}/>}
+                {name &&<Pokemon_page id={id} name={name} img={img}/>}
             </>
         )
     }

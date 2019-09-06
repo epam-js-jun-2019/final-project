@@ -27,7 +27,7 @@
     }
   }
   
-  @keyframes fade-in {
+@keyframes fade-in {
     0% {
       opacity: 0;
       transform: scale(0);
@@ -37,7 +37,17 @@
       opacity: 1;
       transform: scale(1);
     }
+}
+
+@media screen and (max-width: 650px){
+  .card{
+    width: 45%;
   }
+  .card__text span{
+      font-size: 25px;
+    }
+}
+
   @media screen and (orientation: portrait){
     .card{
       width: 45%;
@@ -45,4 +55,10 @@
         flex-direction: column;
       }
     }
+}
+
+@media screen and (max-width: 410px){
+  .card{
+    width: 90%;
+  }
 }

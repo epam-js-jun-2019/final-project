@@ -1,48 +1,60 @@
 import React, { Component } from 'react';
 import { App_container } from '../components/app_container/App_container'
 import { Loading } from '../components/Loading/Loading';
-import { loadItem } from '../scripts/loadItem';
-import { getCollectionLength } from '../scripts/getCollectionLength';
+import { Error } from '../components/error/error'
+import {load, loadCount, pokemonsReset} from '../actions/pokemons';
+import {connect} from 'react-redux';
 
-export class MainContainer extends Component{
+class MainUnmounted extends Component{
     
-    state = {
-        pokemons: [],
-        loading: false,
-        page: 1,
-        total: null
-    }
     
     componentDidMount(){
-        this.loadCustomItem();
-        this.getCustomCollectionLength();
-    }
+        const { loadPokemons, loadPokemonsCount } = this.props;
 
-    loadCustomItem=()=>{
-        const { page } = this.state;
-        const request = `http://localhost:3000/pokemons?_page=${page}&_limit=12`;
-        loadItem.bind(this,request)();
-    }
-
-    getCustomCollectionLength=()=>{
-        const request = `http://localhost:3000/pokemons`;
-        getCollectionLength.bind(this, request)();
+        loadPokemons();
+        loadPokemonsCount();
     }
 
     handleScroll = () =>{
-        const { loading, pokemons, total }=this.state;
-        if(!loading && pokemons.length< total){
-            this.loadCustomItem();
+        const { loadPokemons, loading, pokemons, total } = this.props;
+        if(!loading && pokemons.length<total){
+            loadPokemons();
         }
     }
 
     render(){
-        const { pokemons, loading }=this.state;
+        const { pokemons, loading, error }=this.props;
         return (
             <>
                 {pokemons.length>0 && <App_container onScroll={this.handleScroll} pokemons={pokemons} />}
                 {loading && <Loading />}
+                {error && <Error />}
             </>
         )
     }
+
+    componentWillUnmount(){
+        const { pokemonsReset } = this.props;
+
+        pokemonsReset();
+    }
 }
+
+function MapStateToProps(state){
+    return {
+        pokemons: state.pokemons.pokemons,
+        loading: state.pokemons.loading,
+        total: state.pokemons.total,
+        error: state.pokemons.error
+    }
+}
+
+function MapDispatchToProps(dispatch){
+    return{
+        loadPokemons: () => dispatch(load()),
+        loadPokemonsCount: () => dispatch(loadCount()),
+        pokemonsReset: () => dispatch(pokemonsReset()),
+    }
+}
+
+export const MainContainer = connect(MapStateToProps, MapDispatchToProps)(MainUnmounted);

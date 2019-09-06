@@ -1,49 +1,65 @@
 import React, { Component } from 'react';
 import { App_container } from '../components/app_container/App_container'
 import { Loading } from '../components/Loading/Loading';
-import { loadItem } from '../scripts/loadItem';
-import { getCollectionLength } from '../scripts/getCollectionLength';
+import {Empty_component } from '../components/empty_component/empty_component';
+import { Error } from '../components/error/error';
+import {load, loadCount, caughtReset} from '../actions/caught';
+import {connect} from 'react-redux';
 
-export class CaughtContainer extends Component{
-    
-    state = {
-        pokemons: [],
-        loading: false,
-        page: 1,
-        total:null
-    }
-    
+
+export class CaughtUnmounted extends Component{
+        
     componentDidMount(){
-        this.loadCustomItem();
-        this.getCustomCollectionLength();
-    }
+        const { loadCaught } = this.props;
+        const {loadCaughtCount} = this.props;
 
-    loadCustomItem=()=>{
-        const { page } = this.state;
-        const request = `http://localhost:3000/caught_pokemons?_page=${page}&_limit=12&_sort=capture_date&_expamd=pokemons`;
-        loadItem.bind(this,request)();
+        loadCaughtCount();
+        loadCaught();
     }
-
-    getCustomCollectionLength=()=>{
-        const request = `http://localhost:3000/caught_pokemons`;
-        getCollectionLength.bind(this, request)();
-    }
-
 
     handleScroll = () =>{
-        const { loading, pokemons, total }=this.state;
-        if(!loading && pokemons.length<total ){
-            this.loadCustomItem();
+        const { loadCaught, loading, pokemons, total} = this.props;
+        if(!loading && pokemons.length<total){
+            loadCaught();
         }
     }
 
+
     render(){
-        const { pokemons, loading }=this.state;
+        const { pokemons, loading, total, error }=this.props;
+        console.log(error);
         return (
             <>
-                {pokemons.length>0 && <App_container onScroll={this.handleScroll} pokemons={pokemons} />}
+                {!loading && !error && total===0 && <Empty_component />}
+                {total>0 && <App_container onScroll={this.handleScroll} pokemons={pokemons} />}
                 {loading && <Loading />}
+                {error && <Error />}
             </>
         )
     }
+
+    componentWillUnmount(){
+        const { caughtReset } = this.props;
+
+        caughtReset();
+    }
 }
+
+function MapStateToProps(state){
+    return {
+        pokemons: state.caught.caught,
+        loading: state.caught.loading,
+        total: state.caught.total,
+        error: state.caught.error
+    }
+}
+
+function MapDispatchToProps(dispatch){
+    return{
+        loadCaught: () => dispatch(load()),
+        loadCaughtCount: () => dispatch(loadCount()),
+        caughtReset: () => dispatch(caughtReset())
+    }
+}
+
+export const CaughtContainer = connect(MapStateToProps, MapDispatchToProps)(CaughtUnmounted);
