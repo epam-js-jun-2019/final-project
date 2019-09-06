@@ -1,0 +1,24 @@
+.card {
+  margin-bottom: 2%;
+}
+
+@media (min-width: 576px) {
+  .card {
+    width: 49%;
+  }
+  .card:nth-child(odd) {
+    margin-right: 2%;
+  }
+}
+
+@media (min-width: 992px) {
+  .card {
+    width: 32%;
+  }
+  .card:nth-child(odd) {
+    margin-right: 0;
+  }
+  .card:nth-child(3n + 2) {
+    margin: 0 2% 2% 2%;
+  }
+}

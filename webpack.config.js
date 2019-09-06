@@ -10,17 +10,30 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
+                resolve: {
+                    extensions: ['.jsx', '.js']
+                },
                 use: {
                     loader: 'babel-loader'
                 }
+            },
+            {
+                test: /\.css/,
+                resolve: {
+                    extensions: ['.css']
+                },
+                use: ['style-loader', 'css-loader']
             }
         ]
     },
     plugins: [
         new htmlWebpackPlugin({
-            template: './src/index.html'
+            template: './public/index.html',
         }),
-    ]
+    ],
+    devServer: {
+        historyApiFallback: true
+    }
 }
