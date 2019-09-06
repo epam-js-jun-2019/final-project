@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-const Modal = ({ handleClose, show, source, name, index, status}) => {
+const Modal = ({ handleClose, show, source, name, index, status, date}) => {
   const showHideClassName = show ? "modal display-block" : "modal display-none";
 
   return (
@@ -15,6 +15,7 @@ const Modal = ({ handleClose, show, source, name, index, status}) => {
               <p>Name: {name}</p>
               <p>id: {index}</p>
               <p>Status: {status}</p>
+              <p>{date}</p>
             </div>
           </div>
         <button onClick={handleClose} className="closeButton">close</button>

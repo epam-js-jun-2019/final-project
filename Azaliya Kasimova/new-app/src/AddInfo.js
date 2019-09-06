@@ -9,7 +9,8 @@ class AddInfo extends React.Component {
                    pokemonName: this.props.name,
                    imageSrc: this.props.source,
                    pokemonID: this.props.index,
-                   pokemonStatus: ''}
+                   pokemonStatus: '',
+                   dateOfCaught: ''}
     }
   
   showModal = () => {
@@ -17,14 +18,16 @@ class AddInfo extends React.Component {
     fetch('http://localhost:3001/caughtPokemons')
     .then(resp => resp.json())
     .then(data => {
-      let text = ' is not caught'
+      let text = ' not caught';
+      let date = '';
       for (let i = 0; i < data.length; i++) {
         if (data[i].id === this.state.pokemonID) {   
           text = ' caught';
+          date = data[i].date;
            break;
         }
       }
-      this.setState({pokemonStatus: text});
+      this.setState({pokemonStatus: text, dateOfCaught: date});
 })
 
   };
@@ -38,7 +41,7 @@ class AddInfo extends React.Component {
       <main>
          <Modal show={this.state.show} handleClose={this.hideModal} index={this.state.pokemonID}
                 source = {this.state.imageSrc} name = {this.state.pokemonName}
-                status = {this.state.pokemonStatus}/>
+                status = {this.state.pokemonStatus} date = {this.state.dateOfCaught}/>
         <p type="button" onClick={this.showModal} className="addInfo">
           more info
         </p>

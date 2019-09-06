@@ -15,7 +15,7 @@ function Pokemon(props) {
       <div className="text">
         <h3>{props.pokemon.name}</h3>
       </div>
-      <Button index = {props.pokemon.id} />
+      <Button index = {props.pokemon.id} status = {props.status}/>
       <AddInfo name = {props.pokemon.name} index = {props.pokemon.id}
       source =  {process.env.PUBLIC_URL +'/pokemons/' + props.pokemon.id + '.png'}/>
     </div>
@@ -23,11 +23,27 @@ function Pokemon(props) {
 }
 
 class List extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {caughtPokemons: []};
+    fetch('http://localhost:3001/caughtPokemons')
+    .then(resp => resp.json())
+    .then(data => {
+      this.setState({caughtPokemons: data});
+})
+  }
 
   renderPokemons() {
     return data.pokemons.map(pokemon => {
+      let status = false;
+      for (let i = 0; i < this.state.caughtPokemons.length; i++) {
+        if (this.state.caughtPokemons[i].id === pokemon.id) {   
+          status = true;
+            break;
+      }
+    }
       return (
-        <Pokemon pokemon = {pokemon} key = {pokemon.id} />
+        <Pokemon pokemon = {pokemon} key = {pokemon.id} status={status}/>
       )
     }).slice(0, 720)
   }

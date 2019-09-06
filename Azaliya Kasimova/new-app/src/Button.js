@@ -22,7 +22,10 @@ class Button extends React.Component {
     return arr 
   }
   
-  handleClick() {
+  handleClick(e) {
+    e.target.disabled = true;
+    let pokemon = this.makeArray(this.state.pokemonIndex);
+    pokemon['date'] = new Date().toString();
     return fetch('http://localhost:3001/caughtPokemons', {
       method: 'POST', 
       mode: 'cors', 
@@ -33,16 +36,24 @@ class Button extends React.Component {
       },
       redirect: 'follow', 
       referrer: 'no-referrer', 
-      body: JSON.stringify(this.makeArray(this.state.pokemonIndex)),
+      body: JSON.stringify(pokemon),
   })
       .then(response => response.json())
   }
 
   render() {
-    return (
-    <input type="button" value="CATCH" onClick={this.handleClick}>  
-      </input>
-    )
+    if (this.props.status) {
+      return (
+        <input type="button" value="CATCH" onClick={this.handleClick} disabled>  
+          </input>
+        )
+    }
+    else {
+      return (
+        <input type="button" value="CATCH" onClick={this.handleClick}>  
+          </input>
+        )
+    }
   }
 }
 export default Button;
