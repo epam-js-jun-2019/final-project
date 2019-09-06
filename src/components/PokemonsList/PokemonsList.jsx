@@ -3,7 +3,9 @@ import Loader from '../Loader/Loader';
 import './pokemonsList.css';
 
 export default function PokemonsList(props) {
-  const { pokemons, isFailed, isLoading } = props;
+  const {
+    pokemons, isFailed, isLoading, children,
+  } = props;
 
   if (isLoading) {
     return <Loader />;
@@ -18,7 +20,7 @@ export default function PokemonsList(props) {
       <div className="pokemons">
         {pokemons}
       </div>
-      {props.children}
+      {children}
     </>
   );
 }

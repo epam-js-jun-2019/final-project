@@ -14,19 +14,20 @@ const fetchPokemonFailure = () => ({
   type: FETCH_POKEMON.FAILURE,
 });
 
-export const fetchPokemon = (id) => async (dispatch) => {
+const fetchPokemon = (id) => async (dispatch) => {
   dispatch(fetchPokemonRequest());
   try {
-    const pokemon = fetch(`${POKEMONS_URL}/${id}`).then(res => res.json());
-    const catched = fetch(`${CATCHED_POKEMONS_URL}/${id}`).then(res => res.json());
+    const pokemon = fetch(`${POKEMONS_URL}/${id}`).then((res) => res.json());
+    const catched = fetch(`${CATCHED_POKEMONS_URL}/${id}`).then((res) => res.json());
     const data = await Promise.all([pokemon, catched]);
     const result = {
       data: data[0],
       catched: data[1],
-    }
+    };
     dispatch(fetchPokemonSuccess(result));
   } catch (e) {
-    console.log(e);
     dispatch(fetchPokemonFailure(e));
   }
-}
+};
+
+export default fetchPokemon;

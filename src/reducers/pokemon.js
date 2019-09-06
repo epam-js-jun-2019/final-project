@@ -5,7 +5,7 @@ const initState = {
   catched: {},
   isLoading: false,
   isFailed: false,
-}
+};
 
 const pokemon = (state = initState, action) => {
   switch (action.type) {
@@ -28,11 +28,11 @@ const pokemon = (state = initState, action) => {
       return {
         ...state,
         isFailed: true,
-      }
+      };
     }
     default:
       return state;
   }
-}
+};
 
 export default pokemon;

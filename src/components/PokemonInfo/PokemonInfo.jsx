@@ -1,10 +1,11 @@
 import React from 'react';
 import moment from 'moment';
-import Loader from '../../components/Loader/Loader';
-import { ASSETS_URL } from '../../constants/index';
+import Loader from '../Loader/Loader';
 
 export default function (props) {
-  const { id, name, catched, addDefaultSrc, isLoading, isFailed } = props;
+  const {
+    id, name, catched, addDefaultSrc, isLoading, isFailed,
+  } = props;
 
   if (isLoading) {
     return <Loader />;
@@ -37,11 +38,13 @@ export default function (props) {
                 <td>Status</td>
                 <td>{catched ? 'Catched' : 'Free'}</td>
               </tr>
-              {catched &&
+              {catched
+                && (
                 <tr>
                   <td>Catch date</td>
                   <td>{moment(catched.date).format('LLLL')}</td>
-                </tr>}
+                </tr>
+                )}
             </tbody>
           </table>
         </div>

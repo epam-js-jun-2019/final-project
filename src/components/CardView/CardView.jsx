@@ -2,7 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './cardView.css';
 
-export default function ({ id, name, button, addDefaultSrc }) {
+export default function ({
+  id, name, button, addDefaultSrc,
+}) {
   return (
     <div className="card">
       <Link to={`/pokemons/${id}`}>

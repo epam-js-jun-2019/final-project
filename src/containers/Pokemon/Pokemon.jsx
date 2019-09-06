@@ -1,28 +1,27 @@
 import React, { Component } from 'react';
-import PokemonInfo from '../../components/PokemonInfo/PokemonInfo';
 import { isEmpty, upperFirst } from 'lodash';
+import PokemonInfo from '../../components/PokemonInfo/PokemonInfo';
 import { PLACEHOLDER_IMAGE } from '../../constants';
 
 export default class Pokemon extends Component {
+  static addDefaultSrc(e) {
+    e.target.src = PLACEHOLDER_IMAGE;
+  }
+
   constructor(props) {
     super(props);
-    this.addDefaultSrc = this.addDefaultSrc.bind(this);
     this.isCatched = this.isCatched.bind(this);
   }
 
   componentDidMount() {
     const { fetchPokemon } = this.props;
-    const id = this.props.match.params.id;
+    const { match: { params: { id } } } = this.props;
     fetchPokemon(id);
   }
 
   isCatched() {
     const { catched } = this.props;
-    return isEmpty(catched) ? false : true;
-  }
-
-  addDefaultSrc(e) {
-    e.target.src = PLACEHOLDER_IMAGE;
+    return !isEmpty(catched);
   }
 
   render() {
@@ -36,7 +35,7 @@ export default class Pokemon extends Component {
         id={id}
         name={upperFirst(name)}
         catched={this.isCatched() ? catched : false}
-        addDefaultSrc={this.addDefaultSrc}
+        addDefaultSrc={Pokemon.addDefaultSrc}
       />
     );
   }

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Card from '../../containers/Card/index';
-import Pagination from '../../containers/Pagination/Pagination';
+import Card from '../Card/index';
+import Pagination from '../Pagination/Pagination';
 import PokemonsList from '../../components/PokemonsList/PokemonsList';
 
 export default class Pokemons extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.renderPokemons = this.renderPokemons.bind(this);
   }
 
@@ -16,15 +16,22 @@ export default class Pokemons extends Component {
 
     return pokemons
       .slice(from, to)
-      .map(item => <Card key={item.id} {...item} />);
+      .map((item) => <Card key={item.id} id={item.id} name={item.name} />);
   }
 
   render() {
-    const { pokemons, isFailed, isLoading, page, itemsPerPage, switchPage } = this.props;
+    const {
+      pokemons, isFailed, isLoading, page, itemsPerPage, switchPage,
+    } = this.props;
 
     return (
       <PokemonsList isFailed={isFailed} isLoading={isLoading} pokemons={this.renderPokemons()}>
-        <Pagination switchPage={switchPage} page={page} itemsNumber={pokemons.length} itemsPerPage={itemsPerPage} />
+        <Pagination
+          switchPage={switchPage}
+          page={page}
+          itemsNumber={pokemons.length}
+          itemsPerPage={itemsPerPage}
+        />
       </PokemonsList>
     );
   }

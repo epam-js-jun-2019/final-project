@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import { PLACEHOLDER_IMAGE } from '../../constants';
 import { upperFirst } from 'lodash';
+import { PLACEHOLDER_IMAGE } from '../../constants';
 import CardView from '../../components/CardView/CardView';
 
 export default class Card extends Component {
+  static addDefaultSrc(e) {
+    e.target.src = PLACEHOLDER_IMAGE;
+  }
+
   constructor(props) {
     super(props);
     this.handleCatch = this.handleCatch.bind(this);
-    this.addDefaultSrc = this.addDefaultSrc.bind(this);
     this.renderButton = this.renderButton.bind(this);
   }
 
@@ -16,13 +19,9 @@ export default class Card extends Component {
     return () => catchPokemon({ id, date: Date.now() });
   }
 
-  addDefaultSrc(e) {
-    e.target.src = PLACEHOLDER_IMAGE;
-  }
-
   renderButton() {
     const { id, catchedPokemons } = this.props;
-    const isCatched = catchedPokemons.some(e => e.id === id);
+    const isCatched = catchedPokemons.some((e) => e.id === id);
     if (isCatched) {
       return <button type="button" className="btn btn-primary" disabled>Catched</button>;
     }
@@ -37,7 +36,7 @@ export default class Card extends Component {
         id={id}
         name={upperFirst(name)}
         button={this.renderButton()}
-        addDefaultSrc={this.addDefaultSrc}
+        addDefaultSrc={Card.addDefaultSrc}
       />
     );
   }

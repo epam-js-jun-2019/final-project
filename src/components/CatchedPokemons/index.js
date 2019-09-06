@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchPokemons } from '../../actions/fetchPokemons';
+import fetchPokemons from '../../actions/fetchPokemons';
 import { switchPageCatched } from '../../actions/pagination';
 import CatchedPokemons from './CatchedPokemons';
 

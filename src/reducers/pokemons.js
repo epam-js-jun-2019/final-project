@@ -12,14 +12,14 @@ const pokemons = (state = initState, action) => {
   switch (action.type) {
     case FETCH_POKEMONS.REQUEST: {
       return {
-        ...state
+        ...state,
       };
     }
     case FETCH_POKEMONS.SUCCESS: {
-      const { payload: { pokemons } } = action;
+      const { payload: { allPokemons } } = action;
       return {
         ...state,
-        pokemons,
+        pokemons: allPokemons,
         isLoading: false,
       };
     }
@@ -28,18 +28,18 @@ const pokemons = (state = initState, action) => {
         ...state,
         isLoading: false,
         isFailed: true,
-      }
+      };
     }
     case SWITCH_PAGE_POKEMONS: {
       const { payload: { page } } = action;
       return {
         ...state,
         page,
-      }
+      };
     }
     default:
       return state;
   }
-}
+};
 
 export default pokemons;

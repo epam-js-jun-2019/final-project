@@ -1,4 +1,4 @@
-import { catchPokemon } from '../../actions/catchPokemon';
+import catchPokemon from '../../actions/catchPokemon';
 import { connect } from 'react-redux';
 import Card from './Card';
 

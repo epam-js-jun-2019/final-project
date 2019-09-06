@@ -5,10 +5,9 @@ import cn from 'classnames';
 import './navbar.css';
 
 export default function Navbar({ catchedPokemons }) {
-
   const classes = cn({
     'nav-link': true,
-    disabled: isEmpty(catchedPokemons) ? true : false,
+    disabled: !!isEmpty(catchedPokemons),
   });
 
   return (
@@ -16,7 +15,7 @@ export default function Navbar({ catchedPokemons }) {
       <Link to="/" className="navbar-brand">Pokedex</Link>
       <ul className="navbar-nav">
         <li className="nav-item">
-          <NavLink exact={true} to="/" className="nav-link">Home</NavLink>
+          <NavLink exact to="/" className="nav-link">Home</NavLink>
         </li>
         <li className="nav-item">
           <NavLink to="/catched" className={classes}>Catched</NavLink>

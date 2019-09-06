@@ -15,7 +15,7 @@ export default class Pagination extends Component {
     return (e) => {
       e.preventDefault();
       switchPage(num);
-    }
+    };
   }
 
   renderButtons() {
@@ -25,32 +25,38 @@ export default class Pagination extends Component {
     }
     const lastPage = Math.ceil(itemsNumber / itemsPerPage);
 
-    let pageNumbers = [];
+    const pageNumbers = [];
 
-    for (let i = 1; i <= lastPage; i++) {
+    for (let i = 1; i <= lastPage; i += 1) {
       pageNumbers.push(i);
     }
 
     const pageButtons = pageNumbers
-      .filter(num => num > page - PAGINATION_RANGE && num < page + PAGINATION_RANGE)
-      .map(num => {
+      .filter((num) => num > page - PAGINATION_RANGE && num < page + PAGINATION_RANGE)
+      .map((num) => {
         const classes = cn({
           'page-item': true,
-          active: page === num ? true : false,
+          active: page === num,
         });
 
-        return (<li key={num} className={classes}>
-          <a onClick={this.paginate(num)} className="page-link" href="">{num}</a>
-        </li>)
+        return (
+          <li key={num} className={classes}>
+            <button type="button" onClick={this.paginate(num)} className="page-link">{num}</button>
+          </li>
+        );
       });
 
-    const firstPageBtn = (<li className="page-item">
-      <a onClick={this.paginate(1)} className="page-link" href="#">First</a>
-    </li>);
+    const firstPageBtn = (
+      <li className="page-item">
+        <button type="button" onClick={this.paginate(1)} className="page-link">First</button>
+      </li>
+    );
 
-    const lastPageBtn = (<li className="page-item">
-      <a onClick={this.paginate(lastPage)} className="page-link" href="#">Last</a>
-    </li>);
+    const lastPageBtn = (
+      <li className="page-item">
+        <button type="button" onClick={this.paginate(lastPage)} className="page-link">Last</button>
+      </li>
+    );
 
     return (
       <>

@@ -14,23 +14,24 @@ const catchPokemonFailure = () => ({
   type: CATCH_POKEMON.FAILURE,
 });
 
-export const catchPokemon = (data) => async (dispatch) => {
+const catchPokemon = (data) => async (dispatch) => {
   dispatch(catchPokemonRequest());
   try {
-    const response = await fetch( `${CATCHED_POKEMONS_URL}`, {
+    const response = await fetch(`${CATCHED_POKEMONS_URL}`, {
       method: 'POST',
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
       },
       body: JSON.stringify(data),
-    })
+    });
     if (response.status === 201) {
       dispatch(catchPokemonSuccess(data));
     } else {
       dispatch(catchPokemonFailure());
     }
-  } catch(e) {
-    console.log(e);
+  } catch (e) {
     dispatch(catchPokemonFailure());
   }
 };
+
+export default catchPokemon;

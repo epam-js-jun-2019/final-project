@@ -13,13 +13,13 @@ const catched = (state = initState, action) => {
       return {
         ...state,
         catchedPokemons,
-      }
+      };
     }
     case CATCH_POKEMON.SUCCESS: {
       const { payload: { id, date } } = action;
       return {
         ...state,
-        catchedPokemons: [ ...state.catchedPokemons, { id, date } ],
+        catchedPokemons: [...state.catchedPokemons, { id, date }],
       };
     }
     case SWITCH_PAGE_CATCHED: {
@@ -27,11 +27,11 @@ const catched = (state = initState, action) => {
       return {
         ...state,
         page,
-      }
+      };
     }
     default:
       return state;
   }
-}
+};
 
 export default catched;

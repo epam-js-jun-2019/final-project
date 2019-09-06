@@ -9,4 +9,3 @@ export const switchPageCatched = (page) => ({
   type: SWITCH_PAGE_CATCHED,
   payload: { page },
 });
-
