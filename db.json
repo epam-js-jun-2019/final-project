@@ -1,104 +1,130 @@
 {
   "pokemons": [
     {
+      "id": 1,
       "name": "bulbasaur",
-      "id": 1
+      "catched": true,
+      "date": "2-09-2019"
     },
     {
-      "name": "ivysaur",
-      "id": 2
+      "id": 2,
+      "name": "ivysaur"
     },
     {
+      "id": 3,
       "name": "venusaur",
-      "id": 3
+      "catched": true,
+      "date": "2-09-2019"
     },
     {
+      "id": 4,
       "name": "charmander",
-      "id": 4
+      "catched": true,
+      "date": "6-09-2019"
     },
     {
+      "id": 5,
       "name": "charmeleon",
-      "id": 5
+      "catched": true,
+      "date": "5-09-2019"
     },
     {
+      "id": 6,
       "name": "charizard",
-      "id": 6
+      "catched": true,
+      "date": "4-09-2019"
     },
     {
+      "id": 7,
       "name": "squirtle",
-      "id": 7
+      "catched": true,
+      "date": "1-09-2019"
     },
     {
-      "name": "wartortle",
-      "id": 8
+      "id": 8,
+      "name": "wartortle"
     },
     {
+      "id": 9,
       "name": "blastoise",
-      "id": 9
+      "catched": true,
+      "date": "6-09-2019"
     },
     {
+      "id": 10,
       "name": "caterpie",
-      "id": 10
+      "catched": true,
+      "date": "6-09-2019"
     },
     {
-      "name": "metapod",
-      "id": 11
+      "id": 11,
+      "name": "metapod"
     },
     {
-      "name": "butterfree",
-      "id": 12
+      "id": 12,
+      "name": "butterfree"
     },
     {
-      "name": "weedle",
-      "id": 13
+      "id": 13,
+      "name": "weedle"
     },
     {
-      "name": "kakuna",
-      "id": 14
+      "id": 14,
+      "name": "kakuna"
     },
     {
-      "name": "beedrill",
-      "id": 15
+      "id": 15,
+      "name": "beedrill"
     },
     {
-      "name": "pidgey",
-      "id": 16
+      "id": 16,
+      "name": "pidgey"
     },
     {
-      "name": "pidgeotto",
-      "id": 17
+      "id": 17,
+      "name": "pidgeotto"
     },
     {
-      "name": "pidgeot",
-      "id": 18
+      "id": 18,
+      "name": "pidgeot"
     },
     {
-      "name": "rattata",
-      "id": 19
+      "id": 19,
+      "name": "rattata"
     },
     {
+      "id": 20,
       "name": "raticate",
-      "id": 20
+      "catched": true,
+      "date": "3-09-2019"
     },
     {
+      "id": 21,
       "name": "spearow",
-      "id": 21
+      "catched": true,
+      "date": "6-09-2019"
     },
     {
+      "id": 22,
       "name": "fearow",
-      "id": 22
+      "catched": true,
+      "date": "5-09-2019"
     },
     {
+      "id": 23,
       "name": "ekans",
-      "id": 23
+      "catched": true,
+      "date": "4-09-2019"
     },
     {
-      "name": "arbok",
-      "id": 24
+      "id": 24,
+      "name": "arbok"
     },
     {
+      "id": 25,
       "name": "pikachu",
-      "id": 25
+      "catched": true,
+      "date": "5-09-2019"
     },
     {
       "name": "raichu",
@@ -109,8 +135,10 @@
       "id": 27
     },
     {
+      "id": 28,
       "name": "sandslash",
-      "id": 28
+      "catched": true,
+      "date": "3-09-2019"
     },
     {
       "name": "nidoran-f",
@@ -129,8 +157,10 @@
       "id": 32
     },
     {
+      "id": 33,
       "name": "nidorino",
-      "id": 33
+      "catched": true,
+      "date": "5-09-2019"
     },
     {
       "name": "nidoking",
@@ -169,12 +199,16 @@
       "id": 42
     },
     {
+      "id": 43,
       "name": "oddish",
-      "id": 43
+      "catched": true,
+      "date": "5-09-2019"
     },
     {
+      "id": 44,
       "name": "gloom",
-      "id": 44
+      "catched": true,
+      "date": "5-09-2019"
     },
     {
       "name": "vileplume",
