@@ -1,31 +1,41 @@
-import { catchPokemon, setPokemonFree } from 'Redux/pokemons/pokemons.actions';
 import apiRequests from './http.lib';
 import restApiLinks from './restful-api.links';
-import store from 'Redux/store';
 
 const pokemonsApiService = {
   catchPokemon: async pokemon => {
-    const backRequest = await apiRequests.post(
-      restApiLinks.capturedPokemons,
-      pokemon
-    );
-    const { data, response } = backRequest;
-    if (response.ok) {
-      await apiRequests.delete(`${restApiLinks.freePokemons}/${pokemon.id}`);
-      store.dispatch(catchPokemon(data));
+    try {
+      const backRequest = await apiRequests.post(
+        restApiLinks.capturedPokemons,
+        pokemon
+      );
+      const { response } = backRequest;
+      if (response.ok) {
+        await apiRequests.delete(`${restApiLinks.freePokemons}/${pokemon.id}`);
+      } else {
+        throw new Error(response);
+      }
+      return backRequest;
+    } catch (err) {
+      throw err;
     }
   },
   setPokemonFree: async pokemon => {
-    const backRequest = await apiRequests.post(
-      restApiLinks.freePokemons,
-      pokemon
-    );
-    const { data, response } = backRequest;
-    if (response.ok) {
-      await apiRequests.delete(
-        `${restApiLinks.capturedPokemons}/${pokemon.id}`
+    try {
+      const backRequest = await apiRequests.post(
+        restApiLinks.freePokemons,
+        pokemon
       );
-      store.dispatch(setPokemonFree(data));
+      const { response } = backRequest;
+      if (response.ok) {
+        await apiRequests.delete(
+          `${restApiLinks.capturedPokemons}/${pokemon.id}`
+        );
+      } else {
+        throw new Error(response);
+      }
+      return backRequest;
+    } catch (err) {
+      throw err;
     }
   }
 };

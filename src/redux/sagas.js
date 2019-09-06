@@ -3,9 +3,16 @@ import apiRequests from 'FetchAPI/http.lib';
 import restApiLinks from 'FetchAPI/restful-api.links';
 import PokemonsActionTypes from 'Redux/pokemons/pokemons.types';
 import pokemonsApiService from 'FetchAPI/pokemonsApiService';
+import { catchPokemon, setPokemonFree } from 'Redux/pokemons/pokemons.actions';
 
 function* catchPokemonAsync(action) {
-  yield call(pokemonsApiService.catchPokemon, action.payload);
+  const backRequest = yield call(
+    pokemonsApiService.catchPokemon,
+    action.payload
+  );
+  if (backRequest.response.ok) {
+    yield put(catchPokemon(action.payload));
+  }
 }
 
 function* watchCatchPokemonAsync() {
@@ -13,7 +20,13 @@ function* watchCatchPokemonAsync() {
 }
 
 function* setPokemonFreeAsync(action) {
-  yield call(pokemonsApiService.setPokemonFree, action.payload);
+  const backRequest = yield call(
+    pokemonsApiService.setPokemonFree,
+    action.payload
+  );
+  if (backRequest.response.ok) {
+    yield put(setPokemonFree(action.payload));
+  }
 }
 
 function* watchSetPokemonFreeAsync() {
