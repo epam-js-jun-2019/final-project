@@ -1,4 +1,6 @@
-import { FETCH_POKEMONS, SWITCH_PAGE_POKEMONS } from '../actions/actionTypes';
+import { handleActions } from 'redux-actions';
+import { fetchPokemonsRequest, fetchPokemonsSuccess, fetchPokemonsFailure } from '../actions/fetchPokemons';
+import { switchPagePokemons } from '../actions/pagination';
 
 const initState = {
   pokemons: [],
@@ -8,38 +10,30 @@ const initState = {
   itemsPerPage: 24,
 };
 
-const pokemons = (state = initState, action) => {
-  switch (action.type) {
-    case FETCH_POKEMONS.REQUEST: {
-      return {
-        ...state,
-      };
-    }
-    case FETCH_POKEMONS.SUCCESS: {
-      const { payload: { allPokemons } } = action;
-      return {
-        ...state,
-        pokemons: allPokemons,
-        isLoading: false,
-      };
-    }
-    case FETCH_POKEMONS.FAILURE: {
-      return {
-        ...state,
-        isLoading: false,
-        isFailed: true,
-      };
-    }
-    case SWITCH_PAGE_POKEMONS: {
-      const { payload: { page } } = action;
-      return {
-        ...state,
-        page,
-      };
-    }
-    default:
-      return state;
-  }
-};
+const pokemons = handleActions({
+  [fetchPokemonsRequest](state) {
+    return { ...state };
+  },
+  [fetchPokemonsSuccess](state, { payload: { allPokemons } }) {
+    return {
+      ...state,
+      pokemons: allPokemons,
+      isLoading: false,
+    };
+  },
+  [fetchPokemonsFailure](state) {
+    return {
+      ...state,
+      isLoading: false,
+      isFailed: true,
+    };
+  },
+  [switchPagePokemons](state, { payload: { page } }) {
+    return {
+      ...state,
+      page,
+    };
+  },
+}, initState);
 
 export default pokemons;

@@ -1,4 +1,5 @@
-import { FETCH_POKEMON } from '../actions/actionTypes';
+import { handleActions } from 'redux-actions';
+import { fetchPokemonRequest, fetchPokemonSuccess, fetchPokemonFailure } from '../actions/fetchPokemon';
 
 const initState = {
   data: {},
@@ -7,32 +8,27 @@ const initState = {
   isFailed: false,
 };
 
-const pokemon = (state = initState, action) => {
-  switch (action.type) {
-    case FETCH_POKEMON.REQUEST: {
-      return {
-        ...state,
-        isLoading: true,
-      };
-    }
-    case FETCH_POKEMON.SUCCESS: {
-      const { payload: { data, catched } } = action;
-      return {
-        ...state,
-        data,
-        catched,
-        isLoading: false,
-      };
-    }
-    case FETCH_POKEMON.FAILURE: {
-      return {
-        ...state,
-        isFailed: true,
-      };
-    }
-    default:
-      return state;
-  }
-};
+const pokemon = handleActions({
+  [fetchPokemonRequest](state) {
+    return {
+      ...state,
+      isLoading: true,
+    };
+  },
+  [fetchPokemonSuccess](state, { payload: { data, catched } }) {
+    return {
+      ...state,
+      data,
+      catched,
+      isLoading: false,
+    };
+  },
+  [fetchPokemonFailure](state) {
+    return {
+      ...state,
+      isFailed: true,
+    };
+  },
+}, initState);
 
 export default pokemon;

@@ -1,4 +1,7 @@
-import { CATCH_POKEMON, FETCH_POKEMONS, SWITCH_PAGE_CATCHED } from '../actions/actionTypes';
+import { handleActions } from 'redux-actions';
+import { fetchPokemonsSuccess } from '../actions/fetchPokemons';
+import { catchPokemonSuccess } from '../actions/catchPokemon';
+import { switchPageCatched } from '../actions/pagination';
 
 const initState = {
   catchedPokemons: [],
@@ -6,32 +9,25 @@ const initState = {
   itemsPerPage: 12,
 };
 
-const catched = (state = initState, action) => {
-  switch (action.type) {
-    case FETCH_POKEMONS.SUCCESS: {
-      const { payload: { catchedPokemons } } = action;
-      return {
-        ...state,
-        catchedPokemons,
-      };
-    }
-    case CATCH_POKEMON.SUCCESS: {
-      const { payload: { id, date } } = action;
-      return {
-        ...state,
-        catchedPokemons: [...state.catchedPokemons, { id, date }],
-      };
-    }
-    case SWITCH_PAGE_CATCHED: {
-      const { payload: { page } } = action;
-      return {
-        ...state,
-        page,
-      };
-    }
-    default:
-      return state;
-  }
-};
+const catched = handleActions({
+  [fetchPokemonsSuccess](state, { payload: { catchedPokemons } }) {
+    return {
+      ...state,
+      catchedPokemons,
+    };
+  },
+  [catchPokemonSuccess](state, { payload: { id, date } }) {
+    return {
+      ...state,
+      catchedPokemons: [...state.catchedPokemons, { id, date }],
+    };
+  },
+  [switchPageCatched](state, { payload: { page } }) {
+    return {
+      ...state,
+      page,
+    };
+  },
+}, initState);
 
 export default catched;

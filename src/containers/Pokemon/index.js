@@ -1,6 +1,6 @@
 import Pokemon from './Pokemon';
 import { connect } from 'react-redux';
-import fetchPokemon from '../../actions/fetchPokemon';
+import { fetchPokemon } from '../../actions/fetchPokemon';
 
 const mapStateToProps = (state) => {
   const { pokemon: { data, catched, isLoading, isFailed } } = state;

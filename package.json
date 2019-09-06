@@ -7,6 +7,7 @@
     "start": "webpack-dev-server --mode development --open --hot",
     "server": "json-server --watch db.json",
     "lint": "eslint src/**/*.js src/**/*.jsx",
+    "lint-fix": "eslint src/**/*.js src/**/*.jsx --fix",
     "build": "webpack --mode production"
   },
   "repository": {
@@ -29,6 +30,7 @@
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.0.1",
     "redux": "^4.0.4",
+    "redux-actions": "^2.6.5",
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {

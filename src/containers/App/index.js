@@ -1,8 +1,6 @@
 import App from './App';
 import { connect } from 'react-redux';
-import fetchPokemons from '../../actions/fetchPokemons';
-
-console.log(fetchPokemons);
+import { fetchPokemons } from '../../actions/fetchPokemons';
 
 const mapDispatchToProps = {
   fetchPokemons,

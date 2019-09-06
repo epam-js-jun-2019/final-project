@@ -14,7 +14,7 @@ export default class Pagination extends Component {
     const { switchPage } = this.props;
     return (e) => {
       e.preventDefault();
-      switchPage(num);
+      switchPage({ page: num });
     };
   }
 

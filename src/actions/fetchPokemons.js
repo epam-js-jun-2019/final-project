@@ -1,20 +1,11 @@
+import { createAction } from 'redux-actions';
 import { POKEMONS_URL, CATCHED_POKEMONS_URL } from '../constants/index';
-import { FETCH_POKEMONS } from './actionTypes';
 
-const fetchPokemonsRequest = () => ({
-  type: FETCH_POKEMONS.REQUEST,
-});
+export const fetchPokemonsRequest = createAction('FETCH_POKEMONS_REQUEST');
+export const fetchPokemonsSuccess = createAction('FETCH_POKEMONS_SUCCESS');
+export const fetchPokemonsFailure = createAction('FETCH_POKEMONS_FAILURE');
 
-const fetchPokemonsSuccess = (data) => ({
-  type: FETCH_POKEMONS.SUCCESS,
-  payload: data,
-});
-
-const fetchPokemonsFailure = () => ({
-  type: FETCH_POKEMONS.FAILURE,
-});
-
-const fetchPokemons = () => async (dispatch) => {
+export const fetchPokemons = () => async (dispatch) => {
   dispatch(fetchPokemonsRequest());
   try {
     const pokemons = fetch(`${POKEMONS_URL}`).then((res) => res.json());
@@ -29,5 +20,3 @@ const fetchPokemons = () => async (dispatch) => {
     dispatch(fetchPokemonsFailure());
   }
 };
-
-export default fetchPokemons;

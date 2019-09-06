@@ -1,20 +1,11 @@
+import { createAction } from 'redux-actions';
 import { CATCHED_POKEMONS_URL } from '../constants/index';
-import { CATCH_POKEMON } from './actionTypes';
 
-const catchPokemonRequest = () => ({
-  type: CATCH_POKEMON.REQUEST,
-});
+export const catchPokemonRequest = createAction('CATCH_POKEMON_REQUEST');
+export const catchPokemonSuccess = createAction('CATCH_POKEMON_SUCCESS');
+export const catchPokemonFailure = createAction('CATCH_POKEMON_FAILURE');
 
-const catchPokemonSuccess = (data) => ({
-  type: CATCH_POKEMON.SUCCESS,
-  payload: data,
-});
-
-const catchPokemonFailure = () => ({
-  type: CATCH_POKEMON.FAILURE,
-});
-
-const catchPokemon = (data) => async (dispatch) => {
+export const catchPokemon = (data) => async (dispatch) => {
   dispatch(catchPokemonRequest());
   try {
     const response = await fetch(`${CATCHED_POKEMONS_URL}`, {
@@ -33,5 +24,3 @@ const catchPokemon = (data) => async (dispatch) => {
     dispatch(catchPokemonFailure());
   }
 };
-
-export default catchPokemon;
