@@ -5,7 +5,7 @@ import data from './db.json';
 class Button extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {caughtPokemon: this.makeArray(this.props.index),}
+    this.state = {pokemonIndex: this.props.index}
     
     this.handleClick = this.handleClick.bind(this)
     this.makeArray = this.makeArray.bind(this)
@@ -33,9 +33,9 @@ class Button extends React.Component {
       },
       redirect: 'follow', 
       referrer: 'no-referrer', 
-      body: JSON.stringify(this.state.caughtPokemon),
+      body: JSON.stringify(this.makeArray(this.state.pokemonIndex)),
   })
-  .then(response => response.json())
+      .then(response => response.json())
   }
 
   render() {
