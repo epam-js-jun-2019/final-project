@@ -1,11 +1,11 @@
 import React from 'react';
 import './error-message.css';
-// import logo from './error-logo.png';
+import logo from './error-logo.png';
 
 const ErrorMessage = () => {
     return (
         <div className="error-message">
-            <img src='error-logo.png'
+            <img src={logo}
                  className="error-logo"
                  alt="error-logo" />
             <h2>Oops!</h2>

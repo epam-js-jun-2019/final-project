@@ -1,17 +1,12 @@
 function AsyncProvider() {
-    const apiUrl = 'http://localhost:8087/';
+    const API_URL = 'http://localhost:8087/';
 
     const getData = async function(query) {
-        console.log('async getData()');
-        const resp = await fetch(`${apiUrl}/${query}`);
+        const resp = await fetch(`${API_URL}/${query}`);
         if(!resp.ok) {
             throw new Error(`Couldn't fetch; status ${resp.status}`)
         };
         return await resp.json();
-    };
-
-    const getDataById = function(category, id) {
-        return getData(`${category}/${id}`);
     };
 
     const getLimitedData = function(page, limit) {
@@ -20,8 +15,7 @@ function AsyncProvider() {
 
     return {
         getData,
-        getLimitedData,
-        getDataById
+        getLimitedData
     };
 };
 

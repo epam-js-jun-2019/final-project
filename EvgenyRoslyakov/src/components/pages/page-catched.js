@@ -107,8 +107,6 @@ class PageCatched extends Component {
                                             ]} />
                         </React.Fragment>) :
                         null;
-        console.log(this.props.match.params.id);
-        console.log(currentCatchedPage);
         return (
             <div className="pokedex main-container">
                 {content}

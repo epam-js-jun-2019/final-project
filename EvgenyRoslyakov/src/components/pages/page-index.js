@@ -80,7 +80,7 @@ class IndexPage extends Component {
 
     onError(err) {
         this.setState({
-            error: true,
+            isError: true,
             isLoading: false
         })
     }
@@ -108,7 +108,6 @@ class IndexPage extends Component {
     handleCatchClick(e, id) {
         e.stopPropagation();
         const dataToChange = LSWorker.readLSData(this.state.currentPage);
-        console.log('new catched', id);
         const newData = this.updateDataToCatched(dataToChange, id);
         LSWorker.writeLSData(this.state.currentPage, newData);
         this.setViewedContent(this.state.currentPage);
@@ -159,8 +158,6 @@ class IndexPage extends Component {
                                             ]} />
                         </React.Fragment>) : 
                         null;
-        console.log(currentPage);
-        console.log(this.props.match.params.id);
         return (
             <div className="pokedex main-container">
                 {spinner}
