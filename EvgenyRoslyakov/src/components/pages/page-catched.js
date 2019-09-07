@@ -9,7 +9,7 @@ class PageCatched extends Component {
         super(props);
         this.state = {
             viewedCatchedContent: [],
-            currentCatchedPage: 1,
+            currentCatchedPage: Number.parseInt(this.props.match.params.id),
             maxCatchedPage: null,
             previewsPerPage: 18
         };
@@ -64,11 +64,11 @@ class PageCatched extends Component {
     getMaxCatchedPage(itemsNumber) {
         const maxCatchedPage = Math.floor(itemsNumber / this.state.previewsPerPage) + 1;
         this.setState({maxCatchedPage: maxCatchedPage});
+        return maxCatchedPage;
     }
 
     handleShowCatched() {
         const catchedData = this.getCatchedData();
-        console.log('catched number', catchedData.length);
         const maxPage = this.getMaxCatchedPage(catchedData.length);
         if(maxPage <= 1) {
             this.setViewedCatchedContent(catchedData);
@@ -98,7 +98,7 @@ class PageCatched extends Component {
         const content = (this.hasCatchedData()) ?
                         (<React.Fragment>
                             <PokemonsList data={viewedCatchedContent} />
-                            <PaginationBar  page={currentCatchedPage}
+                            <PaginationBar  category={'/catched'}
                                             toNext={this.handleToNextClick}
                                             toPrev={this.handleToPrevClick}
                                             pageInfo={[
@@ -107,6 +107,8 @@ class PageCatched extends Component {
                                             ]} />
                         </React.Fragment>) :
                         null;
+        console.log(this.props.match.params.id);
+        console.log(currentCatchedPage);
         return (
             <div className="pokedex main-container">
                 {content}

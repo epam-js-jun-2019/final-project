@@ -14,11 +14,11 @@ const PokemonPreview = (props) => {
             <div className={`pokemon-preview ${(props.pokemon.catched) ? 'pokemon-preview__catched' : ''}`}>
                 <div className="leftside">
                     {buttonView}
-                    <Link to={`/${props.pokemon.id}`}>
+                    <Link to={`/card/${props.pokemon.id}`}>
                         <h4>{props.pokemon.name}</h4>
                     </Link>
                 </div>
-                <Link to={`/${props.pokemon.id}`}>
+                <Link to={`/card/${props.pokemon.id}`}>
                     <img className="img-miniature"
                          src={props.imgPath}
                          alt="preview pic" />

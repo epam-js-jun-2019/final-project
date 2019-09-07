@@ -12,7 +12,7 @@ const AppHeader = (props) => {
                      onClick={props.toCatched}
                      alt="logo" />
             </Link>
-            <Link to="/catched">
+            <Link to="/catched/page1">
                 <button className="btn-link to-catched-poks"
                         onClick={props.toCatched}>
                     catched

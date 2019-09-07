@@ -11,7 +11,7 @@ class IndexPage extends Component {
         super(props);
         this.state = {
             viewedContent: [],
-            currentPage: 1,
+            currentPage: Number.parseInt(this.props.match.params.id),
             previewsPerPage: 18,
             isLoading: false,
             isError: false
@@ -150,7 +150,7 @@ class IndexPage extends Component {
                         (<React.Fragment>
                             <PokemonsList data={viewedContent}
                                           onCatch={this.handleCatchClick} />
-                            <PaginationBar page={currentPage}
+                            <PaginationBar category={''}
                                            toNext={this.handleToNextClick}
                                            toPrev={this.handleToPrevClick}
                                            pageInfo={[
@@ -159,6 +159,8 @@ class IndexPage extends Component {
                                             ]} />
                         </React.Fragment>) : 
                         null;
+        console.log(currentPage);
+        console.log(this.props.match.params.id);
         return (
             <div className="pokedex main-container">
                 {spinner}

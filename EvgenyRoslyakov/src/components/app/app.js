@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 import AppHeader from '../app-header/app-header';
 import PageIndex from '../pages/page-index';
 import PageCatched from '../pages/page-catched';
@@ -11,9 +11,10 @@ const App = () => {
         <Router>
             <AppHeader />
             <Switch>
-                <Route exact path="/" component={PageIndex} />
-                <Route path="/catched" component={PageCatched} />
-                <Route path="/:id" component={PageCard} />
+                <Redirect exact from="/" to="/page1" />
+                <Route path="/page:id" component={PageIndex} />
+                <Route path="/catched/page:id" component={PageCatched} />
+                <Route path="/card/:id" component={PageCard} />
             </Switch>
         </Router>
     )
