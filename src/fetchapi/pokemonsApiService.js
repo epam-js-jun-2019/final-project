@@ -8,12 +8,13 @@ const pokemonsApiService = {
         restApiLinks.capturedPokemons,
         pokemon
       );
-      const { response } = backRequest;
+      const { response, data } = backRequest;
       if (response.ok) {
         await apiRequests.delete(`${restApiLinks.freePokemons}/${pokemon.id}`);
       } else {
         throw new Error(response);
       }
+      return data;
     } catch (err) {
       throw err;
     }
@@ -24,7 +25,7 @@ const pokemonsApiService = {
         restApiLinks.freePokemons,
         pokemon
       );
-      const { response } = backRequest;
+      const { response, data } = backRequest;
       if (response.ok) {
         await apiRequests.delete(
           `${restApiLinks.capturedPokemons}/${pokemon.id}`
@@ -32,6 +33,7 @@ const pokemonsApiService = {
       } else {
         throw new Error(response);
       }
+      return data;
     } catch (err) {
       throw err;
     }

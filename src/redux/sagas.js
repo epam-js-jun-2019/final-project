@@ -6,8 +6,8 @@ import pokemonsApiService from 'FetchAPI/pokemonsApiService';
 import { catchPokemon, setPokemonFree } from 'Redux/pokemons/pokemons.actions';
 
 function* catchPokemonAsync(action) {
-  yield call(pokemonsApiService.catchPokemon, action.payload);
-  yield put(catchPokemon(action.payload));
+  const data = yield call(pokemonsApiService.catchPokemon, action.payload);
+  yield put(catchPokemon(data));
 }
 
 function* watchCatchPokemonAsync() {
@@ -15,8 +15,8 @@ function* watchCatchPokemonAsync() {
 }
 
 function* setPokemonFreeAsync(action) {
-  yield call(pokemonsApiService.setPokemonFree, action.payload);
-  yield put(setPokemonFree(action.payload));
+  const data = yield call(pokemonsApiService.setPokemonFree, action.payload);
+  yield put(setPokemonFree(data));
 }
 
 function* watchSetPokemonFreeAsync() {
