@@ -10,24 +10,28 @@ const Main = () => {
   const loading = useSelector(state => state.loading);
   const count = useSelector(state => state.catched.length);
   const page = useSelector(state => state.page);
-
+  console.log(loading)
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [loading]);
+  });
 
   function handleScroll() {
     if (
-      window.innerHeight + document.documentElement.scrollTop <
-      document.documentElement.offsetHeight
+      window.innerHeight + document.documentElement.scrollTop + 50 <
+      document.documentElement.offsetHeight  
     )
       return;
-    fetchData();
+
+    if (!loading) {
+      fetchData();
+    }
   }
 
   async function fetchData() {
-    dispatch(loadPokemons());
     const url = `http://localhost:3000/pokemons?_limit=20&_page=${page}`;
+    if (loading) return
+    dispatch(loadPokemons());
     fetch(url)
       .then(data => data.json())
       .then(data => {

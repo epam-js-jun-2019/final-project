@@ -1,7 +1,7 @@
 import { LOADING_START, LOADING_SUCCESS, POKEMON_CATCH } from "./consts";
 
 const initialState = {
-  page: 1,
+  page: 0,
   data: [],
   loading: false,
   error: false,
@@ -13,15 +13,17 @@ const reducer = (state = initialState, action) => {
     case LOADING_START:
       return {
         ...state,
-        loading: true
+        loading: true,
+        page : state.page + 1 
       };
     case LOADING_SUCCESS:
-      return {
+      const newState ={
         ...state,
         loading: false,
-        page : state.page + 1,
         data: [...state.data, ...action.payload]
       };
+      console.log(newState)
+      return newState
     case POKEMON_CATCH:
       const { payload } = action;
       const { data } = state;

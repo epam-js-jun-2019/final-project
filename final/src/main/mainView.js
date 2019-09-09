@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../layout";
 import Loading from "../loading"
 
-const MainView = ({ loading, data, count }) => {
+const MainView = ({ loading, data, count,fetchData }) => {
   return (
     <div className="columns">
       <div className="column"></div>
