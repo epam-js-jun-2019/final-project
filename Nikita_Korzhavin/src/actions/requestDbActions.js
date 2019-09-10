@@ -52,12 +52,6 @@ export const fetchPokemonsIfNeeded = ( page = 1, pageType="pokemons", limit = PA
 }
 
 
-export const checkIfPageInStore = (page, pageType) => (dispatch, getState) => {
-  if (!ifPageInStore(getState(), page, pageType)){
-    fetchPokemonsIfNeeded(page)
-  }
-}
-
 
 
     

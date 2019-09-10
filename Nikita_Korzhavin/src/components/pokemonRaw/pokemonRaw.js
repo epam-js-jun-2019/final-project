@@ -9,8 +9,8 @@ export const PokemonRaw = ( props ) => {
   return (
         <div className="card text-left col-12 col-sm-12 col-md-6 col-xl-3 shadow " >
           <Link to={`/pokemon/${id}`} className="nav-link"  >
-              <img className="card-img" src={ `../../../database/pokemons/${id}.png` } alt={name}/>
-              <h5 className="card-title">{ name }</h5>
+            <img className="card-img" src={ `../../../database/pokemons/${id}.png` } alt={name}/>
+            <h5 className="card-title">{ name }</h5>
           </Link>
           <div className="card-body">
             <p className="card-text">

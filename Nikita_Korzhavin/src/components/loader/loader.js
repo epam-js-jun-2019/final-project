@@ -3,7 +3,7 @@ import React from 'react';
 
 export  const Loader = ( props ) => {
   const  length  = props.length;
-  const isFetching = props.length || false;
+  const isFetching = props.isFetching || false;
 
   return (
     <>
