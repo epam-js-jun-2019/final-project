@@ -9,7 +9,7 @@ class ListCatched extends React.Component {
     constructor() {
         super();
         this.state = {pokemons: []};
-        this.handleClick = this.handleClick.bind(this);
+        this.handleClickMoreButton = this.handleClickMoreButton.bind(this);
     }
     
     componentDidMount() {
@@ -19,7 +19,7 @@ class ListCatched extends React.Component {
         .then(this.setState({ counter: 2 }));
     }
     
-    handleClick() {
+    handleClickMoreButton() {
         fetch(`${dburl}/pokemons?catched=1&_page=${this.state.counter}&_limit=30`)
         .then(response => response.json())
         .then(data => this.setState({ pokemons: this.state.pokemons.concat(data) }))
@@ -55,7 +55,7 @@ class ListCatched extends React.Component {
                     )}  
                     />   
                     <Row type="flex" justify="center">
-                        <Col><Button type="default" onClick={this.handleClick} disabled={ifDisabled}>Load more</Button></Col>
+                        <Col><Button type="default" onClick={this.handleClickMoreButton} disabled={ifDisabled}>Load more</Button></Col>
                     </Row>
             </>   
         );

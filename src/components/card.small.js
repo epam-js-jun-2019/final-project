@@ -7,7 +7,7 @@ class SmallCard extends React.Component {
 
     constructor(props) {
         super(props);
-        this.handleClick = this.handleClick.bind(this);
+        this.handleClickCatchButton = this.handleClickCatchButton.bind(this);
         this.state = {
             active: false
         };
@@ -23,10 +23,7 @@ class SmallCard extends React.Component {
           }
     }
 
-    handleClick() {
-        this.setState(state => ({
-            active: !state.active
-          }));      
+    handleClickCatchButton() {
         const url = `${dburl}/pokemons/${this.props.pokemon.id}`;
         const data = {
             name: this.props.pokemon.name,
@@ -40,19 +37,20 @@ class SmallCard extends React.Component {
             })
         .then(res => res.json())
         .catch(error => console.error('Error:', error));
+        this.setState(state => ({
+            active: !state.active
+          }));  
     }
 
     render () {
         let pokemonStatus = false;
-        if (this.state) {
-            pokemonStatus = this.state.active;
-        }
+        pokemonStatus = this.state.active;
         const { pokemon } = this.props;
     
         return (
             <Card title={`${pokemon.name}`}  style={{ width: '100%', textTransform: 'capitalize' }}>
                 <Link to={`/p/${pokemon.id}`}><img src={`../pokemons/${pokemon.id}.png`} width='100%'  /></Link>
-                <Button type="primary" block={true} onClick={this.handleClick} disabled={pokemonStatus ? false : true}>
+                <Button type="primary" block={true} onClick={this.handleClickCatchButton} disabled={pokemonStatus ? false : true}>
                     {pokemonStatus ? 'Catch!' : 'Catched!'}
                 </Button>
             </Card>

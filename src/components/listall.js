@@ -11,7 +11,7 @@ class ListAll extends React.Component {
         this.state = {pokemons: [],
         vivible: false,
         loading: false};
-        this.handleClick = this.handleClick.bind(this);
+        this.handleClickMoreButton = this.handleClickMoreButton.bind(this);
     }
     
     componentDidMount() {
@@ -21,7 +21,7 @@ class ListAll extends React.Component {
         .then(this.setState({ counter: 2 }));
     }
     
-    handleClick() {
+    handleClickMoreButton() {
         fetch(`${dburl}/pokemons?_page=${this.state.counter}&_limit=30`)
         .then(response => response.json())
         .then(data => this.setState({ pokemons: this.state.pokemons.concat(data) }))
@@ -56,7 +56,7 @@ class ListAll extends React.Component {
                     </List.Item> )}  
             />   
             <Row type="flex" justify="center">
-               <Col> <Button type="default" onClick={this.handleClick} disabled={ifDisabled}>Load more</Button></Col>
+               <Col> <Button type="default" onClick={this.handleClickMoreButton} disabled={ifDisabled}>Load more</Button></Col>
             </Row>
             </>   
         );
