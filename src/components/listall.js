@@ -27,8 +27,18 @@ class ListAll extends React.Component {
         .then(data => this.setState({ pokemons: this.state.pokemons.concat(data) }))
         .then(this.setState({ counter: this.state.counter+1 }));
     }
-    
+  
+
     render () {
+        const gridSettings={
+            gutter: 16,
+            xs: 1,
+            sm: 2,
+            md: 3,
+            lg: 4,
+            xl: 5,
+            xxl: 5,
+        }
         let pokemons = this.state.pokemons;
         let ifDisabled;
         if (pokemons.length < 30) {
@@ -40,15 +50,7 @@ class ListAll extends React.Component {
         return (
             <>
             <List
-                grid={{
-                    gutter: 16,
-                    xs: 1,
-                    sm: 2,
-                    md: 3,
-                    lg: 4,
-                    xl: 5,
-                    xxl: 5,
-                }}
+                grid={gridSettings}
                 dataSource={pokemons}
                 renderItem={pokemon => (
                     <List.Item>
