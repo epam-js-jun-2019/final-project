@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Button } from 'antd';
-import dburl from '../constants/const';
+import * as consts from '../constants/const';
 
 class SmallCard extends React.Component {
 
@@ -24,7 +24,7 @@ class SmallCard extends React.Component {
     }
 
     handleClickCatchButton() {
-        const url = `${dburl}/pokemons/${this.props.pokemon.id}`;
+        const url = `${consts.POKEMON_ROUTES}/${this.props.pokemon.id}`;
         const data = {
             name: this.props.pokemon.name,
             catched: 1,
@@ -49,7 +49,7 @@ class SmallCard extends React.Component {
     
         return (
             <Card title={`${pokemon.name}`}  style={{ width: '100%', textTransform: 'capitalize' }}>
-                <Link to={`/p/${pokemon.id}`}><img src={`../pokemons/${pokemon.id}.png`} width='100%'  /></Link>
+                <Link to={`${consts.PATH_POKEMON}/${pokemon.id}`}><img src={`../pokemons/${pokemon.id}.png`} width='100%'  /></Link>
                 <Button type="primary" block={true} onClick={this.handleClickCatchButton} disabled={pokemonStatus ? false : true}>
                     {pokemonStatus ? 'Catch!' : 'Catched!'}
                 </Button>

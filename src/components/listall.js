@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Row } from 'antd';
 import SmallCard from './card.small';
 import { Button, List } from 'antd';
-import dburl from '../constants/const';
+import * as consts from '../constants/const';
 
 class ListAll extends React.Component {
 
@@ -15,14 +15,14 @@ class ListAll extends React.Component {
     }
     
     componentDidMount() {
-        fetch(`${dburl}/pokemons?_page=1&_limit=30`)
+        fetch(`${consts.POKEMON_ROUTES}?_page=1&_limit=30`)
         .then(response => response.json())
         .then(data => this.setState({ pokemons: data }))
         .then(this.setState({ counter: 2 }));
     }
     
     handleClickMoreButton() {
-        fetch(`${dburl}/pokemons?_page=${this.state.counter}&_limit=30`)
+        fetch(`${consts.POKEMON_ROUTES}?_page=${this.state.counter}&_limit=30`)
         .then(response => response.json())
         .then(data => this.setState({ pokemons: this.state.pokemons.concat(data) }))
         .then(this.setState({ counter: this.state.counter+1 }));

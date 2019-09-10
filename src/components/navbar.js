@@ -1,6 +1,7 @@
 import React from 'react';
 import{ Link } from"react-router-dom";
 import { Layout, Menu } from 'antd';
+import * as consts from '../constants/const';
 const { Header } = Layout;
 
 
@@ -22,9 +23,9 @@ const NavBar = () => {
                 style={{ lineHeight: '64px' }}
             >
               
-                <Menu.Item key="m1"><Link to='/'>Show all </Link></Menu.Item>
-                <Menu.Item key="m2"><Link to='/catched'>Catched </Link></Menu.Item>
-                <Menu.Item key="m3"><Link to='/about'>About </Link></Menu.Item>
+                <Menu.Item key="m1"><Link to={consts.PATH_MAIN}>Show all </Link></Menu.Item>
+                <Menu.Item key="m2"><Link to={consts.PATH_CATCHED}>Catched </Link></Menu.Item>
+                <Menu.Item key="m3"><Link to={consts.PATH_ABOUT}>About </Link></Menu.Item>
             </Menu>
         </Header>
     )
