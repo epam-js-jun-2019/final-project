@@ -1,0 +1,21 @@
+.catch_button{
+    font-family: 'Amatic SC', cursive;
+    font-size: 40px;
+    background-color: #fff;
+    &:disabled{
+        background-color: #e3e3e3;
+        color: #454545;
+    }
+}
+@media screen and (max-width: 900px){
+    .catch_button{
+        font-size: 25px;
+    }
+}
+@media screen and (orientation: portrait){
+    .catch_button{
+        font-size: 30px;
+    }
+}
+
+

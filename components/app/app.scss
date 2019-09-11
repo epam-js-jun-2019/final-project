@@ -1,0 +1,10 @@
+.app{
+    display: grid;
+    grid-template-rows: 60px 1fr;
+}
+
+@media screen and (max-width: 400px){
+    .app{
+        grid-template-rows: 70px 1fr;
+    }
+  }
