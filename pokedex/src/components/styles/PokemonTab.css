@@ -3,7 +3,7 @@
 /*---------------TAB--------------- */
 .tabs__tab {
   text-align: center;
-  margin: 0.2em;
+  margin: 2em;
   margin-bottom: 0.6em;
   width: 200px;
   height: 300px;
@@ -55,6 +55,7 @@
   font-weight: 700; }
 
 .catchbutton:disabled {
+  cursor: not-allowed;
   background-color: #818181; }
 
 /*# sourceMappingURL=PokemonTab.css.map */

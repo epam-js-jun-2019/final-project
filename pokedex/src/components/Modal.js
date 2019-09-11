@@ -21,9 +21,14 @@ export default class Modal extends React.Component{
         .then(data => this.setState({ pokemoncatch: data }));
     }
 
+    pokemonDate = date_ =>{
+        return moment(date_).format('LLL');
+    }
+
     onClose = e => {
         this.props.onClose && this.props.onClose(e);
       };
+      
     render() {
         if(!this.props.show)
         {
@@ -38,7 +43,7 @@ export default class Modal extends React.Component{
                     <div className="modal__info">
                         <h1>{this.state.loaded ? this.props.pokemon.name.charAt(0).toUpperCase() + this.props.pokemon.name.slice(1) : S}</h1>
                         <h2>{this.state.pokemoncatch.caught  ? C : W}</h2>
-                        <span>{this.state.pokemoncatch.caught ? moment(this.state.pokemoncatch.date).format('LLL') : P}</span>
+                        <span>{this.state.pokemoncatch.caught ? this.pokemonDate(this.state.pokemoncatch.date) : P}</span>
                     </div>
                 </div>
             </div>

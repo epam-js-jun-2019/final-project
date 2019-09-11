@@ -25,13 +25,17 @@ export default class InfiniteScrollCatched extends React.Component{
             .then(data => this.setState({ pokemon: data }))
     }
 
+    visiblePokemons = pokemons =>{
+        return pokemons.slice(0, this.state.visible)
+    }
+
     render(){
         return(
             <>
                 {this.state.pokemon? (
                     <div className = "tabs__wrapper"> 
                     <div className = "tabs__items">
-                    { this.state.pokemon.slice(0, this.state.visible).map(pokemon =>(
+                    { this.visiblePokemons(this.state.pokemon).map(pokemon =>(
                         <PokemonTab
                             key = {pokemon.id}
                             pokemon={pokemon}/>

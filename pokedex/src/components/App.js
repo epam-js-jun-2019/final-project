@@ -4,20 +4,16 @@ import Header from './Header'
 import Home from './Home';
 import Catched from './Catched'
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
+import RoutePaths from './Constants'
 
-class App extends React.Component{
-    constructor(){
-        super();
-        this.state = {};
-    }
-
+class App extends React.Component{npm 
     render(){
         return(
             <div className="App">
                 <Router>
                     <Header />
-                    <Route path="/" exact component={Home}/>
-                    <Route path="/catched" component={Catched}/>
+                    <Route path={RoutePaths.HOMEPAGE} exact component={Home}/>
+                    <Route path={RoutePaths.CATCHED} component={Catched}/>
                 </Router>
             </div>
         );
