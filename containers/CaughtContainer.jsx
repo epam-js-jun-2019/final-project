@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { App_container } from '../components/app_container/App_container'
+import { AppContainer } from '../components/AppContainer/AppContainer'
 import { Loading } from '../components/Loading/Loading';
-import {Empty_component } from '../components/empty_component/empty_component';
+import { EmptyComponent } from '../components/EmptyComponent/EmptyComponent';
 import { Error } from '../components/error/error';
 import {load, loadCount, caughtReset} from '../actions/caught';
 import {connect} from 'react-redux';
@@ -27,13 +27,9 @@ export class CaughtUnmounted extends Component{
 
     render(){
         const { pokemons, loading, total, error }=this.props;
-        console.log(error);
         return (
             <>
-                {!loading && !error && total===0 && <Empty_component />}
-                {total>0 && <App_container onScroll={this.handleScroll} pokemons={pokemons} />}
-                {loading && <Loading />}
-                {error && <Error />}
+            {loading? <Loading />: error? <Error />: total? <AppContainer onScroll={this.handleScroll} pokemons={pokemons} /> : <EmptyComponent />}
             </>
         )
     }

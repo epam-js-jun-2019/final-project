@@ -4794,6 +4794,12 @@
       "name": "pikachu",
       "img": "/pokemons/25.png",
       "capture_date": "2019-09-06T15:09:09.437Z"
+    },
+    {
+      "id": 4,
+      "name": "charmander",
+      "img": "/pokemons/4.png",
+      "captureDate": "2019-09-11T20:40:34.308Z"
     }
   ]
 }

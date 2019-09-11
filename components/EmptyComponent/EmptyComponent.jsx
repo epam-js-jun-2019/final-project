@@ -1,7 +1,7 @@
 import React from 'react';
-import './empty_component.scss'
+import './EmptyComponent.scss'
 
-export function Empty_component(){
+export function EmptyComponent(){
     return (
         <div className="empty">
             Ты еще никого не поймал ;(

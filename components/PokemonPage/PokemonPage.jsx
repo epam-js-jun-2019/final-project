@@ -1,10 +1,10 @@
-import React , {Component} from 'react';
+import React from 'react';
 
-import './Pokemon_page.scss';
+import './PokemonPage.scss';
 import { CaptureDateContainer } from '../../containers/CaptureDateContainer';
 import {CatchButtonContainer} from '../../containers/CatchButtonContainer'
 
-export function Pokemon_page(props){
+export function PokemonPage(props){
     const {id, name, img } = props;
     return(
         <section className="pokemon">

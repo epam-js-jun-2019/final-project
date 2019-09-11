@@ -1,17 +1,17 @@
-import './Pockemon_card.scss';
+import './PokemonCard.scss';
 
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { CatchButtonContainer } from '../../containers/CatchButtonContainer'
 
-export function Pockemon_card(props){
+export function PokemonCard(props){
         const { id, name, img } = props;
-        console.log(img);
+        const pokemonPage = `/pokemon/${id}`;
         return (
                 <section className="card">
-                    <Link to={`/pokemon/${id}`}><img className="card__image" src={img}/></Link>
+                    <Link to={pokemonPage}><img className="card__image" src={img}/></Link>
                     <div className="card__text">
-                        <Link to={`/pokemon/${id}`}><span>{ name }</span></Link>
+                        <Link to={pokemonPage}><span>{ name }</span></Link>
                         <CatchButtonContainer id={id} name={name} img={img}/>
                     </div>
                 </section>

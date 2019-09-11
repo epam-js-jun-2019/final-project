@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {getCaptureDate} from '../scripts/getCaptureDate'
-import { Capture_date_view } from '../components/Capture_date_view/Capture_date_view';
+import {pokemonsService} from '../scripts/pokemonsService'
+import { CaptureDateView } from '../components/CaptureDateView/CaptureDateView';
 import { getDate } from '../scripts/getDate';
 
 export class CaptureDateContainer extends Component{
@@ -8,20 +8,24 @@ export class CaptureDateContainer extends Component{
         captureDate: null
     }
 
-    getCustomCaptureDate = () =>{
-        const { id } = this.props;
-        getCaptureDate.bind(this,id)();
-    }
-
     componentDidMount(){
-        this.getCustomCaptureDate();
+        const { id } = this.props;
+        pokemonsService.getCaughtPokemon(id)
+        .then(data => {
+            if (data.length!=0){
+                this.setState({captureDate: data[0].capture_date});
+            }
+        })
+        .catch(error => {
+            console.log('Request failed', error);
+        });
     }
 
     render(){
         const { captureDate } = this.state;
         return(
             <>
-                {captureDate && <Capture_date_view capture_date={getDate(captureDate)}/>}
+                {captureDate && <CaptureDateView capture_date={getDate(captureDate)}/>}
             </>
         )
     }

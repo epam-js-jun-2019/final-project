@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function Capture_date_view(props){
+export function CaptureDateView(props){
     var { capture_date }=props;
     return(
         <span>

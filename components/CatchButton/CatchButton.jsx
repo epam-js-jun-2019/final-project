@@ -1,8 +1,8 @@
-import './Catch_button.scss';
+import './CatchButton.scss';
 
-import React, { Component } from 'react';
+import React from 'react';
 
-export function Catch_button(props){
+export function CatchButton(props){
     const {onClick, disable, text} = props;
 
     return(

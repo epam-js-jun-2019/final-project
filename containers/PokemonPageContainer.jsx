@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import {Pokemon_page} from '../components/Pokemon_page/Pokemon_page'
-import { getPokemonName } from '../scripts/getPokemonName';
+import { PokemonPage } from '../components/PokemonPage/PokemonPage';
 import { Loading } from '../components/Loading/Loading';
+import { pokemonsService } from '../scripts/pokemonsService';
 
 export class PokemonPageContainer extends Component{
     state={
@@ -10,13 +10,15 @@ export class PokemonPageContainer extends Component{
     }
 
 
-    getCustomPokemonName = () =>{
-        const id = this.props.match.params.id;
-        getPokemonName.bind(this,id)();
-    }
-
     componentDidMount(){
-        this.getCustomPokemonName();
+        const id = this.props.match.params.id;
+        pokemonsService.getPokemon(id)
+        .then(data => {
+            this.setState({name:data[0].name, img:data[0].img});
+        })
+        .catch(error => {
+            console.log('Request failed', error);
+        });
     }
 
 
@@ -25,8 +27,7 @@ export class PokemonPageContainer extends Component{
         const {name, img} = this.state;
         return (
             <>
-                {!name &&<Loading />}
-                {name &&<Pokemon_page id={id} name={name} img={img}/>}
+                {name&&img? <PokemonPage id={id} name={name} img={img}/> : <Loading />}
             </>
         )
     }

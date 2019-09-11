@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { App_container } from '../components/app_container/App_container'
+import { AppContainer } from '../components/AppContainer/AppContainer'
 import { Loading } from '../components/Loading/Loading';
 import { Error } from '../components/error/error'
 import {load, loadCount, pokemonsReset} from '../actions/pokemons';
@@ -26,9 +26,9 @@ class MainUnmounted extends Component{
         const { pokemons, loading, error }=this.props;
         return (
             <>
-                {pokemons.length>0 && <App_container onScroll={this.handleScroll} pokemons={pokemons} />}
-                {loading && <Loading />}
-                {error && <Error />}
+                { 
+                    loading? <Loading /> : error? <Error /> : <AppContainer onScroll={this.handleScroll} pokemons={pokemons} />
+                }
             </>
         )
     }

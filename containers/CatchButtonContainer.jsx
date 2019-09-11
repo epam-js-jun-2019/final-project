@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Catch_button } from '../components/Catch_button/Catch_button';
-import {catchPokemon} from '../scripts/catchPokemon'
+import {pokemonsService} from '../scripts/pokemonsService';
+import { CatchButton } from '../components/CatchButton/CatchButton';
 
 export class CatchButtonContainer extends Component{
 
@@ -10,11 +10,7 @@ export class CatchButtonContainer extends Component{
 
     componentDidMount(){
         const {id} = this.props;
-        fetch(`http://localhost:3000/caught_pokemons/?id=${id}`, {
-        headers: {
-        'Content-Type': 'application/json',
-        }})
-        .then(response => response.json())
+        pokemonsService.getCaughtPokemon(id)
         .then(data => {
             if (data.length!=0){
                 this.setState({caught:true})
@@ -29,23 +25,24 @@ export class CatchButtonContainer extends Component{
     }
 
     handleCatchButton =()=>{
-        this.catchCustomPokemon();
-    }
-
-    catchCustomPokemon = () =>{
         const { id, name, img }=this.props;
-        catchPokemon.bind(this, id, name, img)();
+        pokemonsService.catchPokemon(id,name,img)
+        .then(data => {
+            this.setState({caught:true})
+        })
+        .catch(error => {
+            console.log(error)
+        });
     }
 
     render(){
         const {caught} = this.state;
+        let buttonText = '';
+        caught? buttonText='Пойман' : buttonText='Поймать';
         if (caught===null) return (<></>)
         else return(
-                <>
-                    {caught && <Catch_button onClick={this.handleCatchButton} disable={caught} text='Пойман' />}
-                    {!caught && <Catch_button onClick={this.handleCatchButton} disable={caught} text='Поймать' />}
-                </>
-            )
+            <CatchButton onClick={this.handleCatchButton} disable={caught} text={buttonText} />
+        )
     }
 
 }

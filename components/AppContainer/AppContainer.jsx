@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import { Pockemon_card } from '../pockemon_card/Pockemon_card';
-import './app_container.scss';
+import { PokemonCard } from '../PokemonCard/PokemonCard';
+import './AppContainer.scss';
 
-export function App_container(props) {
+export function AppContainer(props) {
     const { pokemons, onScroll } = props;
 
 
@@ -24,7 +24,7 @@ export function App_container(props) {
     
     return (
         <section className="app__container">
-            {pokemons.map(pokemon => <Pockemon_card key={pokemon.id} id={pokemon.id} name={pokemon.name} img={pokemon.img}/>) }    
+            {pokemons.map(pokemon => <PokemonCard key={pokemon.id} id={pokemon.id} name={pokemon.name} img={pokemon.img}/>) }    
         </section>
     );
 }
