@@ -1,4 +1,4 @@
-const LSWorker = () => {
+const LSService = () => {
 
     function readLSData(key) {
         const result = localStorage.getItem(key);
@@ -7,11 +7,12 @@ const LSWorker = () => {
 
     function readLSDataById(id) {
         const keys = readLSKeys();
+        const numId = Number.parseInt(id);
         let data = [],
             result = -1;
         for(let key of keys) {
             data = readLSData(key);
-            result = data.find(item => id == item.id);
+            result = data.find(item => numId === item.id);
             if (result) break;
         }
         return result;
@@ -19,6 +20,7 @@ const LSWorker = () => {
 
     function writeLSData(newKey, data) {
         localStorage.setItem(newKey, JSON.stringify(data));
+        return data;
     }
 
     function isInLS(key) {
@@ -27,7 +29,7 @@ const LSWorker = () => {
 
     function readLSKeys() {
         const keys = Object.keys(localStorage);
-        return keys.filter(key => (Number.parseInt(key) || key == 'catched'))
+        return keys.filter(key => (Number.parseInt(key) || key === 'catched'))
     }
 
     return {
@@ -39,4 +41,4 @@ const LSWorker = () => {
     }
 }
 
-export default LSWorker();
+export default LSService();

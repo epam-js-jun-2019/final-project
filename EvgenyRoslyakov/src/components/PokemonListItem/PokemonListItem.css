@@ -14,9 +14,9 @@
     justify-content: space-around;
     align-items: center;
     box-sizing: border-box;
+    width: 100%;
     padding: .5rem 1rem;
     margin-bottom: .5rem;
-    width: 100%;
     border: 2px solid #659EAE;
     border-radius: 10px;
     cursor: pointer;
@@ -34,10 +34,12 @@
     display: inline-block;
     padding: .5rem 1rem;
     margin: .25rem;
-    vertical-align: middle;
+    font-size: 1rem;
     color: #90AAB1;
+    vertical-align: middle; 
     border: 2px solid #90AAB1;
     border-radius: 20px;
+    line-height: 1;
 }
 
 @media (max-width: 590px) {

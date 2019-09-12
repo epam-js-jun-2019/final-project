@@ -1,5 +1,6 @@
 function AsyncProvider() {
-    const API_URL = 'http://localhost:8087/';
+    const API_URL = 'http://localhost:8087';
+    const NUM_OF_PREVIEWS = 18;
 
     const getData = async function(query) {
         const resp = await fetch(`${API_URL}/${query}`);
@@ -9,8 +10,9 @@ function AsyncProvider() {
         return await resp.json();
     };
 
-    const getLimitedData = function(page, limit) {
-        return getData(`pokemons?_page=${page}&_limit=${limit}`);
+    const getLimitedData = async function(page) {
+        const res = await getData(`pokemons?_page=${page}&_limit=${NUM_OF_PREVIEWS}`);
+        return res;
     };
 
     return {
