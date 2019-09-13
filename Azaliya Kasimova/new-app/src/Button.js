@@ -5,7 +5,6 @@ import data from './db.json';
 class Button extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {pokemonIndex: this.props.index}
     
     this.handleClick = this.handleClick.bind(this)
     this.makeArray = this.makeArray.bind(this)
@@ -24,7 +23,7 @@ class Button extends React.Component {
   
   handleClick(e) {
     e.target.disabled = true;
-    let pokemon = this.makeArray(this.state.pokemonIndex);
+    let pokemon = this.makeArray(this.props.index);
     pokemon['date'] = new Date().toString();
     return fetch('http://localhost:3001/caughtPokemons', {
       method: 'POST', 
