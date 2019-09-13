@@ -18,6 +18,7 @@ const PaginationBar = (props) => {
     const decPath = () => {
         return (currentPage <= 1) ? maxPage : currentPage - 1;
     };
+    
     const NEXT_PAGE = `/${category}/page${incPath()}`;
     const PREV_PAGE = `/${category}/page${decPath()}`;
 
@@ -56,7 +57,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        setPageNumber: (data) => dispatch(setPageNumber(data))
+        setPageNumber: data => dispatch(setPageNumber(data))
     }
 }
 

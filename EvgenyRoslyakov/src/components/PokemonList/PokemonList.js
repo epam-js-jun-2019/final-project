@@ -13,6 +13,7 @@ const PokemonList = ({ data }) => {
                 )
             });
     };
+    
     return (
         <ul className="pokemons-list">
             {mapHelper(data)}

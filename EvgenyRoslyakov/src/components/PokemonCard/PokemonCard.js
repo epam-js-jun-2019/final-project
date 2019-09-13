@@ -2,12 +2,14 @@ import React from 'react';
 import './PokemonCard.css';
 
 const PokemonCard = ({ data }) => {
+
     function convertDate(stamp) {
         const dateObj = new Date(stamp);
         const date = `${dateObj.getFullYear()}.${dateObj.getMonth()}.${dateObj.getDate()}`;
         const time = `${dateObj.getHours()}:${dateObj.getMinutes()}`;
         return `${date} ${time}`;
     };
+    
     const IMG_SRC = `/pokemons/${data.id}.png`;
     const classValue = (data.catched) ?
                         'pokemon-card pokemon-card__catched' :

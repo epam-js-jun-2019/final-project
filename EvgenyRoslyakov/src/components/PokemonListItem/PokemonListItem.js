@@ -53,7 +53,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        updateViewedContent: (currentPage) => {
+        updateViewedContent: currentPage => {
             return dispatch(setLoadedPokemons(currentPage));
         }
     }

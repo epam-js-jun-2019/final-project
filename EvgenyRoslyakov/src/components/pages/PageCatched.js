@@ -7,8 +7,8 @@ import EmptyMessage from '../EmptyMessage/EmptyMessage';
 import PokemonService from '../../services/PokemonService';
 
 const PageCatched = (props) => {
-
-    const { viewedContent, currentPage, category, setLoadedPokemons } = props;
+    const { viewedContent, currentPage,
+            category, setLoadedPokemons } = props;
 
     useEffect(() => {
         if(category === 'catched') {
@@ -46,7 +46,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        setLoadedPokemons: (data) => dispatch(setLoadedPokemons(data))
+        setLoadedPokemons: data => dispatch(setLoadedPokemons(data))
     }
 }
 

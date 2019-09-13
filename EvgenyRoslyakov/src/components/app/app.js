@@ -20,7 +20,7 @@ const App = () => {
                     <Route path={routes.CATCHED_PAGE} component={PageCatched} />
                     <Route path={routes.CARD_PAGE} component={PageCard} />
                 </Switch>
-                </Router>
+            </Router>
         </Provider>
     )
 }

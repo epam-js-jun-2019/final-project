@@ -27,22 +27,20 @@ const IndexPage = (props) => {
         } else {
             setLoading(true);
             AsyncProvider.getLimitedData(page)
-                        .then(response => LSService.writeLSData(page, response))
-                        .then(content => {
-                            setLoading(false);
-                            props.setLoadedPokemons(content);
-                        })
-                        .catch(err => {
-                            setError(true);
-                            setLoading(false);
-                            console.log(err);
-                        })
+                .then(response => LSService.writeLSData(page, response))
+                .then(content => {
+                    setLoading(false);
+                    props.setLoadedPokemons(content);
+                })
+                .catch(err => {
+                    setError(true);
+                    setLoading(false);
+                    console.log(err);
+                })
         }
     };
         
-    const errorMessage = (isError && !isLoading) ?
-                         <ErrorMessage /> :
-                         null;
+    const errorMessage = (isError && !isLoading) ? <ErrorMessage /> : null;
     const spinner = isLoading ? <Spinner /> : null;
     const content = !(isError || isLoading) ?
                     (<React.Fragment>
@@ -69,7 +67,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        setLoadedPokemons: (data) => dispatch(setLoadedPokemons(data))
+        setLoadedPokemons: data => dispatch(setLoadedPokemons(data))
     }
 };
 

@@ -1,7 +1,6 @@
 import LSService from './LocalstorageService';
 
 const PokemonService = () => {
-
     const PREVIEWS_PER_PAGE = 18;
 
     function getMaxPage(itemsNumber) {
@@ -46,8 +45,7 @@ const PokemonService = () => {
     }
 
     function calcViewedData(data, page) {
-        const calcViewedData = data.slice((page - 1) * PREVIEWS_PER_PAGE, PREVIEWS_PER_PAGE * page);
-        return calcViewedData;
+        return data.slice((page - 1) * PREVIEWS_PER_PAGE, PREVIEWS_PER_PAGE * page);
     }
 
     return {
