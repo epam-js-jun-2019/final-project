@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-const Modal = ({ handleClose, show, source, name, index, status, date}) => {
+function Modal ({ handleClose, show, source, name, index, status, date}) {
   const showHideClassName = show ? "modal display-block" : "modal display-none";
 
   return (

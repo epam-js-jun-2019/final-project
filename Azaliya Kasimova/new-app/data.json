@@ -1,19 +1,5 @@
 {
   "caughtPokemons": [
-    {
-      "name": "jigglypuff",
-      "id": 39,
-      "date": "Fri Sep 06 2019 22:18:24 GMT+0300 (Москва, стандартное время)"
-    },
-    {
-      "name": "wigglytuff",
-      "id": 40,
-      "date": "Fri Sep 06 2019 22:18:25 GMT+0300 (Москва, стандартное время)"
-    },
-    {
-      "name": "igglybuff",
-      "id": 174,
-      "date": "Fri Sep 06 2019 22:19:30 GMT+0300 (Москва, стандартное время)"
-    }
+    
   ]
 }
