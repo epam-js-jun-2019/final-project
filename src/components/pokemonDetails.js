@@ -7,7 +7,7 @@ class PokemonDetails extends Component {
     super(props);
     this.state = {
       pokemon: '',
-      catched: false
+      caught: false
     };
   }
 
@@ -16,7 +16,7 @@ class PokemonDetails extends Component {
     fetch(url)
       .then(response => response.json())
         .then(json => {this.setState({pokemon: json}); 
-                      this.setState({catched:json.catched});}
+                      this.setState({caught:json.caught});}
         )
   }
 
@@ -29,7 +29,7 @@ class PokemonDetails extends Component {
       body: JSON.stringify({
         id: POKEMON_ID,
         name: POKEMON_NAME,
-        catched: true,
+        caught: true,
         date: today
       }),
       headers: {
@@ -38,19 +38,20 @@ class PokemonDetails extends Component {
     })
       .then(response => response.json())
         .then(json =>{ console.log(json);
-            this.setState({catched:true});}
+            this.setState({caught:true});}
         )
   }
+  
   render(){
     return(
-      <Container className="d-flex flex-row justify-content-center">
+      <Container className="d-flex flex-row justify-content-center p-3">
         <Card style={{ width: '30rem' }}>
-          <Card.Title>#{this.props.match.params.id} 
+          <Card.Title className="p-3">#{this.props.match.params.id} 
             <h2 className="top-name center-block text-center">{this.state.pokemon.name}</h2>
           </Card.Title>
           <Card.Img variant="top" src={`http://localhost:3001/images/img/${this.props.match.params.id}.png`}/>
-          <Card.Subtitle className="text-muted center-block text-center ">{this.state.pokemon.catched ? 'Catched' : 'Not catched'} {this.state.pokemon.date}</Card.Subtitle>
-          <Button  disabled={this.state.catched} onClick={()=>{this.CatchPokemon(this.state.pokemon.id, this.state.pokemon.name)}} variant="primary">Catch</Button>
+          <Card.Subtitle className="text-muted center-block text-center p-3">{this.state.pokemon.caught ? 'Caught' : 'Not caught'} {this.state.pokemon.date}</Card.Subtitle>
+          <Button  disabled={this.state.caught} onClick={()=>{this.CatchPokemon(this.state.pokemon.id, this.state.pokemon.name)}} variant="primary">Catch</Button>
         </Card>   
       </Container>      
     )

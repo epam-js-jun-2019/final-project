@@ -17,7 +17,7 @@ class PokemonsList extends Component {
 
   componentDidMount(){
     this.setState({loading:true})
-    let url = 'http://localhost:3000/pokemons?catched=true';
+    let url = 'http://localhost:3000/pokemons?caught=true';
     fetch(url, {signal: this.abortController.signal
     })
       .then(response => response.json())

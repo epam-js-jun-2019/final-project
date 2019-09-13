@@ -1,12 +1,9 @@
 import React, { Component } from "react";
 import PokemonCard from "./pokemonCard";
-import PokemonDetails from "./pokemonDetails"
 import Button from 'react-bootstrap/Button';
-import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import PageNotFound from './pageNotFound'
-import Loader from './loader';
+import Loader from './loader'
 
-class PokemonsList extends Component {
+class CaughtPokemons extends Component {
   constructor(props){
     super(props);
     this.abortController = new AbortController();
@@ -21,29 +18,23 @@ class PokemonsList extends Component {
 
 componentDidMount(){ 
   this.setState({loading:true})
-  let url = 'http://localhost:3000/pokemons';
+  let url = 'http://localhost:3000/pokemons?caught=true';
   fetch(url,{signal: this.abortController.signal})
     .then(response => response.json())
       .then(data=> {data = data.map((pokemon) => {return pokemon}); 
-        this.setState({pokemons: data, loading:false})}
-      );
+        this.setState({pokemons: data, loading:false});
+        ;}
+      ); 
 }
 
 componentWillUnmount(){
   this.abortController.abort();
 } 
 
-checkMorePokemons(){
-  if (this.state.cards+15 >= this.state.pokemons.length){
-    this.setState({morePokemons:false})
-  }
-}
-
 loadMore(){
-  this.checkMorePokemons();
   this.setState((prev) => {
     return {cards: prev.cards + 15};
-  });
+  });  
 }
   
   render(){
@@ -62,12 +53,10 @@ loadMore(){
                 )})
               }
             </div>
-            <Button onClick={this.loadMore} variant="primary" disabled={!(this.state.morePokemons)}  style={{ width: "10rem" }} className="align-self-center m-4">Load more</Button></div>  
+            <Button onClick={this.loadMore} disabled={!(this.state.morePokemons)} variant="primary" style={{ width: "10rem" }} className="align-self-center m-4">Load more</Button></div>  
       )
     }
   }
 }
 
-        
-
-export default PokemonsList;
+export default CaughtPokemons;

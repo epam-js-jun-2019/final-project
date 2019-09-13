@@ -8,24 +8,24 @@ class PokemonsCard extends Component {
       super(props);
       this.state = {
         pokemon: '',
-        catched: false,
+        caught: false,
       };
     }
     
     componentDidMount(){
-      this.setState({catched:this.props.pokemon.catched});
+      this.setState({caught:this.props.pokemon.caught});
     }
     
-    CatchPokemon(POKEMON_ID, POKEMON_NAME){
-      let url = 'http://localhost:3000/pokemons/'+POKEMON_ID;
+    CatchPokemon(pokemonId, pokemonName){
+      let url = 'http://localhost:3000/pokemons/'+pokemonId;
       let date = new Date();
       let today = ([date.getDate(), ('0'+(date.getMonth()+1)), date.getFullYear()]).join('-');
         fetch(url, {
           method: 'PUT',
           body: JSON.stringify({
-            id: POKEMON_ID,
-            name: POKEMON_NAME,
-            catched: true,
+            id: pokemonId,
+            name: pokemonName,
+            caught: true,
             date: today
           }),
           headers: {
@@ -34,20 +34,21 @@ class PokemonsCard extends Component {
         })
           .then(response => response.json())
            .then(json =>{ console.log(json);
-              this.setState({catched:true});
+              this.setState({caught:true});
             })
     }
     render(){
       let pokemon  = this.props.pokemon; 
+      let status = this.state.caught? "Caught!":"Catch";
         return(
-          <Card style={{ width: '15rem' }}  id={pokemon.id}>
+          <Card style={{ width: "15rem" }} id={pokemon.id} className="m-2">
             <Card.Title className="top-name center-block text-center">
               {(pokemon.name).toUpperCase()}
             </Card.Title>
             <Link to={`pokemons/${pokemon.id}`}>
               <Card.Img variant="top" src={`images/img/${pokemon.id}.png`}/>
             </Link>
-            <Button  disabled={this.state.catched} onClick={()=>{this.CatchPokemon(pokemon.id,pokemon.name)}} variant="primary">Catch</Button>
+            <Button  disabled={this.state.caught} onClick={()=>{this.CatchPokemon(pokemon.id,pokemon.name)}} variant="primary">{status}</Button>
           </Card>
         )
     }
