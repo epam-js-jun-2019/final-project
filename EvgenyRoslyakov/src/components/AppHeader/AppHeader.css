@@ -40,23 +40,13 @@
 }
 
 @media (max-width: 590px) {
-    .app-header {
-        padding: .5rem;
-    }
-    .page-info,
-    .btn-disabled,
-    .btn-link {
-        font-size: 1.2rem;
+    .logo {
+        margin-right: 1rem;
     }
 }
 
-@media (max-width: 420px) {
-    .app-header {
-        padding: .4rem;
-    }
-    .page-info,
-    .btn-disabled,
-    .btn-link {
-        font-size: 1.4rem;
+@media (max-width: 236px) {
+    .logo {
+        margin-right: 0;
     }
 }

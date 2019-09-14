@@ -27,3 +27,8 @@ h4 {
     width: 100%;
 }
 
+@media (max-width: 280px) {
+    .pokemon-card {
+        width: 80%;
+    }
+}
