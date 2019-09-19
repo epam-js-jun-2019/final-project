@@ -6,9 +6,6 @@ class AddInfo extends React.Component {
   constructor (props) {
     super(props)
     this.state = { show: false,
-                   pokemonName: this.props.name,
-                   imageSrc: this.props.source,
-                   pokemonID: this.props.index,
                    pokemonStatus: '',
                    dateOfCaught: ''}
     }
@@ -21,7 +18,7 @@ class AddInfo extends React.Component {
       let text = ' not caught';
       let date = '';
       for (let i = 0; i < data.length; i++) {
-        if (data[i].id === this.state.pokemonID) {   
+        if (data[i].id === this.props.index) {   
           text = ' caught';
           date = data[i].date;
            break;
@@ -39,8 +36,8 @@ class AddInfo extends React.Component {
   render() {
     return (
       <main>
-         <Modal show={this.state.show} handleClose={this.hideModal} index={this.state.pokemonID}
-                source = {this.state.imageSrc} name = {this.state.pokemonName}
+         <Modal show={this.state.show} handleClose={this.hideModal} index={this.props.index}
+                source = {this.props.source} name = {this.props.name}
                 status = {this.state.pokemonStatus} date = {this.state.dateOfCaught}/>
         <p type="button" onClick={this.showModal} className="addInfo">
           more info
