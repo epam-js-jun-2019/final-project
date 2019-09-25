@@ -1,8 +1,12 @@
+import { INDEX_PAGE_NUM, CATEGORY_ALL } from '../constants/constants';
+
 const initialState = {
-    category: 'all',
-    currentPage: 1,
-    viewedContent: []
-}
+    category: CATEGORY_ALL,
+    currentPage: INDEX_PAGE_NUM,
+    viewedContent: [],
+    error: null,
+    isLoading: false
+};
 
 export default function reduce(state = initialState, action = {}) {
     switch (action.type) {
@@ -16,12 +20,27 @@ export default function reduce(state = initialState, action = {}) {
                 ...state,
                 currentPage: action.payload
             };
-        case 'SET_LOADED_POKEMONS':
+        case 'FETCH_DATA_REQUEST':
             return {
                 ...state,
+                error: null,
+                isLoading: true,
+                viewedContent: []
+            };
+        case 'FETCH_DATA_SUCCESS':
+            return {
+                ...state,
+                error: null,
+                isLoading: false,
                 viewedContent: action.payload
+            };
+        case 'FETCH_DATA_FAILURE':
+            return {
+                ...state,
+                error: action.payload,
+                isLoading: false
             };
         default:
             return state;
-    }
-}
+    };
+};

@@ -2,17 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import routes from '../../routes/routes';
 import * as actions from '../../store/actions';
+import routes from '../../routes/routes';
+import { INDEX_PAGE_NUM, CATEGORY_ALL, CATEGORY_CATCHED } from '../../constants/constants';
 import './AppHeader.css';
-import icon from './header-icon.png';
+import icon from '../../assets/img/header-icon.png';
 
-const AppHeader = (props) => {
-    const { setCategory, setPageNumber } = props;
-
+const AppHeader = ({ setCategory, setPageNumber }) => {
     const handleToggleCategory = (category) => {
         setCategory(category);
-        setPageNumber(1);
+        setPageNumber(INDEX_PAGE_NUM);
     };
 
     return (
@@ -20,26 +19,26 @@ const AppHeader = (props) => {
             <Link to={routes.INDEX}>
                 <img className="logo"
                      src={icon}
-                     onClick={() => handleToggleCategory('all')}
+                     onClick={() => handleToggleCategory(CATEGORY_ALL)}
                      alt="logo" />
             </Link>
             <Link to={routes.CATCHED_PAGE_1}>
                 <button className="btn-link to-catched-poks"
-                        onClick={() => handleToggleCategory('catched')}>
+                        onClick={() => handleToggleCategory(CATEGORY_CATCHED)}>
                     catched
                 </button>
             </Link>
         </nav>
-    )
-}
+    );
+};
 
 const mapDispatchToProps = (dispatch) => {
     const { setCategory,
-            setPageNumber } = bindActionCreators(actions, dispatch)
+            setPageNumber } = bindActionCreators(actions, dispatch);
     return {
         setCategory,
         setPageNumber
-    }
-}
+    };
+};
 
 export default connect(null, mapDispatchToProps)(AppHeader);

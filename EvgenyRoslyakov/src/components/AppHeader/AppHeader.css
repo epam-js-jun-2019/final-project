@@ -4,7 +4,7 @@
     justify-content: center;
     width: 100%;
     padding: 0.8rem;
-    margin: .5rem auto;
+    margin: 2.5rem auto .5rem auto;
 }
 
 .logo {
@@ -37,6 +37,12 @@
 .btn-link:active {
     color: black;
     box-shadow: 0 2px 4px 0 rgba(33, 56, 110, .5);
+}
+
+@media (max-height: 870px) {
+    .app-header {
+        margin: .5rem auto;
+    }
 }
 
 @media (max-width: 590px) {

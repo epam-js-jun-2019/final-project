@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom';
 import PokemonService from '../../services/PokemonService';
 import LSService from '../../services/LocalstorageService';
 import { setPageNumber } from '../../store/actions';
+import { MAX_DATA_NUM, CATEGORY_ALL, CATEGORY_CATCHED } from '../../constants/constants';
 import './PaginationBar.css';
 
 const PaginationBar = (props) => {
     const { currentPage, category, setPageNumber } = props;
-    const maxPage = (category === 'all') ? 
-                    PokemonService.getMaxPage(949) :
-                    PokemonService.getMaxPage(LSService.readLSData('catched').length);
+    const maxPage = (category === CATEGORY_ALL) ? 
+                    PokemonService.getMaxPage(MAX_DATA_NUM) :
+                    PokemonService.getMaxPage(LSService.readLSData(CATEGORY_CATCHED).length);
 
     const incPath = () => {
         return (currentPage >= maxPage) ? 1 : currentPage + 1;
@@ -18,7 +19,7 @@ const PaginationBar = (props) => {
     const decPath = () => {
         return (currentPage <= 1) ? maxPage : currentPage - 1;
     };
-    
+
     const NEXT_PAGE = `/${category}/page${incPath()}`;
     const PREV_PAGE = `/${category}/page${decPath()}`;
 

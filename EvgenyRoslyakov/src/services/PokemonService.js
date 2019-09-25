@@ -1,10 +1,9 @@
 import LSService from './LocalstorageService';
+import { PREVIEWS_PER_PAGE, CATEGORY_CATCHED } from '../constants/constants';
 
 const PokemonService = () => {
-    const PREVIEWS_PER_PAGE = 18;
-
     function getMaxPage(itemsNumber) {
-        return Math.floor(itemsNumber / PREVIEWS_PER_PAGE) + 1;
+        return Math.floor(itemsNumber / PREVIEWS_PER_PAGE) + !!(itemsNumber % PREVIEWS_PER_PAGE);
     }
 
     function updateDataToCatched(data, id) {
@@ -22,15 +21,13 @@ const PokemonService = () => {
     }
 
     function updateCatchedCollection(item) {
-        const catchedData = (LSService.readLSData('catched')) ?
-                            LSService.readLSData('catched') :
-                            [];
+        const catchedData = LSService.readLSData(CATEGORY_CATCHED) || [];
         catchedData.push(item);
-        LSService.writeLSData('catched', catchedData);
+        LSService.writeLSData(CATEGORY_CATCHED, catchedData);
     }
 
     function hasCatchedData() {
-        return !!(LSService.isInLS('catched'))
+        return !!(LSService.isInLS(CATEGORY_CATCHED))
     }
 
     function prepareCatchedData(page) {
@@ -39,9 +36,7 @@ const PokemonService = () => {
     }
 
     function getCatchedData() {
-        return (LSService.readLSData('catched')) ?
-                LSService.readLSData('catched') :
-                [];
+        return LSService.readLSData(CATEGORY_CATCHED) || [];
     }
 
     function calcViewedData(data, page) {

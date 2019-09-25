@@ -1,28 +1,29 @@
 import React, { useEffect, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { setLoadedPokemons } from '../../store/actions';
+import { fetchDataSuccess } from '../../store/actions';
 import PokemonList from '../PokemonList/PokemonList';
 import PaginationBar from '../PaginationBar/PaginationBar';
 import EmptyMessage from '../EmptyMessage/EmptyMessage';
 import PokemonService from '../../services/PokemonService';
+import { CATEGORY_CATCHED } from '../../constants/constants';
 
-const PageCatched = (props) => {
-    const { viewedContent, currentPage,
-            category, setLoadedPokemons } = props;
+const PageCatched = ({ viewedContent, currentPage,
+                       category, fetchDataSuccess }) => {
 
     useEffect(() => {
-        if(category === 'catched') {
+        if(category === CATEGORY_CATCHED) {
             getCheckedContent(currentPage)
         } else return;
     }, [currentPage, category]);
 
     function getCheckedContent(page) {
         const content = PokemonService.prepareCatchedData(page);
-        setLoadedPokemons(content);
-    }
+        fetchDataSuccess(content);
+    };
 
-    const message = !(PokemonService.hasCatchedData()) ? <EmptyMessage /> : null;
-    const content = (PokemonService.hasCatchedData()) ?
+    const hasCatchedData = PokemonService.hasCatchedData();
+    const message = !(hasCatchedData) ? <EmptyMessage /> : null;
+    const content = (hasCatchedData) ?
                     (<Fragment>
                         <PokemonList data={viewedContent} />
                         <PaginationBar />
@@ -33,21 +34,21 @@ const PageCatched = (props) => {
             {content}
             {message}
         </div>
-    )
-}
+    );
+};
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
     return {
         category: state.category,
         viewedContent: state.viewedContent,
         currentPage: state.currentPage
-    }
-}
+    };
+};
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
     return {
-        setLoadedPokemons: data => dispatch(setLoadedPokemons(data))
-    }
-}
+        fetchDataSuccess: data => dispatch(fetchDataSuccess(data))
+    };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(PageCatched);

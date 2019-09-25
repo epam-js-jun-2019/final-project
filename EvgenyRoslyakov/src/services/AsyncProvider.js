@@ -1,22 +1,25 @@
-function AsyncProvider() {
-    const API_URL = 'http://localhost:8087';
-    const NUM_OF_PREVIEWS = 18;
+import { API_URL, PREVIEWS_PER_PAGE } from '../constants/constants';
 
+function AsyncProvider() {
     const getData = async function(query) {
-        const resp = await fetch(`${API_URL}/${query}`);
-        if(!resp.ok) {
-            throw new Error(`Couldn't fetch; status ${resp.status}`)
+        try {
+            const resp = await fetch(`${API_URL}/${query}`);
+            return await resp.json();
+        } catch(e) {
+            throw new Error(`Couldn't fetch`)
         };
-        return await resp.json();
     };
 
     const getLimitedData = async function(page) {
-        const res = await getData(`pokemons?_page=${page}&_limit=${NUM_OF_PREVIEWS}`);
-        return res;
+        try {
+            const data = await getData(`pokemons?_page=${page}&_limit=${PREVIEWS_PER_PAGE}`);
+            return data;
+        } catch(err) {
+            throw err;
+        };
     };
 
     return {
-        getData,
         getLimitedData
     };
 };
