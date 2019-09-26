@@ -1,0 +1,58 @@
+.app-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 0.8rem;
+    margin: 2.5rem auto .5rem auto;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 2rem;
+}
+
+.btn-link {
+    display: inline-block;
+    padding: .5rem 1rem;
+    margin: .25rem;
+    vertical-align: middle;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    background-color: white;
+    border: 2px solid #3566AF;
+    border-radius: 20px;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.btn-link:hover {
+    color: #3566AF;
+    box-shadow: 0 2px 6px 0 rgba(33, 56, 110, .9);
+}
+
+.btn-link:active {
+    color: black;
+    box-shadow: 0 2px 4px 0 rgba(33, 56, 110, .5);
+}
+
+@media (max-height: 870px) {
+    .app-header {
+        margin: .5rem auto;
+    }
+}
+
+@media (max-width: 590px) {
+    .logo {
+        margin-right: 1rem;
+    }
+}
+
+@media (max-width: 236px) {
+    .logo {
+        margin-right: 0;
+    }
+}

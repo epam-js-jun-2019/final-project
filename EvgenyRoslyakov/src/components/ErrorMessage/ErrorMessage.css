@@ -1,0 +1,18 @@
+.error-logo {
+    margin: 0 auto;
+}
+
+.error-message {
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+    background-color: #3566AF;
+    border-radius: 10px;
+}
+
+.error-message h2 {
+    margin: .25rem;
+    font-size: 1.2rem;
+    color: #FFCC00;
+    text-align: center;
+}

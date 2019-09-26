@@ -1,0 +1,19 @@
+body {
+    font-family: 'Rajdhani', sans-serif;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.main-container {
+    width: 600px;
+    margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+    .main-container {
+        width: 100%;
+    }
+}

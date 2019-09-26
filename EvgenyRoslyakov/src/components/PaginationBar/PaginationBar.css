@@ -1,0 +1,24 @@
+.app-pagination {
+    position: fixed;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.page-number {
+    color: #21386E;
+    font-weight: 700;
+}
+
+@media (max-height: 890px) {
+    .app-pagination {
+        position: initial;
+        bottom: none;
+        left: none;
+        transform: none;
+        margin-top: .5rem;
+    }
+}
