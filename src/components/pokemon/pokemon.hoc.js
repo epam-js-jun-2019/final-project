@@ -12,7 +12,6 @@ const mapDispatchToProps = dispatch => ({
   setCurrentPokemon: pokemon => dispatch(setCurrentPokemon(pokemon))
 });
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(Pokemon);
+const PokemonHOC = connect(null, mapDispatchToProps)(Pokemon);
+
+export default PokemonHOC;

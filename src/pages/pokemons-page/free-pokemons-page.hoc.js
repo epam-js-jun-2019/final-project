@@ -5,4 +5,6 @@ const mapStateToProps = ({ pokemons: { freePokemons } }) => ({
   collection: freePokemons || null
 });
 
-export default connect(mapStateToProps)(PokemonsPage);
+const FreePokemonsPageHOC = connect(mapStateToProps)(PokemonsPage);
+
+export default FreePokemonsPageHOC;

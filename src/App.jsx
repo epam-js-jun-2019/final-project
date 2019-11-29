@@ -6,10 +6,10 @@ import { getPokemonsAsync } from 'Redux/pokemons/pokemons.actions';
 
 import Navbar from 'Components/navbar/navbar.component';
 import HomePage from 'Pages/homepage/homepage.component';
-import PokemonPage from './HOCs/pokemon-page.hoc';
-import FreePokemonsPage from './HOCs/free-pokemons-page.hoc';
-import CapturedPokemonsPage from './HOCs/captured-pokemons-page.hoc';
-import RandomPage from './HOCs/random-page.hoc';
+import PokemonPage from 'Pages/pokemon-page/pokemon-page.hoc';
+import FreePokemonsPage from 'Pages/pokemons-page/free-pokemons-page.hoc';
+import CapturedPokemonsPage from 'Pages/pokemons-page/captured-pokemons-page.hoc';
+import RandomPage from 'Pages/random-page/random-page.hoc';
 import AppRoutesConstants from './routing/routes.constants';
 import './App.scss';
 
@@ -53,7 +53,4 @@ const mapDispatchToProps = dispatch => ({
   getPokemonsAsync: () => dispatch(getPokemonsAsync())
 });
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(App);
+export default connect(null, mapDispatchToProps)(App);

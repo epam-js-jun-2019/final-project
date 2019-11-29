@@ -12,4 +12,6 @@ const mapStateToProps = ({ pokemons: { freePokemons, capturedPokemons } }) => ({
         ]
 });
 
-export default connect(mapStateToProps)(RandomPage);
+const RandomPageHOC = connect(mapStateToProps)(RandomPage);
+
+export default RandomPageHOC;

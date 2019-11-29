@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Pokemon from '../../HOCs/pokemon.hoc';
+import Pokemon from 'Components/pokemon/pokemon.hoc';
 import SearchBox from 'Components/search-box/search-box.component';
 import Pagination from 'Components/pagination/pagination.component';
 

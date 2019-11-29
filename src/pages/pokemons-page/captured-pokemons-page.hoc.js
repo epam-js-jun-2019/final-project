@@ -5,4 +5,6 @@ const mapStateToProps = ({ pokemons: { capturedPokemons } }) => ({
   collection: capturedPokemons || null
 });
 
-export default connect(mapStateToProps)(PokemonsPage);
+const CapturedPokemonsPageHOC = connect(mapStateToProps)(PokemonsPage);
+
+export default CapturedPokemonsPageHOC;
