@@ -1,17 +1,25 @@
 import { connect } from 'react-redux';
-import RandomPage from 'Pages/random-page/random-page.component';
+import { getPokemonsAsync } from 'Redux/pokemons/pokemons.actions';
 
-const mapStateToProps = ({ pokemons: { freePokemons, capturedPokemons } }) => ({
+import RandomPage from 'Pages/random-page/random-page.component';
+const mapStateToProps = ({
+  pokemons: { freePokemons, capturedPokemons, loading }
+}) => ({
   pokemon:
     (Math.random().toFixed(2) * 100) % 3.5 !== 0
       ? freePokemons[
-          Math.floor(Math.random() * Math.floor(freePokemons['length']))
+          Math.floor(Math.random() * Math.floor(freePokemons.length))
         ]
       : capturedPokemons[
-          Math.floor(Math.random() * Math.floor(capturedPokemons['length']))
-        ]
+          Math.floor(Math.random() * Math.floor(capturedPokemons.length))
+        ],
+  loading
 });
 
-const RandomPageHOC = connect(mapStateToProps)(RandomPage);
+const mapDispatchToProps = dispatch => ({
+  getPokemonsAsync: () => dispatch(getPokemonsAsync())
+});
+
+const RandomPageHOC = connect(mapStateToProps, mapDispatchToProps)(RandomPage);
 
 export default RandomPageHOC;

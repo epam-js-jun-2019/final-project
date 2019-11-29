@@ -1,8 +1,5 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { connect } from 'react-redux';
-
-import { getPokemonsAsync } from 'Redux/pokemons/pokemons.actions';
 
 import Navbar from 'Components/navbar/navbar.component';
 import HomePage from 'Pages/homepage/homepage.component';
@@ -13,12 +10,14 @@ import RandomPage from 'Pages/random-page/random-page.hoc';
 import AppRoutesConstants from './routing/routes.constants';
 import './App.scss';
 
-const NoMatch = () => <div>The page doesn't exist</div>;
-
 class App extends React.Component {
   componentDidMount() {
-    this.props.getPokemonsAsync();
+    const { getPokemonsAsync } = this.props;
+    getPokemonsAsync();
   }
+
+  NoMatch = () => <div>The page doesn't exist</div>;
+
   render() {
     return (
       <>
@@ -42,15 +41,11 @@ class App extends React.Component {
             component={CapturedPokemonsPage}
           />
           <Route path={AppRoutesConstants.RANDOM_PAGE} component={RandomPage} />
-          <Route component={NoMatch} />
+          <Route component={this.NoMatch} />
         </Switch>
       </>
     );
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  getPokemonsAsync: () => dispatch(getPokemonsAsync())
-});
-
-export default connect(null, mapDispatchToProps)(App);
+export default App;

@@ -1,9 +1,9 @@
 import PokemonsActionTypes from './pokemons.types';
 
 const INITIAL_STATE = {
-  freePokemons: null,
-  capturedPokemons: null,
-  currentPokemon: null,
+  freePokemons: [],
+  capturedPokemons: [],
+  currentPokemon: [],
   loading: false
 };
 
