@@ -1,7 +1,7 @@
 import { put, takeEvery, call } from 'redux-saga/effects';
 import apiRequests from 'FetchAPI/http.lib';
 import restApiLinks from 'FetchAPI/restful-api.links';
-import PokemonsActionTypes from 'Redux/pokemons/pokemons.types';
+import actionTypes from 'Redux/pokemons/pokemons.action-types';
 import pokemonsApiService from 'FetchAPI/pokemonsApiService';
 import { catchPokemon, setPokemonFree } from 'Redux/pokemons/pokemons.actions';
 
@@ -11,7 +11,7 @@ function* catchPokemonAsync(action) {
 }
 
 export function* watchCatchPokemonAsync() {
-  yield takeEvery(PokemonsActionTypes.CATCH_POKEMON_ASYNC, catchPokemonAsync);
+  yield takeEvery(actionTypes.CATCH_POKEMON_ASYNC, catchPokemonAsync);
 }
 
 function* setPokemonFreeAsync(action) {
@@ -20,20 +20,14 @@ function* setPokemonFreeAsync(action) {
 }
 
 export function* watchSetPokemonFreeAsync() {
-  yield takeEvery(
-    PokemonsActionTypes.SET_POKEMON_FREE_ASYNC,
-    setPokemonFreeAsync
-  );
+  yield takeEvery(actionTypes.SET_POKEMON_FREE_ASYNC, setPokemonFreeAsync);
 }
 
 function* getPokemonDataAsync() {
   const payload = yield apiRequests.get(restApiLinks.DB);
-  yield put({ type: PokemonsActionTypes.GET_POKEMON_DATA, payload });
+  yield put({ type: actionTypes.GET_POKEMON_DATA, payload });
 }
 
 export function* watchGetPokemonDataAsync() {
-  yield takeEvery(
-    PokemonsActionTypes.GET_POKEMON_DATA_ASYNC,
-    getPokemonDataAsync
-  );
+  yield takeEvery(actionTypes.GET_POKEMON_DATA_ASYNC, getPokemonDataAsync);
 }

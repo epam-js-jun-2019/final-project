@@ -1,4 +1,4 @@
-const PokemonsActionTypes = {
+const actionTypes = {
   CATCH_POKEMON_ASYNC: 'CATCH_POKEMON_ASYNC',
   CATCH_POKEMON: 'CATCH_POKEMON',
   SET_POKEMON_FREE_ASYNC: 'SET_POKEMON_FREE_ASYNC',
@@ -8,4 +8,4 @@ const PokemonsActionTypes = {
   SET_CURRENT_POKEMON: 'SET_CURRENT_POKEMON'
 };
 
-export default PokemonsActionTypes;
+export default actionTypes;

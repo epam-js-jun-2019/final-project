@@ -1,14 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { capitalizeWord } from '../../utils/utilities';
 import './pokemon-page.styles.scss';
 
 const PokemonPage = ({ currentPokemon: { id, name, status, captureDate } }) => {
-  const capitalizeWord = word => {
-    const newWord = word.split('')[0].toUpperCase() + word.slice(1);
-    return newWord;
-  };
-
   return (
     <div style={{ position: 'relative' }}>
       <div

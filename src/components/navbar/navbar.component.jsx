@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AppRoutesConstants from '../../routing/routes.constants';
+import routesConstants from '../../routing/routes.constants';
 import './navbar.styles.scss';
 
 const Navbar = () => (
   <nav className='navbar'>
-    <Link className='logo-container' to={AppRoutesConstants.HOMEPAGE}>
+    <Link className='logo-container' to={routesConstants.HOMEPAGE}>
       <img
         className='logo'
         src='/assets/images/Pokedex_logo.png'
@@ -13,13 +13,13 @@ const Navbar = () => (
       />
     </Link>
     <div className='options'>
-      <Link className='option' to={AppRoutesConstants.FREE_POKEMONS_PAGE}>
+      <Link className='option' to={routesConstants.FREE_POKEMONS_PAGE}>
         Wild Pokemons
       </Link>
-      <Link className='option' to={AppRoutesConstants.CAPTURED_POKEMONS_PAGE}>
+      <Link className='option' to={routesConstants.CAPTURED_POKEMONS_PAGE}>
         Captured Pokemons
       </Link>
-      <Link className='option' to={AppRoutesConstants.RANDOM_PAGE}>
+      <Link className='option' to={routesConstants.RANDOM_PAGE}>
         Random Pokemon
       </Link>
     </div>

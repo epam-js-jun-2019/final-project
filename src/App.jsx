@@ -7,7 +7,7 @@ import PokemonPage from 'Pages/pokemon-page/pokemon-page.hoc';
 import FreePokemonsPage from 'Pages/pokemons-page/free-pokemons-page.hoc';
 import CapturedPokemonsPage from 'Pages/pokemons-page/captured-pokemons-page.hoc';
 import RandomPage from 'Pages/random-page/random-page.hoc';
-import AppRoutesConstants from './routing/routes.constants';
+import routesConstants from './routing/routes.constants';
 import './App.scss';
 
 class App extends React.Component {
@@ -23,24 +23,17 @@ class App extends React.Component {
       <>
         <Navbar />
         <Switch>
+          <Route exact path={routesConstants.HOMEPAGE} component={HomePage} />
+          <Route path={routesConstants.POKEMON_PAGE} component={PokemonPage} />
           <Route
-            exact
-            path={AppRoutesConstants.HOMEPAGE}
-            component={HomePage}
-          />
-          <Route
-            path={AppRoutesConstants.POKEMON_PAGE}
-            component={PokemonPage}
-          />
-          <Route
-            path={AppRoutesConstants.FREE_POKEMONS_PAGE}
+            path={routesConstants.FREE_POKEMONS_PAGE}
             component={FreePokemonsPage}
           />
           <Route
-            path={AppRoutesConstants.CAPTURED_POKEMONS_PAGE}
+            path={routesConstants.CAPTURED_POKEMONS_PAGE}
             component={CapturedPokemonsPage}
           />
-          <Route path={AppRoutesConstants.RANDOM_PAGE} component={RandomPage} />
+          <Route path={routesConstants.RANDOM_PAGE} component={RandomPage} />
           <Route component={this.NoMatch} />
         </Switch>
       </>

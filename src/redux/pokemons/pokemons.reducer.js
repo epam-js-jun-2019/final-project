@@ -1,4 +1,4 @@
-import PokemonsActionTypes from './pokemons.types';
+import actionTypes from './pokemons.action-types';
 
 const INITIAL_STATE = {
   freePokemons: [],
@@ -9,19 +9,19 @@ const INITIAL_STATE = {
 
 const pokemonsReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case PokemonsActionTypes.GET_POKEMON_DATA:
+    case actionTypes.GET_POKEMON_DATA:
       return {
         ...state,
         isLoading: false,
         freePokemons: action.payload.freePokemons,
         capturedPokemons: action.payload.capturedPokemons
       };
-    case PokemonsActionTypes.GET_POKEMON_DATA_ASYNC:
+    case actionTypes.GET_POKEMON_DATA_ASYNC:
       return {
         ...state,
         isLoading: true
       };
-    case PokemonsActionTypes.CATCH_POKEMON:
+    case actionTypes.CATCH_POKEMON:
       return {
         ...state,
         freePokemons: state.freePokemons.filter(
@@ -29,7 +29,7 @@ const pokemonsReducer = (state = INITIAL_STATE, action) => {
         ),
         capturedPokemons: [...state.capturedPokemons, action.payload]
       };
-    case PokemonsActionTypes.SET_POKEMON_FREE:
+    case actionTypes.SET_POKEMON_FREE:
       return {
         ...state,
         capturedPokemons: state.capturedPokemons.filter(
@@ -37,7 +37,7 @@ const pokemonsReducer = (state = INITIAL_STATE, action) => {
         ),
         freePokemons: [...state.freePokemons, action.payload]
       };
-    case PokemonsActionTypes.SET_CURRENT_POKEMON:
+    case actionTypes.SET_CURRENT_POKEMON:
       return {
         ...state,
         currentPokemon: action.payload

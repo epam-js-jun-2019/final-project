@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import { capitalizeWord } from '../../utils/utilities';
 import CustomButton from 'Components/custom-button/custom-button.component';
 
 import './pokemon.styles.scss';
@@ -15,11 +16,6 @@ const Pokemon = ({
   catchPokemonAsync,
   setPokemonFreeAsync
 }) => {
-  const capitalizeWord = word => {
-    const newWord = word.split('')[0].toUpperCase() + word.slice(1);
-    return newWord;
-  };
-
   const captureDateBlock = () => (
     <div className='Pokemon__captureDate'>
       Capture Date: <span className='Pokemon__text_focus'>{captureDate}</span>

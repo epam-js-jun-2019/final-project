@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { capitalizeWord } from '../../utils/utilities';
 import './Random-page.styles.scss';
 
 class RandomPage extends React.Component {
@@ -8,10 +9,6 @@ class RandomPage extends React.Component {
     getPokemonsAsync: PropTypes.func.isRequired,
     pokemon: PropTypes.object,
     isLoading: PropTypes.bool
-  };
-  capitalizeWord = word => {
-    const newWord = word.split('')[0].toUpperCase() + word.slice(1);
-    return newWord;
   };
 
   state = {
@@ -43,9 +40,7 @@ class RandomPage extends React.Component {
       isLoading
     } = this.state;
     return isLoading ? (
-      <div style={{ fontSize: '15rem', backgroundColor: 'green' }}>
-        Loading pokemons...
-      </div>
+      <div />
     ) : (
       <div style={{ position: 'relative' }}>
         <div
@@ -55,7 +50,7 @@ class RandomPage extends React.Component {
           }}
         />
         <div className='pokemon-info'>
-          <h1>{this.capitalizeWord(name)}</h1>
+          <h1>{capitalizeWord(name)}</h1>
           <img
             className='pokemon-image'
             src={`../../assets/images/pokemons-images/${id}.png`}

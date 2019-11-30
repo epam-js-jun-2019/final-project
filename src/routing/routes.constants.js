@@ -1,4 +1,4 @@
-const AppRoutesConstants = {
+const routesConstants = {
   HOMEPAGE: '/',
   POKEMON_PAGE: '/pokemon/:pokemonID',
   FREE_POKEMONS_PAGE: '/free-pokemons',
@@ -6,4 +6,4 @@ const AppRoutesConstants = {
   RANDOM_PAGE: '/random-page'
 };
 
-export default AppRoutesConstants;
+export default routesConstants;
