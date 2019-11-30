@@ -4,7 +4,7 @@ const INITIAL_STATE = {
   freePokemons: [],
   capturedPokemons: [],
   currentPokemon: [],
-  loading: false
+  isLoading: false
 };
 
 const pokemonsReducer = (state = INITIAL_STATE, action) => {
@@ -12,14 +12,14 @@ const pokemonsReducer = (state = INITIAL_STATE, action) => {
     case PokemonsActionTypes.GET_POKEMON_DATA:
       return {
         ...state,
-        loading: false,
+        isLoading: false,
         freePokemons: action.payload.freePokemons,
         capturedPokemons: action.payload.capturedPokemons
       };
     case PokemonsActionTypes.GET_POKEMON_DATA_ASYNC:
       return {
         ...state,
-        loading: true
+        isLoading: true
       };
     case PokemonsActionTypes.CATCH_POKEMON:
       return {

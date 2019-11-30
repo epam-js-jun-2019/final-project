@@ -3,7 +3,7 @@ import { getPokemonsAsync } from 'Redux/pokemons/pokemons.actions';
 
 import RandomPage from 'Pages/random-page/random-page.component';
 const mapStateToProps = ({
-  pokemons: { freePokemons, capturedPokemons, loading }
+  pokemons: { freePokemons, capturedPokemons, isLoading }
 }) => ({
   pokemon:
     (Math.random().toFixed(2) * 100) % 3.5 !== 0
@@ -13,7 +13,7 @@ const mapStateToProps = ({
       : capturedPokemons[
           Math.floor(Math.random() * Math.floor(capturedPokemons.length))
         ],
-  loading
+  isLoading
 });
 
 const mapDispatchToProps = dispatch => ({

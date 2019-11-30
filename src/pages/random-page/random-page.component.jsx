@@ -6,7 +6,8 @@ import './Random-page.styles.scss';
 class RandomPage extends React.Component {
   static propTypes = {
     getPokemonsAsync: PropTypes.func.isRequired,
-    pokemon: PropTypes.object
+    pokemon: PropTypes.object,
+    isLoading: PropTypes.bool
   };
   capitalizeWord = word => {
     const newWord = word.split('')[0].toUpperCase() + word.slice(1);
@@ -19,7 +20,8 @@ class RandomPage extends React.Component {
       name: 'name',
       status: 'status',
       captureDate: 'capture date'
-    }
+    },
+    isLoading: true
   };
 
   componentDidMount() {
@@ -28,18 +30,23 @@ class RandomPage extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { pokemon } = this.props;
+    const { pokemon, isLoading } = this.props;
 
     if (prevProps.pokemon !== pokemon) {
-      this.setState({ pokemon: pokemon });
+      this.setState({ pokemon, isLoading });
     }
   }
 
   render() {
     const {
-      pokemon: { id, name, status, captureDate }
+      pokemon: { id, name, status, captureDate },
+      isLoading
     } = this.state;
-    return (
+    return isLoading ? (
+      <div style={{ fontSize: '15rem', backgroundColor: 'green' }}>
+        Loading pokemons...
+      </div>
+    ) : (
       <div style={{ position: 'relative' }}>
         <div
           className='background-image'
