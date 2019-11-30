@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './pagination.styles.scss';
 
@@ -36,6 +37,13 @@ const Pagination = ({
       ))}
     </nav>
   );
+};
+
+Pagination.propTypes = {
+  pokemonsPerPage: PropTypes.number.isRequired,
+  currentPage: PropTypes.number.isRequired,
+  totalPokemons: PropTypes.number.isRequired,
+  paginate: PropTypes.func.isRequired
 };
 
 export default Pagination;

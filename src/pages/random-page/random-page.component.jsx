@@ -1,8 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './Random-page.styles.scss';
 
 class RandomPage extends React.Component {
+  static propTypes = {
+    getPokemonsAsync: PropTypes.func.isRequired,
+    pokemon: PropTypes.object
+  };
   capitalizeWord = word => {
     const newWord = word.split('')[0].toUpperCase() + word.slice(1);
     return newWord;
@@ -20,13 +25,14 @@ class RandomPage extends React.Component {
   componentDidMount() {
     const { getPokemonsAsync } = this.props;
     getPokemonsAsync();
-    setTimeout(() => {
-      this.setState({ pokemon: this.props.pokemon });
-    }, 1000);
   }
 
-  componentWillUnmount() {
-    console.log('goodbye');
+  componentDidUpdate(prevProps) {
+    const { pokemon } = this.props;
+
+    if (prevProps.pokemon !== pokemon) {
+      this.setState({ pokemon: pokemon });
+    }
   }
 
   render() {
@@ -54,11 +60,11 @@ class RandomPage extends React.Component {
           <span>
             Status: <span className='focus'>{status}</span>
           </span>
-          {captureDate !== 'none' ? (
+          {captureDate !== 'none' && (
             <span>
               Capture Date: <span className='focus'>{captureDate}</span>
             </span>
-          ) : null}
+          )}
         </div>
       </div>
     );

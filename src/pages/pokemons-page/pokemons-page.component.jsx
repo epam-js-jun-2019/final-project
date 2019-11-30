@@ -3,22 +3,25 @@ import React from 'react';
 import Pokemon from 'Components/pokemon/pokemon.hoc';
 import SearchBox from 'Components/search-box/search-box.component';
 import Pagination from 'Components/pagination/pagination.component';
+import PropTypes from 'prop-types';
 
 import './pokemons-page.styles.scss';
 
 class PokemonsPage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchField: '',
-      paginationWindow: false,
-      currentPage: 1,
-      pokemonsPerPage: 20
-    };
-  }
+  static propTypes = {
+    collection: PropTypes.array.isRequired,
+    isLoading: PropTypes.bool
+  };
+
+  state = {
+    searchField: '',
+    isPaginationWindow: false,
+    currentPage: 1,
+    pokemonsPerPage: 20
+  };
 
   togglePaginationWindow = () =>
-    this.setState({ paginationWindow: !this.state.paginationWindow });
+    this.setState({ isPaginationWindow: !this.state.isPaginationWindow });
 
   paginate = pageNumber => this.setState({ currentPage: pageNumber });
 
@@ -37,8 +40,8 @@ class PokemonsPage extends React.Component {
       .sort((a, b) => (a.props.id > b.props.id ? 1 : -1));
 
   render() {
-    const { collection, loading } = this.props;
-    const { pokemonsPerPage, currentPage, paginationWindow } = this.state;
+    const { collection, isLoading } = this.props;
+    const { pokemonsPerPage, currentPage, isPaginationWindow } = this.state;
 
     const indexOfLastPokemon = currentPage * pokemonsPerPage;
     const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
@@ -54,7 +57,7 @@ class PokemonsPage extends React.Component {
       filteredPokemons = this.filterPokemons(currentPokemons);
     }
 
-    return loading ? (
+    return isLoading ? (
       <h1 style={{ color: 'white', marginLeft: '45%' }}>Loading...</h1>
     ) : (
       <div className='homepage' id='homepage'>
@@ -71,17 +74,17 @@ class PokemonsPage extends React.Component {
           >
             More pages
           </a>
-          {collection && paginationWindow ? (
+          {collection && isPaginationWindow && (
             <Pagination
               pokemonsPerPage={pokemonsPerPage}
               currentPage={currentPage}
               totalPokemons={collection.length}
               paginate={this.paginate}
             />
-          ) : null}
+          )}
         </div>
         <div className='pokemons'>
-          {collection ? this.renderPokemons(filteredPokemons) : null}
+          {collection && this.renderPokemons(filteredPokemons)}
         </div>
         <a className='to-begin-button' href='#homepage'>
           To Top

@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import './search-box.styles.scss';
 
 const SearchBox = ({ placeholder, handleChange }) => (
@@ -9,5 +11,10 @@ const SearchBox = ({ placeholder, handleChange }) => (
     onChange={handleChange}
   />
 );
+
+SearchBox.propTypes = {
+  placeholder: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired
+};
 
 export default SearchBox;

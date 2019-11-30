@@ -1,108 +1,111 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import CustomButton from 'Components/custom-button/custom-button.component';
 
 import './pokemon.styles.scss';
 
-class Pokemon extends React.Component {
-  capitalizeWord = word => {
+const Pokemon = ({
+  id,
+  name,
+  status,
+  captureDate,
+  setCurrentPokemon,
+  catchPokemonAsync,
+  setPokemonFreeAsync
+}) => {
+  const capitalizeWord = word => {
     const newWord = word.split('')[0].toUpperCase() + word.slice(1);
     return newWord;
   };
 
-  render() {
-    const {
-      id,
-      name,
-      status,
-      captureDate,
-      setCurrentPokemon,
-      catchPokemonAsync,
-      setPokemonFreeAsync
-    } = this.props;
+  const captureDateBlock = () => (
+    <div className='Pokemon__captureDate'>
+      Capture Date: <span className='Pokemon__text_focus'>{captureDate}</span>
+    </div>
+  );
 
-    const captureDateBlock =
-      status !== 'free' ? (
-        <div className='Pokemon__captureDate'>
-          Capture Date:{' '}
-          <span className='Pokemon__text_focus'>{captureDate}</span>
+  const pokemonPage = `pokemon/${id}`;
+
+  const pokemonMainContainerClasses = `${
+    status !== 'free' ? 'Pokemon_captured' : 'Pokemon_captured-alt'
+  } Pokemon`;
+
+  const hiddenBackgroundClasses = `${
+    status !== 'free' ? 'hidden-background_alt' : 'hidden-background'
+  }`;
+
+  return (
+    <div className={pokemonMainContainerClasses}>
+      <div className={hiddenBackgroundClasses} />
+      <Link
+        onClick={() => setCurrentPokemon({ id, name, status, captureDate })}
+        to={pokemonPage}
+      >
+        <img
+          className='Pokemon__image'
+          src={`../../assets/images/pokemons-images/${id}.png`}
+          alt='pokemon'
+        />
+      </Link>
+      <div className='Pokemon__text'>
+        <div className='Pokemon__id'>
+          ID: <span className='Pokemon__text_focus'>{id}</span>
         </div>
-      ) : null;
-
-    const pokemonPage = `pokemon/${id}`;
-
-    const pokemonMainContainerClasses = `${
-      status !== 'free' ? 'Pokemon_captured' : 'Pokemon_captured-alt'
-    } Pokemon`;
-
-    const hiddenBackgroundClasses = `${
-      status !== 'free' ? 'hidden-background_alt' : 'hidden-background'
-    }`;
-
-    return (
-      <div className={pokemonMainContainerClasses}>
-        <div className={hiddenBackgroundClasses} />
-        <Link
-          onClick={() => setCurrentPokemon({ id, name, status, captureDate })}
-          to={pokemonPage}
-        >
-          <img
-            className='Pokemon__image'
-            src={`../../assets/images/pokemons-images/${id}.png`}
-            alt='pokemon'
-          />
-        </Link>
-        <div className='Pokemon__text'>
-          <div className='Pokemon__id'>
-            ID: <span className='Pokemon__text_focus'>{id}</span>
-          </div>
-          <div className='Pokemon__name'>
-            Name:{' '}
-            <span className='Pokemon__text_focus'>
-              {this.capitalizeWord(name)}
-            </span>
-          </div>
-          <div className='Pokemon__status'>
-            Status: <span className='Pokemon__text_focus'>{status}</span>
-          </div>
-          {captureDateBlock}
+        <div className='Pokemon__name'>
+          Name:{' '}
+          <span className='Pokemon__text_focus'>{capitalizeWord(name)}</span>
         </div>
-        {status === 'free' ? (
-          <CustomButton
-            onClick={() =>
-              catchPokemonAsync({
-                id,
-                name,
-                status: 'captured',
-                captureDate: new Date()
-                  .toDateString()
-                  .split(' ')
-                  .slice(1, 4)
-                  .join(' ')
-              })
-            }
-          >
-            Catch
-          </CustomButton>
-        ) : null}
-        {status === 'captured' ? (
-          <CustomButton
-            onClick={() =>
-              setPokemonFreeAsync({
-                id,
-                name,
-                status: 'free',
-                captureDate: 'none'
-              })
-            }
-          >
-            Set Free
-          </CustomButton>
-        ) : null}
+        <div className='Pokemon__status'>
+          Status: <span className='Pokemon__text_focus'>{status}</span>
+        </div>
+        {status !== 'free' && captureDateBlock()}
       </div>
-    );
-  }
-}
+      {status === 'free' && (
+        <CustomButton
+          onClick={() =>
+            catchPokemonAsync({
+              id,
+              name,
+              status: 'captured',
+              captureDate: new Date()
+                .toDateString()
+                .split(' ')
+                .slice(1, 4)
+                .join(' ')
+            })
+          }
+        >
+          Catch
+        </CustomButton>
+      )}
+      {status === 'captured' && (
+        <CustomButton
+          onClick={() =>
+            setPokemonFreeAsync({
+              id,
+              name,
+              status: 'free',
+              captureDate: 'none'
+            })
+          }
+        >
+          Set Free
+        </CustomButton>
+      )}
+    </div>
+  );
+};
+
+Pokemon.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  status: PropTypes.string.isRequired,
+  captureDate: PropTypes.string.isRequired,
+  setCurrentPokemon: PropTypes.func.isRequired,
+  catchPokemonAsync: PropTypes.func.isRequired,
+  setPokemonFreeAsync: PropTypes.func.isRequired
+};
 
 export default Pokemon;
