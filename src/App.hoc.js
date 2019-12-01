@@ -3,7 +3,8 @@ import App from './App';
 
 import { setUserData } from './redux/user/user.actions';
 
-const mapStateToProps = ({ user: { userData } }) => ({
+const mapStateToProps = ({ user: { userId, userData } }) => ({
+  userId,
   userData
 });
 

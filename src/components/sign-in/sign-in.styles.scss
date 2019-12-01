@@ -17,8 +17,15 @@ $text: #fff4d4;
   color: $text;
 }
 
-.buttons-wrapper {
-  .second-button {
-    margin-left: 0.5rem;
+.google-sign-in {
+  background-color: #4c76ff;
+
+  &:hover {
+    background-color: #1e3ea8;
   }
+}
+
+.buttons-wrapper {
+  display: flex;
+  justify-content: space-between;
 }

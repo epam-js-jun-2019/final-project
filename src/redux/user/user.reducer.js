@@ -1,6 +1,7 @@
 import actionTypes from './user.action-types';
 
 const INITIAL_STATE = {
+  userId: null,
   userData: null
 };
 
@@ -9,7 +10,8 @@ const userReducer = (state = INITIAL_STATE, action) => {
     case actionTypes.USER_SIGN_IN:
       return {
         ...state,
-        userData: action.payload
+        userId: action.payload.id,
+        userData: { ...action.payload.userData }
       };
     default:
       return state;

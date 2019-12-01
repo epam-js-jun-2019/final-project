@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { auth } from './firebase/firebase.utils';
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 import Navbar from './components/navbar/navbar.hoc';
 import HomePage from './pages/homepage/homepage.component';
@@ -13,13 +13,21 @@ import SignInAndSignUpPage from './pages/sign-in-and-sign-up-page/sign-in-and-si
 import routesConstants from './routing/routes.constants';
 import './App.scss';
 
-const App = ({ setUserData, userData }) => {
+const App = ({ setUserData, userData, userId }) => {
   let unsubcribeFromAuth = null;
 
   useEffect(() => {
-    unsubcribeFromAuth = auth.onAuthStateChanged(user => setUserData(user));
+    unsubcribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+      if (userAuth && !userId) {
+        const userRef = await createUserProfileDocument(userAuth);
+
+        userRef.onSnapshot(snapShot => {
+          setUserData({ id: snapShot.id, userData: { ...snapShot.data() } });
+        });
+      }
+    });
     return unsubcribeFromAuth;
-  }, [userData]);
+  }, [userData, userId]);
 
   const renderNoMatch = () => (
     <div className='no-match-page'>The page doesn't exist</div>

@@ -12,6 +12,12 @@ const Navbar = ({ userData, auth }) => (
         alt='Pokemon logo'
       />
     </Link>
+    {userData && (
+      <div className='user'>
+        <img className='user-avatar' src={userData.photoURL} />
+        <p className='user-name'>{userData.displayName}</p>
+      </div>
+    )}
     <ul className='options'>
       <li>
         <Link className='option' to={routesConstants.FREE_POKEMONS_PAGE}>

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 import './custom-button.styles.scss';
 
-const CustomButton = ({ children, addClass, ...otherProps }) => (
-  <button {...otherProps} className={`custom-button ${addClass}`}>
+const CustomButton = ({ children, additionalClass, ...otherProps }) => (
+  <button {...otherProps} className={`custom-button ${additionalClass}`}>
     {children}
   </button>
 );

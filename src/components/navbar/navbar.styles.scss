@@ -23,12 +23,33 @@
   animation: changeScale1 0.75s alternate infinite ease-in-out;
 }
 
+.user {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.user-avatar {
+  width: 5rem;
+  height: auto;
+  border: 2px solid #ffb900;
+  border-radius: 100px;
+}
+
+.user-name {
+  height: 3.5rem;
+  font-size: 2rem;
+  color: #fff9eed4;
+  border: 3px solid #ffb900;
+  border-radius: 5px;
+}
+
 .options {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 47rem;
   height: 2.5rem;
+  list-style: none;
 }
 
 .option {
