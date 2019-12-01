@@ -6,7 +6,7 @@ import './Random-page.styles.scss';
 
 class RandomPage extends React.Component {
   static propTypes = {
-    getPokemonsAsync: PropTypes.func.isRequired,
+    getRandomPokemonAsync: PropTypes.func.isRequired,
     pokemon: PropTypes.object,
     isLoading: PropTypes.bool
   };
@@ -22,8 +22,8 @@ class RandomPage extends React.Component {
   };
 
   componentDidMount() {
-    const { getPokemonsAsync } = this.props;
-    getPokemonsAsync();
+    const { getRandomPokemonAsync } = this.props;
+    getRandomPokemonAsync();
   }
 
   componentDidUpdate(prevProps) {

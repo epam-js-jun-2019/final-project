@@ -4,6 +4,7 @@ const INITIAL_STATE = {
   freePokemons: [],
   capturedPokemons: [],
   currentPokemon: [],
+  randomPokemon: {},
   isLoading: false
 };
 
@@ -17,6 +18,17 @@ const pokemonsReducer = (state = INITIAL_STATE, action) => {
         capturedPokemons: action.payload.capturedPokemons
       };
     case actionTypes.GET_POKEMON_DATA_ASYNC:
+      return {
+        ...state,
+        isLoading: true
+      };
+    case actionTypes.GET_RANDOM_POKEMON:
+      return {
+        ...state,
+        isLoading: false,
+        randomPokemon: action.payload
+      };
+    case actionTypes.GET_RANDOM_POKEMON_ASYNC:
       return {
         ...state,
         isLoading: true
