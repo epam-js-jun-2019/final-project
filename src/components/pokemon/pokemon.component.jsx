@@ -12,6 +12,7 @@ const Pokemon = ({
   name,
   status,
   captureDate,
+  userData,
   setCurrentPokemon,
   catchPokemonAsync,
   setPokemonFreeAsync
@@ -22,8 +23,8 @@ const Pokemon = ({
     </div>
   );
 
-  const renderActionButton = pokemonStatus => {
-    if (pokemonStatus == 'free') {
+  const renderActionButton = (pokemonStatus, isUserRegistered) => {
+    if (pokemonStatus == 'free' && isUserRegistered) {
       return (
         <CustomButton
           onClick={() =>
@@ -42,7 +43,7 @@ const Pokemon = ({
           Catch
         </CustomButton>
       );
-    } else if (pokemonStatus == 'captured') {
+    } else if (pokemonStatus == 'captured' && isUserRegistered) {
       return (
         <CustomButton
           onClick={() =>
@@ -96,7 +97,7 @@ const Pokemon = ({
         </div>
         {status !== 'free' && captureDateBlock()}
       </div>
-      {renderActionButton(status)}
+      {renderActionButton(status, userData)}
     </div>
   );
 };

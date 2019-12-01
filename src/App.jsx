@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { auth } from './firebase/firebase.utils';
 
-import Navbar from './components/navbar/navbar.component';
+import Navbar from './components/navbar/navbar.hoc';
 import HomePage from './pages/homepage/homepage.component';
 import PokemonPage from './pages/pokemon-page/pokemon-page.hoc';
 import FreePokemonsPage from './pages/pokemons-page/free-pokemons-page.hoc';
@@ -13,20 +13,13 @@ import SignInAndSignUpPage from './pages/sign-in-and-sign-up-page/sign-in-and-si
 import routesConstants from './routing/routes.constants';
 import './App.scss';
 
-const App = () => {
-  const initialState = {
-    currentUser: null
-  };
-
-  const [state, setState] = useState(initialState);
-  const { currentUser } = state;
+const App = ({ setUserData, userData }) => {
+  let unsubcribeFromAuth = null;
 
   useEffect(() => {
-    auth.onAuthStateChanged(user => {
-      setState({ ...state, currentUser: user });
-    });
-    return () => null;
-  }, [currentUser]);
+    unsubcribeFromAuth = auth.onAuthStateChanged(user => setUserData(user));
+    return unsubcribeFromAuth;
+  }, [userData]);
 
   const renderNoMatch = () => (
     <div className='no-match-page'>The page doesn't exist</div>

@@ -36,6 +36,7 @@
   color: $color-navbar;
   transition: 0.15s all ease-in;
   border-bottom: 0px solid white;
+  cursor: pointer;
 
   &:hover {
     color: $color-secondary-light;
