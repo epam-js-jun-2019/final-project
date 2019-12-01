@@ -11,10 +11,10 @@ const pokemonsApiService = {
       const { response, data } = backRequest;
       if (response.ok) {
         await apiRequests.delete(`${restApiLinks.freePokemons}/${pokemon.id}`);
+        return data;
       } else {
         throw new Error(response);
       }
-      return data;
     } catch (err) {
       throw err;
     }
@@ -30,9 +30,36 @@ const pokemonsApiService = {
         await apiRequests.delete(
           `${restApiLinks.capturedPokemons}/${pokemon.id}`
         );
+        return data;
       } else {
         throw new Error(response);
       }
+    } catch (err) {
+      throw err;
+    }
+  },
+  getRandomPokemon: async () => {
+    try {
+      const pseudoRandomNumber =
+        Math.floor(Math.random() * Math.floor(100)) + 10;
+      const id = pseudoRandomNumber > 0 && pseudoRandomNumber;
+      const data = await apiRequests.get(`${restApiLinks.freePokemons}/${id}`);
+      return data;
+    } catch (err) {
+      throw err;
+    }
+  },
+  getFreePokemons: async () => {
+    try {
+      const data = await apiRequests.get(restApiLinks.freePokemons);
+      return data;
+    } catch (err) {
+      throw err;
+    }
+  },
+  getCapturedPokemons: async () => {
+    try {
+      const data = await apiRequests.get(restApiLinks.capturedPokemons);
       return data;
     } catch (err) {
       throw err;

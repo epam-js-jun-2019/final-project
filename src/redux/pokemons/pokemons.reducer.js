@@ -19,7 +19,7 @@ const pokemonsReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isLoading: false,
-        freePokemons: action.payload
+        freePokemons: action.payload.sort((a, b) => a.id - b.id)
       };
     case actionTypes.GET_CAPTURED_POKEMONS_ASYNC:
       return {
@@ -30,16 +30,9 @@ const pokemonsReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isLoading: false,
-        capturedPokemons: action.payload
+        capturedPokemons: action.payload.sort((a, b) => a.id - b.id)
       };
-    case actionTypes.GET_POKEMON_DATA:
-      return {
-        ...state,
-        isLoading: false,
-        freePokemons: action.payload.freePokemons,
-        capturedPokemons: action.payload.capturedPokemons
-      };
-    case actionTypes.GET_POKEMON_DATA_ASYNC:
+    case actionTypes.GET_RANDOM_POKEMON_ASYNC:
       return {
         ...state,
         isLoading: true
@@ -50,18 +43,15 @@ const pokemonsReducer = (state = INITIAL_STATE, action) => {
         isLoading: false,
         randomPokemon: action.payload
       };
-    case actionTypes.GET_RANDOM_POKEMON_ASYNC:
-      return {
-        ...state,
-        isLoading: true
-      };
     case actionTypes.CATCH_POKEMON:
       return {
         ...state,
         freePokemons: state.freePokemons.filter(
           pokemon => pokemon.id !== action.payload.id
         ),
-        capturedPokemons: [...state.capturedPokemons, action.payload]
+        capturedPokemons: [...state.capturedPokemons, action.payload].sort(
+          (a, b) => a.id - b.id
+        )
       };
     case actionTypes.SET_POKEMON_FREE:
       return {
@@ -69,7 +59,9 @@ const pokemonsReducer = (state = INITIAL_STATE, action) => {
         capturedPokemons: state.capturedPokemons.filter(
           pokemon => pokemon.id !== action.payload.id
         ),
-        freePokemons: [...state.freePokemons, action.payload]
+        freePokemons: [...state.freePokemons, action.payload].sort(
+          (a, b) => a.id - b.id
+        )
       };
     case actionTypes.SET_CURRENT_POKEMON:
       return {

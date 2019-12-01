@@ -22,6 +22,44 @@ const Pokemon = ({
     </div>
   );
 
+  const renderActionButton = pokemonStatus => {
+    if (pokemonStatus == 'free') {
+      return (
+        <CustomButton
+          onClick={() =>
+            catchPokemonAsync({
+              id,
+              name,
+              status: 'captured',
+              captureDate: new Date()
+                .toDateString()
+                .split(' ')
+                .slice(1, 4)
+                .join(' ')
+            })
+          }
+        >
+          Catch
+        </CustomButton>
+      );
+    } else if (pokemonStatus == 'captured') {
+      return (
+        <CustomButton
+          onClick={() =>
+            setPokemonFreeAsync({
+              id,
+              name,
+              status: 'free',
+              captureDate: 'none'
+            })
+          }
+        >
+          Set Free
+        </CustomButton>
+      );
+    }
+  };
+
   const pokemonPage = `pokemon/${id}`;
 
   const pokemonMainContainerClasses = `${
@@ -58,38 +96,7 @@ const Pokemon = ({
         </div>
         {status !== 'free' && captureDateBlock()}
       </div>
-      {status === 'free' && (
-        <CustomButton
-          onClick={() =>
-            catchPokemonAsync({
-              id,
-              name,
-              status: 'captured',
-              captureDate: new Date()
-                .toDateString()
-                .split(' ')
-                .slice(1, 4)
-                .join(' ')
-            })
-          }
-        >
-          Catch
-        </CustomButton>
-      )}
-      {status === 'captured' && (
-        <CustomButton
-          onClick={() =>
-            setPokemonFreeAsync({
-              id,
-              name,
-              status: 'free',
-              captureDate: 'none'
-            })
-          }
-        >
-          Set Free
-        </CustomButton>
-      )}
+      {renderActionButton(status)}
     </div>
   );
 };

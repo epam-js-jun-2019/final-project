@@ -1,14 +1,5 @@
 import actionTypes from './pokemons.action-types';
 
-export const getPokemonsAsync = () => ({
-  type: actionTypes.GET_POKEMON_DATA_ASYNC
-});
-
-export const getPokemons = payload => ({
-  type: actionTypes.GET_POKEMON_DATA,
-  payload
-});
-
 export const getFreePokemonsAsync = () => ({
   type: actionTypes.GET_FREE_POKEMONS_ASYNC
 });
