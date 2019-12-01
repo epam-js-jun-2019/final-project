@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 
 import './custom-button.styles.scss';
 
-const CustomButton = ({ children, onClick }) => (
-  <button onClick={onClick} className='custom-button'>
+const CustomButton = ({ children, addClass, ...otherProps }) => (
+  <button {...otherProps} className={`custom-button ${addClass}`}>
     {children}
   </button>
 );
 
 CustomButton.propTypes = {
   children: PropTypes.string.isRequired || PropTypes.number.isRequired,
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func
 };
 
 export default CustomButton;

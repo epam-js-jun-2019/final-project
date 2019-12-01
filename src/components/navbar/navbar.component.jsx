@@ -19,8 +19,11 @@ const Navbar = () => (
       <Link className='option' to={routesConstants.CAPTURED_POKEMONS_PAGE}>
         Captured Pokemons
       </Link>
-      <Link className='option' to={routesConstants.RANDOM_PAGE}>
+      <Link className='option' to={routesConstants.RANDOM_POKEMON_PAGE}>
         Random Pokemon
+      </Link>
+      <Link className='option auth' to={routesConstants.SIGN_IN_AND_SIGN_UP}>
+        Sign In
       </Link>
     </div>
   </nav>

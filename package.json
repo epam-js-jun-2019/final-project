@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
+    "firebase": "^7.5.0",
     "json-server": "^0.15.1",
     "react": "^16.9.0",
     "react-app-polyfill": "^1.0.2",

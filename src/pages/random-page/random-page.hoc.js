@@ -11,6 +11,9 @@ const mapDispatchToProps = dispatch => ({
   getRandomPokemonAsync: () => dispatch(getRandomPokemonAsync())
 });
 
-const RandomPageHOC = connect(mapStateToProps, mapDispatchToProps)(RandomPage);
+const RandomPokemonPageHOC = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(RandomPage);
 
-export default RandomPageHOC;
+export default RandomPokemonPageHOC;

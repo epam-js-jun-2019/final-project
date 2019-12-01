@@ -27,7 +27,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 40rem;
+  width: 47rem;
   height: 2.5rem;
 }
 
@@ -41,6 +41,26 @@
     color: $color-secondary-light;
     transform: translateY(2px);
     border-bottom: 3px solid white;
+  }
+}
+
+.auth {
+  width: 7rem;
+  height: 2.5rem;
+  text-align: center;
+  font-size: 1.7rem;
+  border-radius: 5px;
+  color: #2998ff;
+  background-color: #fff;
+
+  &:hover {
+    color: #29dfff;
+    transform: translateY(0) scale(1.05);
+    border-bottom: 3px solid white;
+  }
+
+  &:active {
+    transform: translateY(2px) scale(1.05);
   }
 }
 
