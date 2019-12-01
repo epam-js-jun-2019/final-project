@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getPokemonsAsync } from 'Redux/pokemons/pokemons.actions';
+import { getPokemonsAsync } from './redux/pokemons/pokemons.actions';
 import App from './App';
 
 const mapDispatchToProps = dispatch => ({

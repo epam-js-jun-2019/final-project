@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import Pokemon from 'Components/pokemon/pokemon.hoc';
-import SearchBox from 'Components/search-box/search-box.component';
-import Pagination from 'Components/pagination/pagination.component';
+import Pokemon from '../../components/pokemon/pokemon.hoc';
+import SearchBox from '../../components/search-box/search-box.component';
+import Pagination from '../../components/pagination/pagination.component';
 import PropTypes from 'prop-types';
 
 import './pokemons-page.styles.scss';

@@ -4,7 +4,7 @@ import {
   setPokemonFreeAsync,
   setCurrentPokemon
 } from 'Redux/pokemons/pokemons.actions';
-import Pokemon from 'Components/pokemon/pokemon.component';
+import Pokemon from './pokemon.component';
 
 const mapDispatchToProps = dispatch => ({
   catchPokemonAsync: pokemon => dispatch(catchPokemonAsync(pokemon)),

@@ -4,7 +4,7 @@ import {
   watchCatchPokemonAsync,
   watchSetPokemonFreeAsync,
   watchGetRandomPokemonAsync
-} from 'Redux/pokemons/pokemons.sagas';
+} from './pokemons/pokemons.sagas';
 
 export default function* rootSaga() {
   yield all([

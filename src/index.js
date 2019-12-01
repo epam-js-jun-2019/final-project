@@ -6,9 +6,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import App from './App.hoc';
-import 'Sass/main.scss';
+import './sass/main.scss';
 
-import store from 'Redux/store';
+import store from './redux/store';
 
 ReactDOM.render(
   <Provider store={store}>

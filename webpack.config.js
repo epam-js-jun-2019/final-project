@@ -51,15 +51,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
-    alias: {
-      Assets: path.resolve(__dirname, './assets/'),
-      Components: path.resolve(__dirname, './src/components/'),
-      FetchAPI: path.resolve(__dirname, './src/fetchapi/'),
-      Pages: path.resolve(__dirname, './src/pages/'),
-      Redux: path.resolve(__dirname, './src/redux/'),
-      Sass: path.resolve(__dirname, './src/sass/')
-    }
+    extensions: ['.js', '.jsx']
   },
   plugins: [
     new HtmlWebpackPlugin({

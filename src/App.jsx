@@ -1,12 +1,12 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Navbar from 'Components/navbar/navbar.component';
-import HomePage from 'Pages/homepage/homepage.component';
-import PokemonPage from 'Pages/pokemon-page/pokemon-page.hoc';
-import FreePokemonsPage from 'Pages/pokemons-page/free-pokemons-page.hoc';
-import CapturedPokemonsPage from 'Pages/pokemons-page/captured-pokemons-page.hoc';
-import RandomPage from 'Pages/random-page/random-page.hoc';
+import Navbar from './components/navbar/navbar.component';
+import HomePage from './pages/homepage/homepage.component';
+import PokemonPage from './pages/pokemon-page/pokemon-page.hoc';
+import FreePokemonsPage from './pages/pokemons-page/free-pokemons-page.hoc';
+import CapturedPokemonsPage from './pages/pokemons-page/captured-pokemons-page.hoc';
+import RandomPage from './pages/random-page/random-page.hoc';
 import routesConstants from './routing/routes.constants';
 import './App.scss';
 
@@ -16,7 +16,7 @@ class App extends React.Component {
     getPokemonsAsync();
   }
 
-  NoMatch = () => <div>The page doesn't exist</div>;
+  NoMatch = () => <div className='no-match-page'>The page doesn't exist</div>;
 
   render() {
     return (

@@ -1,14 +1,14 @@
 import { put, takeEvery, call } from 'redux-saga/effects';
-import apiRequests from 'FetchAPI/http.lib';
-import restApiLinks from 'FetchAPI/restful-api.links';
-import actionTypes from 'Redux/pokemons/pokemons.action-types';
-import pokemonsApiService from 'FetchAPI/pokemonsApiService';
+import apiRequests from '../../fetchapi/http.lib';
+import restApiLinks from '../../fetchapi/restful-api.links';
+import actionTypes from '../pokemons/pokemons.action-types';
+import pokemonsApiService from '../../fetchapi/pokemonsApiService';
 import {
   getPokemons,
   getRandomPokemon,
   catchPokemon,
   setPokemonFree
-} from 'Redux/pokemons/pokemons.actions';
+} from '../pokemons/pokemons.actions';
 
 function* catchPokemonAsync(action) {
   const data = yield call(pokemonsApiService.catchPokemon, action.payload);

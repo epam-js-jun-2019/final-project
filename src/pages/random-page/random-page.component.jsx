@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { capitalizeWord } from '../../utils/utilities';
-import './Random-page.styles.scss';
+import './random-page.styles.scss';
 
 class RandomPage extends React.Component {
   static propTypes = {

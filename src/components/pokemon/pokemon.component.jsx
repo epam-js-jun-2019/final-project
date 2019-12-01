@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { capitalizeWord } from '../../utils/utilities';
-import CustomButton from 'Components/custom-button/custom-button.component';
+import CustomButton from '../custom-button/custom-button.component';
 
 import './pokemon.styles.scss';
 

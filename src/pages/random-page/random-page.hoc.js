@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import { getRandomPokemonAsync } from 'Redux/pokemons/pokemons.actions';
+import { getRandomPokemonAsync } from '../../redux/pokemons/pokemons.actions';
 
-import RandomPage from 'Pages/random-page/random-page.component';
+import RandomPage from '../random-page/random-page.component';
 const mapStateToProps = ({ pokemons: { randomPokemon, isLoading } }) => ({
   pokemon: randomPokemon,
   isLoading
