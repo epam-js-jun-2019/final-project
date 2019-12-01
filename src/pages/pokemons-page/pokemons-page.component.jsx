@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Pokemon from '../../components/pokemon/pokemon.hoc';
 import SearchBox from '../../components/search-box/search-box.component';
@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 
 import './pokemons-page.styles.scss';
 
-const PokemonsPage = ({ collection, isLoading }) => {
+const PokemonsPage = ({ collection, isLoading, getPokemonsAsync }) => {
   const initialState = {
     searchField: '',
     isPaginationWindow: false,
@@ -16,6 +16,11 @@ const PokemonsPage = ({ collection, isLoading }) => {
   };
 
   const [state, setState] = useState(initialState);
+
+  useEffect(() => {
+    !collection.length && getPokemonsAsync();
+    return () => null;
+  }, [collection]);
 
   const {
     searchField,
@@ -68,7 +73,7 @@ const PokemonsPage = ({ collection, isLoading }) => {
   };
 
   return isLoading ? (
-    <div />
+    <div /> // Spinner placeholder
   ) : (
     <div className='homepage' id='homepage'>
       <div className='search-box__container'>

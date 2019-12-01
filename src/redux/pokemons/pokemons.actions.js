@@ -9,6 +9,24 @@ export const getPokemons = payload => ({
   payload
 });
 
+export const getFreePokemonsAsync = () => ({
+  type: actionTypes.GET_FREE_POKEMONS_ASYNC
+});
+
+export const getFreePokemons = payload => ({
+  type: actionTypes.GET_FREE_POKEMONS,
+  payload
+});
+
+export const getCapturedPokemonsAsync = () => ({
+  type: actionTypes.GET_CAPTURED_POKEMONS_ASYNC
+});
+
+export const getCapturedPokemons = payload => ({
+  type: actionTypes.GET_CAPTURED_POKEMONS,
+  payload
+});
+
 export const getRandomPokemonAsync = () => ({
   type: actionTypes.GET_RANDOM_POKEMON_ASYNC
 });

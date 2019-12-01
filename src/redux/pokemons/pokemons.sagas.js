@@ -4,6 +4,8 @@ import restApiLinks from '../../fetchapi/restful-api.links';
 import actionTypes from '../pokemons/pokemons.action-types';
 import pokemonsApiService from '../../fetchapi/pokemonsApiService';
 import {
+  getFreePokemons,
+  getCapturedPokemons,
   getPokemons,
   getRandomPokemon,
   catchPokemon,
@@ -35,6 +37,27 @@ function* getPokemonDataAsync() {
 
 export function* watchGetPokemonDataAsync() {
   yield takeEvery(actionTypes.GET_POKEMON_DATA_ASYNC, getPokemonDataAsync);
+}
+
+function* getFreePokemonsAsync() {
+  const payload = yield apiRequests.get(restApiLinks.freePokemons);
+  yield put(getFreePokemons(payload));
+}
+
+export function* watchGetFreePokemonsAsync() {
+  yield takeEvery(actionTypes.GET_FREE_POKEMONS_ASYNC, getFreePokemonsAsync);
+}
+
+function* getCapturedPokemonsAsync() {
+  const payload = yield apiRequests.get(restApiLinks.capturedPokemons);
+  yield put(getCapturedPokemons(payload));
+}
+
+export function* watchGetCapturedPokemonsAsync() {
+  yield takeEvery(
+    actionTypes.GET_CAPTURED_POKEMONS_ASYNC,
+    getCapturedPokemonsAsync
+  );
 }
 
 function* getRandomPokemonAsync() {

@@ -10,6 +10,28 @@ const INITIAL_STATE = {
 
 const pokemonsReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case actionTypes.GET_FREE_POKEMONS_ASYNC:
+      return {
+        ...state,
+        isLoading: true
+      };
+    case actionTypes.GET_FREE_POKEMONS:
+      return {
+        ...state,
+        isLoading: false,
+        freePokemons: action.payload
+      };
+    case actionTypes.GET_CAPTURED_POKEMONS_ASYNC:
+      return {
+        ...state,
+        isLoading: true
+      };
+    case actionTypes.GET_CAPTURED_POKEMONS:
+      return {
+        ...state,
+        isLoading: false,
+        capturedPokemons: action.payload
+      };
     case actionTypes.GET_POKEMON_DATA:
       return {
         ...state,

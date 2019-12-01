@@ -10,35 +10,30 @@ import RandomPage from './pages/random-page/random-page.hoc';
 import routesConstants from './routing/routes.constants';
 import './App.scss';
 
-class App extends React.Component {
-  componentDidMount() {
-    const { getPokemonsAsync } = this.props;
-    getPokemonsAsync();
-  }
+const App = () => {
+  const renderNoMatch = () => (
+    <div className='no-match-page'>The page doesn't exist</div>
+  );
 
-  NoMatch = () => <div className='no-match-page'>The page doesn't exist</div>;
-
-  render() {
-    return (
-      <>
-        <Navbar />
-        <Switch>
-          <Route exact path={routesConstants.HOMEPAGE} component={HomePage} />
-          <Route path={routesConstants.POKEMON_PAGE} component={PokemonPage} />
-          <Route
-            path={routesConstants.FREE_POKEMONS_PAGE}
-            component={FreePokemonsPage}
-          />
-          <Route
-            path={routesConstants.CAPTURED_POKEMONS_PAGE}
-            component={CapturedPokemonsPage}
-          />
-          <Route path={routesConstants.RANDOM_PAGE} component={RandomPage} />
-          <Route component={this.NoMatch} />
-        </Switch>
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <Navbar />
+      <Switch>
+        <Route exact path={routesConstants.HOMEPAGE} component={HomePage} />
+        <Route path={routesConstants.POKEMON_PAGE} component={PokemonPage} />
+        <Route
+          path={routesConstants.FREE_POKEMONS_PAGE}
+          component={FreePokemonsPage}
+        />
+        <Route
+          path={routesConstants.CAPTURED_POKEMONS_PAGE}
+          component={CapturedPokemonsPage}
+        />
+        <Route path={routesConstants.RANDOM_PAGE} component={RandomPage} />
+        <Route component={renderNoMatch} />
+      </Switch>
+    </>
+  );
+};
 
 export default App;
