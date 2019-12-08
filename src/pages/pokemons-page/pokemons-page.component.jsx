@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 
 import './pokemons-page.styles.scss';
 
-const PokemonsPage = ({ collection, isLoading, getPokemonsAsync }) => {
+const PokemonsPage = ({ collection, isFetching, fetchPokemons }) => {
   const initialState = {
     searchField: '',
     isPaginationWindow: false,
@@ -25,7 +25,7 @@ const PokemonsPage = ({ collection, isLoading, getPokemonsAsync }) => {
   } = state;
 
   useEffect(() => {
-    !collection[1] && getPokemonsAsync();
+    !collection[0] && fetchPokemons();
     return () => null;
   });
 
@@ -66,14 +66,14 @@ const PokemonsPage = ({ collection, isLoading, getPokemonsAsync }) => {
 
   const renderPokemons = pokemons => {
     return pokemons
-      .map(({ id, ...collectionProps }) => (
-        <Pokemon key={id} id={id} {...collectionProps} />
+      .map(({ id, photoId, ...collectionProps }) => (
+        <Pokemon key={id} id={id} photoId={photoId} {...collectionProps} />
       ))
-      .sort((a, b) => a.props.id - b.props.id);
+      .sort((a, b) => a.props.photoId - b.props.photoId);
   };
 
-  return isLoading ? (
-    <div /> // Spinner placeholder
+  return isFetching ? (
+    <div />
   ) : (
     <div className='homepage' id='homepage'>
       <div className='search-box__container'>
@@ -114,7 +114,11 @@ const PokemonsPage = ({ collection, isLoading, getPokemonsAsync }) => {
 
 PokemonsPage.propTypes = {
   collection: PropTypes.array.isRequired,
-  isLoading: PropTypes.bool
+  isFetching: PropTypes.bool.isRequired
+};
+
+PokemonsPage.defaultProps = {
+  isFetching: false
 };
 
 export default PokemonsPage;

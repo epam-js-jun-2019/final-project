@@ -11,7 +11,9 @@ const Pokemon = ({
   id,
   name,
   status,
+  owner,
   captureDate,
+  photoId,
   userData,
   setCurrentPokemon,
   catchPokemonAsync,
@@ -31,6 +33,8 @@ const Pokemon = ({
             catchPokemonAsync({
               id,
               name,
+              owner: userData.displayName,
+              photoId,
               status: 'captured',
               captureDate: new Date()
                 .toDateString()
@@ -50,6 +54,8 @@ const Pokemon = ({
             setPokemonFreeAsync({
               id,
               name,
+              owner: 'none',
+              photoId,
               status: 'free',
               captureDate: 'none'
             })
@@ -75,18 +81,20 @@ const Pokemon = ({
     <div className={pokemonMainContainerClasses}>
       <div className={hiddenBackgroundClasses} />
       <Link
-        onClick={() => setCurrentPokemon({ id, name, status, captureDate })}
+        onClick={() =>
+          setCurrentPokemon({ id, photoId, name, status, captureDate })
+        }
         to={pokemonPage}
       >
         <img
           className='Pokemon__image'
-          src={`../../assets/images/pokemons-images/${id}.png`}
+          src={`../../assets/images/pokemons-images/${photoId}.png`}
           alt='pokemon'
         />
       </Link>
       <div className='Pokemon__text'>
         <div className='Pokemon__id'>
-          ID: <span className='Pokemon__text_focus'>{id}</span>
+          Owner: <span className='Pokemon__text_focus'>{owner}</span>
         </div>
         <div className='Pokemon__name'>
           Name:{' '}
@@ -102,8 +110,12 @@ const Pokemon = ({
   );
 };
 
+Pokemon.defaultProps = {
+  owner: 'none'
+};
+
 Pokemon.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   status: PropTypes.string.isRequired,
   captureDate: PropTypes.string.isRequired,

@@ -11,7 +11,11 @@ const CustomButton = ({ children, additionalClass, ...otherProps }) => (
 
 CustomButton.propTypes = {
   children: PropTypes.string.isRequired || PropTypes.number.isRequired,
-  onClick: PropTypes.func
+  onClick: PropTypes.func.isRequired
+};
+
+CustomButton.defaultProps = {
+  onClick: function() {}
 };
 
 export default CustomButton;

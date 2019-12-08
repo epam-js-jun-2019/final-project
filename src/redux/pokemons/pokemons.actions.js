@@ -1,21 +1,31 @@
 import actionTypes from './pokemons.action-types';
 
-export const getFreePokemonsAsync = () => ({
-  type: actionTypes.GET_FREE_POKEMONS_ASYNC
+export const fetchFreePokemonsStart = () => ({
+  type: actionTypes.FETCH_FREE_POKEMONS_START
 });
 
-export const getFreePokemons = payload => ({
-  type: actionTypes.GET_FREE_POKEMONS,
-  payload
+export const fetchFreePokemonsSuccess = freePokemonsMap => ({
+  type: actionTypes.FETCH_FREE_POKEMONS_SUCCESS,
+  payload: freePokemonsMap
 });
 
-export const getCapturedPokemonsAsync = () => ({
-  type: actionTypes.GET_CAPTURED_POKEMONS_ASYNC
+export const fetchFreePokemonsFailure = errorMessage => ({
+  type: actionTypes.FETCH_FREE_POKEMONS_FAILURE,
+  payload: errorMessage
 });
 
-export const getCapturedPokemons = payload => ({
-  type: actionTypes.GET_CAPTURED_POKEMONS,
-  payload
+export const fetchCapturedPokemonsStart = () => ({
+  type: actionTypes.FETCH_CAPTURED_POKEMONS_START
+});
+
+export const fetchCapturedPokemonsSuccess = CapturedPokemonsMap => ({
+  type: actionTypes.FETCH_CAPTURED_POKEMONS_SUCCESS,
+  payload: CapturedPokemonsMap
+});
+
+export const fetchCapturedPokemonsFailure = errorMessage => ({
+  type: actionTypes.FETCH_CAPTURED_POKEMONS_FAILURE,
+  payload: errorMessage
 });
 
 export const getRandomPokemonAsync = () => ({

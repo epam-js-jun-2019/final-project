@@ -7,8 +7,18 @@ import './random-page.styles.scss';
 class RandomPage extends React.Component {
   static propTypes = {
     getRandomPokemonAsync: PropTypes.func.isRequired,
-    pokemon: PropTypes.object,
-    isLoading: PropTypes.bool
+    pokemon: PropTypes.object.isRequired,
+    isFetching: PropTypes.bool.isRequired
+  };
+
+  static defaultProps = {
+    pokemon: {
+      id: 1,
+      name: 'name',
+      status: 'status',
+      captureDate: 'capture date'
+    },
+    isFetching: false
   };
 
   state = {
@@ -18,7 +28,7 @@ class RandomPage extends React.Component {
       status: 'status',
       captureDate: 'capture date'
     },
-    isLoading: true
+    isFetching: true
   };
 
   componentDidMount() {
@@ -27,19 +37,19 @@ class RandomPage extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { pokemon, isLoading } = this.props;
+    const { pokemon, isFetching } = this.props;
 
     if (prevProps.pokemon !== pokemon) {
-      this.setState({ pokemon, isLoading });
+      this.setState({ pokemon, isFetching });
     }
   }
 
   render() {
     const {
       pokemon: { id, name, status, captureDate },
-      isLoading
+      isFetching
     } = this.state;
-    return isLoading ? (
+    return isFetching ? (
       <div />
     ) : (
       <div style={{ position: 'relative' }}>

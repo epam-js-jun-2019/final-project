@@ -51,6 +51,15 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef;
 };
 
+export const addPokemonToFirestore = async (collectionKey, pokemon) => {
+  const collectionRef = firestore.collection(collectionKey);
+  const batch = firestore.batch();
+  const newDocRef = collectionRef.doc();
+  batch.set(newDocRef, { ...pokemon, id: newDocRef.id });
+  await batch.commit();
+  return newDocRef.id;
+};
+
 export const addCollectionAndDocuments = async (
   collectionKey,
   objectsToAdd
@@ -59,17 +68,13 @@ export const addCollectionAndDocuments = async (
   const batch = firestore.batch();
   objectsToAdd.forEach(obj => {
     const newDocRef = collectionRef.doc();
-    batch.set(newDocRef, { ...obj });
+    batch.set(newDocRef, { ...obj, id: newDocRef.id });
   });
   return await batch.commit();
 };
 
-export const convertCollectionSnapshotToMap = collection => {
-  const transformedCollection = collection.docs.map(doc => ({
-    ...doc.data(),
-    id: doc.id,
-    photoId: doc.data().id
-  }));
+export const convertCollectionSnapshotToMap = (collection, mapCallback) => {
+  const transformedCollection = collection.docs.map(mapCallback);
   return transformedCollection;
 };
 

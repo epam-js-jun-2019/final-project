@@ -5,49 +5,62 @@ const INITIAL_STATE = {
   capturedPokemons: [],
   currentPokemon: [],
   randomPokemon: {},
-  isLoading: false
+  isFetching: false,
+  errorMessage: null
 };
 
 const pokemonsReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case actionTypes.GET_FREE_POKEMONS_ASYNC:
+    case actionTypes.FETCH_FREE_POKEMONS_START:
       return {
         ...state,
-        isLoading: true
+        isFetching: true
       };
-    case actionTypes.GET_FREE_POKEMONS:
+    case actionTypes.FETCH_FREE_POKEMONS_SUCCESS:
       return {
         ...state,
-        isLoading: false,
-        freePokemons: action.payload.sort((a, b) => a.id - b.id)
+        isFetching: false,
+        freePokemons: action.payload.sort((a, b) => a.photoId - b.photoId)
       };
-    case actionTypes.GET_CAPTURED_POKEMONS_ASYNC:
+    case actionTypes.FETCH_FREE_POKEMONS_FAILURE:
       return {
         ...state,
-        isLoading: true
+        isFetching: false,
+        errorMessage: action.payload
       };
-    case actionTypes.GET_CAPTURED_POKEMONS:
+    case actionTypes.FETCH_CAPTURED_POKEMONS_START:
       return {
         ...state,
-        isLoading: false,
-        capturedPokemons: action.payload.sort((a, b) => a.id - b.id)
+        isFetching: true
+      };
+    case actionTypes.FETCH_CAPTURED_POKEMONS_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        capturedPokemons: action.payload.sort((a, b) => a.photoId - b.photoId)
+      };
+    case actionTypes.FETCH_CAPTURED_POKEMONS_FAILURE:
+      return {
+        ...state,
+        isFetching: false,
+        errorMessage: action.payload
       };
     case actionTypes.GET_RANDOM_POKEMON_ASYNC:
       return {
         ...state,
-        isLoading: true
+        isFetching: true
       };
     case actionTypes.GET_RANDOM_POKEMON:
       return {
         ...state,
-        isLoading: false,
+        isFetching: false,
         randomPokemon: action.payload
       };
     case actionTypes.CATCH_POKEMON:
       return {
         ...state,
         freePokemons: state.freePokemons.filter(
-          pokemon => pokemon.id !== action.payload.id
+          pokemon => pokemon.name !== action.payload.name
         ),
         capturedPokemons: [...state.capturedPokemons, action.payload].sort(
           (a, b) => a.id - b.id
@@ -57,7 +70,7 @@ const pokemonsReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         capturedPokemons: state.capturedPokemons.filter(
-          pokemon => pokemon.id !== action.payload.id
+          pokemon => pokemon.name !== action.payload.name
         ),
         freePokemons: [...state.freePokemons, action.payload].sort(
           (a, b) => a.id - b.id
