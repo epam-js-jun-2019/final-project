@@ -13,7 +13,7 @@ class RandomPage extends React.Component {
 
   static defaultProps = {
     pokemon: {
-      id: 1,
+      owner: 'none',
       name: 'name',
       status: 'status',
       captureDate: 'capture date'
@@ -23,7 +23,7 @@ class RandomPage extends React.Component {
 
   state = {
     pokemon: {
-      id: 1,
+      owner: 'none',
       name: 'name',
       status: 'status',
       captureDate: 'capture date'
@@ -46,7 +46,7 @@ class RandomPage extends React.Component {
 
   render() {
     const {
-      pokemon: { id, name, status, captureDate },
+      pokemon: { owner, photoId, name, status, captureDate },
       isFetching
     } = this.state;
     return isFetching ? (
@@ -56,18 +56,18 @@ class RandomPage extends React.Component {
         <div
           className='background-image'
           style={{
-            backgroundImage: `url(../../assets/images/pokemons-images/${id}.png)`
+            backgroundImage: `url(../../assets/images/pokemons-images/${photoId}.png)`
           }}
         />
         <div className='pokemon-info'>
           <h1>{capitalizeWord(name)}</h1>
           <img
             className='pokemon-image'
-            src={`../../assets/images/pokemons-images/${id}.png`}
+            src={`../../assets/images/pokemons-images/${photoId}.png`}
             alt='pokemon'
           />
           <span>
-            ID: <span className='focus'>{id}</span>
+            Owner: <span className='focus'>{owner}</span>
           </span>
           <span>
             Status: <span className='focus'>{status}</span>

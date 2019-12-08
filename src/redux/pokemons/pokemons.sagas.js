@@ -132,8 +132,25 @@ export function* watchSetPokemonFreeAsync() {
 }
 
 function* getRandomPokemonAsync() {
-  const payload = yield call(pokemonsApiService.getRandomPokemon);
-  yield put(getRandomPokemon(payload));
+  try {
+    const pseudoRandomNumber = Math.floor(Math.random() * Math.floor(100)) + 10;
+    const id = pseudoRandomNumber > 0 && pseudoRandomNumber;
+    const pokemonRef = firestore
+      .collection('freePokemons')
+      .where('photoId', '==', id);
+    const pokemonSnapshot = yield pokemonRef.get().then(snapshot => snapshot);
+    const pokemon = pokemonSnapshot.docs.map(doc => {
+      return {
+        ...doc.data(),
+        id: doc.id,
+        photoId: doc.data().photoId
+      };
+    })[0];
+
+    yield put(getRandomPokemon(pokemon));
+  } catch (error) {
+    console.log(error.message);
+  }
 }
 export function* watchGetRandomPokemonAsync() {
   yield takeEvery(actionTypes.GET_RANDOM_POKEMON_ASYNC, getRandomPokemonAsync);
