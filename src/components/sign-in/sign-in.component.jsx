@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { signInWithGoogle } from '../../firebase/firebase.utils';
+import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
 
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
@@ -13,10 +13,15 @@ const SignIn = () => {
   const [state, setState] = useState(initialState);
   const { email, password } = state;
 
-  const handleFormSubmit = e => {
+  const handleFormSubmit = async e => {
     e.preventDefault();
 
-    setState({ ...state, email: '', password: '' });
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+      setState({ ...state, email: '', password: '' });
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const handleInputChange = e => {

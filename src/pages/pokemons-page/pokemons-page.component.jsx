@@ -17,17 +17,17 @@ const PokemonsPage = ({ collection, isLoading, getPokemonsAsync }) => {
 
   const [state, setState] = useState(initialState);
 
-  useEffect(() => {
-    !collection[1] && getPokemonsAsync();
-    return () => null;
-  });
-
   const {
     searchField,
     isPaginationWindow,
     currentPage,
     pokemonsPerPage
   } = state;
+
+  useEffect(() => {
+    !collection[1] && getPokemonsAsync();
+    return () => null;
+  });
 
   const indexOfLastPokemon = currentPage * pokemonsPerPage;
 
