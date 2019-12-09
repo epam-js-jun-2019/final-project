@@ -28,12 +28,12 @@ export const fetchCapturedPokemonsFailure = errorMessage => ({
   payload: errorMessage
 });
 
-export const getRandomPokemonAsync = () => ({
-  type: actionTypes.GET_RANDOM_POKEMON_ASYNC
+export const fetchRandomPokemonAsync = () => ({
+  type: actionTypes.FETCH_RANDOM_POKEMON_ASYNC
 });
 
-export const getRandomPokemon = payload => ({
-  type: actionTypes.GET_RANDOM_POKEMON,
+export const fetchRandomPokemon = payload => ({
+  type: actionTypes.FETCH_RANDOM_POKEMON,
   payload
 });
 

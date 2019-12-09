@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
 
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 import './sign-in.styles.scss';
 
-const SignIn = () => {
+const SignIn = ({ auth, googleSignInStart }) => {
   const initialState = {
     email: '',
     password: ''
@@ -54,8 +53,9 @@ const SignIn = () => {
         <div className='buttons-wrapper'>
           <CustomButton type='submit'>Sign In</CustomButton>
           <CustomButton
+            type='button'
             additionalClass='google-sign-in'
-            onClick={signInWithGoogle}
+            onClick={googleSignInStart}
           >
             Sign In With Google
           </CustomButton>

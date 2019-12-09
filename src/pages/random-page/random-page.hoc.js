@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getRandomPokemonAsync } from '../../redux/pokemons/pokemons.actions';
+import { fetchRandomPokemonAsync } from '../../redux/pokemons/pokemons.actions';
 
 import RandomPage from '../random-page/random-page.component';
 const mapStateToProps = ({ pokemons: { randomPokemon, isFetching } }) => ({
@@ -8,7 +8,7 @@ const mapStateToProps = ({ pokemons: { randomPokemon, isFetching } }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  getRandomPokemonAsync: () => dispatch(getRandomPokemonAsync())
+  fetchRandomPokemonAsync: () => dispatch(fetchRandomPokemonAsync())
 });
 
 const RandomPokemonPageHOC = connect(

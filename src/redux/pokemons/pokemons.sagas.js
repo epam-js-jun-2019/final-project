@@ -1,4 +1,4 @@
-import { takeEvery, call, put } from 'redux-saga/effects';
+import { takeLatest, all, call, put } from 'redux-saga/effects';
 import {
   firestore,
   convertCollectionSnapshotToMap,
@@ -6,9 +6,8 @@ import {
 } from '../../firebase/firebase.utils';
 
 import actionTypes from '../pokemons/pokemons.action-types';
-import pokemonsApiService from '../../fetchapi/pokemonsApiService';
 import {
-  getRandomPokemon,
+  fetchRandomPokemon,
   catchPokemon,
   setPokemonFree,
   fetchFreePokemonsSuccess,
@@ -33,12 +32,13 @@ function* fetchFreePokemonsAsync() {
     );
     yield put(fetchFreePokemonsSuccess(freePokemonsMap));
   } catch (error) {
+    console.error(error.message);
     yield put(fetchFreePokemonsFailure(error.message));
   }
 }
 
-export function* watchFetchFreePokemonsAsync() {
-  yield takeEvery(
+export function* onFetchFreePokemonsAsync() {
+  yield takeLatest(
     actionTypes.FETCH_FREE_POKEMONS_START,
     fetchFreePokemonsAsync
   );
@@ -60,12 +60,13 @@ function* fetchCapturedPokemonsAsync() {
     );
     yield put(fetchCapturedPokemonsSuccess(capturedPokemonsMap));
   } catch (error) {
+    console.error(error.message);
     yield put(fetchCapturedPokemonsFailure(error.message));
   }
 }
 
-export function* watchFetchCapturedPokemonsAsync() {
-  yield takeEvery(
+export function* onFetchCapturedPokemonsAsync() {
+  yield takeLatest(
     actionTypes.FETCH_CAPTURED_POKEMONS_START,
     fetchCapturedPokemonsAsync
   );
@@ -94,11 +95,11 @@ function* catchPokemonAsync(action) {
 
     yield put(catchPokemon(pokemon));
   } catch (error) {
-    console.log(error.message);
+    console.error(error.message);
   }
 }
-export function* watchCatchPokemonAsync() {
-  yield takeEvery(actionTypes.CATCH_POKEMON_ASYNC, catchPokemonAsync);
+export function* onCatchPokemonAsync() {
+  yield takeLatest(actionTypes.CATCH_POKEMON_ASYNC, catchPokemonAsync);
 }
 
 function* setPokemonFreeAsync(action) {
@@ -124,22 +125,24 @@ function* setPokemonFreeAsync(action) {
 
     yield put(setPokemonFree(pokemon));
   } catch (error) {
-    console.log(error.message);
+    console.error(error.message);
   }
 }
-export function* watchSetPokemonFreeAsync() {
-  yield takeEvery(actionTypes.SET_POKEMON_FREE_ASYNC, setPokemonFreeAsync);
+export function* onSetPokemonFreeAsync() {
+  yield takeLatest(actionTypes.SET_POKEMON_FREE_ASYNC, setPokemonFreeAsync);
 }
 
-function* getRandomPokemonAsync() {
+function* fetchRandomPokemonAsync() {
   try {
     const pseudoRandomNumber = Math.floor(Math.random() * Math.floor(100)) + 10;
     const id = pseudoRandomNumber > 0 && pseudoRandomNumber;
     const pokemonRef = firestore
       .collection('freePokemons')
       .where('photoId', '==', id);
-    const pokemonSnapshot = yield pokemonRef.get().then(snapshot => snapshot);
-    const pokemon = pokemonSnapshot.docs.map(doc => {
+    const pokemonSnapshot = yield pokemonRef
+      .get()
+      .then(snapshot => snapshot.docs[0]);
+    const pokemon = [pokemonSnapshot].map(doc => {
       return {
         ...doc.data(),
         id: doc.id,
@@ -147,11 +150,24 @@ function* getRandomPokemonAsync() {
       };
     })[0];
 
-    yield put(getRandomPokemon(pokemon));
+    yield put(fetchRandomPokemon(pokemon));
   } catch (error) {
-    console.log(error.message);
+    console.error(error.message);
   }
 }
-export function* watchGetRandomPokemonAsync() {
-  yield takeEvery(actionTypes.GET_RANDOM_POKEMON_ASYNC, getRandomPokemonAsync);
+export function* onFetchRandomPokemonAsync() {
+  yield takeLatest(
+    actionTypes.FETCH_RANDOM_POKEMON_ASYNC,
+    fetchRandomPokemonAsync
+  );
+}
+
+export function* pokemonsSagas() {
+  yield all([
+    call(onCatchPokemonAsync),
+    call(onSetPokemonFreeAsync),
+    call(onFetchRandomPokemonAsync),
+    call(onFetchFreePokemonsAsync),
+    call(onFetchCapturedPokemonsAsync)
+  ]);
 }

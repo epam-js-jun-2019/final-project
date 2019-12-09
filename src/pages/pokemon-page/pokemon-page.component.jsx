@@ -4,24 +4,26 @@ import PropTypes from 'prop-types';
 import { capitalizeWord } from '../../utils/utilities';
 import './pokemon-page.styles.scss';
 
-const PokemonPage = ({ currentPokemon: { id, name, status, captureDate } }) => {
+const PokemonPage = ({
+  currentPokemon: { id, photoId, owner, name, status, captureDate }
+}) => {
   return (
     <div style={{ position: 'relative' }}>
       <div
         className='background-image'
         style={{
-          backgroundImage: `url(../../assets/images/pokemons-images/${id}.png)`
+          backgroundImage: `url(../../assets/images/pokemons-images/${photoId}.png)`
         }}
       />
       <div className='pokemon-info'>
         <h1 className='pokemon-title'>{capitalizeWord(name)}</h1>
         <img
           className='pokemon-image'
-          src={`../../assets/images/pokemons-images/${id}.png`}
+          src={`../../assets/images/pokemons-images/${photoId}.png`}
           alt='pokemon'
         />
         <span>
-          ID: <span className='pokemon-info_focus'>{id}</span>
+          Owner: <span className='pokemon-info_focus'>{owner || 'none'}</span>
         </span>
         <span>
           Status: <span className='pokemon-info_focus'>{status}</span>
