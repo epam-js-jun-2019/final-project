@@ -16,18 +16,18 @@ import './App.scss';
 const App = ({ setUserData, userData, userId }) => {
   let unsubcribeFromAuth = null;
 
-  // useEffect(() => {
-  //   unsubcribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-  //     if (userAuth && !userId) {
-  //       const userRef = await createUserProfileDocument(userAuth);
+  useEffect(() => {
+    unsubcribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+      if (userAuth && !userId) {
+        const userRef = await createUserProfileDocument(userAuth);
 
-  //       userRef.onSnapshot(snapShot => {
-  //         setUserData({ id: snapShot.id, userData: { ...snapShot.data() } });
-  //       });
-  //     }
-  //   });
-  //   return unsubcribeFromAuth;
-  // }, [userData, userId]);
+        userRef.onSnapshot(snapShot => {
+          setUserData({ id: snapShot.id, userData: { ...snapShot.data() } });
+        });
+      }
+    });
+    return unsubcribeFromAuth;
+  }, [userData, userId]);
 
   const renderNoMatch = () => (
     <div className='no-match-page'>The page doesn't exist</div>

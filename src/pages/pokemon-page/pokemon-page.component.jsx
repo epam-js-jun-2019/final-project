@@ -5,7 +5,7 @@ import { capitalizeWord } from '../../utils/utilities';
 import './pokemon-page.styles.scss';
 
 const PokemonPage = ({
-  currentPokemon: { id, photoId, owner, name, status, captureDate }
+  currentPokemon: { photoId, owner, name, status, captureDate }
 }) => {
   return (
     <div style={{ position: 'relative' }}>

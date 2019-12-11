@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
-import { googleSignInStart } from '../../redux/user/user.actions';
-import { auth } from '../../firebase/firebase.utils';
+import {
+  googleSignInStart,
+  emailSignInStart
+} from '../../redux/user/user.actions';
 import SignIn from './sign-in.component';
 
-const mapStateToProps = state => ({
-  auth
-});
-
 const mapDispatchToProps = dispatch => ({
-  googleSignInStart: () => dispatch(googleSignInStart())
+  googleSignInStart: () => dispatch(googleSignInStart()),
+  emailSignInStart: emailAndPassword =>
+    dispatch(emailSignInStart(emailAndPassword))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
+export default connect(null, mapDispatchToProps)(SignIn);

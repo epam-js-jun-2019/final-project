@@ -14,7 +14,10 @@ const Navbar = ({ userData, auth }) => (
     </Link>
     {userData && (
       <div className='user'>
-        <img className='user-avatar' src={userData.photoURL} />
+        <img
+          className='user-avatar'
+          src={userData.photoURL || 'https://picsum.photos/200'}
+        />
         <p className='user-name'>{userData.displayName}</p>
       </div>
     )}

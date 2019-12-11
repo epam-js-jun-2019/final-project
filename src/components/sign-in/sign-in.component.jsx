@@ -4,7 +4,7 @@ import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 import './sign-in.styles.scss';
 
-const SignIn = ({ auth, googleSignInStart }) => {
+const SignIn = ({ googleSignInStart, emailSignInStart }) => {
   const initialState = {
     email: '',
     password: ''
@@ -14,13 +14,8 @@ const SignIn = ({ auth, googleSignInStart }) => {
 
   const handleFormSubmit = async e => {
     e.preventDefault();
-
-    try {
-      await auth.signInWithEmailAndPassword(email, password);
-      setState({ ...state, email: '', password: '' });
-    } catch (error) {
-      console.error(error);
-    }
+    emailSignInStart({ email, password });
+    setState({ ...state, email: '', password: '' });
   };
 
   const handleInputChange = e => {

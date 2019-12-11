@@ -12,6 +12,7 @@ const INITIAL_STATE = {
 const pokemonsReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case actionTypes.FETCH_FREE_POKEMONS_START:
+    case actionTypes.FETCH_CAPTURED_POKEMONS_START:
       return {
         ...state,
         isFetching: true
@@ -23,17 +24,6 @@ const pokemonsReducer = (state = INITIAL_STATE, action) => {
         freePokemons: action.payload.sort((a, b) => a.photoId - b.photoId),
         errorMessage: null
       };
-    case actionTypes.FETCH_FREE_POKEMONS_FAILURE:
-      return {
-        ...state,
-        isFetching: false,
-        errorMessage: action.payload
-      };
-    case actionTypes.FETCH_CAPTURED_POKEMONS_START:
-      return {
-        ...state,
-        isFetching: true
-      };
     case actionTypes.FETCH_CAPTURED_POKEMONS_SUCCESS:
       return {
         ...state,
@@ -41,6 +31,7 @@ const pokemonsReducer = (state = INITIAL_STATE, action) => {
         capturedPokemons: action.payload.sort((a, b) => a.photoId - b.photoId),
         errorMessage: null
       };
+    case actionTypes.FETCH_FREE_POKEMONS_FAILURE:
     case actionTypes.FETCH_CAPTURED_POKEMONS_FAILURE:
       return {
         ...state,
