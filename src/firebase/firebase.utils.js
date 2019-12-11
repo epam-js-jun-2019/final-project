@@ -1,5 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
+import 'firebase/storage';
 import 'firebase/auth';
 
 const config = {
@@ -17,6 +18,17 @@ firebase.initializeApp(config);
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
+export const storage = firebase.storage();
+export const storageRef = storage.ref();
+
+export const getPokemonImgReference = photoId => {
+  const url = storageRef
+    .child(`pokemon-images/${photoId}.png`)
+    .getDownloadURL()
+    .then(url => url)
+    .catch(error => console.log(error.message));
+  return url;
+};
 
 export const googleProvider = new firebase.auth.GoogleAuthProvider();
 

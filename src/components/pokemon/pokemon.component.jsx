@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -17,8 +17,26 @@ const Pokemon = ({
   userData,
   setCurrentPokemon,
   catchPokemonAsync,
-  setPokemonFreeAsync
+  setPokemonFreeAsync,
+  getPokemonImgReference
 }) => {
+  const initialState = {
+    imgUrl: null
+  };
+  const [state, setState] = useState(initialState);
+  const { imgUrl } = state;
+
+  const loadImageUrl = async photoId => {
+    const imgUrl = await getPokemonImgReference(photoId);
+    setState({ imgUrl });
+    return imgUrl;
+  };
+
+  useEffect(() => {
+    loadImageUrl(photoId);
+    return () => null;
+  }, [id]);
+
   const captureDateBlock = () => (
     <div className='Pokemon__captureDate'>
       Capture Date: <span className='Pokemon__text_focus'>{captureDate}</span>
@@ -86,11 +104,7 @@ const Pokemon = ({
         }
         to={pokemonPage}
       >
-        <img
-          className='Pokemon__image'
-          src={`../../assets/images/pokemons-images/${photoId}.png`}
-          alt='pokemon'
-        />
+        <img className='Pokemon__image' src={imgUrl} alt='pokemon' />
       </Link>
       <div className='Pokemon__text'>
         <div className='Pokemon__id'>

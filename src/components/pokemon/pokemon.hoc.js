@@ -4,10 +4,12 @@ import {
   setPokemonFreeAsync,
   setCurrentPokemon
 } from '../../redux/pokemons/pokemons.actions';
+import { getPokemonImgReference } from '../../firebase/firebase.utils';
 import Pokemon from './pokemon.component';
 
 const mapStateToProps = ({ user: { userData } }) => ({
-  userData
+  userData,
+  getPokemonImgReference
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -8,7 +8,8 @@ class RandomPage extends React.Component {
   static propTypes = {
     fetchRandomPokemonAsync: PropTypes.func.isRequired,
     pokemon: PropTypes.object.isRequired,
-    isFetching: PropTypes.bool.isRequired
+    isFetching: PropTypes.bool.isRequired,
+    getPokemonImgReference: PropTypes.func.isRequired
   };
 
   static defaultProps = {
@@ -26,9 +27,18 @@ class RandomPage extends React.Component {
       owner: 'none',
       name: 'name',
       status: 'status',
+      photoId: null,
       captureDate: 'capture date'
     },
+    imgUrl: null,
     isFetching: true
+  };
+
+  loadImageUrl = async photoId => {
+    const { getPokemonImgReference } = this.props;
+    const imgUrl = await getPokemonImgReference(photoId);
+    this.setState({ imgUrl });
+    return imgUrl;
   };
 
   componentDidMount() {
@@ -41,33 +51,31 @@ class RandomPage extends React.Component {
 
     if (prevProps.pokemon !== pokemon) {
       this.setState({ pokemon, isFetching });
+      this.loadImageUrl(pokemon.photoId);
     }
   }
 
   render() {
     const {
-      pokemon: { owner, photoId, name, status, captureDate },
-      isFetching
+      pokemon: { owner, name, status, captureDate },
+      isFetching,
+      imgUrl
     } = this.state;
-    return isFetching ? (
-      <div />
+    return isFetching && imgUrl === null ? (
+      <h1>IS LOADING</h1>
     ) : (
       <div style={{ position: 'relative' }}>
         <div
           className='background-image'
           style={{
-            backgroundImage: `url(../../assets/images/pokemons-images/${photoId}.png)`
+            backgroundImage: `url(${imgUrl})`
           }}
         />
         <div className='pokemon-info'>
           <h1>{capitalizeWord(name)}</h1>
-          <img
-            className='pokemon-image'
-            src={`../../assets/images/pokemons-images/${photoId}.png`}
-            alt='pokemon'
-          />
+          <img className='pokemon-image' src={imgUrl} alt='pokemon' />
           <span>
-            Owner: <span className='focus'>{owner}</span>
+            Owner: <span className='focus'>{owner || 'none'}</span>
           </span>
           <span>
             Status: <span className='focus'>{status}</span>
