@@ -1,6 +1,6 @@
 const routesConstants = {
-  HOMEPAGE: '/',
-  POKEMON_PAGE: '/pokemon/:pokemonID',
+  HOMEPAGE: '/final-project',
+  POKEMON_PAGE: '/pokemon/',
   FREE_POKEMONS_PAGE: '/free-pokemons',
   CAPTURED_POKEMONS_PAGE: '/captured-pokemons',
   RANDOM_POKEMON_PAGE: '/random-pokemon',

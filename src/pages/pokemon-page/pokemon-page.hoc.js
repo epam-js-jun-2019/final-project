@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import PokemonPage from './pokemon-page.component';
 
 const mapStateToProps = ({ pokemons: { currentPokemon } }) => ({
-  currentPokemon: currentPokemon || null
+  currentPokemon
 });
 
 const PokemonPageHOC = connect(mapStateToProps)(PokemonPage);

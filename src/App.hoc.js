@@ -3,9 +3,13 @@ import App from './App';
 
 import { setUserData } from './redux/user/user.actions';
 
-const mapStateToProps = ({ user: { userId, userData } }) => ({
+const mapStateToProps = ({
+  user: { userId, userData },
+  pokemons: { currentPokemon }
+}) => ({
   userId,
-  userData
+  userData,
+  currentPokemon
 });
 
 const mapDispatchToProps = dispatch => ({

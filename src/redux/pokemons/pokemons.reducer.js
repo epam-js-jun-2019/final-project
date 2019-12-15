@@ -3,7 +3,7 @@ import actionTypes from './pokemons.action-types';
 const INITIAL_STATE = {
   freePokemons: [],
   capturedPokemons: [],
-  currentPokemon: [],
+  currentPokemon: {},
   randomPokemon: {},
   isFetching: false,
   errorMessage: null

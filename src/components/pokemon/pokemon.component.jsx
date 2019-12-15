@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import routesConstants from '../../routing/routes.constants';
 import { capitalizeWord } from '../../utils/utilities';
 import CustomButton from '../custom-button/custom-button.component';
 
@@ -15,6 +16,7 @@ const Pokemon = ({
   captureDate,
   photoId,
   userData,
+  currentPokemon,
   setCurrentPokemon,
   catchPokemonAsync,
   setPokemonFreeAsync,
@@ -85,8 +87,6 @@ const Pokemon = ({
     }
   };
 
-  const pokemonPage = `pokemon/${id}`;
-
   const pokemonMainContainerClasses = `${
     status !== 'free' ? 'Pokemon_captured' : 'Pokemon_captured-alt'
   } Pokemon`;
@@ -100,9 +100,9 @@ const Pokemon = ({
       <div className={hiddenBackgroundClasses} />
       <Link
         onClick={() =>
-          setCurrentPokemon({ id, photoId, name, status, captureDate })
+          setCurrentPokemon({ id, photoId, imgUrl, name, status, captureDate })
         }
-        to={pokemonPage}
+        to={`${routesConstants.POKEMON_PAGE}${photoId}`}
       >
         <img className='Pokemon__image' src={imgUrl} alt='pokemon' />
       </Link>

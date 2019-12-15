@@ -7,9 +7,13 @@ import {
 import { getPokemonImgReference } from '../../firebase/firebase.utils';
 import Pokemon from './pokemon.component';
 
-const mapStateToProps = ({ user: { userData } }) => ({
+const mapStateToProps = ({
+  user: { userData },
+  pokemons: { currentPokemon }
+}) => ({
   userData,
-  getPokemonImgReference
+  getPokemonImgReference,
+  currentPokemon
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -1,27 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { capitalizeWord } from '../../utils/utilities';
 import './pokemon-page.styles.scss';
 
-const PokemonPage = ({
-  currentPokemon: { photoId, owner, name, status, captureDate }
-}) => {
+const PokemonPage = ({ currentPokemon }) => {
+  const initialState = {
+    imgUrl: null,
+    owner: 'none',
+    name: 'none',
+    status: 'none',
+    captureDate: 'none'
+  };
+
+  const [state, setState] = useState(initialState);
+  const { imgUrl, owner, name, status, captureDate } = state;
+
+  useEffect(() => {
+    const { imgUrl, owner, name, status, captureDate } = currentPokemon;
+    setState({ ...state, imgUrl, owner, name, status, captureDate });
+    return () => null;
+  }, [currentPokemon.photoId]);
+
   return (
     <div style={{ position: 'relative' }}>
       <div
         className='background-image'
         style={{
-          backgroundImage: `url(../../assets/images/pokemons-images/${photoId}.png)`
+          backgroundImage: `url(${imgUrl})`
         }}
       />
       <div className='pokemon-info'>
-        <h1 className='pokemon-title'>{capitalizeWord(name)}</h1>
-        <img
-          className='pokemon-image'
-          src={`../../assets/images/pokemons-images/${photoId}.png`}
-          alt='pokemon'
-        />
+        <h1 className='pokemon-title'>{name && capitalizeWord(name)}</h1>
+        <img className='pokemon-image' src={imgUrl} alt='pokemon' />
         <span>
           Owner: <span className='pokemon-info_focus'>{owner || 'none'}</span>
         </span>
