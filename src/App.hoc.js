@@ -1,19 +1,19 @@
 import { connect } from 'react-redux';
 import App from './App';
 
-import { setUserData } from './redux/user/user.actions';
+import { checkUserSession } from './redux/user/user.actions';
 
 const mapStateToProps = ({
-  user: { userId, userData },
+  user: { userData, isLoadingUser },
   pokemons: { currentPokemon }
 }) => ({
-  userId,
   userData,
-  currentPokemon
+  currentPokemon,
+  isLoadingUser
 });
 
 const mapDispatchToProps = dispatch => ({
-  setUserData: payload => dispatch(setUserData(payload))
+  checkUserSession: () => dispatch(checkUserSession())
 });
 
 const AppHOC = connect(mapStateToProps, mapDispatchToProps)(App);

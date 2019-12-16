@@ -21,6 +21,15 @@ export const firestore = firebase.firestore();
 export const storage = firebase.storage();
 export const storageRef = storage.ref();
 
+export const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = auth.onAuthStateChanged(userAuth => {
+      unsubscribe();
+      resolve(userAuth);
+    }, reject);
+  });
+};
+
 export const getPokemonImgReference = photoId => {
   const url = storageRef
     .child(`pokemon-images/${photoId}.png`)

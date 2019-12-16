@@ -1,12 +1,11 @@
 import actionTypes from './user.action-types';
 
-export const setUserData = user => ({
-  type: actionTypes.USER_SIGN_IN,
-  payload: user
+export const checkUserSession = () => ({
+  type: actionTypes.CHECK_USER_SESSION
 });
 
 export const onUserSignOut = () => ({
-  type: actionTypes.USER_SIGN_OUT
+  type: actionTypes.USER_SIGNED_OUT
 });
 
 export const googleSignInStart = () => ({

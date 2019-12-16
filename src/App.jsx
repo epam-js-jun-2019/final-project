@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 import Navbar from './components/navbar/navbar.hoc';
 import HomePage from './pages/homepage/homepage.component';
@@ -13,21 +12,10 @@ import SignInAndSignUpPage from './pages/sign-in-and-sign-up-page/sign-in-and-si
 import routesConstants from './routing/routes.constants';
 import './App.scss';
 
-const App = ({ setUserData, userData, userId, currentPokemon }) => {
-  let unsubcribeFromAuth = null;
-
+const App = ({ checkUserSession, userData, isLoadingUser, currentPokemon }) => {
   useEffect(() => {
-    unsubcribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-      if (userAuth && !userId) {
-        const userRef = await createUserProfileDocument(userAuth);
-
-        userRef.onSnapshot(snapShot => {
-          setUserData({ id: snapShot.id, userData: { ...snapShot.data() } });
-        });
-      }
-    });
-    return unsubcribeFromAuth;
-  }, [userData, userId]);
+    checkUserSession();
+  }, []);
 
   const renderNoMatch = () => (
     <div className='no-match-page'>The page doesn't exist</div>
@@ -36,56 +24,57 @@ const App = ({ setUserData, userData, userId, currentPokemon }) => {
   return (
     <>
       <Navbar />
-      <Switch>
-        <Route exact path={routesConstants.HOMEPAGE}>
-          {userData ? (
-            <HomePage />
-          ) : (
-            <Redirect to={routesConstants.SIGN_IN_AND_SIGN_UP} />
-          )}
-        </Route>
-        <Route
-          path={`${routesConstants.POKEMON_PAGE}${currentPokemon.photoId}`}
-        >
-          {userData ? (
-            <PokemonPage />
-          ) : (
-            <Redirect to={routesConstants.SIGN_IN_AND_SIGN_UP} />
-          )}
-        </Route>
-        <Route path={routesConstants.FREE_POKEMONS_PAGE}>
-          {userData ? (
-            <FreePokemonsPage />
-          ) : (
-            <Redirect to={routesConstants.SIGN_IN_AND_SIGN_UP} />
-          )}
-        </Route>
-        <Route path={routesConstants.CAPTURED_POKEMONS_PAGE}>
-          {userData ? (
-            <CapturedPokemonsPage />
-          ) : (
-            <Redirect to={routesConstants.SIGN_IN_AND_SIGN_UP} />
-          )}
-        </Route>
-        <Route path={routesConstants.RANDOM_POKEMON_PAGE}>
-          {userData ? (
-            <RandomPokemonPage />
-          ) : (
-            <Redirect to={routesConstants.SIGN_IN_AND_SIGN_UP} />
-          )}
-        </Route>
-        <Route
-          path={routesConstants.SIGN_IN_AND_SIGN_UP}
-          component={SignInAndSignUpPage}
-        >
-          {userData ? (
-            <Redirect to={routesConstants.HOMEPAGE} />
-          ) : (
-            <SignInAndSignUpPage />
-          )}
-        </Route>
-        <Route component={renderNoMatch} />
-      </Switch>
+      {isLoadingUser ? (
+        <h1 style={{ color: 'wheat', fontSize: '6rem' }}>Loading...</h1>
+      ) : (
+        <Switch>
+          <Route exact path={routesConstants.HOMEPAGE}>
+            {userData ? (
+              <HomePage />
+            ) : (
+              <Redirect to={routesConstants.SIGN_IN_AND_SIGN_UP} />
+            )}
+          </Route>
+          <Route
+            path={`${routesConstants.POKEMON_PAGE}${currentPokemon.photoId}`}
+          >
+            {userData ? (
+              <PokemonPage />
+            ) : (
+              <Redirect to={routesConstants.SIGN_IN_AND_SIGN_UP} />
+            )}
+          </Route>
+          <Route path={routesConstants.FREE_POKEMONS_PAGE}>
+            {userData ? (
+              <FreePokemonsPage />
+            ) : (
+              <Redirect to={routesConstants.SIGN_IN_AND_SIGN_UP} />
+            )}
+          </Route>
+          <Route path={routesConstants.CAPTURED_POKEMONS_PAGE}>
+            {userData ? (
+              <CapturedPokemonsPage />
+            ) : (
+              <Redirect to={routesConstants.SIGN_IN_AND_SIGN_UP} />
+            )}
+          </Route>
+          <Route path={routesConstants.RANDOM_POKEMON_PAGE}>
+            {userData ? (
+              <RandomPokemonPage />
+            ) : (
+              <Redirect to={routesConstants.SIGN_IN_AND_SIGN_UP} />
+            )}
+          </Route>
+          <Route path={routesConstants.SIGN_IN_AND_SIGN_UP}>
+            {userData ? (
+              <Redirect to={routesConstants.HOMEPAGE} />
+            ) : (
+              <SignInAndSignUpPage />
+            )}
+          </Route>
+          <Route component={renderNoMatch} />
+        </Switch>
+      )}
     </>
   );
 };

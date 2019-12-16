@@ -137,7 +137,7 @@ function* fetchRandomPokemonAsync() {
     const pseudoRandomNumber = Math.floor(Math.random() * Math.floor(100)) + 10;
     const id = pseudoRandomNumber > 0 && pseudoRandomNumber;
     const pokemonRef = firestore
-      .collection('freePokemons')
+      .collection('pokemons')
       .where('photoId', '==', id);
     const pokemonSnapshot = yield pokemonRef
       .get()
