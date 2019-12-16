@@ -2,6 +2,8 @@ import actionTypes from './pokemons.action-types';
 
 const INITIAL_STATE = {
   freePokemons: [],
+  shouldFreePokemonsRefetch: true,
+  shouldCapturedPokemonsRefetch: true,
   capturedPokemons: [],
   currentPokemon: {},
   randomPokemon: {},
@@ -21,6 +23,7 @@ const pokemonsReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isFetching: false,
+        shouldFreePokemonsRefetch: false,
         freePokemons: action.payload.sort((a, b) => a.photoId - b.photoId),
         errorMessage: null
       };
@@ -28,6 +31,7 @@ const pokemonsReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isFetching: false,
+        shouldCapturedPokemonsRefetch: false,
         capturedPokemons: action.payload.sort((a, b) => a.photoId - b.photoId),
         errorMessage: null
       };
@@ -55,9 +59,7 @@ const pokemonsReducer = (state = INITIAL_STATE, action) => {
         freePokemons: state.freePokemons.filter(
           pokemon => pokemon.name !== action.payload.name
         ),
-        capturedPokemons: [...state.capturedPokemons, action.payload].sort(
-          (a, b) => a.id - b.id
-        )
+        shouldCapturedPokemonsRefetch: true
       };
     case actionTypes.SET_POKEMON_FREE:
       return {
@@ -65,9 +67,7 @@ const pokemonsReducer = (state = INITIAL_STATE, action) => {
         capturedPokemons: state.capturedPokemons.filter(
           pokemon => pokemon.name !== action.payload.name
         ),
-        freePokemons: [...state.freePokemons, action.payload].sort(
-          (a, b) => a.id - b.id
-        )
+        shouldFreePokemonsRefetch: true
       };
     case actionTypes.SET_CURRENT_POKEMON:
       return {

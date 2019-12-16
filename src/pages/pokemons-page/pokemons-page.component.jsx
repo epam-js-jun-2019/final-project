@@ -7,7 +7,12 @@ import PropTypes from 'prop-types';
 
 import './pokemons-page.styles.scss';
 
-const PokemonsPage = ({ collection, isFetching, fetchPokemons }) => {
+const PokemonsPage = ({
+  collection,
+  isFetching,
+  fetchPokemons,
+  shouldRefetch
+}) => {
   const initialState = {
     searchField: '',
     isPaginationWindow: false,
@@ -25,9 +30,10 @@ const PokemonsPage = ({ collection, isFetching, fetchPokemons }) => {
   } = state;
 
   useEffect(() => {
-    !collection[0] && fetchPokemons();
-    return () => null;
-  });
+    if (shouldRefetch) {
+      fetchPokemons();
+    }
+  }, []);
 
   const indexOfLastPokemon = currentPage * pokemonsPerPage;
 
