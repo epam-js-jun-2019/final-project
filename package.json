@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/TigranKirakosov/final-project/issues"
   },
-  "homepage": "https://tigrankirakosov.github.io/",
+  "homepage": "https://tigrankirakosov.github.io/final-project",
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",

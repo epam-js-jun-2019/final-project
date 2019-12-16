@@ -77,7 +77,13 @@ const App = ({ setUserData, userData, userId, currentPokemon }) => {
         <Route
           path={routesConstants.SIGN_IN_AND_SIGN_UP}
           component={SignInAndSignUpPage}
-        />
+        >
+          {userData ? (
+            <Redirect to={routesConstants.HOMEPAGE} />
+          ) : (
+            <SignInAndSignUpPage />
+          )}
+        </Route>
         <Route component={renderNoMatch} />
       </Switch>
     </>

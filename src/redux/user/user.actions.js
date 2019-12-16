@@ -5,6 +5,10 @@ export const setUserData = user => ({
   payload: user
 });
 
+export const onUserSignOut = () => ({
+  type: actionTypes.USER_SIGN_OUT
+});
+
 export const googleSignInStart = () => ({
   type: actionTypes.GOOGLE_SIGN_IN_START
 });
