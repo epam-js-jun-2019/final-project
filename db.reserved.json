@@ -1,0 +1,4326 @@
+{
+  "freePokemons": [
+    {
+      "name": "charizard",
+      "id": 6,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "squirtle",
+      "id": 7,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "wartortle",
+      "id": 8,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "blastoise",
+      "id": 9,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "metapod",
+      "id": 11,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "butterfree",
+      "id": 12,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "weedle",
+      "id": 13,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "kakuna",
+      "id": 14,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "beedrill",
+      "id": 15,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "pidgey",
+      "id": 16,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "pidgeotto",
+      "id": 17,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "pidgeot",
+      "id": 18,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "rattata",
+      "id": 19,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "raticate",
+      "id": 20,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "spearow",
+      "id": 21,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "fearow",
+      "id": 22,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "ekans",
+      "id": 23,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "arbok",
+      "id": 24,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "pikachu",
+      "id": 25,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "raichu",
+      "id": 26,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "sandshrew",
+      "id": 27,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "sandslash",
+      "id": 28,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "nidoran-f",
+      "id": 29,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "nidorina",
+      "id": 30,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "nidoqueen",
+      "id": 31,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "nidoran-m",
+      "id": 32,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "nidorino",
+      "id": 33,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "nidoking",
+      "id": 34,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "clefairy",
+      "id": 35,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "clefable",
+      "id": 36,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "vulpix",
+      "id": 37,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "ninetales",
+      "id": 38,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "jigglypuff",
+      "id": 39,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "wigglytuff",
+      "id": 40,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "zubat",
+      "id": 41,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "golbat",
+      "id": 42,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "oddish",
+      "id": 43,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "gloom",
+      "id": 44,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "vileplume",
+      "id": 45,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "paras",
+      "id": 46,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "parasect",
+      "id": 47,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "venonat",
+      "id": 48,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "venomoth",
+      "id": 49,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "diglett",
+      "id": 50,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "dugtrio",
+      "id": 51,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "meowth",
+      "id": 52,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "persian",
+      "id": 53,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "psyduck",
+      "id": 54,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "golduck",
+      "id": 55,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "mankey",
+      "id": 56,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "primeape",
+      "id": 57,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "growlithe",
+      "id": 58,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "arcanine",
+      "id": 59,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "poliwag",
+      "id": 60,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "poliwhirl",
+      "id": 61,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "poliwrath",
+      "id": 62,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "abra",
+      "id": 63,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "kadabra",
+      "id": 64,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "alakazam",
+      "id": 65,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "machop",
+      "id": 66,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "machoke",
+      "id": 67,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "machamp",
+      "id": 68,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "bellsprout",
+      "id": 69,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "weepinbell",
+      "id": 70,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "victreebel",
+      "id": 71,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "tentacool",
+      "id": 72,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "tentacruel",
+      "id": 73,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "geodude",
+      "id": 74,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "graveler",
+      "id": 75,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "golem",
+      "id": 76,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "ponyta",
+      "id": 77,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "rapidash",
+      "id": 78,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "slowpoke",
+      "id": 79,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "slowbro",
+      "id": 80,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "magnemite",
+      "id": 81,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "magneton",
+      "id": 82,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "farfetchd",
+      "id": 83,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "doduo",
+      "id": 84,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "dodrio",
+      "id": 85,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "seel",
+      "id": 86,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "dewgong",
+      "id": 87,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "grimer",
+      "id": 88,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "muk",
+      "id": 89,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "shellder",
+      "id": 90,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "cloyster",
+      "id": 91,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "gastly",
+      "id": 92,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "haunter",
+      "id": 93,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "gengar",
+      "id": 94,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "onix",
+      "id": 95,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "drowzee",
+      "id": 96,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "hypno",
+      "id": 97,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "krabby",
+      "id": 98,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "kingler",
+      "id": 99,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "voltorb",
+      "id": 100,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "electrode",
+      "id": 101,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "exeggcute",
+      "id": 102,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "exeggutor",
+      "id": 103,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "cubone",
+      "id": 104,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "marowak",
+      "id": 105,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "hitmonlee",
+      "id": 106,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "hitmonchan",
+      "id": 107,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "lickitung",
+      "id": 108,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "koffing",
+      "id": 109,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "weezing",
+      "id": 110,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "rhyhorn",
+      "id": 111,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "rhydon",
+      "id": 112,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "chansey",
+      "id": 113,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "tangela",
+      "id": 114,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "kangaskhan",
+      "id": 115,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "horsea",
+      "id": 116,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "seadra",
+      "id": 117,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "goldeen",
+      "id": 118,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "seaking",
+      "id": 119,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "staryu",
+      "id": 120,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "starmie",
+      "id": 121,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "mr-mime",
+      "id": 122,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "scyther",
+      "id": 123,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "jynx",
+      "id": 124,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "electabuzz",
+      "id": 125,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "magmar",
+      "id": 126,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "pinsir",
+      "id": 127,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "tauros",
+      "id": 128,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "magikarp",
+      "id": 129,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "gyarados",
+      "id": 130,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "lapras",
+      "id": 131,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "ditto",
+      "id": 132,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "eevee",
+      "id": 133,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "vaporeon",
+      "id": 134,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "jolteon",
+      "id": 135,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "flareon",
+      "id": 136,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "porygon",
+      "id": 137,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "omanyte",
+      "id": 138,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "omastar",
+      "id": 139,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "kabuto",
+      "id": 140,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "kabutops",
+      "id": 141,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "aerodactyl",
+      "id": 142,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "snorlax",
+      "id": 143,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "articuno",
+      "id": 144,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "zapdos",
+      "id": 145,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "moltres",
+      "id": 146,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "dratini",
+      "id": 147,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "dragonair",
+      "id": 148,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "dragonite",
+      "id": 149,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "mewtwo",
+      "id": 150,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "mew",
+      "id": 151,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "chikorita",
+      "id": 152,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "bayleef",
+      "id": 153,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "meganium",
+      "id": 154,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "cyndaquil",
+      "id": 155,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "quilava",
+      "id": 156,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "typhlosion",
+      "id": 157,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "totodile",
+      "id": 158,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "croconaw",
+      "id": 159,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "feraligatr",
+      "id": 160,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "sentret",
+      "id": 161,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "furret",
+      "id": 162,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "hoothoot",
+      "id": 163,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "noctowl",
+      "id": 164,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "ledyba",
+      "id": 165,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "ledian",
+      "id": 166,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "spinarak",
+      "id": 167,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "ariados",
+      "id": 168,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "crobat",
+      "id": 169,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "chinchou",
+      "id": 170,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "lanturn",
+      "id": 171,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "pichu",
+      "id": 172,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "cleffa",
+      "id": 173,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "igglybuff",
+      "id": 174,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "togepi",
+      "id": 175,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "togetic",
+      "id": 176,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "natu",
+      "id": 177,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "xatu",
+      "id": 178,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "mareep",
+      "id": 179,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "flaaffy",
+      "id": 180,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "ampharos",
+      "id": 181,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "bellossom",
+      "id": 182,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "marill",
+      "id": 183,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "azumarill",
+      "id": 184,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "sudowoodo",
+      "id": 185,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "politoed",
+      "id": 186,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "hoppip",
+      "id": 187,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "skiploom",
+      "id": 188,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "jumpluff",
+      "id": 189,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "aipom",
+      "id": 190,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "sunkern",
+      "id": 191,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "sunflora",
+      "id": 192,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "yanma",
+      "id": 193,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "wooper",
+      "id": 194,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "quagsire",
+      "id": 195,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "espeon",
+      "id": 196,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "umbreon",
+      "id": 197,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "murkrow",
+      "id": 198,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "slowking",
+      "id": 199,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "misdreavus",
+      "id": 200,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "unown",
+      "id": 201,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "wobbuffet",
+      "id": 202,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "girafarig",
+      "id": 203,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "pineco",
+      "id": 204,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "forretress",
+      "id": 205,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "dunsparce",
+      "id": 206,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "gligar",
+      "id": 207,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "steelix",
+      "id": 208,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "snubbull",
+      "id": 209,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "granbull",
+      "id": 210,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "qwilfish",
+      "id": 211,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "scizor",
+      "id": 212,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "shuckle",
+      "id": 213,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "heracross",
+      "id": 214,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "sneasel",
+      "id": 215,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "teddiursa",
+      "id": 216,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "ursaring",
+      "id": 217,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "slugma",
+      "id": 218,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "magcargo",
+      "id": 219,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "swinub",
+      "id": 220,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "piloswine",
+      "id": 221,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "corsola",
+      "id": 222,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "remoraid",
+      "id": 223,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "octillery",
+      "id": 224,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "delibird",
+      "id": 225,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "mantine",
+      "id": 226,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "skarmory",
+      "id": 227,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "houndour",
+      "id": 228,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "houndoom",
+      "id": 229,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "kingdra",
+      "id": 230,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "phanpy",
+      "id": 231,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "donphan",
+      "id": 232,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "porygon2",
+      "id": 233,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "stantler",
+      "id": 234,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "smeargle",
+      "id": 235,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "tyrogue",
+      "id": 236,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "hitmontop",
+      "id": 237,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "smoochum",
+      "id": 238,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "elekid",
+      "id": 239,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "magby",
+      "id": 240,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "miltank",
+      "id": 241,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "blissey",
+      "id": 242,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "raikou",
+      "id": 243,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "entei",
+      "id": 244,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "suicune",
+      "id": 245,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "larvitar",
+      "id": 246,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "pupitar",
+      "id": 247,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "tyranitar",
+      "id": 248,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "lugia",
+      "id": 249,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "ho-oh",
+      "id": 250,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "celebi",
+      "id": 251,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "treecko",
+      "id": 252,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "grovyle",
+      "id": 253,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "sceptile",
+      "id": 254,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "torchic",
+      "id": 255,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "combusken",
+      "id": 256,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "blaziken",
+      "id": 257,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "mudkip",
+      "id": 258,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "marshtomp",
+      "id": 259,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "swampert",
+      "id": 260,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "poochyena",
+      "id": 261,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "mightyena",
+      "id": 262,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "zigzagoon",
+      "id": 263,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "linoone",
+      "id": 264,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "wurmple",
+      "id": 265,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "silcoon",
+      "id": 266,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "beautifly",
+      "id": 267,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "cascoon",
+      "id": 268,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "dustox",
+      "id": 269,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "lotad",
+      "id": 270,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "lombre",
+      "id": 271,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "ludicolo",
+      "id": 272,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "seedot",
+      "id": 273,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "nuzleaf",
+      "id": 274,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "shiftry",
+      "id": 275,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "taillow",
+      "id": 276,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "swellow",
+      "id": 277,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "wingull",
+      "id": 278,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "pelipper",
+      "id": 279,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "ralts",
+      "id": 280,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "kirlia",
+      "id": 281,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "gardevoir",
+      "id": 282,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "surskit",
+      "id": 283,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "masquerain",
+      "id": 284,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "shroomish",
+      "id": 285,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "breloom",
+      "id": 286,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "slakoth",
+      "id": 287,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "vigoroth",
+      "id": 288,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "slaking",
+      "id": 289,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "nincada",
+      "id": 290,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "ninjask",
+      "id": 291,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "shedinja",
+      "id": 292,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "whismur",
+      "id": 293,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "loudred",
+      "id": 294,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "exploud",
+      "id": 295,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "makuhita",
+      "id": 296,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "hariyama",
+      "id": 297,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "azurill",
+      "id": 298,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "nosepass",
+      "id": 299,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "skitty",
+      "id": 300,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "delcatty",
+      "id": 301,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "sableye",
+      "id": 302,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "mawile",
+      "id": 303,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "aron",
+      "id": 304,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "lairon",
+      "id": 305,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "aggron",
+      "id": 306,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "meditite",
+      "id": 307,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "medicham",
+      "id": 308,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "electrike",
+      "id": 309,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "manectric",
+      "id": 310,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "plusle",
+      "id": 311,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "minun",
+      "id": 312,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "illumise",
+      "id": 314,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "roselia",
+      "id": 315,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "gulpin",
+      "id": 316,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "swalot",
+      "id": 317,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "carvanha",
+      "id": 318,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "sharpedo",
+      "id": 319,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "wailmer",
+      "id": 320,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "wailord",
+      "id": 321,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "numel",
+      "id": 322,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "camerupt",
+      "id": 323,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "torkoal",
+      "id": 324,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "spoink",
+      "id": 325,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "grumpig",
+      "id": 326,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "spinda",
+      "id": 327,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "trapinch",
+      "id": 328,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "vibrava",
+      "id": 329,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "flygon",
+      "id": 330,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "cacnea",
+      "id": 331,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "cacturne",
+      "id": 332,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "swablu",
+      "id": 333,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "altaria",
+      "id": 334,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "zangoose",
+      "id": 335,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "seviper",
+      "id": 336,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "lunatone",
+      "id": 337,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "solrock",
+      "id": 338,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "barboach",
+      "id": 339,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "whiscash",
+      "id": 340,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "corphish",
+      "id": 341,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "crawdaunt",
+      "id": 342,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "baltoy",
+      "id": 343,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "claydol",
+      "id": 344,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "lileep",
+      "id": 345,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "cradily",
+      "id": 346,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "anorith",
+      "id": 347,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "armaldo",
+      "id": 348,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "feebas",
+      "id": 349,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "milotic",
+      "id": 350,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "castform",
+      "id": 351,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "kecleon",
+      "id": 352,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "shuppet",
+      "id": 353,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "banette",
+      "id": 354,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "duskull",
+      "id": 355,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "dusclops",
+      "id": 356,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "tropius",
+      "id": 357,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "chimecho",
+      "id": 358,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "absol",
+      "id": 359,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "wynaut",
+      "id": 360,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "snorunt",
+      "id": 361,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "glalie",
+      "id": 362,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "spheal",
+      "id": 363,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "sealeo",
+      "id": 364,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "walrein",
+      "id": 365,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "clamperl",
+      "id": 366,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "huntail",
+      "id": 367,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "gorebyss",
+      "id": 368,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "relicanth",
+      "id": 369,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "luvdisc",
+      "id": 370,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "bagon",
+      "id": 371,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "shelgon",
+      "id": 372,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "salamence",
+      "id": 373,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "beldum",
+      "id": 374,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "metang",
+      "id": 375,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "metagross",
+      "id": 376,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "regirock",
+      "id": 377,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "regice",
+      "id": 378,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "registeel",
+      "id": 379,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "latias",
+      "id": 380,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "latios",
+      "id": 381,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "kyogre",
+      "id": 382,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "groudon",
+      "id": 383,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "rayquaza",
+      "id": 384,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "jirachi",
+      "id": 385,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "deoxys-normal",
+      "id": 386,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "turtwig",
+      "id": 387,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "grotle",
+      "id": 388,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "torterra",
+      "id": 389,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "chimchar",
+      "id": 390,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "monferno",
+      "id": 391,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "infernape",
+      "id": 392,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "piplup",
+      "id": 393,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "prinplup",
+      "id": 394,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "empoleon",
+      "id": 395,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "starly",
+      "id": 396,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "staravia",
+      "id": 397,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "staraptor",
+      "id": 398,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "bidoof",
+      "id": 399,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "bibarel",
+      "id": 400,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "kricketot",
+      "id": 401,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "kricketune",
+      "id": 402,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "shinx",
+      "id": 403,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "luxio",
+      "id": 404,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "luxray",
+      "id": 405,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "budew",
+      "id": 406,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "roserade",
+      "id": 407,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "cranidos",
+      "id": 408,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "rampardos",
+      "id": 409,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "shieldon",
+      "id": 410,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "bastiodon",
+      "id": 411,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "burmy",
+      "id": 412,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "wormadam-plant",
+      "id": 413,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "mothim",
+      "id": 414,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "combee",
+      "id": 415,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "vespiquen",
+      "id": 416,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "pachirisu",
+      "id": 417,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "buizel",
+      "id": 418,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "floatzel",
+      "id": 419,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "cherubi",
+      "id": 420,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "cherrim",
+      "id": 421,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "shellos",
+      "id": 422,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "gastrodon",
+      "id": 423,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "ambipom",
+      "id": 424,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "drifloon",
+      "id": 425,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "drifblim",
+      "id": 426,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "buneary",
+      "id": 427,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "lopunny",
+      "id": 428,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "mismagius",
+      "id": 429,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "honchkrow",
+      "id": 430,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "glameow",
+      "id": 431,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "purugly",
+      "id": 432,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "chingling",
+      "id": 433,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "stunky",
+      "id": 434,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "skuntank",
+      "id": 435,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "bronzor",
+      "id": 436,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "bronzong",
+      "id": 437,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "bonsly",
+      "id": 438,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "mime-jr",
+      "id": 439,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "happiny",
+      "id": 440,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "chatot",
+      "id": 441,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "spiritomb",
+      "id": 442,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "gible",
+      "id": 443,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "gabite",
+      "id": 444,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "garchomp",
+      "id": 445,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "munchlax",
+      "id": 446,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "riolu",
+      "id": 447,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "lucario",
+      "id": 448,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "hippopotas",
+      "id": 449,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "hippowdon",
+      "id": 450,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "skorupi",
+      "id": 451,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "drapion",
+      "id": 452,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "croagunk",
+      "id": 453,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "toxicroak",
+      "id": 454,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "carnivine",
+      "id": 455,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "finneon",
+      "id": 456,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "lumineon",
+      "id": 457,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "mantyke",
+      "id": 458,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "snover",
+      "id": 459,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "abomasnow",
+      "id": 460,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "weavile",
+      "id": 461,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "magnezone",
+      "id": 462,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "lickilicky",
+      "id": 463,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "rhyperior",
+      "id": 464,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "tangrowth",
+      "id": 465,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "electivire",
+      "id": 466,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "magmortar",
+      "id": 467,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "togekiss",
+      "id": 468,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "yanmega",
+      "id": 469,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "glaceon",
+      "id": 471,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "gliscor",
+      "id": 472,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "mamoswine",
+      "id": 473,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "porygon-z",
+      "id": 474,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "gallade",
+      "id": 475,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "probopass",
+      "id": 476,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "dusknoir",
+      "id": 477,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "froslass",
+      "id": 478,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "rotom",
+      "id": 479,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "uxie",
+      "id": 480,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "mesprit",
+      "id": 481,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "azelf",
+      "id": 482,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "dialga",
+      "id": 483,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "palkia",
+      "id": 484,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "heatran",
+      "id": 485,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "regigigas",
+      "id": 486,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "giratina-altered",
+      "id": 487,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "cresselia",
+      "id": 488,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "phione",
+      "id": 489,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "manaphy",
+      "id": 490,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "darkrai",
+      "id": 491,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "shaymin-land",
+      "id": 492,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "arceus",
+      "id": 493,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "victini",
+      "id": 494,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "snivy",
+      "id": 495,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "servine",
+      "id": 496,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "serperior",
+      "id": 497,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "tepig",
+      "id": 498,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "pignite",
+      "id": 499,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "emboar",
+      "id": 500,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "oshawott",
+      "id": 501,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "dewott",
+      "id": 502,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "samurott",
+      "id": 503,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "patrat",
+      "id": 504,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "watchog",
+      "id": 505,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "lillipup",
+      "id": 506,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "herdier",
+      "id": 507,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "stoutland",
+      "id": 508,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "purrloin",
+      "id": 509,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "liepard",
+      "id": 510,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "pansage",
+      "id": 511,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "simisage",
+      "id": 512,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "pansear",
+      "id": 513,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "simisear",
+      "id": 514,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "panpour",
+      "id": 515,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "simipour",
+      "id": 516,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "munna",
+      "id": 517,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "musharna",
+      "id": 518,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "pidove",
+      "id": 519,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "tranquill",
+      "id": 520,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "unfezant",
+      "id": 521,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "blitzle",
+      "id": 522,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "zebstrika",
+      "id": 523,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "roggenrola",
+      "id": 524,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "boldore",
+      "id": 525,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "gigalith",
+      "id": 526,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "woobat",
+      "id": 527,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "swoobat",
+      "id": 528,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "drilbur",
+      "id": 529,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "excadrill",
+      "id": 530,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "audino",
+      "id": 531,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "timburr",
+      "id": 532,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "gurdurr",
+      "id": 533,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "conkeldurr",
+      "id": 534,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "tympole",
+      "id": 535,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "palpitoad",
+      "id": 536,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "seismitoad",
+      "id": 537,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "throh",
+      "id": 538,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "sawk",
+      "id": 539,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "sewaddle",
+      "id": 540,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "swadloon",
+      "id": 541,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "leavanny",
+      "id": 542,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "venipede",
+      "id": 543,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "whirlipede",
+      "id": 544,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "scolipede",
+      "id": 545,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "cottonee",
+      "id": 546,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "whimsicott",
+      "id": 547,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "petilil",
+      "id": 548,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "lilligant",
+      "id": 549,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "basculin-red-striped",
+      "id": 550,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "sandile",
+      "id": 551,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "krokorok",
+      "id": 552,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "krookodile",
+      "id": 553,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "darumaka",
+      "id": 554,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "darmanitan-standard",
+      "id": 555,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "maractus",
+      "id": 556,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "dwebble",
+      "id": 557,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "crustle",
+      "id": 558,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "scraggy",
+      "id": 559,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "scrafty",
+      "id": 560,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "sigilyph",
+      "id": 561,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "yamask",
+      "id": 562,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "cofagrigus",
+      "id": 563,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "tirtouga",
+      "id": 564,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "carracosta",
+      "id": 565,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "archen",
+      "id": 566,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "archeops",
+      "id": 567,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "trubbish",
+      "id": 568,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "garbodor",
+      "id": 569,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "zorua",
+      "id": 570,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "zoroark",
+      "id": 571,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "minccino",
+      "id": 572,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "cinccino",
+      "id": 573,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "gothita",
+      "id": 574,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "gothorita",
+      "id": 575,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "gothitelle",
+      "id": 576,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "solosis",
+      "id": 577,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "duosion",
+      "id": 578,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "reuniclus",
+      "id": 579,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "ducklett",
+      "id": 580,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "swanna",
+      "id": 581,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "vanillite",
+      "id": 582,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "vanillish",
+      "id": 583,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "vanilluxe",
+      "id": 584,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "deerling",
+      "id": 585,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "sawsbuck",
+      "id": 586,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "emolga",
+      "id": 587,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "karrablast",
+      "id": 588,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "escavalier",
+      "id": 589,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "foongus",
+      "id": 590,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "amoonguss",
+      "id": 591,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "frillish",
+      "id": 592,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "jellicent",
+      "id": 593,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "alomomola",
+      "id": 594,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "joltik",
+      "id": 595,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "galvantula",
+      "id": 596,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "ferroseed",
+      "id": 597,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "ferrothorn",
+      "id": 598,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "klink",
+      "id": 599,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "klang",
+      "id": 600,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "klinklang",
+      "id": 601,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "tynamo",
+      "id": 602,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "eelektrik",
+      "id": 603,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "eelektross",
+      "id": 604,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "elgyem",
+      "id": 605,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "beheeyem",
+      "id": 606,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "litwick",
+      "id": 607,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "lampent",
+      "id": 608,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "chandelure",
+      "id": 609,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "axew",
+      "id": 610,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "fraxure",
+      "id": 611,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "haxorus",
+      "id": 612,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "cubchoo",
+      "id": 613,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "beartic",
+      "id": 614,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "cryogonal",
+      "id": 615,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "shelmet",
+      "id": 616,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "accelgor",
+      "id": 617,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "stunfisk",
+      "id": 618,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "mienfoo",
+      "id": 619,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "mienshao",
+      "id": 620,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "druddigon",
+      "id": 621,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "golett",
+      "id": 622,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "golurk",
+      "id": 623,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "pawniard",
+      "id": 624,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "bisharp",
+      "id": 625,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "bouffalant",
+      "id": 626,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "rufflet",
+      "id": 627,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "braviary",
+      "id": 628,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "vullaby",
+      "id": 629,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "mandibuzz",
+      "id": 630,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "heatmor",
+      "id": 631,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "durant",
+      "id": 632,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "deino",
+      "id": 633,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "zweilous",
+      "id": 634,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "hydreigon",
+      "id": 635,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "larvesta",
+      "id": 636,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "volcarona",
+      "id": 637,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "cobalion",
+      "id": 638,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "terrakion",
+      "id": 639,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "virizion",
+      "id": 640,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "tornadus-incarnate",
+      "id": 641,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "thundurus-incarnate",
+      "id": 642,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "reshiram",
+      "id": 643,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "zekrom",
+      "id": 644,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "landorus-incarnate",
+      "id": 645,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "kyurem",
+      "id": 646,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "keldeo-ordinary",
+      "id": 647,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "meloetta-aria",
+      "id": 648,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "genesect",
+      "id": 649,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "chespin",
+      "id": 650,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "quilladin",
+      "id": 651,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "chesnaught",
+      "id": 652,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "fennekin",
+      "id": 653,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "braixen",
+      "id": 654,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "delphox",
+      "id": 655,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "froakie",
+      "id": 656,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "frogadier",
+      "id": 657,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "greninja",
+      "id": 658,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "bunnelby",
+      "id": 659,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "diggersby",
+      "id": 660,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "fletchling",
+      "id": 661,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "fletchinder",
+      "id": 662,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "talonflame",
+      "id": 663,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "scatterbug",
+      "id": 664,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "spewpa",
+      "id": 665,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "vivillon",
+      "id": 666,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "litleo",
+      "id": 667,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "pyroar",
+      "id": 668,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "flabebe",
+      "id": 669,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "floette",
+      "id": 670,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "florges",
+      "id": 671,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "skiddo",
+      "id": 672,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "gogoat",
+      "id": 673,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "pancham",
+      "id": 674,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "pangoro",
+      "id": 675,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "furfrou",
+      "id": 676,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "espurr",
+      "id": 677,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "meowstic-male",
+      "id": 678,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "honedge",
+      "id": 679,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "doublade",
+      "id": 680,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "aegislash-shield",
+      "id": 681,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "spritzee",
+      "id": 682,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "aromatisse",
+      "id": 683,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "swirlix",
+      "id": 684,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "slurpuff",
+      "id": 685,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "inkay",
+      "id": 686,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "malamar",
+      "id": 687,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "binacle",
+      "id": 688,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "barbaracle",
+      "id": 689,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "skrelp",
+      "id": 690,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "dragalge",
+      "id": 691,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "clauncher",
+      "id": 692,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "clawitzer",
+      "id": 693,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "helioptile",
+      "id": 694,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "heliolisk",
+      "id": 695,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "tyrunt",
+      "id": 696,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "tyrantrum",
+      "id": 697,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "amaura",
+      "id": 698,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "aurorus",
+      "id": 699,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "sylveon",
+      "id": 700,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "hawlucha",
+      "id": 701,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "dedenne",
+      "id": 702,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "carbink",
+      "id": 703,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "goomy",
+      "id": 704,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "sliggoo",
+      "id": 705,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "goodra",
+      "id": 706,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "klefki",
+      "id": 707,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "name": "phantump",
+      "id": 708,
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "id": 313,
+      "name": "volbeat",
+      "status": "free",
+      "captureDate": "none"
+    },
+    {
+      "id": 470,
+      "name": "leafeon",
+      "status": "free",
+      "captureDate": "none"
+    }
+  ],
+  "capturedPokemons": [
+    {
+      "id": 3,
+      "name": "venusaur",
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
+    },
+    {
+      "id": 2,
+      "name": "ivysaur",
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
+    },
+    {
+      "id": 4,
+      "name": "charmander",
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
+    },
+    {
+      "id": 5,
+      "name": "charmeleon",
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
+    },
+    {
+      "id": 10,
+      "name": "caterpie",
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
+    },
+    {
+      "name": "trevenant",
+      "id": 709,
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
+    },
+    {
+      "name": "pumpkaboo-average",
+      "id": 710,
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
+    },
+    {
+      "name": "gourgeist-average",
+      "id": 711,
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
+    },
+    {
+      "name": "bergmite",
+      "id": 712,
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
+    },
+    {
+      "name": "avalugg",
+      "id": 713,
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
+    },
+    {
+      "name": "noibat",
+      "id": 714,
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
+    },
+    {
+      "name": "noivern",
+      "id": 715,
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
+    },
+    {
+      "name": "xerneas",
+      "id": 716,
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
+    },
+    {
+      "name": "yveltal",
+      "id": 717,
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
+    },
+    {
+      "name": "zygarde",
+      "id": 718,
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
+    },
+    {
+      "name": "diancie",
+      "id": 719,
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
+    },
+    {
+      "name": "hoopa",
+      "id": 720,
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
+    },
+    {
+      "id": 1,
+      "name": "bulbasaur",
+      "status": "captured",
+      "captureDate": "Aug 24 2019"
+    }
+  ]
+}

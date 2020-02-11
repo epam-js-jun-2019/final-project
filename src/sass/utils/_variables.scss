@@ -1,0 +1,74 @@
+// COLORS
+$color-primary: #ffb900;
+$color-primary-light: #ff9c40;
+$color-primary-dark: #ff7730;
+
+$color-secondary-light: #2998ff;
+$color-secondary-dark: #5643fa;
+
+$color-tertiary: #27054e;
+
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+
+$color-grey-dark: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+
+$color-white: #fff;
+$color-black: #000;
+
+$color-body-bg-1: #ffd829;
+$color-body-bg-2: #44c4ff;
+
+$color-navbar: #fff4d4;
+
+//SHADOW
+$shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.6);
+$shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.25);
+
+// FONT
+$font-regular: 'Blinker-Regular', Helvetica, Arial, sans-serif;
+$font-light: 'Blinker-Light', Helvetica, Arial, sans-serif;
+$font-bold: 'Blinker-Bold', Helvetica, Arial, sans-serif;
+$font-size-default: 1.6rem;
+
+// ANIMATION
+@keyframes changeScale {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes changeScale1 {
+  0% {
+    transform: scale(0.98) rotate(-3deg);
+  }
+  100% {
+    transform: scale(1.02) rotate(3deg);
+  }
+}
+
+@keyframes changeScale2 {
+  0% {
+    transform: scaleX(0.95);
+  }
+  100% {
+    transform: scaleX(1.05);
+  }
+}
+
+@keyframes changeScale3 {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(5px);
+  }
+}

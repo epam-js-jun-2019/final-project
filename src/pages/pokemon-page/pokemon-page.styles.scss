@@ -1,0 +1,44 @@
+@import '../../sass/utils/variables';
+@import '../../sass/utils/mixins';
+
+.pokemon-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50rem;
+  font-family: inherit;
+  font-size: 2rem;
+
+  &_focus {
+    color: chocolate;
+  }
+
+  span {
+    text-align: left;
+  }
+}
+
+.pokemon-title {
+  color: #072b4d;
+}
+
+.pokemon-image {
+  width: 35rem;
+  height: auto;
+  transition: 0.6s all ease-in;
+  animation: changeScale 2s alternate infinite ease-in-out;
+  @include preciseRespond(450px) {
+    width: 20rem;
+  }
+}
+
+.background-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: 20% 75%;
+  opacity: 0.075;
+}

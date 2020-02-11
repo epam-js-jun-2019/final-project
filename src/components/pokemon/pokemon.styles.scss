@@ -1,0 +1,167 @@
+@import '../../sass/utils/variables';
+@import '../../sass/utils/mixins';
+
+.Pokemon {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25rem;
+  height: 37rem;
+  margin-bottom: 5rem;
+  padding: 2rem;
+  border: 3px solid #153f7c;
+  border-radius: 13rem;
+  box-shadow: $shadow-light;
+  transform: scale(1);
+  opacity: 1;
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.5s all cubic-bezier(0.26, 0.29, 0.21, 1.87);
+
+  .custom-button {
+    transition: all 0.35s ease-in-out;
+    opacity: 0;
+    z-index: 1;
+  }
+
+  &:hover {
+    transform: scale(1 + 0.15);
+    box-shadow: $shadow-dark;
+    border: 3px solid $color-tertiary;
+    z-index: 200;
+    .Pokemon__image {
+      animation: changeScale 0.9s alternate infinite ease-in-out;
+    }
+    .Pokemon__text {
+      border: 2px solid $color-tertiary;
+    }
+    .hidden-background {
+      opacity: 1;
+    }
+    .hidden-background_alt {
+      opacity: 1;
+    }
+    .custom-button {
+      opacity: 1;
+    }
+  }
+
+  &__image {
+    width: 18rem;
+    height: auto;
+    z-index: 1;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    height: 10rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 2rem;
+    font-family: inherit;
+    font-size: 1.2rem;
+    border: 2px solid #153f7c;
+    border-radius: 5px;
+    background-color: #fff4d4;
+    z-index: 1;
+
+    &_focus {
+      color: chocolate;
+    }
+  }
+
+  &__id,
+  &__name,
+  &__status,
+  &__captureDate {
+    margin-top: 5px;
+  }
+
+  &_captured {
+    background-image: linear-gradient(
+      to left top,
+      $color-secondary-dark,
+      $color-primary-dark
+    );
+  }
+
+  &_captured-alt {
+    background-image: linear-gradient(
+      to right bottom,
+      #0099ff,
+      rgb(255, 222, 37)
+    );
+  }
+}
+
+.hidden-background {
+  position: absolute;
+  top: -0.5rem;
+  left: 0rem;
+  width: 25rem;
+  height: 37rem;
+  content: '';
+  background-image: linear-gradient(
+    to left top,
+    $color-secondary-dark,
+    $color-primary-dark
+  );
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0;
+  z-index: -1;
+
+  &_alt {
+    position: absolute;
+    top: -0.5rem;
+    left: 0rem;
+    width: 25rem;
+    height: 37rem;
+    content: '';
+    background-image: linear-gradient(
+      to right bottom,
+      #0099ff,
+      rgb(255, 222, 37)
+    );
+    transition: opacity 0.2s ease-in-out;
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+@include preciseRespond(490px) {
+  .Pokemon {
+    transform: scale(1 - 0.2);
+    &:hover {
+      transform: scale(1 - 0.2 + 0.15);
+    }
+  }
+  .hidden-background,
+  .hidden-background_alt {
+    transform: scale(1);
+  }
+}
+@include preciseRespond(470px) {
+  .Pokemon {
+    transform: scale(1 - 0.3);
+    &:hover {
+      transform: scale(1 - 0.3 + 0.15);
+    }
+  }
+  .hidden-background,
+  .hidden-background_alt {
+    transform: scale(1);
+  }
+}
+@include preciseRespond(370px) {
+  .Pokemon {
+    transform: scale(1 - 0.4);
+    &:hover {
+      transform: scale(1 - 0.4 + 0.15);
+    }
+  }
+  .hidden-background,
+  .hidden-background_alt {
+    transform: scale(1);
+  }
+}

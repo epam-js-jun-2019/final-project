@@ -1,0 +1,64 @@
+@import '../../sass/utils/variables';
+@import '../../sass/utils/mixins';
+
+.pagination {
+  position: absolute;
+  top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.425);
+  border-radius: 5px;
+  z-index: 1000;
+
+  &__page-pointer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    margin: 0.45rem;
+    padding: 5px;
+    font-size: 1.3rem;
+    background-color: $color-primary-light;
+    color: white;
+    border: 1px solid $color-tertiary;
+    border-radius: 10rem;
+    transition: 0.27s all ease;
+    cursor: pointer;
+
+    &_active {
+      transform: scale(1.2);
+      background-color: $color-secondary-dark;
+      border: 1px solid white;
+    }
+
+    &:hover {
+      transform: scale(1.4);
+      background-color: $color-secondary-light;
+      border: 1px solid white;
+      color: black;
+      box-shadow: $shadow-light;
+    }
+    &:active {
+      transform: scale(1.2) translateY(3px);
+      box-shadow: $shadow-dark;
+    }
+  }
+}
+
+@include preciseRespond(490px) {
+  .pagination__page-pointer {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
+  }
+}
+
+@include preciseRespond(420px) {
+  .pagination__page-pointer {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.1rem;
+  }
+}

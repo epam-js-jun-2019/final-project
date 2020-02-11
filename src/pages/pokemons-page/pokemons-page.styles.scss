@@ -1,0 +1,116 @@
+@import '../../sass/utils/variables';
+@import '../../sass/utils/mixins';
+
+.search-box__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination {
+  &__container {
+    position: relative;
+  }
+
+  &__toggler {
+    position: absolute;
+    top: -6rem;
+    left: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 4rem;
+    margin: 0.45rem;
+    padding: 5px;
+    font-size: 1.5rem;
+    background-color: $color-primary-light;
+    color: white;
+    border: 1px solid $color-tertiary;
+    border-radius: 0.5rem;
+    transition: 0.27s all ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+      background-color: $color-secondary-light;
+      border: 1px solid white;
+      color: black;
+      box-shadow: $shadow-light;
+    }
+    &:active {
+      transform: scale(1.05) translateY(3px);
+      box-shadow: $shadow-dark;
+    }
+  }
+}
+
+.pokemons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.to-begin-button {
+  position: fixed;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  border: 3px solid white;
+  border-radius: 100px;
+  font-size: 1rem;
+  color: white;
+  background-color: $color-secondary-dark;
+  z-index: 2000;
+  opacity: 0.25;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+    background-color: $color-secondary-light;
+    color: black;
+    box-shadow: $shadow-light;
+    opacity: 1;
+  }
+  &:active {
+    transform: scale(1.05) translateY(3px);
+    box-shadow: $shadow-dark;
+    opacity: 1;
+  }
+}
+
+@include preciseRespond(900px) {
+  .pokemons {
+    padding: 1rem 2rem;
+  }
+  .to-begin-button {
+    left: 5px;
+  }
+}
+
+@include preciseRespond(470px) {
+  .pokemons {
+    flex-wrap: none;
+    justify-content: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  .pagination__toggler {
+    font-size: 10px;
+    width: 9rem;
+    height: 3rem;
+  }
+}
+
+@include preciseRespond(430px) {
+  .pagination__toggler {
+    font-size: 8px;
+    width: 7rem;
+    height: 2.5rem;
+    left: 5px;
+  }
+}
